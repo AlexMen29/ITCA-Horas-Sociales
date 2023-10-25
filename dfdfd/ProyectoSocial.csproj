@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="bdSocial\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkcore.SqlServer" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="SistemaAdministrativo\EliminarDetallesAlum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SistemaAdministrativo\FrmDatosInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SistemaAdministrativo\FrmDetallesAd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SistemaAdministrativo\FrmLoginAdmi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SistemaAdministrativo\ImpresionDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SistemaEntrada\EstudianteOrDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SistemaEntrada\frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SistemaEntrada\RegistroDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SistemaEntrada\RegistroUniversitarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
