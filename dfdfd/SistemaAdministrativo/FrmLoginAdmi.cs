@@ -1,4 +1,5 @@
 ﻿using dfdfd.bdSocial;
+using Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,6 @@ namespace SistemaAdministrativo
 {
     public partial class FrmSisAd : Form
     {
-
         //Metodo para obtener informacion de las credenciales ingresadas en el menu de login
         public DatosAlumno usuarioActual { get; set; }
         public FrmSisAd()
@@ -40,68 +40,92 @@ namespace SistemaAdministrativo
         {
             FrmDatosInicio us = new FrmDatosInicio();
             AbrirForm(us);
-
-
-
         }
-
-        private void pnlContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnDetalles_Click(object sender, EventArgs e)
         {
             FrmDetallesAd us = new FrmDetallesAd();
             AbrirForm(us);
 
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             EliminarDetallesAlum us = new EliminarDetallesAlum();
             AbrirForm(us);
 
         }
-
         private void btnHojaSocial_Click(object sender, EventArgs e)
         {
             ImpresionDatos us = new ImpresionDatos();
             AbrirForm(us);
 
         }
-
         private void FrmSisAd_Load(object sender, EventArgs e)
         {
             LabNombre.Text = usuarioActual.Nombres + " " + usuarioActual.Apellidos;
         }
-
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-
             DialogResult Respuesta = MessageBox.Show("¿Desea salir del Sistema?", "Horas Sociales", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (Respuesta == DialogResult.Yes)
             {
                 Application.Exit();
             }
-
-
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void LabNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNotificacion_MouseEnter(object sender, EventArgs e)
         {
             MessageBox.Show("Esta es una version beta de como mostrar los mensajes, posiblemnete lo dejemos asi pero con clik, sin mas que decir chambean por favor");
         }
+
+        public void eventosEnterLeave(Button btn, Color ColorFondo, Color ColorLetra)
+        {
+            btn.BackColor = ColorFondo;
+            btn.ForeColor = ColorLetra;
+        }
+
+        private void btnInicio_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnInicio, ColorTranslator.FromHtml("#cd9013"), Color.White);
+
+        }
+
+        private void btnInicio_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnInicio, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+
+        private void btnDetalles_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnDetalles, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+        private void btnDetalles_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnDetalles, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+        private void btnEliModi_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnEliModi, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+        private void btnEliModi_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnEliModi, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+        private void btnEnviarMensaje_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnEnviarMensaje, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+        private void btnEnviarMensaje_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnEnviarMensaje, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+        private void btnHojaSocial_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnHojaSocial, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+        private void btnHojaSocial_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnHojaSocial, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
     }
+
 }

@@ -97,6 +97,8 @@
             btnHojaSocial.Text = "   Hoja de Hora Social";
             btnHojaSocial.UseVisualStyleBackColor = false;
             btnHojaSocial.Click += btnHojaSocial_Click;
+            btnHojaSocial.MouseEnter += btnHojaSocial_MouseEnter;
+            btnHojaSocial.MouseLeave += btnHojaSocial_MouseLeave;
             // 
             // btnEnviarMensaje
             // 
@@ -113,6 +115,8 @@
             btnEnviarMensaje.TabIndex = 12;
             btnEnviarMensaje.Text = "Enviar mensaje";
             btnEnviarMensaje.UseVisualStyleBackColor = false;
+            btnEnviarMensaje.MouseEnter += btnEnviarMensaje_MouseEnter;
+            btnEnviarMensaje.MouseLeave += btnEnviarMensaje_MouseLeave;
             // 
             // btnEliModi
             // 
@@ -130,6 +134,8 @@
             btnEliModi.Text = "Eliminar/Modificar";
             btnEliModi.UseVisualStyleBackColor = false;
             btnEliModi.Click += button3_Click;
+            btnEliModi.MouseEnter += btnEliModi_MouseEnter;
+            btnEliModi.MouseLeave += btnEliModi_MouseLeave;
             // 
             // btnDetalles
             // 
@@ -147,6 +153,8 @@
             btnDetalles.Text = "Detalles ";
             btnDetalles.UseVisualStyleBackColor = false;
             btnDetalles.Click += btnDetalles_Click;
+            btnDetalles.MouseEnter += btnDetalles_MouseEnter;
+            btnDetalles.MouseLeave += btnDetalles_MouseLeave;
             // 
             // btnInicio
             // 
@@ -164,6 +172,8 @@
             btnInicio.Text = "Inicio";
             btnInicio.UseVisualStyleBackColor = false;
             btnInicio.Click += btnInicio_Click;
+            btnInicio.MouseEnter += btnInicio_MouseEnter;
+            btnInicio.MouseLeave += btnInicio_MouseLeave;
             // 
             // btnCerrarSesion
             // 
@@ -242,7 +252,6 @@
             LabNombre.Size = new Size(14, 19);
             LabNombre.TabIndex = 1;
             LabNombre.Text = " ";
-            LabNombre.Click += LabNombre_Click;
             // 
             // label1
             // 
@@ -263,7 +272,6 @@
             pnlContenedor.Name = "pnlContenedor";
             pnlContenedor.Size = new Size(767, 516);
             pnlContenedor.TabIndex = 4;
-            pnlContenedor.Paint += pnlContenedor_Paint;
             // 
             // FrmSisAd
             // 

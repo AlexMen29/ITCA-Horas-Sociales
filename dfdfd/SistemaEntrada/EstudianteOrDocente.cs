@@ -55,15 +55,15 @@ namespace Login
         {
             
             RegistroUniversitarios frm = new RegistroUniversitarios();
-            Hide();
-            frm.ShowDialog();
+            Close();
+            frm.Show();
         }
 
         private void PanelDocente_Click(object sender, EventArgs e)
         {
             RegistroDocente frm = new RegistroDocente();
-            Hide();
-            frm.ShowDialog();
+            Close();
+            frm.Show();
 
         }
 

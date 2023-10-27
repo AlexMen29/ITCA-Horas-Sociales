@@ -35,7 +35,6 @@
             PicOcultar = new PictureBox();
             labRegistrarme = new Label();
             label1 = new Label();
-            LabRecuperarContraseña = new Label();
             txtCarnet = new TextBox();
             label2 = new Label();
             btnIngresar = new Button();
@@ -44,7 +43,7 @@
             label5 = new Label();
             label4 = new Label();
             panel1 = new Panel();
-            dataGridView1 = new DataGridView();
+            pictureBox1 = new PictureBox();
             label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -55,7 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)PicOcultar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -70,7 +69,6 @@
             splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
             splitContainer1.Panel1.Controls.Add(panel2);
-            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
@@ -89,7 +87,6 @@
             panel2.Controls.Add(PicOcultar);
             panel2.Controls.Add(labRegistrarme);
             panel2.Controls.Add(label1);
-            panel2.Controls.Add(LabRecuperarContraseña);
             panel2.Controls.Add(txtCarnet);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(btnIngresar);
@@ -155,24 +152,8 @@
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(136, 24);
-            label1.TabIndex = 2;
+            label1.TabIndex = 14;
             label1.Text = "Iniciar Sesión";
-            // 
-            // LabRecuperarContraseña
-            // 
-            LabRecuperarContraseña.Anchor = AnchorStyles.None;
-            LabRecuperarContraseña.AutoSize = true;
-            LabRecuperarContraseña.BackColor = Color.Transparent;
-            LabRecuperarContraseña.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Underline, GraphicsUnit.Point);
-            LabRecuperarContraseña.ForeColor = Color.FromArgb(176, 25, 30);
-            LabRecuperarContraseña.Location = new Point(79, 447);
-            LabRecuperarContraseña.Margin = new Padding(4, 0, 4, 0);
-            LabRecuperarContraseña.Name = "LabRecuperarContraseña";
-            LabRecuperarContraseña.Size = new Size(147, 18);
-            LabRecuperarContraseña.TabIndex = 9;
-            LabRecuperarContraseña.Text = "Olvidé mi contraseña";
-            LabRecuperarContraseña.MouseEnter += LabRecuperarContraseña_MouseEnter;
-            LabRecuperarContraseña.MouseLeave += LabRecuperarContraseña_MouseLeave;
             // 
             // txtCarnet
             // 
@@ -185,8 +166,7 @@
             txtCarnet.Name = "txtCarnet";
             txtCarnet.PasswordChar = '*';
             txtCarnet.Size = new Size(280, 40);
-            txtCarnet.TabIndex = 12;
-            txtCarnet.TabStop = false;
+            txtCarnet.TabIndex = 1;
             txtCarnet.UseSystemPasswordChar = true;
             // 
             // label2
@@ -209,11 +189,11 @@
             btnIngresar.BackColor = Color.FromArgb(177, 32, 31);
             btnIngresar.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnIngresar.ForeColor = SystemColors.ControlLightLight;
-            btnIngresar.Location = new Point(23, 482);
+            btnIngresar.Location = new Point(23, 462);
             btnIngresar.Margin = new Padding(4, 3, 4, 3);
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new Size(281, 52);
-            btnIngresar.TabIndex = 11;
+            btnIngresar.TabIndex = 3;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = false;
             btnIngresar.Click += btnIngresar_Click;
@@ -243,8 +223,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(280, 40);
-            txtPassword.TabIndex = 7;
-            txtPassword.TabStop = false;
+            txtPassword.TabIndex = 2;
             // 
             // label5
             // 
@@ -278,27 +257,25 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.AutoSize = true;
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label6);
             panel1.ImeMode = ImeMode.Disable;
-            panel1.Location = new Point(53, 197);
+            panel1.Location = new Point(45, 197);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(773, 255);
-            panel1.TabIndex = 2;
+            panel1.TabIndex = 20;
             // 
-            // dataGridView1
+            // pictureBox1
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(770, 189);
-            dataGridView1.TabIndex = 2;
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(16, 15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(743, 176);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -322,10 +299,10 @@
             Controls.Add(splitContainer1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "frmInicio";
-            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio";
             WindowState = FormWindowState.Maximized;
@@ -342,7 +319,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -355,7 +332,6 @@
         private TextBox txtCarnet;
         private Button btnIngresar;
         private PictureBox pictureBox2;
-        private Label LabRecuperarContraseña;
         private TextBox txtPassword;
         private Label label5;
         private Label label4;
@@ -364,7 +340,7 @@
         private Label labRegistrarme;
         private PictureBox PicOcultar;
         private PictureBox PicMostrar;
-        private DataGridView dataGridView1;
+        private PictureBox pictureBox1;
     }
 }
 

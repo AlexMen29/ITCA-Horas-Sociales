@@ -33,7 +33,7 @@ namespace Login
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             EstudianteOrDocente frm = new EstudianteOrDocente();
-            this.Close();
+            Close();
             frm.Show();
         }
 
@@ -51,4 +51,7 @@ namespace Login
 
         }
     }
+
+
+    //Metod
 }

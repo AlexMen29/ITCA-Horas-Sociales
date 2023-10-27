@@ -37,17 +37,20 @@ namespace Login
 
         private void btnRegresar_MouseLeave(object sender, EventArgs e)
         {
-            this.btnRegresar.BackColor = ColorTranslator.FromHtml("#b1201f");
-            this.btnRegresar.ForeColor = Color.White;
+            btnRegresar.BackColor = ColorTranslator.FromHtml("#b1201f");
+            btnRegresar.ForeColor = Color.White;
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            EstudianteOrDocente frm=new EstudianteOrDocente();
-            this.Close();
+            EstudianteOrDocente frm = new EstudianteOrDocente();
+            Close();
             frm.Show();
         }
 
-     
+        private void RegistroUniversitarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

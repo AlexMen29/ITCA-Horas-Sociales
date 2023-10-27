@@ -29,250 +29,268 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUniversitarios));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtEncargado = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCarnet = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnRegresar = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            txtEncargado = new TextBox();
+            label7 = new Label();
+            btnRegistrar = new Button();
+            txtCorreo = new TextBox();
+            txtApellidos = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            txtNombres = new TextBox();
+            label3 = new Label();
+            txtContraseña = new TextBox();
+            label2 = new Label();
+            txtCarnet = new TextBox();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            btnRegresar = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.txtEncargado);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnRegistrar);
-            this.panel1.Controls.Add(this.txtCorreo);
-            this.panel1.Controls.Add(this.txtApellidos);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtNombres);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtContraseña);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtCarnet);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(340, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 518);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.FromArgb(247, 233, 233);
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(txtEncargado);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(btnRegistrar);
+            panel1.Controls.Add(txtCorreo);
+            panel1.Controls.Add(txtApellidos);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(txtNombres);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(txtContraseña);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(txtCarnet);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(397, 38);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(456, 598);
+            panel1.TabIndex = 0;
             // 
             // txtEncargado
             // 
-            this.txtEncargado.Location = new System.Drawing.Point(156, 307);
-            this.txtEncargado.Name = "txtEncargado";
-            this.txtEncargado.Size = new System.Drawing.Size(182, 20);
-            this.txtEncargado.TabIndex = 14;
+            txtEncargado.Location = new Point(182, 354);
+            txtEncargado.Margin = new Padding(4, 3, 4, 3);
+            txtEncargado.Name = "txtEncargado";
+            txtEncargado.Size = new Size(212, 23);
+            txtEncargado.TabIndex = 14;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(59, 306);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 19);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Encargado";
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Microsoft YaHei", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(69, 353);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(90, 19);
+            label7.TabIndex = 13;
+            label7.Text = "Encargado";
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(32)))), ((int)(((byte)(31)))));
-            this.btnRegistrar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRegistrar.Location = new System.Drawing.Point(63, 359);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(275, 45);
-            this.btnRegistrar.TabIndex = 12;
-            this.btnRegistrar.Text = "Registrarme";
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.MouseEnter += new System.EventHandler(this.btnRegistrar_MouseEnter);
-            this.btnRegistrar.MouseLeave += new System.EventHandler(this.btnRegistrar_MouseLeave);
+            btnRegistrar.Anchor = AnchorStyles.None;
+            btnRegistrar.BackColor = Color.FromArgb(177, 32, 31);
+            btnRegistrar.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRegistrar.ForeColor = SystemColors.ControlLightLight;
+            btnRegistrar.Location = new Point(74, 414);
+            btnRegistrar.Margin = new Padding(4, 3, 4, 3);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(321, 52);
+            btnRegistrar.TabIndex = 12;
+            btnRegistrar.Text = "Registrarme";
+            btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.MouseEnter += btnRegistrar_MouseEnter;
+            btnRegistrar.MouseLeave += btnRegistrar_MouseLeave;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(156, 281);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(182, 20);
-            this.txtCorreo.TabIndex = 11;
+            txtCorreo.Location = new Point(182, 324);
+            txtCorreo.Margin = new Padding(4, 3, 4, 3);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(212, 23);
+            txtCorreo.TabIndex = 11;
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(156, 249);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(182, 20);
-            this.txtApellidos.TabIndex = 10;
+            txtApellidos.Location = new Point(182, 287);
+            txtApellidos.Margin = new Padding(4, 3, 4, 3);
+            txtApellidos.Name = "txtApellidos";
+            txtApellidos.Size = new Size(212, 23);
+            txtApellidos.TabIndex = 10;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(89, 281);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 19);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Correo";
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Microsoft YaHei", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(104, 324);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(60, 19);
+            label6.TabIndex = 9;
+            label6.Text = "Correo";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(71, 253);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 19);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Apellidos";
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Microsoft YaHei", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(83, 292);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(78, 19);
+            label5.TabIndex = 8;
+            label5.Text = "Apellidos";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 222);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 19);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Nombres";
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Microsoft YaHei", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(83, 256);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(79, 19);
+            label4.TabIndex = 7;
+            label4.Text = "Nombres";
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(156, 223);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(182, 20);
-            this.txtNombres.TabIndex = 6;
+            txtNombres.Location = new Point(182, 257);
+            txtNombres.Margin = new Padding(4, 3, 4, 3);
+            txtNombres.Name = "txtNombres";
+            txtNombres.Size = new Size(212, 23);
+            txtNombres.TabIndex = 6;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 186);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 19);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Contraseña";
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Microsoft YaHei", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(64, 215);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(95, 19);
+            label3.TabIndex = 5;
+            label3.Text = "Contraseña";
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(156, 187);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(182, 20);
-            this.txtContraseña.TabIndex = 4;
+            txtContraseña.Location = new Point(182, 216);
+            txtContraseña.Margin = new Padding(4, 3, 4, 3);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(212, 23);
+            txtContraseña.TabIndex = 4;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(91, 150);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Carnet";
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft YaHei", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(106, 173);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(59, 19);
+            label2.TabIndex = 3;
+            label2.Text = "Carnet";
             // 
             // txtCarnet
             // 
-            this.txtCarnet.Location = new System.Drawing.Point(156, 151);
-            this.txtCarnet.Name = "txtCarnet";
-            this.txtCarnet.Size = new System.Drawing.Size(182, 20);
-            this.txtCarnet.TabIndex = 2;
+            txtCarnet.Location = new Point(182, 174);
+            txtCarnet.Margin = new Padding(4, 3, 4, 3);
+            txtCarnet.Name = "txtCarnet";
+            txtCarnet.Size = new Size(212, 23);
+            txtCarnet.TabIndex = 2;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(107, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(54, 54);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(125, 50);
+            pictureBox1.Margin = new Padding(4, 3, 4, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(63, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(167, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Regístrate";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft YaHei", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(195, 62);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(120, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Regístrate";
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(32)))), ((int)(((byte)(31)))));
-            this.btnRegresar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRegresar.Location = new System.Drawing.Point(59, 506);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(275, 45);
-            this.btnRegresar.TabIndex = 26;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            this.btnRegresar.MouseEnter += new System.EventHandler(this.btnRegresar_MouseEnter);
-            this.btnRegresar.MouseLeave += new System.EventHandler(this.btnRegresar_MouseLeave);
+            btnRegresar.Anchor = AnchorStyles.None;
+            btnRegresar.BackColor = Color.FromArgb(177, 32, 31);
+            btnRegresar.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRegresar.ForeColor = SystemColors.ControlLightLight;
+            btnRegresar.Location = new Point(69, 584);
+            btnRegresar.Margin = new Padding(4, 3, 4, 3);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(321, 52);
+            btnRegresar.TabIndex = 26;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
+            btnRegresar.MouseEnter += btnRegresar_MouseEnter;
+            btnRegresar.MouseLeave += btnRegresar_MouseLeave;
             // 
             // RegistroUniversitarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1100, 620);
-            this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.panel1);
-            this.Name = "RegistroUniversitarios";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistroUniversitarios";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1283, 715);
+            Controls.Add(btnRegresar);
+            Controls.Add(panel1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "RegistroUniversitarios";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "RegistroUniversitarios";
+            Load += RegistroUniversitarios_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCarnet;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtApellidos;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.TextBox txtEncargado;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnRegresar;
+        private Panel panel1;
+        private Label label1;
+        private Label label3;
+        private TextBox txtContraseña;
+        private Label label2;
+        private TextBox txtCarnet;
+        private PictureBox pictureBox1;
+        private TextBox txtCorreo;
+        private TextBox txtApellidos;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private TextBox txtNombres;
+        private Button btnRegistrar;
+        private TextBox txtEncargado;
+        private Label label7;
+        private Button btnRegresar;
     }
 }
