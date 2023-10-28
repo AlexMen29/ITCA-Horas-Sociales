@@ -36,7 +36,6 @@
             btnEliModi = new Button();
             btnDetalles = new Button();
             btnInicio = new Button();
-            btnCerrarSesion = new Button();
             PanelMenu = new Panel();
             btnPerfil = new Button();
             btnNotificacion = new Button();
@@ -44,6 +43,7 @@
             LabNombre = new Label();
             label1 = new Label();
             pnlContenedor = new Panel();
+            btnCerrarSesion = new Button();
             PanelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelMenu.SuspendLayout();
@@ -55,13 +55,13 @@
             PanelOpciones.BackColor = Color.FromArgb(206, 144, 17);
             PanelOpciones.BackgroundImage = (Image)resources.GetObject("PanelOpciones.BackgroundImage");
             PanelOpciones.BackgroundImageLayout = ImageLayout.Stretch;
+            PanelOpciones.Controls.Add(btnCerrarSesion);
             PanelOpciones.Controls.Add(pictureBox1);
             PanelOpciones.Controls.Add(btnHojaSocial);
             PanelOpciones.Controls.Add(btnEnviarMensaje);
             PanelOpciones.Controls.Add(btnEliModi);
             PanelOpciones.Controls.Add(btnDetalles);
             PanelOpciones.Controls.Add(btnInicio);
-            PanelOpciones.Controls.Add(btnCerrarSesion);
             PanelOpciones.Dock = DockStyle.Left;
             PanelOpciones.Location = new Point(0, 0);
             PanelOpciones.Margin = new Padding(4, 3, 4, 3);
@@ -74,7 +74,7 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(82, 60);
+            pictureBox1.Location = new Point(91, 46);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(131, 85);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -89,10 +89,10 @@
             btnHojaSocial.ForeColor = SystemColors.ControlLightLight;
             btnHojaSocial.Image = (Image)resources.GetObject("btnHojaSocial.Image");
             btnHojaSocial.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHojaSocial.Location = new Point(0, 378);
+            btnHojaSocial.Location = new Point(33, 378);
             btnHojaSocial.Margin = new Padding(4, 3, 4, 3);
             btnHojaSocial.Name = "btnHojaSocial";
-            btnHojaSocial.Size = new Size(271, 55);
+            btnHojaSocial.Size = new Size(238, 55);
             btnHojaSocial.TabIndex = 13;
             btnHojaSocial.Text = "   Hoja de Hora Social";
             btnHojaSocial.UseVisualStyleBackColor = false;
@@ -108,10 +108,10 @@
             btnEnviarMensaje.ForeColor = SystemColors.ControlLightLight;
             btnEnviarMensaje.Image = (Image)resources.GetObject("btnEnviarMensaje.Image");
             btnEnviarMensaje.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEnviarMensaje.Location = new Point(0, 323);
+            btnEnviarMensaje.Location = new Point(33, 323);
             btnEnviarMensaje.Margin = new Padding(4, 3, 4, 3);
             btnEnviarMensaje.Name = "btnEnviarMensaje";
-            btnEnviarMensaje.Size = new Size(271, 55);
+            btnEnviarMensaje.Size = new Size(238, 55);
             btnEnviarMensaje.TabIndex = 12;
             btnEnviarMensaje.Text = "Enviar mensaje";
             btnEnviarMensaje.UseVisualStyleBackColor = false;
@@ -126,10 +126,10 @@
             btnEliModi.ForeColor = SystemColors.ControlLightLight;
             btnEliModi.Image = (Image)resources.GetObject("btnEliModi.Image");
             btnEliModi.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliModi.Location = new Point(0, 268);
+            btnEliModi.Location = new Point(33, 268);
             btnEliModi.Margin = new Padding(4, 3, 4, 3);
             btnEliModi.Name = "btnEliModi";
-            btnEliModi.Size = new Size(271, 55);
+            btnEliModi.Size = new Size(238, 55);
             btnEliModi.TabIndex = 10;
             btnEliModi.Text = "Eliminar/Modificar";
             btnEliModi.UseVisualStyleBackColor = false;
@@ -145,10 +145,10 @@
             btnDetalles.ForeColor = SystemColors.ControlLightLight;
             btnDetalles.Image = (Image)resources.GetObject("btnDetalles.Image");
             btnDetalles.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDetalles.Location = new Point(0, 212);
+            btnDetalles.Location = new Point(33, 212);
             btnDetalles.Margin = new Padding(4, 3, 4, 3);
             btnDetalles.Name = "btnDetalles";
-            btnDetalles.Size = new Size(271, 55);
+            btnDetalles.Size = new Size(238, 55);
             btnDetalles.TabIndex = 9;
             btnDetalles.Text = "Detalles ";
             btnDetalles.UseVisualStyleBackColor = false;
@@ -164,34 +164,16 @@
             btnInicio.ForeColor = SystemColors.ButtonHighlight;
             btnInicio.Image = (Image)resources.GetObject("btnInicio.Image");
             btnInicio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnInicio.Location = new Point(0, 151);
+            btnInicio.Location = new Point(33, 151);
             btnInicio.Margin = new Padding(4, 3, 4, 3);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(271, 55);
+            btnInicio.Size = new Size(238, 55);
             btnInicio.TabIndex = 0;
             btnInicio.Text = "Inicio";
             btnInicio.UseVisualStyleBackColor = false;
             btnInicio.Click += btnInicio_Click;
             btnInicio.MouseEnter += btnInicio_MouseEnter;
             btnInicio.MouseLeave += btnInicio_MouseLeave;
-            // 
-            // btnCerrarSesion
-            // 
-            btnCerrarSesion.BackColor = Color.FromArgb(176, 25, 29);
-            btnCerrarSesion.Dock = DockStyle.Bottom;
-            btnCerrarSesion.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCerrarSesion.ForeColor = SystemColors.ControlLightLight;
-            btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
-            btnCerrarSesion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCerrarSesion.Location = new Point(0, 508);
-            btnCerrarSesion.Margin = new Padding(4, 3, 4, 3);
-            btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(271, 54);
-            btnCerrarSesion.TabIndex = 8;
-            btnCerrarSesion.Tag = "Cerrar Sesión";
-            btnCerrarSesion.Text = "Cerrar Sesión";
-            btnCerrarSesion.UseVisualStyleBackColor = false;
-            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // PanelMenu
             // 
@@ -273,6 +255,23 @@
             pnlContenedor.Size = new Size(767, 516);
             pnlContenedor.TabIndex = 4;
             // 
+            // btnCerrarSesion
+            // 
+            btnCerrarSesion.Anchor = AnchorStyles.None;
+            btnCerrarSesion.BackColor = Color.FromArgb(176, 25, 29);
+            btnCerrarSesion.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCerrarSesion.ForeColor = SystemColors.ControlLightLight;
+            btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
+            btnCerrarSesion.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCerrarSesion.Location = new Point(33, 512);
+            btnCerrarSesion.Margin = new Padding(4, 3, 4, 3);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(238, 50);
+            btnCerrarSesion.TabIndex = 15;
+            btnCerrarSesion.Tag = "Cerrar Sesión";
+            btnCerrarSesion.Text = "Cerrar Sesión";
+            btnCerrarSesion.UseVisualStyleBackColor = false;
+            // 
             // FrmSisAd
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -299,7 +298,6 @@
         #endregion
 
         private Panel PanelOpciones;
-        private Button btnCerrarSesion;
         private Panel PanelMenu;
         private Button btnPerfil;
         private Button btnNotificacion;
@@ -313,6 +311,7 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Label LabNombre;
+        private Button btnCerrarSesion;
     }
 }
 
