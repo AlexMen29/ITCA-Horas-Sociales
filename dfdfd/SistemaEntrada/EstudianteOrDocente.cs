@@ -17,7 +17,7 @@ namespace Login
             InitializeComponent();
         }
 
-      
+
 
         private void PanelUniversitario_MouseEnter(object sender, EventArgs e)
         {
@@ -53,7 +53,7 @@ namespace Login
 
         private void PanelUniversitario_Click(object sender, EventArgs e)
         {
-            
+
             RegistroUniversitarios frm = new RegistroUniversitarios();
             Close();
             frm.Show();
@@ -67,6 +67,6 @@ namespace Login
 
         }
 
-     
+
     }
 }

@@ -50,6 +50,11 @@ namespace Login
             this.btnRegistrar.ForeColor = Color.White;
 
         }
+
+        private void RegistroDocente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
