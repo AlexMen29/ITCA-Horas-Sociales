@@ -31,9 +31,7 @@
     <Compile Update="SistemaAdministrativo\EliminarDetallesAlum.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="SistemaAdministrativo\FrmDatosInicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="SistemaAdministrativo\FrmDatosInicio.cs" />
     <Compile Update="SistemaAdministrativo\FrmDetallesAd.cs">
       <SubType>Form</SubType>
     </Compile>
