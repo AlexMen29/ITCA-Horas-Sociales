@@ -29,216 +29,226 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetallesAd));
-            this.pnlDetallesInfo = new System.Windows.Forms.Panel();
-            this.btnInfoDetaAlumAd = new System.Windows.Forms.Button();
-            this.lblDetalles = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pnlDetallesInfo.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            pnlDetallesInfo = new Panel();
+            btnInfoDetaAlumAd = new Button();
+            lblDetalles = new Label();
+            panel1 = new Panel();
+            gridDatosAlumnos = new DataGridView();
+            panel2 = new Panel();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pnlDetallesInfo.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridDatosAlumnos).BeginInit();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // pnlDetallesInfo
             // 
-            this.pnlDetallesInfo.Controls.Add(this.btnInfoDetaAlumAd);
-            this.pnlDetallesInfo.Controls.Add(this.lblDetalles);
-            this.pnlDetallesInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDetallesInfo.Location = new System.Drawing.Point(0, 0);
-            this.pnlDetallesInfo.Name = "pnlDetallesInfo";
-            this.pnlDetallesInfo.Size = new System.Drawing.Size(788, 81);
-            this.pnlDetallesInfo.TabIndex = 0;
+            pnlDetallesInfo.Controls.Add(btnInfoDetaAlumAd);
+            pnlDetallesInfo.Controls.Add(lblDetalles);
+            pnlDetallesInfo.Dock = DockStyle.Top;
+            pnlDetallesInfo.Location = new Point(0, 0);
+            pnlDetallesInfo.Margin = new Padding(4, 3, 4, 3);
+            pnlDetallesInfo.Name = "pnlDetallesInfo";
+            pnlDetallesInfo.Size = new Size(919, 93);
+            pnlDetallesInfo.TabIndex = 0;
             // 
             // btnInfoDetaAlumAd
             // 
-            this.btnInfoDetaAlumAd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInfoDetaAlumAd.BackColor = System.Drawing.Color.Maroon;
-            this.btnInfoDetaAlumAd.Image = ((System.Drawing.Image)(resources.GetObject("btnInfoDetaAlumAd.Image")));
-            this.btnInfoDetaAlumAd.Location = new System.Drawing.Point(689, 2);
-            this.btnInfoDetaAlumAd.Name = "btnInfoDetaAlumAd";
-            this.btnInfoDetaAlumAd.Size = new System.Drawing.Size(99, 76);
-            this.btnInfoDetaAlumAd.TabIndex = 1;
-            this.btnInfoDetaAlumAd.UseVisualStyleBackColor = false;
+            btnInfoDetaAlumAd.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnInfoDetaAlumAd.BackColor = Color.Maroon;
+            btnInfoDetaAlumAd.Image = (Image)resources.GetObject("btnInfoDetaAlumAd.Image");
+            btnInfoDetaAlumAd.Location = new Point(804, 2);
+            btnInfoDetaAlumAd.Margin = new Padding(4, 3, 4, 3);
+            btnInfoDetaAlumAd.Name = "btnInfoDetaAlumAd";
+            btnInfoDetaAlumAd.Size = new Size(115, 88);
+            btnInfoDetaAlumAd.TabIndex = 1;
+            btnInfoDetaAlumAd.UseVisualStyleBackColor = false;
             // 
             // lblDetalles
             // 
-            this.lblDetalles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDetalles.AutoSize = true;
-            this.lblDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDetalles.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalles.Location = new System.Drawing.Point(0, 2);
-            this.lblDetalles.Name = "lblDetalles";
-            this.lblDetalles.Size = new System.Drawing.Size(682, 72);
-            this.lblDetalles.TabIndex = 0;
-            this.lblDetalles.Text = resources.GetString("lblDetalles.Text");
+            lblDetalles.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblDetalles.AutoSize = true;
+            lblDetalles.FlatStyle = FlatStyle.Flat;
+            lblDetalles.Font = new Font("Tahoma", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDetalles.Location = new Point(0, 2);
+            lblDetalles.Margin = new Padding(4, 0, 4, 0);
+            lblDetalles.Name = "lblDetalles";
+            lblDetalles.Size = new Size(682, 72);
+            lblDetalles.TabIndex = 0;
+            lblDetalles.Text = resources.GetString("lblDetalles.Text");
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 81);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 435);
-            this.panel1.TabIndex = 2;
+            panel1.Controls.Add(gridDatosAlumnos);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 93);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(919, 502);
+            panel1.TabIndex = 2;
+            // 
+            // gridDatosAlumnos
+            // 
+            gridDatosAlumnos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            gridDatosAlumnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridDatosAlumnos.Location = new Point(243, 76);
+            gridDatosAlumnos.Margin = new Padding(4, 3, 4, 3);
+            gridDatosAlumnos.Name = "gridDatosAlumnos";
+            gridDatosAlumnos.Size = new Size(668, 415);
+            gridDatosAlumnos.TabIndex = 1;
+            gridDatosAlumnos.CellContentClick += gridDatosAlumnos_CellContentClick;
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 435);
-            this.panel2.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(208, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(573, 360);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "DETALLES DE ALUMNOS";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(70, 169);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "CARNET";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 303);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "CORREO";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(65, 195);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "NOMBRES";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 221);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "APELLIDOS";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(67, 249);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "ESCUELA";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(80, 273);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "AÑO";
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(label1);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(4, 3, 4, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(233, 502);
+            panel2.TabIndex = 0;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(58, 327);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 13);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "ENCARGADO";
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(68, 377);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(84, 13);
+            label8.TabIndex = 9;
+            label8.Text = "ENCARGADO";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(93, 315);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(33, 13);
+            label7.TabIndex = 8;
+            label7.Text = "AÑO";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(78, 287);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(63, 13);
+            label6.TabIndex = 7;
+            label6.Text = "ESCUELA";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(72, 255);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(75, 13);
+            label5.TabIndex = 6;
+            label5.Text = "APELLIDOS";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(76, 225);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(68, 13);
+            label4.TabIndex = 5;
+            label4.Text = "NOMBRES";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(80, 350);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(59, 13);
+            label3.TabIndex = 4;
+            label3.Text = "CORREO";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(82, 195);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 13);
+            label2.TabIndex = 3;
+            label2.Text = "CARNET";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(31, 158);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(155, 13);
+            label1.TabIndex = 2;
+            label1.Text = "DETALLES DE ALUMNOS";
             // 
             // FrmDetallesAd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(788, 516);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlDetallesInfo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmDetallesAd";
-            this.Text = "FrmDetallesAd";
-            this.pnlDetallesInfo.ResumeLayout(false);
-            this.pnlDetallesInfo.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(919, 595);
+            Controls.Add(panel1);
+            Controls.Add(pnlDetallesInfo);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "FrmDetallesAd";
+            Text = "FrmDetallesAd";
+            pnlDetallesInfo.ResumeLayout(false);
+            pnlDetallesInfo.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridDatosAlumnos).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlDetallesInfo;
-        private System.Windows.Forms.Label lblDetalles;
-        private System.Windows.Forms.Button btnInfoDetaAlumAd;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private Panel pnlDetallesInfo;
+        private Label lblDetalles;
+        private Button btnInfoDetaAlumAd;
+        private Panel panel1;
+        private DataGridView gridDatosAlumnos;
+        private Panel panel2;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Label label8;
+        private Label label7;
     }
 }

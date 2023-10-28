@@ -29,627 +29,720 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarDetallesAlum));
-            this.pnlInfoEliDetAd = new System.Windows.Forms.Panel();
-            this.pnlInfoDeta = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtBoxCarnetCap = new System.Windows.Forms.TextBox();
-            this.txtBoxNombresCap = new System.Windows.Forms.TextBox();
-            this.txtBoxApellidosCap = new System.Windows.Forms.TextBox();
-            this.txtBoxCarreraCap = new System.Windows.Forms.TextBox();
-            this.txtBoxAñoCap = new System.Windows.Forms.TextBox();
-            this.txtBoxCorreoCap = new System.Windows.Forms.TextBox();
-            this.txtBoxTelAlumCap = new System.Windows.Forms.TextBox();
-            this.txtBoxTelEmergCap = new System.Windows.Forms.TextBox();
-            this.txtBoxCoorSSECap = new System.Windows.Forms.TextBox();
-            this.txtBoxConctEmergCap = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtBoxNombreInstCap = new System.Windows.Forms.TextBox();
-            this.txtBoxTelInstCap = new System.Windows.Forms.TextBox();
-            this.txtBoxActivReaCap = new System.Windows.Forms.TextBox();
-            this.txtBoxResponsableCap = new System.Windows.Forms.TextBox();
-            this.txtBoxCorreoResponCap = new System.Windows.Forms.TextBox();
-            this.txtBoxTiempoCap = new System.Windows.Forms.TextBox();
-            this.txtBoxInicioSSCap = new System.Windows.Forms.TextBox();
-            this.txtBoxObjetivosCap = new System.Windows.Forms.TextBox();
-            this.txtBoxMetasCap = new System.Windows.Forms.TextBox();
-            this.txtBoxDuracionCap = new System.Windows.Forms.TextBox();
-            this.pnlInfoEliMoAd = new System.Windows.Forms.Panel();
-            this.dataGridEliminarModificar = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnIInfoElMoAd = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.pnlInfoEliMoAd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEliminarModificar)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.SuspendLayout();
+            pnlInfoEliDetAd = new Panel();
+            pnlInfoDeta = new Panel();
+            panel1 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
+            dataGridEliminarModificar = new DataGridView();
+            pnlInfoEliMoAd = new Panel();
+            panel2 = new Panel();
+            btnIInfoElMoAd = new Button();
+            label21 = new Label();
+            txtBoxDuracionCap = new TextBox();
+            txtBoxMetasCap = new TextBox();
+            txtBoxObjetivosCap = new TextBox();
+            txtBoxInicioSSCap = new TextBox();
+            txtBoxTiempoCap = new TextBox();
+            txtBoxCorreoResponCap = new TextBox();
+            txtBoxResponsableCap = new TextBox();
+            txtBoxActivReaCap = new TextBox();
+            txtBoxTelInstCap = new TextBox();
+            txtBoxNombreInstCap = new TextBox();
+            label20 = new Label();
+            label19 = new Label();
+            label18 = new Label();
+            label17 = new Label();
+            label16 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label8 = new Label();
+            txtBoxConctEmergCap = new TextBox();
+            txtBoxCoorSSECap = new TextBox();
+            txtBoxTelEmergCap = new TextBox();
+            txtBoxTelAlumCap = new TextBox();
+            txtBoxCorreoCap = new TextBox();
+            txtBoxAñoCap = new TextBox();
+            txtBoxCarreraCap = new TextBox();
+            txtBoxApellidosCap = new TextBox();
+            txtBoxNombresCap = new TextBox();
+            txtBoxCarnetCap = new TextBox();
+            label7 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridEliminarModificar).BeginInit();
+            pnlInfoEliMoAd.SuspendLayout();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // pnlInfoEliDetAd
             // 
-            this.pnlInfoEliDetAd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlInfoEliDetAd.Location = new System.Drawing.Point(0, 0);
-            this.pnlInfoEliDetAd.Name = "pnlInfoEliDetAd";
-            this.pnlInfoEliDetAd.Size = new System.Drawing.Size(992, 72);
-            this.pnlInfoEliDetAd.TabIndex = 0;
-            this.pnlInfoEliDetAd.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlInfoEliDetAd_Paint);
+            pnlInfoEliDetAd.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pnlInfoEliDetAd.Location = new Point(0, 0);
+            pnlInfoEliDetAd.Margin = new Padding(4, 3, 4, 3);
+            pnlInfoEliDetAd.Name = "pnlInfoEliDetAd";
+            pnlInfoEliDetAd.Size = new Size(1157, 83);
+            pnlInfoEliDetAd.TabIndex = 0;
+            pnlInfoEliDetAd.Paint += pnlInfoEliDetAd_Paint;
             // 
             // pnlInfoDeta
             // 
-            this.pnlInfoDeta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlInfoDeta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlInfoDeta.BackgroundImage")));
-            this.pnlInfoDeta.Location = new System.Drawing.Point(0, 0);
-            this.pnlInfoDeta.Name = "pnlInfoDeta";
-            this.pnlInfoDeta.Size = new System.Drawing.Size(200, 788);
-            this.pnlInfoDeta.TabIndex = 1;
+            pnlInfoDeta.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlInfoDeta.BackgroundImage = (Image)resources.GetObject("pnlInfoDeta.BackgroundImage");
+            pnlInfoDeta.Location = new Point(0, 0);
+            pnlInfoDeta.Margin = new Padding(4, 3, 4, 3);
+            pnlInfoDeta.Name = "pnlInfoDeta";
+            pnlInfoDeta.Size = new Size(233, 909);
+            pnlInfoDeta.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.dataGridEliminarModificar);
-            this.panel1.Controls.Add(this.pnlInfoEliMoAd);
-            this.panel1.Controls.Add(this.txtBoxDuracionCap);
-            this.panel1.Controls.Add(this.txtBoxMetasCap);
-            this.panel1.Controls.Add(this.txtBoxObjetivosCap);
-            this.panel1.Controls.Add(this.txtBoxInicioSSCap);
-            this.panel1.Controls.Add(this.txtBoxTiempoCap);
-            this.panel1.Controls.Add(this.txtBoxCorreoResponCap);
-            this.panel1.Controls.Add(this.txtBoxResponsableCap);
-            this.panel1.Controls.Add(this.txtBoxActivReaCap);
-            this.panel1.Controls.Add(this.txtBoxTelInstCap);
-            this.panel1.Controls.Add(this.txtBoxNombreInstCap);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.txtBoxConctEmergCap);
-            this.panel1.Controls.Add(this.txtBoxCoorSSECap);
-            this.panel1.Controls.Add(this.txtBoxTelEmergCap);
-            this.panel1.Controls.Add(this.txtBoxTelAlumCap);
-            this.panel1.Controls.Add(this.txtBoxCorreoCap);
-            this.panel1.Controls.Add(this.txtBoxAñoCap);
-            this.panel1.Controls.Add(this.txtBoxCarreraCap);
-            this.panel1.Controls.Add(this.txtBoxApellidosCap);
-            this.panel1.Controls.Add(this.txtBoxNombresCap);
-            this.panel1.Controls.Add(this.txtBoxCarnetCap);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(200, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(790, 788);
-            this.panel1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Carnet";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombres";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(376, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Apellidos";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(552, 120);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Carrera";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 176);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Correo";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(184, 176);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Teléfono";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 232);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Contacto Emergencia";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(584, 176);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Teléfono Emergencia";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(368, 176);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 13);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Coordinado SSE";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(696, 120);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Año ";
-            // 
-            // txtBoxCarnetCap
-            // 
-            this.txtBoxCarnetCap.Location = new System.Drawing.Point(72, 120);
-            this.txtBoxCarnetCap.Multiline = true;
-            this.txtBoxCarnetCap.Name = "txtBoxCarnetCap";
-            this.txtBoxCarnetCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxCarnetCap.TabIndex = 12;
-            // 
-            // txtBoxNombresCap
-            // 
-            this.txtBoxNombresCap.Location = new System.Drawing.Point(248, 120);
-            this.txtBoxNombresCap.Multiline = true;
-            this.txtBoxNombresCap.Name = "txtBoxNombresCap";
-            this.txtBoxNombresCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxNombresCap.TabIndex = 13;
-            // 
-            // txtBoxApellidosCap
-            // 
-            this.txtBoxApellidosCap.Location = new System.Drawing.Point(432, 120);
-            this.txtBoxApellidosCap.Multiline = true;
-            this.txtBoxApellidosCap.Name = "txtBoxApellidosCap";
-            this.txtBoxApellidosCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxApellidosCap.TabIndex = 14;
-            // 
-            // txtBoxCarreraCap
-            // 
-            this.txtBoxCarreraCap.Location = new System.Drawing.Point(592, 120);
-            this.txtBoxCarreraCap.Multiline = true;
-            this.txtBoxCarreraCap.Name = "txtBoxCarreraCap";
-            this.txtBoxCarreraCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxCarreraCap.TabIndex = 15;
-            // 
-            // txtBoxAñoCap
-            // 
-            this.txtBoxAñoCap.Location = new System.Drawing.Point(728, 120);
-            this.txtBoxAñoCap.Name = "txtBoxAñoCap";
-            this.txtBoxAñoCap.Size = new System.Drawing.Size(40, 20);
-            this.txtBoxAñoCap.TabIndex = 16;
-            // 
-            // txtBoxCorreoCap
-            // 
-            this.txtBoxCorreoCap.Location = new System.Drawing.Point(72, 176);
-            this.txtBoxCorreoCap.Multiline = true;
-            this.txtBoxCorreoCap.Name = "txtBoxCorreoCap";
-            this.txtBoxCorreoCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxCorreoCap.TabIndex = 17;
-            // 
-            // txtBoxTelAlumCap
-            // 
-            this.txtBoxTelAlumCap.Location = new System.Drawing.Point(248, 176);
-            this.txtBoxTelAlumCap.Multiline = true;
-            this.txtBoxTelAlumCap.Name = "txtBoxTelAlumCap";
-            this.txtBoxTelAlumCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxTelAlumCap.TabIndex = 18;
-            // 
-            // txtBoxTelEmergCap
-            // 
-            this.txtBoxTelEmergCap.Location = new System.Drawing.Point(696, 176);
-            this.txtBoxTelEmergCap.Multiline = true;
-            this.txtBoxTelEmergCap.Name = "txtBoxTelEmergCap";
-            this.txtBoxTelEmergCap.Size = new System.Drawing.Size(84, 20);
-            this.txtBoxTelEmergCap.TabIndex = 19;
-            // 
-            // txtBoxCoorSSECap
-            // 
-            this.txtBoxCoorSSECap.Location = new System.Drawing.Point(456, 176);
-            this.txtBoxCoorSSECap.Multiline = true;
-            this.txtBoxCoorSSECap.Name = "txtBoxCoorSSECap";
-            this.txtBoxCoorSSECap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxCoorSSECap.TabIndex = 20;
-            // 
-            // txtBoxConctEmergCap
-            // 
-            this.txtBoxConctEmergCap.Location = new System.Drawing.Point(136, 232);
-            this.txtBoxConctEmergCap.Multiline = true;
-            this.txtBoxConctEmergCap.Name = "txtBoxConctEmergCap";
-            this.txtBoxConctEmergCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxConctEmergCap.TabIndex = 21;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(264, 232);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Nombre Institución";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(552, 232);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 13);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Teléfono Institución";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(24, 280);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 13);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Actividad a realizar";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(256, 280);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(69, 13);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Responsable";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(472, 336);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(36, 13);
-            this.label15.TabIndex = 26;
-            this.label15.Text = "Metas";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(480, 280);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(103, 13);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "Correo Responsable";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 336);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 13);
-            this.label17.TabIndex = 28;
-            this.label17.Text = "Tiempo";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(616, 336);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(50, 13);
-            this.label18.TabIndex = 29;
-            this.label18.Text = "Duración";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(296, 336);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(51, 13);
-            this.label19.TabIndex = 30;
-            this.label19.Text = "Objetivos";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(144, 336);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 13);
-            this.label20.TabIndex = 31;
-            this.label20.Text = "Inicio SS";
-            // 
-            // txtBoxNombreInstCap
-            // 
-            this.txtBoxNombreInstCap.Location = new System.Drawing.Point(360, 232);
-            this.txtBoxNombreInstCap.Multiline = true;
-            this.txtBoxNombreInstCap.Name = "txtBoxNombreInstCap";
-            this.txtBoxNombreInstCap.Size = new System.Drawing.Size(184, 20);
-            this.txtBoxNombreInstCap.TabIndex = 32;
-            // 
-            // txtBoxTelInstCap
-            // 
-            this.txtBoxTelInstCap.Location = new System.Drawing.Point(680, 232);
-            this.txtBoxTelInstCap.Multiline = true;
-            this.txtBoxTelInstCap.Name = "txtBoxTelInstCap";
-            this.txtBoxTelInstCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxTelInstCap.TabIndex = 33;
-            // 
-            // txtBoxActivReaCap
-            // 
-            this.txtBoxActivReaCap.Location = new System.Drawing.Point(128, 280);
-            this.txtBoxActivReaCap.Multiline = true;
-            this.txtBoxActivReaCap.Name = "txtBoxActivReaCap";
-            this.txtBoxActivReaCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxActivReaCap.TabIndex = 34;
-            // 
-            // txtBoxResponsableCap
-            // 
-            this.txtBoxResponsableCap.Location = new System.Drawing.Point(336, 280);
-            this.txtBoxResponsableCap.Multiline = true;
-            this.txtBoxResponsableCap.Name = "txtBoxResponsableCap";
-            this.txtBoxResponsableCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxResponsableCap.TabIndex = 35;
-            // 
-            // txtBoxCorreoResponCap
-            // 
-            this.txtBoxCorreoResponCap.Location = new System.Drawing.Point(592, 280);
-            this.txtBoxCorreoResponCap.Multiline = true;
-            this.txtBoxCorreoResponCap.Name = "txtBoxCorreoResponCap";
-            this.txtBoxCorreoResponCap.Size = new System.Drawing.Size(176, 20);
-            this.txtBoxCorreoResponCap.TabIndex = 36;
-            // 
-            // txtBoxTiempoCap
-            // 
-            this.txtBoxTiempoCap.Location = new System.Drawing.Point(64, 336);
-            this.txtBoxTiempoCap.Name = "txtBoxTiempoCap";
-            this.txtBoxTiempoCap.Size = new System.Drawing.Size(72, 20);
-            this.txtBoxTiempoCap.TabIndex = 37;
-            // 
-            // txtBoxInicioSSCap
-            // 
-            this.txtBoxInicioSSCap.Location = new System.Drawing.Point(200, 336);
-            this.txtBoxInicioSSCap.Multiline = true;
-            this.txtBoxInicioSSCap.Name = "txtBoxInicioSSCap";
-            this.txtBoxInicioSSCap.Size = new System.Drawing.Size(88, 20);
-            this.txtBoxInicioSSCap.TabIndex = 38;
-            // 
-            // txtBoxObjetivosCap
-            // 
-            this.txtBoxObjetivosCap.Location = new System.Drawing.Point(352, 336);
-            this.txtBoxObjetivosCap.Multiline = true;
-            this.txtBoxObjetivosCap.Name = "txtBoxObjetivosCap";
-            this.txtBoxObjetivosCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxObjetivosCap.TabIndex = 39;
-            // 
-            // txtBoxMetasCap
-            // 
-            this.txtBoxMetasCap.Location = new System.Drawing.Point(512, 336);
-            this.txtBoxMetasCap.Multiline = true;
-            this.txtBoxMetasCap.Name = "txtBoxMetasCap";
-            this.txtBoxMetasCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxMetasCap.TabIndex = 40;
-            // 
-            // txtBoxDuracionCap
-            // 
-            this.txtBoxDuracionCap.Location = new System.Drawing.Point(672, 336);
-            this.txtBoxDuracionCap.Multiline = true;
-            this.txtBoxDuracionCap.Name = "txtBoxDuracionCap";
-            this.txtBoxDuracionCap.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxDuracionCap.TabIndex = 41;
-            // 
-            // pnlInfoEliMoAd
-            // 
-            this.pnlInfoEliMoAd.Controls.Add(this.panel2);
-            this.pnlInfoEliMoAd.Controls.Add(this.label21);
-            this.pnlInfoEliMoAd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlInfoEliMoAd.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlInfoEliMoAd.Location = new System.Drawing.Point(0, 0);
-            this.pnlInfoEliMoAd.Name = "pnlInfoEliMoAd";
-            this.pnlInfoEliMoAd.Size = new System.Drawing.Size(790, 100);
-            this.pnlInfoEliMoAd.TabIndex = 42;
-            // 
-            // dataGridEliminarModificar
-            // 
-            this.dataGridEliminarModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridEliminarModificar.Location = new System.Drawing.Point(8, 496);
-            this.dataGridEliminarModificar.Name = "dataGridEliminarModificar";
-            this.dataGridEliminarModificar.Size = new System.Drawing.Size(768, 224);
-            this.dataGridEliminarModificar.TabIndex = 43;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(152, 424);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 45);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.AutoScroll = true;
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(dataGridEliminarModificar);
+            panel1.Controls.Add(pnlInfoEliMoAd);
+            panel1.Controls.Add(txtBoxDuracionCap);
+            panel1.Controls.Add(txtBoxMetasCap);
+            panel1.Controls.Add(txtBoxObjetivosCap);
+            panel1.Controls.Add(txtBoxInicioSSCap);
+            panel1.Controls.Add(txtBoxTiempoCap);
+            panel1.Controls.Add(txtBoxCorreoResponCap);
+            panel1.Controls.Add(txtBoxResponsableCap);
+            panel1.Controls.Add(txtBoxActivReaCap);
+            panel1.Controls.Add(txtBoxTelInstCap);
+            panel1.Controls.Add(txtBoxNombreInstCap);
+            panel1.Controls.Add(label20);
+            panel1.Controls.Add(label19);
+            panel1.Controls.Add(label18);
+            panel1.Controls.Add(label17);
+            panel1.Controls.Add(label16);
+            panel1.Controls.Add(label15);
+            panel1.Controls.Add(label14);
+            panel1.Controls.Add(label13);
+            panel1.Controls.Add(label12);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(txtBoxConctEmergCap);
+            panel1.Controls.Add(txtBoxCoorSSECap);
+            panel1.Controls.Add(txtBoxTelEmergCap);
+            panel1.Controls.Add(txtBoxTelAlumCap);
+            panel1.Controls.Add(txtBoxCorreoCap);
+            panel1.Controls.Add(txtBoxAñoCap);
+            panel1.Controls.Add(txtBoxCarreraCap);
+            panel1.Controls.Add(txtBoxApellidosCap);
+            panel1.Controls.Add(txtBoxNombresCap);
+            panel1.Controls.Add(txtBoxCarnetCap);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label11);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(233, 0);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(922, 909);
+            panel1.TabIndex = 2;
+            panel1.UseWaitCursor = true;
             // 
             // button2
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(544, 424);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 45);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(635, 489);
+            button2.Margin = new Padding(4, 3, 4, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(168, 52);
+            button2.TabIndex = 45;
+            button2.Text = "Modificar";
+            button2.UseVisualStyleBackColor = true;
+            button2.UseWaitCursor = true;
+            button2.Click += button2_Click;
             // 
-            // label21
+            // button1
             // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(0, 8);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(521, 84);
-            this.label21.TabIndex = 0;
-            this.label21.Text = resources.GetString("label21.Text");
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(177, 489);
+            button1.Margin = new Padding(4, 3, 4, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(168, 52);
+            button1.TabIndex = 44;
+            button1.Text = "Eliminar";
+            button1.UseVisualStyleBackColor = true;
+            button1.UseWaitCursor = true;
+            button1.Click += button1_Click;
+            // 
+            // dataGridEliminarModificar
+            // 
+            dataGridEliminarModificar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridEliminarModificar.Location = new Point(8, 547);
+            dataGridEliminarModificar.Margin = new Padding(4, 3, 4, 3);
+            dataGridEliminarModificar.Name = "dataGridEliminarModificar";
+            dataGridEliminarModificar.ReadOnly = true;
+            dataGridEliminarModificar.Size = new Size(901, 224);
+            dataGridEliminarModificar.TabIndex = 43;
+            dataGridEliminarModificar.UseWaitCursor = true;
+            dataGridEliminarModificar.CellClick += dataGridEliminarModificar_CellClick;
+            dataGridEliminarModificar.CellContentClick += dataGridEliminarModificar_CellContentClick;
+            // 
+            // pnlInfoEliMoAd
+            // 
+            pnlInfoEliMoAd.Controls.Add(panel2);
+            pnlInfoEliMoAd.Controls.Add(label21);
+            pnlInfoEliMoAd.Dock = DockStyle.Top;
+            pnlInfoEliMoAd.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            pnlInfoEliMoAd.Location = new Point(0, 0);
+            pnlInfoEliMoAd.Margin = new Padding(4, 3, 4, 3);
+            pnlInfoEliMoAd.Name = "pnlInfoEliMoAd";
+            pnlInfoEliMoAd.Size = new Size(922, 115);
+            pnlInfoEliMoAd.TabIndex = 42;
+            pnlInfoEliMoAd.UseWaitCursor = true;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.btnIInfoElMoAd);
-            this.panel2.Location = new System.Drawing.Point(688, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(102, 100);
-            this.panel2.TabIndex = 1;
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Controls.Add(btnIInfoElMoAd);
+            panel2.Location = new Point(803, 0);
+            panel2.Margin = new Padding(4, 3, 4, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(119, 115);
+            panel2.TabIndex = 1;
+            panel2.UseWaitCursor = true;
             // 
             // btnIInfoElMoAd
             // 
-            this.btnIInfoElMoAd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIInfoElMoAd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnIInfoElMoAd.Image = ((System.Drawing.Image)(resources.GetObject("btnIInfoElMoAd.Image")));
-            this.btnIInfoElMoAd.Location = new System.Drawing.Point(0, 0);
-            this.btnIInfoElMoAd.Name = "btnIInfoElMoAd";
-            this.btnIInfoElMoAd.Size = new System.Drawing.Size(104, 96);
-            this.btnIInfoElMoAd.TabIndex = 0;
-            this.btnIInfoElMoAd.UseVisualStyleBackColor = false;
+            btnIInfoElMoAd.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnIInfoElMoAd.BackColor = Color.FromArgb(192, 0, 0);
+            btnIInfoElMoAd.Image = (Image)resources.GetObject("btnIInfoElMoAd.Image");
+            btnIInfoElMoAd.Location = new Point(0, 0);
+            btnIInfoElMoAd.Margin = new Padding(4, 3, 4, 3);
+            btnIInfoElMoAd.Name = "btnIInfoElMoAd";
+            btnIInfoElMoAd.Size = new Size(121, 111);
+            btnIInfoElMoAd.TabIndex = 0;
+            btnIInfoElMoAd.UseVisualStyleBackColor = false;
+            btnIInfoElMoAd.UseWaitCursor = true;
+            // 
+            // label21
+            // 
+            label21.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label21.AutoSize = true;
+            label21.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.Location = new Point(0, 9);
+            label21.Margin = new Padding(4, 0, 4, 0);
+            label21.Name = "label21";
+            label21.Size = new Size(521, 84);
+            label21.TabIndex = 0;
+            label21.Text = resources.GetString("label21.Text");
+            label21.UseWaitCursor = true;
+            // 
+            // txtBoxDuracionCap
+            // 
+            txtBoxDuracionCap.Location = new Point(784, 388);
+            txtBoxDuracionCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxDuracionCap.Multiline = true;
+            txtBoxDuracionCap.Name = "txtBoxDuracionCap";
+            txtBoxDuracionCap.Size = new Size(116, 22);
+            txtBoxDuracionCap.TabIndex = 41;
+            txtBoxDuracionCap.UseWaitCursor = true;
+            // 
+            // txtBoxMetasCap
+            // 
+            txtBoxMetasCap.Location = new Point(597, 388);
+            txtBoxMetasCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxMetasCap.Multiline = true;
+            txtBoxMetasCap.Name = "txtBoxMetasCap";
+            txtBoxMetasCap.Size = new Size(116, 22);
+            txtBoxMetasCap.TabIndex = 40;
+            txtBoxMetasCap.UseWaitCursor = true;
+            // 
+            // txtBoxObjetivosCap
+            // 
+            txtBoxObjetivosCap.Location = new Point(411, 388);
+            txtBoxObjetivosCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxObjetivosCap.Multiline = true;
+            txtBoxObjetivosCap.Name = "txtBoxObjetivosCap";
+            txtBoxObjetivosCap.Size = new Size(116, 22);
+            txtBoxObjetivosCap.TabIndex = 39;
+            txtBoxObjetivosCap.UseWaitCursor = true;
+            // 
+            // txtBoxInicioSSCap
+            // 
+            txtBoxInicioSSCap.Location = new Point(233, 388);
+            txtBoxInicioSSCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxInicioSSCap.Multiline = true;
+            txtBoxInicioSSCap.Name = "txtBoxInicioSSCap";
+            txtBoxInicioSSCap.Size = new Size(102, 22);
+            txtBoxInicioSSCap.TabIndex = 38;
+            txtBoxInicioSSCap.UseWaitCursor = true;
+            // 
+            // txtBoxTiempoCap
+            // 
+            txtBoxTiempoCap.Location = new Point(75, 388);
+            txtBoxTiempoCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxTiempoCap.Name = "txtBoxTiempoCap";
+            txtBoxTiempoCap.Size = new Size(83, 23);
+            txtBoxTiempoCap.TabIndex = 37;
+            txtBoxTiempoCap.UseWaitCursor = true;
+            // 
+            // txtBoxCorreoResponCap
+            // 
+            txtBoxCorreoResponCap.Location = new Point(691, 323);
+            txtBoxCorreoResponCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxCorreoResponCap.Multiline = true;
+            txtBoxCorreoResponCap.Name = "txtBoxCorreoResponCap";
+            txtBoxCorreoResponCap.Size = new Size(205, 22);
+            txtBoxCorreoResponCap.TabIndex = 36;
+            txtBoxCorreoResponCap.UseWaitCursor = true;
+            // 
+            // txtBoxResponsableCap
+            // 
+            txtBoxResponsableCap.Location = new Point(392, 323);
+            txtBoxResponsableCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxResponsableCap.Multiline = true;
+            txtBoxResponsableCap.Name = "txtBoxResponsableCap";
+            txtBoxResponsableCap.Size = new Size(116, 22);
+            txtBoxResponsableCap.TabIndex = 35;
+            txtBoxResponsableCap.UseWaitCursor = true;
+            // 
+            // txtBoxActivReaCap
+            // 
+            txtBoxActivReaCap.Location = new Point(149, 323);
+            txtBoxActivReaCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxActivReaCap.Multiline = true;
+            txtBoxActivReaCap.Name = "txtBoxActivReaCap";
+            txtBoxActivReaCap.Size = new Size(116, 22);
+            txtBoxActivReaCap.TabIndex = 34;
+            txtBoxActivReaCap.UseWaitCursor = true;
+            // 
+            // txtBoxTelInstCap
+            // 
+            txtBoxTelInstCap.Location = new Point(793, 268);
+            txtBoxTelInstCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxTelInstCap.Multiline = true;
+            txtBoxTelInstCap.Name = "txtBoxTelInstCap";
+            txtBoxTelInstCap.Size = new Size(116, 22);
+            txtBoxTelInstCap.TabIndex = 33;
+            txtBoxTelInstCap.UseWaitCursor = true;
+            // 
+            // txtBoxNombreInstCap
+            // 
+            txtBoxNombreInstCap.Location = new Point(420, 268);
+            txtBoxNombreInstCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxNombreInstCap.Multiline = true;
+            txtBoxNombreInstCap.Name = "txtBoxNombreInstCap";
+            txtBoxNombreInstCap.Size = new Size(214, 22);
+            txtBoxNombreInstCap.TabIndex = 32;
+            txtBoxNombreInstCap.UseWaitCursor = true;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(168, 388);
+            label20.Margin = new Padding(4, 0, 4, 0);
+            label20.Name = "label20";
+            label20.Size = new Size(51, 15);
+            label20.TabIndex = 31;
+            label20.Text = "Inicio SS";
+            label20.UseWaitCursor = true;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(345, 388);
+            label19.Margin = new Padding(4, 0, 4, 0);
+            label19.Name = "label19";
+            label19.Size = new Size(57, 15);
+            label19.TabIndex = 30;
+            label19.Text = "Objetivos";
+            label19.UseWaitCursor = true;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(719, 388);
+            label18.Margin = new Padding(4, 0, 4, 0);
+            label18.Name = "label18";
+            label18.Size = new Size(55, 15);
+            label18.TabIndex = 29;
+            label18.Text = "Duración";
+            label18.UseWaitCursor = true;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(19, 388);
+            label17.Margin = new Padding(4, 0, 4, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(47, 15);
+            label17.TabIndex = 28;
+            label17.Text = "Tiempo";
+            label17.UseWaitCursor = true;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(560, 323);
+            label16.Margin = new Padding(4, 0, 4, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(112, 15);
+            label16.TabIndex = 27;
+            label16.Text = "Correo Responsable";
+            label16.UseWaitCursor = true;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(551, 388);
+            label15.Margin = new Padding(4, 0, 4, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(39, 15);
+            label15.TabIndex = 26;
+            label15.Text = "Metas";
+            label15.UseWaitCursor = true;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(299, 323);
+            label14.Margin = new Padding(4, 0, 4, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(73, 15);
+            label14.TabIndex = 25;
+            label14.Text = "Responsable";
+            label14.UseWaitCursor = true;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(28, 323);
+            label13.Margin = new Padding(4, 0, 4, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(106, 15);
+            label13.TabIndex = 24;
+            label13.Text = "Actividad a realizar";
+            label13.UseWaitCursor = true;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(644, 268);
+            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(111, 15);
+            label12.TabIndex = 23;
+            label12.Text = "Teléfono Institución";
+            label12.UseWaitCursor = true;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(308, 268);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(110, 15);
+            label8.TabIndex = 22;
+            label8.Text = "Nombre Institución";
+            label8.UseWaitCursor = true;
+            // 
+            // txtBoxConctEmergCap
+            // 
+            txtBoxConctEmergCap.Location = new Point(159, 268);
+            txtBoxConctEmergCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxConctEmergCap.Multiline = true;
+            txtBoxConctEmergCap.Name = "txtBoxConctEmergCap";
+            txtBoxConctEmergCap.Size = new Size(116, 22);
+            txtBoxConctEmergCap.TabIndex = 21;
+            txtBoxConctEmergCap.UseWaitCursor = true;
+            // 
+            // txtBoxCoorSSECap
+            // 
+            txtBoxCoorSSECap.Location = new Point(532, 203);
+            txtBoxCoorSSECap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxCoorSSECap.Multiline = true;
+            txtBoxCoorSSECap.Name = "txtBoxCoorSSECap";
+            txtBoxCoorSSECap.Size = new Size(116, 22);
+            txtBoxCoorSSECap.TabIndex = 20;
+            txtBoxCoorSSECap.UseWaitCursor = true;
+            // 
+            // txtBoxTelEmergCap
+            // 
+            txtBoxTelEmergCap.Location = new Point(812, 203);
+            txtBoxTelEmergCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxTelEmergCap.Multiline = true;
+            txtBoxTelEmergCap.Name = "txtBoxTelEmergCap";
+            txtBoxTelEmergCap.Size = new Size(97, 22);
+            txtBoxTelEmergCap.TabIndex = 19;
+            txtBoxTelEmergCap.UseWaitCursor = true;
+            // 
+            // txtBoxTelAlumCap
+            // 
+            txtBoxTelAlumCap.Location = new Point(289, 203);
+            txtBoxTelAlumCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxTelAlumCap.Multiline = true;
+            txtBoxTelAlumCap.Name = "txtBoxTelAlumCap";
+            txtBoxTelAlumCap.Size = new Size(116, 22);
+            txtBoxTelAlumCap.TabIndex = 18;
+            txtBoxTelAlumCap.UseWaitCursor = true;
+            // 
+            // txtBoxCorreoCap
+            // 
+            txtBoxCorreoCap.Location = new Point(84, 203);
+            txtBoxCorreoCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxCorreoCap.Multiline = true;
+            txtBoxCorreoCap.Name = "txtBoxCorreoCap";
+            txtBoxCorreoCap.Size = new Size(116, 22);
+            txtBoxCorreoCap.TabIndex = 17;
+            txtBoxCorreoCap.UseWaitCursor = true;
+            // 
+            // txtBoxAñoCap
+            // 
+            txtBoxAñoCap.Location = new Point(849, 138);
+            txtBoxAñoCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxAñoCap.Name = "txtBoxAñoCap";
+            txtBoxAñoCap.Size = new Size(46, 23);
+            txtBoxAñoCap.TabIndex = 16;
+            txtBoxAñoCap.UseWaitCursor = true;
+            // 
+            // txtBoxCarreraCap
+            // 
+            txtBoxCarreraCap.Location = new Point(691, 138);
+            txtBoxCarreraCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxCarreraCap.Multiline = true;
+            txtBoxCarreraCap.Name = "txtBoxCarreraCap";
+            txtBoxCarreraCap.Size = new Size(116, 22);
+            txtBoxCarreraCap.TabIndex = 15;
+            txtBoxCarreraCap.UseWaitCursor = true;
+            // 
+            // txtBoxApellidosCap
+            // 
+            txtBoxApellidosCap.Location = new Point(504, 138);
+            txtBoxApellidosCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxApellidosCap.Multiline = true;
+            txtBoxApellidosCap.Name = "txtBoxApellidosCap";
+            txtBoxApellidosCap.Size = new Size(116, 22);
+            txtBoxApellidosCap.TabIndex = 14;
+            txtBoxApellidosCap.UseWaitCursor = true;
+            // 
+            // txtBoxNombresCap
+            // 
+            txtBoxNombresCap.Location = new Point(289, 138);
+            txtBoxNombresCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxNombresCap.Multiline = true;
+            txtBoxNombresCap.Name = "txtBoxNombresCap";
+            txtBoxNombresCap.Size = new Size(116, 22);
+            txtBoxNombresCap.TabIndex = 13;
+            txtBoxNombresCap.UseWaitCursor = true;
+            // 
+            // txtBoxCarnetCap
+            // 
+            txtBoxCarnetCap.Location = new Point(84, 138);
+            txtBoxCarnetCap.Margin = new Padding(4, 3, 4, 3);
+            txtBoxCarnetCap.Multiline = true;
+            txtBoxCarnetCap.Name = "txtBoxCarnetCap";
+            txtBoxCarnetCap.Size = new Size(116, 22);
+            txtBoxCarnetCap.TabIndex = 12;
+            txtBoxCarnetCap.UseWaitCursor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(812, 138);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(32, 15);
+            label7.TabIndex = 11;
+            label7.Text = "Año ";
+            label7.UseWaitCursor = true;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(429, 203);
+            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(91, 15);
+            label11.TabIndex = 10;
+            label11.Text = "Coordinado SSE";
+            label11.UseWaitCursor = true;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(681, 203);
+            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(117, 15);
+            label10.TabIndex = 9;
+            label10.Text = "Teléfono Emergencia";
+            label10.UseWaitCursor = true;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(19, 268);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(121, 15);
+            label9.TabIndex = 8;
+            label9.Text = "Contacto Emergencia";
+            label9.UseWaitCursor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(215, 203);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(52, 15);
+            label6.TabIndex = 5;
+            label6.Text = "Teléfono";
+            label6.UseWaitCursor = true;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(19, 203);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(43, 15);
+            label5.TabIndex = 4;
+            label5.Text = "Correo";
+            label5.UseWaitCursor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(644, 138);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(45, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Carrera";
+            label4.UseWaitCursor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(439, 138);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(56, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Apellidos";
+            label3.UseWaitCursor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(215, 138);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(56, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Nombres";
+            label2.UseWaitCursor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(19, 138);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(42, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Carnet";
+            label1.UseWaitCursor = true;
             // 
             // EliminarDetallesAlum
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(990, 788);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlInfoDeta);
-            this.Controls.Add(this.pnlInfoEliDetAd);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EliminarDetallesAlum";
-            this.Text = "EliminarDetallesAlum";
-            this.Load += new System.EventHandler(this.EliminarDetallesAlum_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.pnlInfoEliMoAd.ResumeLayout(false);
-            this.pnlInfoEliMoAd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEliminarModificar)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1155, 788);
+            Controls.Add(panel1);
+            Controls.Add(pnlInfoDeta);
+            Controls.Add(pnlInfoEliDetAd);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "EliminarDetallesAlum";
+            Text = "EliminarDetallesAlum";
+            Load += EliminarDetallesAlum_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridEliminarModificar).EndInit();
+            pnlInfoEliMoAd.ResumeLayout(false);
+            pnlInfoEliMoAd.PerformLayout();
+            panel2.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlInfoEliDetAd;
-        private System.Windows.Forms.Panel pnlInfoDeta;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtBoxConctEmergCap;
-        private System.Windows.Forms.TextBox txtBoxCoorSSECap;
-        private System.Windows.Forms.TextBox txtBoxTelEmergCap;
-        private System.Windows.Forms.TextBox txtBoxTelAlumCap;
-        private System.Windows.Forms.TextBox txtBoxCorreoCap;
-        private System.Windows.Forms.TextBox txtBoxAñoCap;
-        private System.Windows.Forms.TextBox txtBoxCarreraCap;
-        private System.Windows.Forms.TextBox txtBoxApellidosCap;
-        private System.Windows.Forms.TextBox txtBoxNombresCap;
-        private System.Windows.Forms.TextBox txtBoxCarnetCap;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtBoxDuracionCap;
-        private System.Windows.Forms.TextBox txtBoxMetasCap;
-        private System.Windows.Forms.TextBox txtBoxObjetivosCap;
-        private System.Windows.Forms.TextBox txtBoxInicioSSCap;
-        private System.Windows.Forms.TextBox txtBoxTiempoCap;
-        private System.Windows.Forms.TextBox txtBoxCorreoResponCap;
-        private System.Windows.Forms.TextBox txtBoxResponsableCap;
-        private System.Windows.Forms.TextBox txtBoxActivReaCap;
-        private System.Windows.Forms.TextBox txtBoxTelInstCap;
-        private System.Windows.Forms.TextBox txtBoxNombreInstCap;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridEliminarModificar;
-        private System.Windows.Forms.Panel pnlInfoEliMoAd;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnIInfoElMoAd;
+        private Panel pnlInfoEliDetAd;
+        private Panel pnlInfoDeta;
+        private Panel panel1;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private TextBox txtBoxConctEmergCap;
+        private TextBox txtBoxCoorSSECap;
+        private TextBox txtBoxTelEmergCap;
+        private TextBox txtBoxTelAlumCap;
+        private TextBox txtBoxCorreoCap;
+        private TextBox txtBoxAñoCap;
+        private TextBox txtBoxCarreraCap;
+        private TextBox txtBoxApellidosCap;
+        private TextBox txtBoxNombresCap;
+        private TextBox txtBoxCarnetCap;
+        private Label label7;
+        private TextBox txtBoxDuracionCap;
+        private TextBox txtBoxMetasCap;
+        private TextBox txtBoxObjetivosCap;
+        private TextBox txtBoxInicioSSCap;
+        private TextBox txtBoxTiempoCap;
+        private TextBox txtBoxCorreoResponCap;
+        private TextBox txtBoxResponsableCap;
+        private TextBox txtBoxActivReaCap;
+        private TextBox txtBoxTelInstCap;
+        private TextBox txtBoxNombreInstCap;
+        private Label label20;
+        private Label label19;
+        private Label label18;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label label13;
+        private Label label12;
+        private Label label8;
+        private Button button2;
+        private Button button1;
+        private DataGridView dataGridEliminarModificar;
+        private Panel pnlInfoEliMoAd;
+        private Label label21;
+        private Panel panel2;
+        private Button btnIInfoElMoAd;
     }
 }
