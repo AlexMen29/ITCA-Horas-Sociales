@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicio));
             splitContainer1 = new SplitContainer();
+            pictCargando = new PictureBox();
             panel2 = new Panel();
             PicMostrar = new PictureBox();
             PicOcultar = new PictureBox();
@@ -49,6 +50,7 @@
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictCargando).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicMostrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PicOcultar).BeginInit();
@@ -68,6 +70,7 @@
             // 
             splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            splitContainer1.Panel1.Controls.Add(pictCargando);
             splitContainer1.Panel1.Controls.Add(panel2);
             // 
             // splitContainer1.Panel2
@@ -78,6 +81,18 @@
             splitContainer1.SplitterDistance = 425;
             splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 0;
+            // 
+            // pictCargando
+            // 
+            pictCargando.Anchor = AnchorStyles.None;
+            pictCargando.Image = (Image)resources.GetObject("pictCargando.Image");
+            pictCargando.Location = new Point(203, 611);
+            pictCargando.Name = "pictCargando";
+            pictCargando.Size = new Size(57, 40);
+            pictCargando.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictCargando.TabIndex = 21;
+            pictCargando.TabStop = false;
+            pictCargando.Visible = false;
             // 
             // panel2
             // 
@@ -99,6 +114,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(324, 542);
             panel2.TabIndex = 13;
+          
             // 
             // PicMostrar
             // 
@@ -260,7 +276,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label6);
             panel1.ImeMode = ImeMode.Disable;
-            panel1.Location = new Point(45, 197);
+            panel1.Location = new Point(32, 197);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(773, 255);
@@ -312,6 +328,7 @@
             splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictCargando).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PicMostrar).EndInit();
@@ -341,6 +358,7 @@
         private PictureBox PicOcultar;
         private PictureBox PicMostrar;
         private PictureBox pictureBox1;
+        private PictureBox pictCargando;
     }
 }
 

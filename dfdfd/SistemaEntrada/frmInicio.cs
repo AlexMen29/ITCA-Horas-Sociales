@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CircularProgressBar;
 using dfdfd.bdSocial;
 using ProyectoSocial;
 using SistemaAdministrativo;
@@ -42,8 +44,6 @@ namespace Login
         private void labRegistrarme_MouseEnter_1(object sender, EventArgs e)
         {
             this.labRegistrarme.ForeColor = Color.Red;
-
-
         }
         private void labRegistrarme_MouseLeave(object sender, EventArgs e)
         {
@@ -53,7 +53,6 @@ namespace Login
         {
             if (txtPassword.UseSystemPasswordChar)
             {
-
                 txtPassword.UseSystemPasswordChar = false; // Mostrar contraseña
                 PicMostrar.Visible = true;
                 PicOcultar.Visible = false;
@@ -66,7 +65,6 @@ namespace Login
                 txtPassword.UseSystemPasswordChar = true;
                 PicOcultar.Visible = true;
                 PicMostrar.Visible = false;
-
             }
         }
         private void labRegistrarme_Click(object sender, EventArgs e)
@@ -76,6 +74,17 @@ namespace Login
         }
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            cargando();
+        }
+        private async void cargando()
+        {
+            pictCargando.Visible = true;
+
+            // Esperar 2 segundos (2000 milisegundos)
+            await Task.Delay(1000);
+
+            pictCargando.Visible = false;
+
             var carnet = txtCarnet.Text;
             var contraseña = txtPassword.Text;
 
@@ -101,20 +110,16 @@ namespace Login
             }
             else
             {
-                MessageBox.Show("Credenciales Incorrectas", "Horas Sociales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Las Credenciales Ingresadas Son Incorrectas ", "ITCA FEPADE ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
-
-    class MetodoUniversales
-    {
-        public void eventosEnterLeave(Button btn, Color ColorFondo, Color ColorLetra)
+        class MetodoUniversales
         {
-            btn.BackColor = ColorFondo;
-            btn.ForeColor = ColorLetra;
+            public void eventosEnterLeave(Button btn, Color ColorFondo, Color ColorLetra)
+            {
+                btn.BackColor = ColorFondo;
+                btn.ForeColor = ColorLetra;
+            }
         }
-
-
-
     }
 }

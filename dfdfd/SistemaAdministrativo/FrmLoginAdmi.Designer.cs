@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSisAd));
             PanelOpciones = new Panel();
+            btnCerrarSesion = new Button();
             pictureBox1 = new PictureBox();
             btnHojaSocial = new Button();
             btnEnviarMensaje = new Button();
@@ -43,7 +44,7 @@
             LabNombre = new Label();
             label1 = new Label();
             pnlContenedor = new Panel();
-            btnCerrarSesion = new Button();
+            btnSalir = new Button();
             PanelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelMenu.SuspendLayout();
@@ -55,6 +56,7 @@
             PanelOpciones.BackColor = Color.FromArgb(206, 144, 17);
             PanelOpciones.BackgroundImage = (Image)resources.GetObject("PanelOpciones.BackgroundImage");
             PanelOpciones.BackgroundImageLayout = ImageLayout.Stretch;
+            PanelOpciones.Controls.Add(btnSalir);
             PanelOpciones.Controls.Add(btnCerrarSesion);
             PanelOpciones.Controls.Add(pictureBox1);
             PanelOpciones.Controls.Add(btnHojaSocial);
@@ -68,6 +70,24 @@
             PanelOpciones.Name = "PanelOpciones";
             PanelOpciones.Size = new Size(271, 562);
             PanelOpciones.TabIndex = 2;
+            // 
+            // btnCerrarSesion
+            // 
+            btnCerrarSesion.Anchor = AnchorStyles.None;
+            btnCerrarSesion.BackColor = Color.FromArgb(176, 25, 29);
+            btnCerrarSesion.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCerrarSesion.ForeColor = SystemColors.ControlLightLight;
+            btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
+            btnCerrarSesion.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCerrarSesion.Location = new Point(33, 439);
+            btnCerrarSesion.Margin = new Padding(4, 3, 4, 3);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(238, 50);
+            btnCerrarSesion.TabIndex = 15;
+            btnCerrarSesion.Tag = "Cerrar Sesión";
+            btnCerrarSesion.Text = "Cerrar Sesión";
+            btnCerrarSesion.UseVisualStyleBackColor = false;
+            btnCerrarSesion.Click += btnCerrarSesion_Click_1;
             // 
             // pictureBox1
             // 
@@ -255,22 +275,22 @@
             pnlContenedor.Size = new Size(767, 516);
             pnlContenedor.TabIndex = 4;
             // 
-            // btnCerrarSesion
+            // btnSalir
             // 
-            btnCerrarSesion.Anchor = AnchorStyles.None;
-            btnCerrarSesion.BackColor = Color.FromArgb(176, 25, 29);
-            btnCerrarSesion.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCerrarSesion.ForeColor = SystemColors.ControlLightLight;
-            btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
-            btnCerrarSesion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCerrarSesion.Location = new Point(33, 512);
-            btnCerrarSesion.Margin = new Padding(4, 3, 4, 3);
-            btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(238, 50);
-            btnCerrarSesion.TabIndex = 15;
-            btnCerrarSesion.Tag = "Cerrar Sesión";
-            btnCerrarSesion.Text = "Cerrar Sesión";
-            btnCerrarSesion.UseVisualStyleBackColor = false;
+            btnSalir.Anchor = AnchorStyles.None;
+            btnSalir.BackColor = Color.FromArgb(176, 25, 29);
+            btnSalir.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSalir.ForeColor = SystemColors.ControlLightLight;
+            btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSalir.Location = new Point(33, 500);
+            btnSalir.Margin = new Padding(4, 3, 4, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(238, 50);
+            btnSalir.TabIndex = 16;
+            btnSalir.Tag = "Cerrar Sesión";
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FrmSisAd
             // 
@@ -312,6 +332,7 @@
         private PictureBox pictureBox1;
         private Label LabNombre;
         private Button btnCerrarSesion;
+        private Button btnSalir;
     }
 }
 

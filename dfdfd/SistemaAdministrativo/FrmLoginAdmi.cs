@@ -126,6 +126,17 @@ namespace SistemaAdministrativo
         {
             eventosEnterLeave(btnHojaSocial, ColorTranslator.FromHtml("#b1201f"), Color.White);
         }
+
+        private void btnCerrarSesion_Click_1(object sender, EventArgs e)
+        {
+            frmInicio Frm = new frmInicio();
+            Close();
+            Frm.Show();
+        }
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
 }
