@@ -21,7 +21,8 @@ namespace SistemaAdministrativo
 
         private void CargarDatosEnDataGridViem()
         {
-            string cadenaConexion = "Data Source = DESKTOP-E4D98NB\\SQLEXPRESS; Initial Catalog= proyectoSocial; Integrated Security= True";
+            
+            string cadenaConexion = "Data Source = DESKTOP-IJ4S2TJ\\SQLEXPRESS; Initial Catalog= proyectoSocial; Integrated Security= True";
             DataTable dataTable = new DataTable();
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
@@ -38,6 +39,7 @@ namespace SistemaAdministrativo
             }
 
             gridDatosAlumnos.DataSource = dataTable;
+            
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -46,6 +48,11 @@ namespace SistemaAdministrativo
         }
 
         private void gridDatosAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

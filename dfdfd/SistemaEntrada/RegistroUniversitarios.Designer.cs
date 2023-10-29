@@ -40,11 +40,13 @@
             txtContraseña = new TextBox();
             label2 = new Label();
             txtCarnet = new TextBox();
-            txtCupHoras = new TextBox();
+            txtEncargado = new TextBox();
             label7 = new Label();
             btnRegistrar = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            txtTipoEstudio = new ComboBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -67,7 +69,7 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(627, 495);
+            txtCorreo.Location = new Point(627, 436);
             txtCorreo.Margin = new Padding(4, 3, 4, 3);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(212, 23);
@@ -75,7 +77,7 @@
             // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(627, 439);
+            txtApellidos.Location = new Point(627, 380);
             txtApellidos.Margin = new Padding(4, 3, 4, 3);
             txtApellidos.Name = "txtApellidos";
             txtApellidos.Size = new Size(212, 23);
@@ -86,7 +88,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(507, 487);
+            label6.Location = new Point(507, 428);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(96, 31);
@@ -98,7 +100,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(475, 431);
+            label5.Location = new Point(475, 372);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(127, 31);
@@ -110,7 +112,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(475, 375);
+            label4.Location = new Point(475, 316);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(126, 31);
@@ -119,7 +121,7 @@
             // 
             // txtNombres
             // 
-            txtNombres.Location = new Point(627, 383);
+            txtNombres.Location = new Point(627, 324);
             txtNombres.Margin = new Padding(4, 3, 4, 3);
             txtNombres.Name = "txtNombres";
             txtNombres.Size = new Size(212, 23);
@@ -130,7 +132,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(451, 319);
+            label3.Location = new Point(451, 260);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(152, 31);
@@ -139,7 +141,7 @@
             // 
             // txtContraseña
             // 
-            txtContraseña.Location = new Point(627, 327);
+            txtContraseña.Location = new Point(627, 268);
             txtContraseña.Margin = new Padding(4, 3, 4, 3);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(212, 23);
@@ -150,7 +152,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(507, 263);
+            label2.Location = new Point(507, 204);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(94, 31);
@@ -159,26 +161,26 @@
             // 
             // txtCarnet
             // 
-            txtCarnet.Location = new Point(627, 271);
+            txtCarnet.Location = new Point(627, 212);
             txtCarnet.Margin = new Padding(4, 3, 4, 3);
             txtCarnet.Name = "txtCarnet";
             txtCarnet.Size = new Size(212, 23);
             txtCarnet.TabIndex = 47;
             // 
-            // txtCupHoras
+            // txtEncargado
             // 
-            txtCupHoras.Location = new Point(627, 551);
-            txtCupHoras.Margin = new Padding(4, 3, 4, 3);
-            txtCupHoras.Name = "txtCupHoras";
-            txtCupHoras.Size = new Size(212, 23);
-            txtCupHoras.TabIndex = 46;
+            txtEncargado.Location = new Point(627, 492);
+            txtEncargado.Margin = new Padding(4, 3, 4, 3);
+            txtEncargado.Name = "txtEncargado";
+            txtEncargado.Size = new Size(212, 23);
+            txtEncargado.TabIndex = 46;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(464, 544);
+            label7.Location = new Point(464, 485);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(142, 31);
@@ -198,12 +200,13 @@
             btnRegistrar.TabIndex = 44;
             btnRegistrar.Text = "Registrarme";
             btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(619, 63);
+            pictureBox1.Location = new Point(619, 4);
             pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(111, 112);
@@ -216,12 +219,33 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft YaHei", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(587, 191);
+            label1.Location = new Point(587, 132);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(182, 42);
             label1.TabIndex = 42;
             label1.Text = "Regístrate";
+            // 
+            // txtTipoEstudio
+            // 
+            txtTipoEstudio.FormattingEnabled = true;
+            txtTipoEstudio.Items.AddRange(new object[] { "Técnico", "Ingeniería" });
+            txtTipoEstudio.Location = new Point(628, 540);
+            txtTipoEstudio.Name = "txtTipoEstudio";
+            txtTipoEstudio.Size = new Size(211, 23);
+            txtTipoEstudio.TabIndex = 58;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(397, 540);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(206, 31);
+            label8.TabIndex = 57;
+            label8.Text = "Tipo De Estudio";
             // 
             // RegistroUniversitarios
             // 
@@ -230,6 +254,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1283, 715);
+            Controls.Add(txtTipoEstudio);
+            Controls.Add(label8);
             Controls.Add(txtCorreo);
             Controls.Add(txtApellidos);
             Controls.Add(label6);
@@ -240,7 +266,7 @@
             Controls.Add(txtContraseña);
             Controls.Add(label2);
             Controls.Add(txtCarnet);
-            Controls.Add(txtCupHoras);
+            Controls.Add(txtEncargado);
             Controls.Add(label7);
             Controls.Add(btnRegistrar);
             Controls.Add(pictureBox1);
@@ -268,10 +294,12 @@
         private TextBox txtContraseña;
         private Label label2;
         private TextBox txtCarnet;
-        private TextBox txtCupHoras;
+        private TextBox txtEncargado;
         private Label label7;
         private Button btnRegistrar;
         private PictureBox pictureBox1;
         private Label label1;
+        private ComboBox txtTipoEstudio;
+        private Label label8;
     }
 }

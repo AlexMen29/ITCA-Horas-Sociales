@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dfdfd.bdSocial;
+
+
 
 namespace Login
 {
     public partial class RegistroUniversitarios : Form
     {
+        ProyectoSocialContext context = new ProyectoSocialContext();
+
+
         public RegistroUniversitarios()
         {
             InitializeComponent();
@@ -50,6 +56,35 @@ namespace Login
 
         private void RegistroUniversitarios_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            DatosAlumno datos = new DatosAlumno();
+
+            datos.Carnet = txtCarnet.Text;
+            datos.Contraseña = txtContraseña.Text;
+            datos.NivelUsuario = 1;
+            datos.Nombres = txtNombres.Text;
+            datos.Apellidos = txtApellidos.Text;
+            datos.Encargado = txtEncargado.Text;
+            datos.TipoEstudio = txtTipoEstudio.Text;
+            datos.Correo= txtCorreo.Text;
+            datos.Grupo = "RS01";
+
+            context.Add(datos);
+            if (context.SaveChanges() == 1)
+            {
+                MessageBox.Show("Se ha Registrado Exitosamente", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
     }

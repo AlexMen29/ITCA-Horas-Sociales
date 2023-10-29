@@ -54,7 +54,7 @@
             btnRegresar.BackColor = Color.FromArgb(177, 32, 31);
             btnRegresar.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnRegresar.ForeColor = SystemColors.ControlLightLight;
-            btnRegresar.Location = new Point(408, 552);
+            btnRegresar.Location = new Point(430, 590);
             btnRegresar.Margin = new Padding(4, 3, 4, 3);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(161, 52);
@@ -67,7 +67,7 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(560, 448);
+            txtCorreo.Location = new Point(614, 471);
             txtCorreo.Margin = new Padding(4, 3, 4, 3);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(212, 23);
@@ -75,7 +75,7 @@
             // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(560, 392);
+            txtApellidos.Location = new Point(614, 415);
             txtApellidos.Margin = new Padding(4, 3, 4, 3);
             txtApellidos.Name = "txtApellidos";
             txtApellidos.Size = new Size(212, 23);
@@ -86,7 +86,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(440, 440);
+            label6.Location = new Point(494, 463);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(96, 31);
@@ -98,7 +98,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(408, 384);
+            label5.Location = new Point(462, 407);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(127, 31);
@@ -110,7 +110,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(408, 328);
+            label4.Location = new Point(462, 351);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(126, 31);
@@ -119,7 +119,7 @@
             // 
             // txtNombres
             // 
-            txtNombres.Location = new Point(560, 336);
+            txtNombres.Location = new Point(614, 359);
             txtNombres.Margin = new Padding(4, 3, 4, 3);
             txtNombres.Name = "txtNombres";
             txtNombres.Size = new Size(212, 23);
@@ -130,7 +130,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(384, 272);
+            label3.Location = new Point(438, 295);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(152, 31);
@@ -139,7 +139,7 @@
             // 
             // txtContraseña
             // 
-            txtContraseña.Location = new Point(560, 280);
+            txtContraseña.Location = new Point(614, 303);
             txtContraseña.Margin = new Padding(4, 3, 4, 3);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(212, 23);
@@ -150,7 +150,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(440, 216);
+            label2.Location = new Point(494, 239);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(94, 31);
@@ -159,7 +159,7 @@
             // 
             // txtCarnet
             // 
-            txtCarnet.Location = new Point(560, 224);
+            txtCarnet.Location = new Point(614, 247);
             txtCarnet.Margin = new Padding(4, 3, 4, 3);
             txtCarnet.Name = "txtCarnet";
             txtCarnet.Size = new Size(212, 23);
@@ -167,7 +167,7 @@
             // 
             // txtCupHoras
             // 
-            txtCupHoras.Location = new Point(560, 504);
+            txtCupHoras.Location = new Point(614, 527);
             txtCupHoras.Margin = new Padding(4, 3, 4, 3);
             txtCupHoras.Name = "txtCupHoras";
             txtCupHoras.Size = new Size(212, 23);
@@ -178,7 +178,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(376, 496);
+            label7.Location = new Point(430, 519);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(157, 31);
@@ -191,7 +191,7 @@
             btnRegistrar.BackColor = Color.FromArgb(177, 32, 31);
             btnRegistrar.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnRegistrar.ForeColor = SystemColors.ControlLightLight;
-            btnRegistrar.Location = new Point(592, 552);
+            btnRegistrar.Location = new Point(614, 590);
             btnRegistrar.Margin = new Padding(4, 3, 4, 3);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(160, 52);
@@ -203,7 +203,7 @@
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(552, 16);
+            pictureBox1.Location = new Point(595, 30);
             pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(111, 112);
@@ -216,7 +216,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft YaHei", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(520, 144);
+            label1.Location = new Point(574, 167);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(182, 42);
