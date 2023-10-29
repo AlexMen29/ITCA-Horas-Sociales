@@ -99,12 +99,15 @@
             // 
             // gridDatosAd
             // 
+            gridDatosAd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridDatosAd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridDatosAd.Dock = DockStyle.Fill;
+            gridDatosAd.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridDatosAd.Location = new Point(0, 0);
             gridDatosAd.Name = "gridDatosAd";
             gridDatosAd.ReadOnly = true;
             gridDatosAd.RowTemplate.Height = 25;
+            gridDatosAd.SelectionMode = DataGridViewSelectionMode.FullColumnSelect;
             gridDatosAd.Size = new Size(687, 415);
             gridDatosAd.TabIndex = 0;
             gridDatosAd.CellContentClick += gridDatosAd_CellContentClick;

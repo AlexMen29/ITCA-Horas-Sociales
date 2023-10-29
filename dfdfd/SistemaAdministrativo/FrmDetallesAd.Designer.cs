@@ -99,10 +99,14 @@
             // gridDatosAlumnos
             // 
             gridDatosAlumnos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            gridDatosAlumnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridDatosAlumnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridDatosAlumnos.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridDatosAlumnos.Location = new Point(243, 76);
             gridDatosAlumnos.Margin = new Padding(4, 3, 4, 3);
             gridDatosAlumnos.Name = "gridDatosAlumnos";
+            gridDatosAlumnos.ReadOnly = true;
+            gridDatosAlumnos.SelectionMode = DataGridViewSelectionMode.FullColumnSelect;
             gridDatosAlumnos.Size = new Size(668, 415);
             gridDatosAlumnos.TabIndex = 1;
             gridDatosAlumnos.CellContentClick += gridDatosAlumnos_CellContentClick;

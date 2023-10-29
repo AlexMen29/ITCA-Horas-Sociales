@@ -21,7 +21,7 @@ namespace SistemaAdministrativo
 
         private void CargarDatosEnDataGridViem()
         {
-            
+
             string cadenaConexion = "Data Source = DESKTOP-IJ4S2TJ\\SQLEXPRESS; Initial Catalog= proyectoSocial; Integrated Security= True";
             DataTable dataTable = new DataTable();
 
@@ -39,7 +39,7 @@ namespace SistemaAdministrativo
             }
 
             gridDatosAlumnos.DataSource = dataTable;
-            
+
         }
 
         private void label7_Click(object sender, EventArgs e)

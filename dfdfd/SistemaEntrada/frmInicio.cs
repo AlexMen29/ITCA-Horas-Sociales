@@ -88,8 +88,7 @@ namespace Login
             var carnet = txtCarnet.Text;
             var contraseña = txtPassword.Text;
 
-            var usuario = context.DatosAlumnos
-                .FirstOrDefault(u => u.Carnet == carnet && u.Contraseña == contraseña);
+            var usuario = context.DatosAlumnos.FirstOrDefault(u => u.Carnet == carnet && u.Contraseña == contraseña);
 
             if (usuario != null)
             {
