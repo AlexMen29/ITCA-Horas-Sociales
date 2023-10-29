@@ -9,36 +9,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Acceso a la carpeta:
+using ProyectoSocial.Contexto;
+
 namespace SistemaAdministrativo
 {
     public partial class EliminarDetallesAlum : Form
     {
+        ProyectoSocialContext context = new ProyectoSocialContext();
         public EliminarDetallesAlum()
         {
             InitializeComponent();
+            dataGridEliminarModificar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CargarDatosEnDataGridViem();
         }
 
+
+        private void CargarTabla()
+        {
+            dataGridEliminarModificar.DataSource = null;
+            dataGridEliminarModificar.DataSource = context.DatosAlumnos.ToList();
+        }
         private void CargarDatosEnDataGridViem()
         {
-            string cadenaConexion = "Data Source = DESKTOP-E4D98NB\\SQLEXPRESS; Initial Catalog = proyectoSocial; Integrated Security = True";
-            DataTable dataTable = new DataTable();
+            dataGridEliminarModificar.DataSource = context.DatosAlumnos.ToList();
+            CargarTabla();
 
-            using (SqlConnection connection = new SqlConnection(cadenaConexion))
-            {
-                connection.Open();
-
-                string consulta = "SELECT * FROM dbo.DatosAlumnos";
-
-                using (SqlCommand command = new SqlCommand(consulta, connection))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    adapter.Fill(dataTable);
-                }
-            }
-
-            dataGridEliminarModificar.DataSource = dataTable;
         }
+
+
+
 
         private void EliminarDetallesAlum_Load(object sender, EventArgs e)
         {
@@ -58,77 +58,48 @@ namespace SistemaAdministrativo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Cuadro de diálogo de confirmación
-            DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (MessageBox.Show(this, "¿Desea eliminar los registros?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                string carnet = txtBoxCarnetCap.Text;
-                string cadenaConexion = "Data Source = DESKTOP-E4D98NB\\SQLEXPRESS; Initial Catalog = proyectoSocial; Integrated Security = True";
-                using (SqlConnection connection = new SqlConnection(cadenaConexion))
-                {
-                    connection.Open();
-                    string Consulta = "DELETE FROM dbo.DatosAlumnos WHERE Carnet = @Carnet";
+                var aEliminar = context.DatosAlumnos.FirstOrDefault(p => p.Carnet == txtBoxCarnetCap.Text);
+                context.DatosAlumnos.Remove(aEliminar);
+                context.SaveChanges();
 
-                    using (SqlCommand command = new SqlCommand(Consulta, connection))
-                    {
-                        command.Parameters.AddWithValue("@Carnet", carnet);
-                        command.ExecuteNonQuery();
-                    }
-                }
-                LimpiarTextBox();
-                MessageBox.Show("Datos eliminados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registros eliminados correctamente.");
+                CargarTabla();
             }
             else
             {
-                MessageBox.Show("Los datos no han sido eliminados.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Los registros no han sido eliminados.");
             }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Cuadro de diálogo de confirmación
-            DialogResult result = MessageBox.Show("¿Está seguro de que desea modificar los datos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            if (MessageBox.Show(this, "¿Desea modificar los registros?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                string nuevoNombres = txtBoxNombresCap.Text;
-                string nuevoApellidos = txtBoxApellidosCap.Text;
-                //Me falta más campos
+                var aModificar = context.DatosAlumnos.FirstOrDefault(p => p.Carnet == txtBoxCarnetCap.Text);
+                aModificar.Carnet = txtBoxCarnetCap.Text;
+                aModificar.Nombres = txtBoxNombresCap.Text;
+                aModificar.Apellidos = txtBoxApellidosCap.Text;
+                aModificar.Encargado = txtBoxResponsableCap.Text;
+                aModificar.TipoEstudio = txtBoxCarreraCap.Text;
+                aModificar.Correo = txtBoxCorreoCap.Text;
+                aModificar.Grupo = txtGrupoCap.Text;
 
 
-                string carnet = txtBoxCarnetCap.Text;
-                //Más obtención de datos
+                context.DatosAlumnos.Update(aModificar);
+                context.SaveChanges();
 
-                //Realizo la modificación en la BD:
-
-                string cadenaConexion = "Data Source = DESKTOP-E4D98NB\\SQLEXPRESS; Initial Catalog = proyectoSocial; Integrated Security = True";
-                using (SqlConnection connection = new SqlConnection(cadenaConexion))
-                {
-                    connection.Open();
-                    // Corrección de la consulta SQL
-                    string consulta = "UPDATE dbo.DatosAlumnos SET Nombres = @Nombres, Apellidos = @Apellidos WHERE CARNET = @Carnet";
-
-                    using (SqlCommand command = new SqlCommand(consulta, connection))
-                    {
-                        command.Parameters.AddWithValue("@Nombres", nuevoNombres);
-                        command.Parameters.AddWithValue("@Apellidos", nuevoApellidos);
-                        command.Parameters.AddWithValue("@Carnet", carnet);
-                        // Me faltan parámetros para otros campos aquí
-
-                        command.ExecuteNonQuery();
-                    }
-                }
-
-                LimpiarTextBox();
-                MessageBox.Show("Datos modificados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registros modificados correctamente.");
+                CargarTabla();
             }
             else
             {
-                MessageBox.Show("Los datos no han sido modificados.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Los registros no han sido modificados.");
             }
         }
+
 
         private void dataGridEliminarModificar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -137,38 +108,213 @@ namespace SistemaAdministrativo
 
         private void dataGridEliminarModificar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dataGridEliminarModificar.Rows[e.RowIndex];
-                txtBoxCarnetCap.Text = selectedRow.Cells["carnet"].Value.ToString();
-                txtBoxNombresCap.Text = selectedRow.Cells["nombres"].Value.ToString();
-                txtBoxApellidosCap.Text = selectedRow.Cells["apellidos"].Value.ToString();
 
-                
-            }
+
         }
 
-        private void LimpiarTextBox()
+        private void dataGridEliminarModificar_Click(object sender, EventArgs e)
         {
-            txtBoxCarnetCap.Text = "";
-            txtBoxNombresCap.Text = "";
-            txtBoxApellidosCap.Text = "";
-            txtBoxCarreraCap.Text = "";
-            txtBoxCorreoCap.Text = "";
-            txtBoxTelAlumCap.Text = "";
-            txtBoxCoorSSECap.Text = "";
-            txtBoxTelEmergCap.Text = "";
-            txtBoxConctEmergCap.Text = "";
-            txtBoxNombreInstCap.Text = "";
-            txtBoxTelInstCap.Text = "";
-            txtBoxActivReaCap.Text = "";
-            txtBoxResponsableCap.Text = "";
-            txtBoxCorreoResponCap.Text = "";
-            txtBoxTiempoCap.Text = "";
-            txtBoxInicioSSCap.Text = "";
-            txtBoxObjetivosCap.Text = "";
-            txtBoxMetasCap.Text = "";
-            txtBoxDuracionCap.Text = "";
+            txtBoxCarnetCap.Text = dataGridEliminarModificar.SelectedCells[0].Value.ToString();
+            txtBoxNombresCap.Text = dataGridEliminarModificar.SelectedCells[3].Value.ToString();
+            txtBoxApellidosCap.Text = dataGridEliminarModificar.SelectedCells[4].Value.ToString();
+            txtBoxCarreraCap.Text = dataGridEliminarModificar.SelectedCells[6].Value.ToString();
+            txtGrupoCap.Text = dataGridEliminarModificar.SelectedCells[8].Value.ToString();
+            txtBoxCorreoCap.Text = dataGridEliminarModificar.SelectedCells[7].Value.ToString();
+            txtBoxResponsableCap.Text = dataGridEliminarModificar.SelectedCells[5].Value.ToString();
+
+        }
+
+        private void pnlInfoEliMoAd_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void txtGrupoCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void pnlInfoDeta_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void btnIInfoElMoAd_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxDuracionCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxMetasCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxObjetivosCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxInicioSSCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxTiempoCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxCorreoResponCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxResponsableCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxActivReaCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxTelInstCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxNombreInstCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxConctEmergCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxCoorSSECap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxTelEmergCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxTelAlumCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxCorreoCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxAñoCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxCarreraCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxApellidosCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxNombresCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtBoxCarnetCap_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

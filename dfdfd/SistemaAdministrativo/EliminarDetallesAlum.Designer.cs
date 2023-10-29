@@ -32,6 +32,8 @@
             pnlInfoEliDetAd = new Panel();
             pnlInfoDeta = new Panel();
             panel1 = new Panel();
+            txtGrupoCap = new TextBox();
+            label22 = new Label();
             button2 = new Button();
             button1 = new Button();
             dataGridEliminarModificar = new DataGridView();
@@ -82,7 +84,6 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridEliminarModificar).BeginInit();
             pnlInfoEliMoAd.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // pnlInfoEliDetAd
@@ -97,7 +98,7 @@
             // 
             // pnlInfoDeta
             // 
-            pnlInfoDeta.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlInfoDeta.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnlInfoDeta.BackgroundImage = (Image)resources.GetObject("pnlInfoDeta.BackgroundImage");
             pnlInfoDeta.Location = new Point(0, 0);
             pnlInfoDeta.Margin = new Padding(4, 3, 4, 3);
@@ -109,6 +110,8 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoScroll = true;
+            panel1.Controls.Add(txtGrupoCap);
+            panel1.Controls.Add(label22);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(dataGridEliminarModificar);
@@ -160,11 +163,32 @@
             panel1.TabIndex = 2;
             panel1.UseWaitCursor = true;
             // 
+            // txtGrupoCap
+            // 
+            txtGrupoCap.Location = new Point(84, 182);
+            txtGrupoCap.Margin = new Padding(4, 3, 4, 3);
+            txtGrupoCap.Multiline = true;
+            txtGrupoCap.Name = "txtGrupoCap";
+            txtGrupoCap.Size = new Size(116, 22);
+            txtGrupoCap.TabIndex = 47;
+            txtGrupoCap.UseWaitCursor = true;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(21, 182);
+            label22.Margin = new Padding(4, 0, 4, 0);
+            label22.Name = "label22";
+            label22.Size = new Size(43, 15);
+            label22.TabIndex = 46;
+            label22.Text = "Grupo ";
+            label22.UseWaitCursor = true;
+            // 
             // button2
             // 
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(635, 489);
+            button2.Location = new Point(614, 466);
             button2.Margin = new Padding(4, 3, 4, 3);
             button2.Name = "button2";
             button2.Size = new Size(168, 52);
@@ -178,7 +202,7 @@
             // 
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(177, 489);
+            button1.Location = new Point(182, 466);
             button1.Margin = new Padding(4, 3, 4, 3);
             button1.Name = "button1";
             button1.Size = new Size(168, 52);
@@ -190,38 +214,43 @@
             // 
             // dataGridEliminarModificar
             // 
+            dataGridEliminarModificar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridEliminarModificar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridEliminarModificar.Location = new Point(8, 547);
+            dataGridEliminarModificar.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridEliminarModificar.Location = new Point(8, 524);
             dataGridEliminarModificar.Margin = new Padding(4, 3, 4, 3);
+            dataGridEliminarModificar.MultiSelect = false;
             dataGridEliminarModificar.Name = "dataGridEliminarModificar";
             dataGridEliminarModificar.ReadOnly = true;
+            dataGridEliminarModificar.SelectionMode = DataGridViewSelectionMode.FullColumnSelect;
             dataGridEliminarModificar.Size = new Size(901, 224);
             dataGridEliminarModificar.TabIndex = 43;
             dataGridEliminarModificar.UseWaitCursor = true;
             dataGridEliminarModificar.CellClick += dataGridEliminarModificar_CellClick;
             dataGridEliminarModificar.CellContentClick += dataGridEliminarModificar_CellContentClick;
+            dataGridEliminarModificar.Click += dataGridEliminarModificar_Click;
             // 
             // pnlInfoEliMoAd
             // 
+            pnlInfoEliMoAd.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pnlInfoEliMoAd.Controls.Add(btnIInfoElMoAd);
             pnlInfoEliMoAd.Controls.Add(panel2);
             pnlInfoEliMoAd.Controls.Add(label21);
-            pnlInfoEliMoAd.Dock = DockStyle.Top;
             pnlInfoEliMoAd.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
             pnlInfoEliMoAd.Location = new Point(0, 0);
             pnlInfoEliMoAd.Margin = new Padding(4, 3, 4, 3);
             pnlInfoEliMoAd.Name = "pnlInfoEliMoAd";
-            pnlInfoEliMoAd.Size = new Size(922, 115);
+            pnlInfoEliMoAd.Size = new Size(935, 115);
             pnlInfoEliMoAd.TabIndex = 42;
             pnlInfoEliMoAd.UseWaitCursor = true;
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.Controls.Add(btnIInfoElMoAd);
             panel2.Location = new Point(803, 0);
             panel2.Margin = new Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(119, 115);
+            panel2.Size = new Size(158, 115);
             panel2.TabIndex = 1;
             panel2.UseWaitCursor = true;
             // 
@@ -230,17 +259,17 @@
             btnIInfoElMoAd.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnIInfoElMoAd.BackColor = Color.FromArgb(192, 0, 0);
             btnIInfoElMoAd.Image = (Image)resources.GetObject("btnIInfoElMoAd.Image");
-            btnIInfoElMoAd.Location = new Point(0, 0);
+            btnIInfoElMoAd.Location = new Point(732, 4);
             btnIInfoElMoAd.Margin = new Padding(4, 3, 4, 3);
             btnIInfoElMoAd.Name = "btnIInfoElMoAd";
-            btnIInfoElMoAd.Size = new Size(121, 111);
+            btnIInfoElMoAd.Size = new Size(186, 111);
             btnIInfoElMoAd.TabIndex = 0;
             btnIInfoElMoAd.UseVisualStyleBackColor = false;
             btnIInfoElMoAd.UseWaitCursor = true;
             // 
             // label21
             // 
-            label21.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label21.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label21.AutoSize = true;
             label21.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label21.Location = new Point(0, 9);
@@ -253,7 +282,7 @@
             // 
             // txtBoxDuracionCap
             // 
-            txtBoxDuracionCap.Location = new Point(784, 388);
+            txtBoxDuracionCap.Location = new Point(566, 414);
             txtBoxDuracionCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxDuracionCap.Multiline = true;
             txtBoxDuracionCap.Name = "txtBoxDuracionCap";
@@ -263,7 +292,7 @@
             // 
             // txtBoxMetasCap
             // 
-            txtBoxMetasCap.Location = new Point(597, 388);
+            txtBoxMetasCap.Location = new Point(379, 414);
             txtBoxMetasCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxMetasCap.Multiline = true;
             txtBoxMetasCap.Name = "txtBoxMetasCap";
@@ -273,7 +302,7 @@
             // 
             // txtBoxObjetivosCap
             // 
-            txtBoxObjetivosCap.Location = new Point(411, 388);
+            txtBoxObjetivosCap.Location = new Point(209, 414);
             txtBoxObjetivosCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxObjetivosCap.Multiline = true;
             txtBoxObjetivosCap.Name = "txtBoxObjetivosCap";
@@ -283,7 +312,7 @@
             // 
             // txtBoxInicioSSCap
             // 
-            txtBoxInicioSSCap.Location = new Point(233, 388);
+            txtBoxInicioSSCap.Location = new Point(695, 355);
             txtBoxInicioSSCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxInicioSSCap.Multiline = true;
             txtBoxInicioSSCap.Name = "txtBoxInicioSSCap";
@@ -293,7 +322,7 @@
             // 
             // txtBoxTiempoCap
             // 
-            txtBoxTiempoCap.Location = new Point(75, 388);
+            txtBoxTiempoCap.Location = new Point(537, 355);
             txtBoxTiempoCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxTiempoCap.Name = "txtBoxTiempoCap";
             txtBoxTiempoCap.Size = new Size(83, 23);
@@ -302,7 +331,7 @@
             // 
             // txtBoxCorreoResponCap
             // 
-            txtBoxCorreoResponCap.Location = new Point(691, 323);
+            txtBoxCorreoResponCap.Location = new Point(227, 355);
             txtBoxCorreoResponCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxCorreoResponCap.Multiline = true;
             txtBoxCorreoResponCap.Name = "txtBoxCorreoResponCap";
@@ -312,7 +341,7 @@
             // 
             // txtBoxResponsableCap
             // 
-            txtBoxResponsableCap.Location = new Point(392, 323);
+            txtBoxResponsableCap.Location = new Point(684, 297);
             txtBoxResponsableCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxResponsableCap.Multiline = true;
             txtBoxResponsableCap.Name = "txtBoxResponsableCap";
@@ -322,7 +351,7 @@
             // 
             // txtBoxActivReaCap
             // 
-            txtBoxActivReaCap.Location = new Point(149, 323);
+            txtBoxActivReaCap.Location = new Point(430, 294);
             txtBoxActivReaCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxActivReaCap.Multiline = true;
             txtBoxActivReaCap.Name = "txtBoxActivReaCap";
@@ -332,7 +361,7 @@
             // 
             // txtBoxTelInstCap
             // 
-            txtBoxTelInstCap.Location = new Point(793, 268);
+            txtBoxTelInstCap.Location = new Point(150, 294);
             txtBoxTelInstCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxTelInstCap.Multiline = true;
             txtBoxTelInstCap.Name = "txtBoxTelInstCap";
@@ -342,7 +371,7 @@
             // 
             // txtBoxNombreInstCap
             // 
-            txtBoxNombreInstCap.Location = new Point(420, 268);
+            txtBoxNombreInstCap.Location = new Point(691, 240);
             txtBoxNombreInstCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxNombreInstCap.Multiline = true;
             txtBoxNombreInstCap.Name = "txtBoxNombreInstCap";
@@ -353,7 +382,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(168, 388);
+            label20.Location = new Point(630, 355);
             label20.Margin = new Padding(4, 0, 4, 0);
             label20.Name = "label20";
             label20.Size = new Size(51, 15);
@@ -364,7 +393,7 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(345, 388);
+            label19.Location = new Point(143, 414);
             label19.Margin = new Padding(4, 0, 4, 0);
             label19.Name = "label19";
             label19.Size = new Size(57, 15);
@@ -375,7 +404,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(719, 388);
+            label18.Location = new Point(501, 414);
             label18.Margin = new Padding(4, 0, 4, 0);
             label18.Name = "label18";
             label18.Size = new Size(55, 15);
@@ -386,7 +415,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(19, 388);
+            label17.Location = new Point(465, 355);
             label17.Margin = new Padding(4, 0, 4, 0);
             label17.Name = "label17";
             label17.Size = new Size(47, 15);
@@ -397,7 +426,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(560, 323);
+            label16.Location = new Point(96, 355);
             label16.Margin = new Padding(4, 0, 4, 0);
             label16.Name = "label16";
             label16.Size = new Size(112, 15);
@@ -408,7 +437,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(551, 388);
+            label15.Location = new Point(333, 414);
             label15.Margin = new Padding(4, 0, 4, 0);
             label15.Name = "label15";
             label15.Size = new Size(39, 15);
@@ -419,7 +448,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(299, 323);
+            label14.Location = new Point(591, 297);
             label14.Margin = new Padding(4, 0, 4, 0);
             label14.Name = "label14";
             label14.Size = new Size(73, 15);
@@ -430,7 +459,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(28, 323);
+            label13.Location = new Point(293, 294);
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
             label13.Size = new Size(106, 15);
@@ -441,7 +470,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(644, 268);
+            label12.Location = new Point(21, 297);
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
             label12.Size = new Size(111, 15);
@@ -452,7 +481,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(308, 268);
+            label8.Location = new Point(579, 240);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(110, 15);
@@ -462,7 +491,7 @@
             // 
             // txtBoxConctEmergCap
             // 
-            txtBoxConctEmergCap.Location = new Point(159, 268);
+            txtBoxConctEmergCap.Location = new Point(430, 240);
             txtBoxConctEmergCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxConctEmergCap.Multiline = true;
             txtBoxConctEmergCap.Name = "txtBoxConctEmergCap";
@@ -472,7 +501,7 @@
             // 
             // txtBoxCoorSSECap
             // 
-            txtBoxCoorSSECap.Location = new Point(532, 203);
+            txtBoxCoorSSECap.Location = new Point(750, 182);
             txtBoxCoorSSECap.Margin = new Padding(4, 3, 4, 3);
             txtBoxCoorSSECap.Multiline = true;
             txtBoxCoorSSECap.Name = "txtBoxCoorSSECap";
@@ -482,7 +511,7 @@
             // 
             // txtBoxTelEmergCap
             // 
-            txtBoxTelEmergCap.Location = new Point(812, 203);
+            txtBoxTelEmergCap.Location = new Point(150, 240);
             txtBoxTelEmergCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxTelEmergCap.Multiline = true;
             txtBoxTelEmergCap.Name = "txtBoxTelEmergCap";
@@ -492,7 +521,7 @@
             // 
             // txtBoxTelAlumCap
             // 
-            txtBoxTelAlumCap.Location = new Point(289, 203);
+            txtBoxTelAlumCap.Location = new Point(504, 182);
             txtBoxTelAlumCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxTelAlumCap.Multiline = true;
             txtBoxTelAlumCap.Name = "txtBoxTelAlumCap";
@@ -502,7 +531,7 @@
             // 
             // txtBoxCorreoCap
             // 
-            txtBoxCorreoCap.Location = new Point(84, 203);
+            txtBoxCorreoCap.Location = new Point(289, 182);
             txtBoxCorreoCap.Margin = new Padding(4, 3, 4, 3);
             txtBoxCorreoCap.Multiline = true;
             txtBoxCorreoCap.Name = "txtBoxCorreoCap";
@@ -573,7 +602,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(429, 203);
+            label11.Location = new Point(647, 182);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(91, 15);
@@ -584,7 +613,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(681, 203);
+            label10.Location = new Point(19, 240);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(117, 15);
@@ -595,7 +624,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(19, 268);
+            label9.Location = new Point(290, 240);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(121, 15);
@@ -606,7 +635,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(215, 203);
+            label6.Location = new Point(430, 182);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(52, 15);
@@ -617,7 +646,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(19, 203);
+            label5.Location = new Point(224, 182);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(43, 15);
@@ -688,7 +717,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridEliminarModificar).EndInit();
             pnlInfoEliMoAd.ResumeLayout(false);
             pnlInfoEliMoAd.PerformLayout();
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -744,5 +772,7 @@
         private Label label21;
         private Panel panel2;
         private Button btnIInfoElMoAd;
+        private TextBox txtGrupoCap;
+        private Label label22;
     }
 }
