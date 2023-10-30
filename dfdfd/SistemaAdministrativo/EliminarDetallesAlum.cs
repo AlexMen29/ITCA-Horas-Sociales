@@ -9,8 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//Acceso a la carpeta:
-using ProyectoSocial.Contexto;
+using dfdfd.bdSocial;
+
 
 namespace SistemaAdministrativo
 {
@@ -33,8 +33,12 @@ namespace SistemaAdministrativo
         private void CargarDatosEnDataGridViem()
         {
             dataGridEliminarModificar.DataSource = context.DatosAlumnos.ToList();
+            dataGridEliminarModificar.DataBindingComplete += (s, e) =>
+            {
+                dataGridEliminarModificar.Columns[1].Visible = false; // Columna 1
+                dataGridEliminarModificar.Columns[2].Visible = false; // Columna 2
+            };
             CargarTabla();
-
         }
 
 
@@ -89,26 +93,30 @@ namespace SistemaAdministrativo
 
 
                 context.DatosAlumnos.Update(aModificar);
+                
                 context.SaveChanges();
-
-                MessageBox.Show("Registros modificados correctamente.");
                 CargarTabla();
+                MessageBox.Show("Registros modificados correctamente.");
+                
             }
             else
             {
                 MessageBox.Show("Los registros no han sido modificados.");
             }
+
+           
+            
         }
 
 
         private void dataGridEliminarModificar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
 
         private void dataGridEliminarModificar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
 
         }
 
@@ -121,6 +129,7 @@ namespace SistemaAdministrativo
             txtGrupoCap.Text = dataGridEliminarModificar.SelectedCells[8].Value.ToString();
             txtBoxCorreoCap.Text = dataGridEliminarModificar.SelectedCells[7].Value.ToString();
             txtBoxResponsableCap.Text = dataGridEliminarModificar.SelectedCells[5].Value.ToString();
+            
 
         }
 

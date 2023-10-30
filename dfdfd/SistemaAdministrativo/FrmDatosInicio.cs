@@ -23,7 +23,7 @@ namespace SistemaAdministrativo
 
         private void CargarDatosEnDataGridViem()
         {
-            string cadenaConexion = "Data Source=DESKTOP-E4D98NB\\SQLEXPRESS;Initial Catalog=proyectoSocial;Integrated Security=True";
+            string cadenaConexion = "Data Source= DESKTOP-E4D98NB\\SQLEXPRESS;Initial Catalog=proyectoSocial;Integrated Security=True";
             DataTable dataTable = new DataTable();
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
@@ -40,11 +40,13 @@ namespace SistemaAdministrativo
             }
 
             gridDatosAd.DataSource = dataTable;
+            gridDatosAd.Columns[1].Visible = false;
+            gridDatosAd.Columns[2].Visible = false;
         }
 
         private void gridDatosAd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Puedes manejar eventos del DataGridView si es necesario
+
         }
     }
 }
