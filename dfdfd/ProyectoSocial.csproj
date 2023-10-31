@@ -34,9 +34,7 @@
     <Compile Update="SistemaAdministrativo\FrmLoginAdmi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="SistemaAdministrativo\ImpresionDatos.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="SistemaAdministrativo\ImpresionDatos.cs" />
     <Compile Update="SistemaEntrada\EstudianteOrDocente.cs">
       <SubType>Form</SubType>
     </Compile>

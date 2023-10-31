@@ -20,26 +20,42 @@ namespace SistemaAdministrativo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            //Me permite la opción por defecto la elección de las impresiones
-            //conectadas a la computadora. 
+            // Me mostrará el cuadro de diálogo de impresión
             PrintDocument pd = new PrintDocument();
-            pd.PrintPage += new PrintPageEventHandler(this.ImprimirContenido);
-
             PrintDialog printDialog = new PrintDialog();
             printDialog.Document = pd;
 
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
+                pd.PrinterSettings = printDialog.PrinterSettings; // Configuración de la impresora
+                pd.PrintPage += new PrintPageEventHandler(this.ImprimirContenido);
+                pd.DefaultPageSettings.Landscape = false; // Configura la orientación de la hoja
+
+                // Verificar si la impresora admite color o no
+                if (pd.PrinterSettings.SupportsColor)
+                {
+                    // Me mostrará el cuadro de diálogo de configuración de la impresora
+                    PageSetupDialog pageSetupDialog = new PageSetupDialog();
+                    pageSetupDialog.PageSettings = pd.DefaultPageSettings;
+
+                    if (pageSetupDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        pd.DefaultPageSettings = pageSetupDialog.PageSettings;
+                    }
+                }
+
                 pd.Print();
             }
         }
 
         private void ImprimirContenido(object sender, PrintPageEventArgs e)
         {
-            Font fuente = new Font("Arial", 12);
-            e.Graphics.DrawString("Este es un ejemplo de impresión.", fuente, Brushes.Black, 100, 100);
+            // Debe capturas la imagen del Panel pnlHojaImprimir
+            Bitmap bmp = new Bitmap(pnlHojaImprimir.Width, pnlHojaImprimir.Height);
+            pnlHojaImprimir.DrawToBitmap(bmp, new Rectangle(0, 0, pnlHojaImprimir.Width, pnlHojaImprimir.Height));
 
-            //Esto me permite la fuente de impresión en la hoja.
+            // Dibuja la imagen en la página de impresión
+            e.Graphics.DrawImage(bmp, e.MarginBounds.Left, e.MarginBounds.Top, bmp.Width, bmp.Height);
         }
     }
 }
