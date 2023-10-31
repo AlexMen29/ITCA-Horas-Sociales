@@ -137,6 +137,11 @@ namespace SistemaAdministrativo
         {
             Application.Exit();
         }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{usuarioActual.Carnet}\n--------------------\n{usuarioActual.Nombres}\n{usuarioActual.Apellidos}\n{usuarioActual.Correo}","Detalles de Sesión");
+        }
     }
 
 }

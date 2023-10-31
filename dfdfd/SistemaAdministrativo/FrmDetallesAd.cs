@@ -16,25 +16,21 @@ namespace SistemaAdministrativo
     public partial class FrmDetallesAd : Form
     {
 
+
         ProyectoSocialContext context = new ProyectoSocialContext();
         public FrmDetallesAd()
         {
             InitializeComponent();
         }
 
-        private void CargarDatosEnDataGridViem()
+        private void CargarDatosEnDataGridViem(int nivel, string carnet)
         {
-            int nivel = compartir.Nivelusuario;
             if (nivel == 1)
             {
-
-                //metodo que devuelve el carnet actual (es decir el alumno)
-                string carnet = compartir.carnetIngresado;
 
                 // Filtrar los datos por el carnet especificado
                 var datosAlumno = context.horasSociales.Where(h => h.Carnet == carnet).ToList();
                 gridDatosAlumnos.DataSource = datosAlumno;
-
 
 
 
@@ -49,24 +45,88 @@ namespace SistemaAdministrativo
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gridDatosAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void FrmDetallesAd_Load(object sender, EventArgs e)
         {
-            CargarDatosEnDataGridViem();
+            CargarDatosEnDataGridViem(compartir.Nivelusuario, compartir.carnetIngresado);
+
+            if (compartir.Nivelusuario == 1)
+            {
+                PanelElementosBusqueda.Visible = false;
+                panelDetallesAlumnos.Visible = false;
+                totalHoras();
+            }
+
+
+
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            LabNombre.Text = "";
+            LabApellido.Text = "";
+            LabCorreo.Text = "";
+            CargarDatosEnDataGridViem(2, compartir.carnetIngresado);
+
+        }
+
+        //Metodo para Eventos mouse enter y leave
+        public void eventosEnterLeave(Button btn, Color ColorFondo, Color ColorLetra)
+        {
+            btn.BackColor = ColorFondo;
+            btn.ForeColor = ColorLetra;
+        }
+
+        private void btnLimpiar_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnLimpiar, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+
+        private void btnLimpiar_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnLimpiar, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+
+        private void gridDatosAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtBuscar.Text = gridDatosAlumnos.SelectedCells[1].Value.ToString();
+        }
+
+        private void btnBuscar_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnBuscar, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+
+        private void btnBuscar_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnBuscar, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CargarDatosEnDataGridViem(1, txtBuscar.Text);
+            totalHoras();
+
+            /*
+            var usuario = context.DatosAlumnos.FirstOrDefault(u => u.Carnet == txtBuscar.Text);
+
+            LabNombre.Text = usuario.Nombres;
+            LabApellido.Text = usuario.Apellidos;
+            LabCorreo.Text = usuario.Correo; 
+            */
+
+        }
+
+        public void totalHoras()
+        {
+            int totalHoras = 0;
+            foreach (DataGridViewRow fila in gridDatosAlumnos.Rows)
+            {
+                totalHoras += Convert.ToInt32(fila.Cells["Total"].Value);
+            }
+
+            LabTotalHoras.Text = totalHoras.ToString();
+        }
+
     }
 }

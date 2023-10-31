@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSisAd));
+            Label txtCarnet;
             PanelOpciones = new Panel();
+            btnSalir = new Button();
             btnCerrarSesion = new Button();
             pictureBox1 = new PictureBox();
             btnHojaSocial = new Button();
@@ -42,9 +44,8 @@
             btnNotificacion = new Button();
             pnlLogo = new Panel();
             LabNombre = new Label();
-            label1 = new Label();
             pnlContenedor = new Panel();
-            btnSalir = new Button();
+            txtCarnet = new Label();
             PanelOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelMenu.SuspendLayout();
@@ -70,6 +71,23 @@
             PanelOpciones.Name = "PanelOpciones";
             PanelOpciones.Size = new Size(271, 562);
             PanelOpciones.TabIndex = 2;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Anchor = AnchorStyles.None;
+            btnSalir.BackColor = Color.FromArgb(176, 25, 29);
+            btnSalir.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSalir.ForeColor = SystemColors.ControlLightLight;
+            btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSalir.Location = new Point(33, 500);
+            btnSalir.Margin = new Padding(4, 3, 4, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(238, 50);
+            btnSalir.TabIndex = 16;
+            btnSalir.Tag = "Cerrar Sesión";
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnCerrarSesion
             // 
@@ -218,6 +236,7 @@
             btnPerfil.Size = new Size(84, 46);
             btnPerfil.TabIndex = 4;
             btnPerfil.UseVisualStyleBackColor = true;
+            btnPerfil.Click += btnPerfil_Click;
             // 
             // btnNotificacion
             // 
@@ -235,12 +254,12 @@
             // pnlLogo
             // 
             pnlLogo.Controls.Add(LabNombre);
-            pnlLogo.Controls.Add(label1);
+            pnlLogo.Controls.Add(txtCarnet);
             pnlLogo.Dock = DockStyle.Top;
             pnlLogo.Location = new Point(0, 0);
             pnlLogo.Margin = new Padding(4, 3, 4, 3);
             pnlLogo.Name = "pnlLogo";
-            pnlLogo.Size = new Size(767, 46);
+            pnlLogo.Size = new Size(767, 75);
             pnlLogo.TabIndex = 2;
             // 
             // LabNombre
@@ -255,16 +274,16 @@
             LabNombre.TabIndex = 1;
             LabNombre.Text = " ";
             // 
-            // label1
+            // txtCarnet
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(9, 9);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(129, 19);
-            label1.TabIndex = 0;
-            label1.Text = "Bienvenido/a: ";
+            txtCarnet.AutoSize = true;
+            txtCarnet.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCarnet.Location = new Point(0, 0);
+            txtCarnet.Margin = new Padding(4, 0, 4, 0);
+            txtCarnet.Name = "txtCarnet";
+            txtCarnet.Size = new Size(129, 19);
+            txtCarnet.TabIndex = 0;
+            txtCarnet.Text = "Bienvenido/a: ";
             // 
             // pnlContenedor
             // 
@@ -274,23 +293,6 @@
             pnlContenedor.Name = "pnlContenedor";
             pnlContenedor.Size = new Size(767, 516);
             pnlContenedor.TabIndex = 4;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Anchor = AnchorStyles.None;
-            btnSalir.BackColor = Color.FromArgb(176, 25, 29);
-            btnSalir.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSalir.ForeColor = SystemColors.ControlLightLight;
-            btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSalir.Location = new Point(33, 500);
-            btnSalir.Margin = new Padding(4, 3, 4, 3);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(238, 50);
-            btnSalir.TabIndex = 16;
-            btnSalir.Tag = "Cerrar Sesión";
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = false;
-            btnSalir.Click += btnSalir_Click;
             // 
             // FrmSisAd
             // 
@@ -328,7 +330,7 @@
         private Button btnEnviarMensaje;
         private Button btnEliModi;
         private Button btnDetalles;
-        private Label label1;
+        private Label txtCarnet;
         private PictureBox pictureBox1;
         private Label LabNombre;
         private Button btnCerrarSesion;

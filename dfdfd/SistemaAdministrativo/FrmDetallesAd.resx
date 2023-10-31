@@ -117,14 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblDetalles.Text" xml:space="preserve">
-    <value>Bienvenido al apartado "Detalles". Aquí podrá visualizar los detalles de todos los alumnos
-que se han registrado en las horas sociales en la plataforma. Solo podrá visualizar sus
-detalles ingresados. Si desea modificar y/o eliminar debe ir al botón "Eliminar/Modificar" 
-para su edición pertinente. </value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAABmpJREFUeF7tWnloHFUYH+8L1NYm82b3vVmoQTB4QdXi9Ycg1gNFEKp/aBEPxGoV

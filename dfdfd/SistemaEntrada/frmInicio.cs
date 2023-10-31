@@ -92,15 +92,7 @@ namespace Login
 
             if (usuario != null)
             {
-                MessageBox.Show("Credenciales Correctas", "Horas Sociales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Las credenciales son válidas, abre el formulario de menú
-
-                //menu.UsuarioActual = usuario;
-                if (usuario.NivelUsuario == 2)
-                {
-                    MessageBox.Show("Usuario Nivel 2", "Horas Sociales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
+                //Abrimos nuestro formulario principal
                 FrmSisAd frmMenu = new FrmSisAd();
                 //Mandamos informacion de usuario a nuestro metodo ubicado en el fomulario FrmSisad 
                 frmMenu.usuarioActual = usuario;
