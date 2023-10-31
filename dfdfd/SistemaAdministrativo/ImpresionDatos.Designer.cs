@@ -29,81 +29,82 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImpresionDatos));
-            this.pnlImprimir = new System.Windows.Forms.Panel();
-            this.pnlHojaAImprimir = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlImprimir.SuspendLayout();
-            this.SuspendLayout();
+            pnlImprimir = new Panel();
+            label1 = new Label();
+            btnImprimir = new Button();
+            pnlHojaImprimir = new FlowLayoutPanel();
+            pnlImprimir.SuspendLayout();
+            SuspendLayout();
             // 
             // pnlImprimir
             // 
-            this.pnlImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlImprimir.BackgroundImage")));
-            this.pnlImprimir.Controls.Add(this.label1);
-            this.pnlImprimir.Controls.Add(this.btnImprimir);
-            this.pnlImprimir.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlImprimir.Location = new System.Drawing.Point(502, 0);
-            this.pnlImprimir.Name = "pnlImprimir";
-            this.pnlImprimir.Size = new System.Drawing.Size(352, 567);
-            this.pnlImprimir.TabIndex = 0;
-            // 
-            // pnlHojaAImprimir
-            // 
-            this.pnlHojaAImprimir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHojaAImprimir.Location = new System.Drawing.Point(0, 0);
-            this.pnlHojaAImprimir.Name = "pnlHojaAImprimir";
-            this.pnlHojaAImprimir.Size = new System.Drawing.Size(502, 567);
-            this.pnlHojaAImprimir.TabIndex = 1;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimir.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(86, 353);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(191, 75);
-            this.btnImprimir.TabIndex = 0;
-            this.btnImprimir.Text = "        Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            pnlImprimir.BackgroundImage = (Image)resources.GetObject("pnlImprimir.BackgroundImage");
+            pnlImprimir.Controls.Add(label1);
+            pnlImprimir.Controls.Add(btnImprimir);
+            pnlImprimir.Dock = DockStyle.Right;
+            pnlImprimir.Location = new Point(585, 0);
+            pnlImprimir.Margin = new Padding(4, 3, 4, 3);
+            pnlImprimir.Name = "pnlImprimir";
+            pnlImprimir.Size = new Size(411, 654);
+            pnlImprimir.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 180);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(337, 54);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Bienvenido a la última acción como Administrador. \r\nAquí encontrará la forma de i" +
-    "mprimir la boleta\r\nde Hora Social de cada estudiante. ";
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(7, 208);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(337, 54);
+            label1.TabIndex = 1;
+            label1.Text = "Bienvenido a la última acción como Administrador. \r\nAquí encontrará la forma de imprimir la boleta\r\nde Hora Social de cada estudiante. ";
+            // 
+            // btnImprimir
+            // 
+            btnImprimir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnImprimir.Font = new Font("Tahoma", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnImprimir.Image = (Image)resources.GetObject("btnImprimir.Image");
+            btnImprimir.ImageAlign = ContentAlignment.MiddleLeft;
+            btnImprimir.Location = new Point(100, 407);
+            btnImprimir.Margin = new Padding(4, 3, 4, 3);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(223, 87);
+            btnImprimir.TabIndex = 0;
+            btnImprimir.Text = "        Imprimir";
+            btnImprimir.UseVisualStyleBackColor = true;
+            btnImprimir.Click += btnImprimir_Click;
+            // 
+            // pnlHojaImprimir
+            // 
+            pnlHojaImprimir.Dock = DockStyle.Fill;
+            pnlHojaImprimir.Location = new Point(0, 0);
+            pnlHojaImprimir.Margin = new Padding(4, 3, 4, 3);
+            pnlHojaImprimir.Name = "pnlHojaImprimir";
+            pnlHojaImprimir.Size = new Size(585, 654);
+            pnlHojaImprimir.TabIndex = 1;
             // 
             // ImpresionDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 567);
-            this.Controls.Add(this.pnlHojaAImprimir);
-            this.Controls.Add(this.pnlImprimir);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ImpresionDatos";
-            this.Text = "Impresion de Datos";
-            this.pnlImprimir.ResumeLayout(false);
-            this.pnlImprimir.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(996, 654);
+            Controls.Add(pnlHojaImprimir);
+            Controls.Add(pnlImprimir);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "ImpresionDatos";
+            Text = "Impresion de Datos";
+            pnlImprimir.ResumeLayout(false);
+            pnlImprimir.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlImprimir;
-        private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.FlowLayoutPanel pnlHojaAImprimir;
-        private System.Windows.Forms.Label label1;
+        private Panel pnlImprimir;
+        private Button btnImprimir;
+        private FlowLayoutPanel pnlHojaImprimir;
+        private Label label1;
     }
 }
