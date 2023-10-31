@@ -104,6 +104,8 @@ namespace Login
                 FrmSisAd frmMenu = new FrmSisAd();
                 //Mandamos informacion de usuario a nuestro metodo ubicado en el fomulario FrmSisad 
                 frmMenu.usuarioActual = usuario;
+                compartir.carnetIngresado = txtCarnet.Text;
+                compartir.Nivelusuario = usuario.NivelUsuario;
                 Hide();
                 frmMenu.Show();
             }
@@ -120,5 +122,12 @@ namespace Login
                 btn.ForeColor = ColorLetra;
             }
         }
+    }
+
+    //Necesario para poder tener acceso desde los demas formularios
+    public static class compartir 
+    {
+        public static string carnetIngresado { get; set; }
+        public static int Nivelusuario { get; set; }
     }
 }

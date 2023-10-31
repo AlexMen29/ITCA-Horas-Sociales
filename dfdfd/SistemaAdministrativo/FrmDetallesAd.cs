@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dfdfd.bdSocial;
+using Login;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,35 +15,38 @@ namespace SistemaAdministrativo
 {
     public partial class FrmDetallesAd : Form
     {
+
+        ProyectoSocialContext context = new ProyectoSocialContext();
         public FrmDetallesAd()
         {
             InitializeComponent();
-            CargarDatosEnDataGridViem();
         }
 
         private void CargarDatosEnDataGridViem()
         {
-
-            string cadenaConexion = "Data Source = DESKTOP-E4D98NB\\SQLEXPRESS; Initial Catalog= proyectoSocial; Integrated Security= True";
-            DataTable dataTable = new DataTable();
-
-            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            int nivel = compartir.Nivelusuario;
+            if (nivel == 1)
             {
-                connection.Open();
 
-                string consulta = "SELECT * FROM dbo.DatosAlumnos";
+                //metodo que devuelve el carnet actual (es decir el alumno)
+                string carnet = compartir.carnetIngresado;
 
-                using (SqlCommand command = new SqlCommand(consulta, connection))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    adapter.Fill(dataTable);
-                }
+                // Filtrar los datos por el carnet especificado
+                var datosAlumno = context.horasSociales.Where(h => h.Carnet == carnet).ToList();
+                gridDatosAlumnos.DataSource = datosAlumno;
+
+
+
+
+                //gridDatosAlumnos.Columns[1].Visible = false;
+                //gridDatosAlumnos.Columns[2].Visible = false;
+            }
+            else
+            {
+                gridDatosAlumnos.DataSource = context.horasSociales.ToList();
+
             }
 
-            gridDatosAlumnos.DataSource = dataTable;
-            gridDatosAlumnos.Columns[1].Visible = false;
-            gridDatosAlumnos.Columns[2].Visible = false;
-            
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -57,6 +62,11 @@ namespace SistemaAdministrativo
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void FrmDetallesAd_Load(object sender, EventArgs e)
+        {
+            CargarDatosEnDataGridViem();
         }
     }
 }

@@ -36,7 +36,6 @@
             pnlDadosAdmi = new Panel();
             gridDatosAd = new DataGridView();
             pnlInicio.SuspendLayout();
-            pnlInformacionAd.SuspendLayout();
             pnlDadosAdmi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridDatosAd).BeginInit();
             SuspendLayout();
@@ -68,7 +67,6 @@
             // 
             pnlInformacionAd.AutoScroll = true;
             pnlInformacionAd.BackgroundImage = (Image)resources.GetObject("pnlInformacionAd.BackgroundImage");
-            pnlInformacionAd.Controls.Add(label1);
             pnlInformacionAd.Dock = DockStyle.Left;
             pnlInformacionAd.Location = new Point(0, 37);
             pnlInformacionAd.Margin = new Padding(4, 3, 4, 3);
@@ -80,16 +78,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(13, 250);
+            label1.Location = new Point(53, 102);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(199, 48);
+            label1.Size = new Size(306, 24);
             label1.TabIndex = 6;
-            label1.Text = "    DATOS DEL \r\nADMINISTRADOR  ";
+            label1.Text = "Dani aqui el diseño del formulario";
             // 
             // pnlDadosAdmi
             // 
             pnlDadosAdmi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlDadosAdmi.Controls.Add(label1);
             pnlDadosAdmi.Controls.Add(gridDatosAd);
             pnlDadosAdmi.Location = new Point(233, 175);
             pnlDadosAdmi.Margin = new Padding(4, 3, 4, 3);
@@ -128,9 +127,8 @@
             Text = "FrmDatosInicio";
             pnlInicio.ResumeLayout(false);
             pnlInicio.PerformLayout();
-            pnlInformacionAd.ResumeLayout(false);
-            pnlInformacionAd.PerformLayout();
             pnlDadosAdmi.ResumeLayout(false);
+            pnlDadosAdmi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridDatosAd).EndInit();
             ResumeLayout(false);
         }
