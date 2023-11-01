@@ -40,11 +40,11 @@
             txtContraseña = new TextBox();
             label2 = new Label();
             txtCarnet = new TextBox();
-            txtCupHoras = new TextBox();
-            label7 = new Label();
             btnRegistrar = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            txtGrupo = new TextBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -165,26 +165,6 @@
             txtCarnet.Size = new Size(212, 23);
             txtCarnet.TabIndex = 31;
             // 
-            // txtCupHoras
-            // 
-            txtCupHoras.Location = new Point(614, 527);
-            txtCupHoras.Margin = new Padding(4, 3, 4, 3);
-            txtCupHoras.Name = "txtCupHoras";
-            txtCupHoras.Size = new Size(212, 23);
-            txtCupHoras.TabIndex = 30;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(430, 519);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(157, 31);
-            label7.TabIndex = 29;
-            label7.Text = "Cupo Horas";
-            // 
             // btnRegistrar
             // 
             btnRegistrar.Anchor = AnchorStyles.None;
@@ -223,6 +203,26 @@
             label1.TabIndex = 26;
             label1.Text = "Regístrate";
             // 
+            // txtGrupo
+            // 
+            txtGrupo.Location = new Point(614, 523);
+            txtGrupo.Margin = new Padding(4, 3, 4, 3);
+            txtGrupo.Name = "txtGrupo";
+            txtGrupo.Size = new Size(212, 23);
+            txtGrupo.TabIndex = 42;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(353, 521);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(234, 31);
+            label8.TabIndex = 41;
+            label8.Text = "Nombre de Grupo";
+            // 
             // RegistroDocente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -230,6 +230,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1283, 715);
+            Controls.Add(txtGrupo);
+            Controls.Add(label8);
             Controls.Add(txtCorreo);
             Controls.Add(txtApellidos);
             Controls.Add(label6);
@@ -240,8 +242,6 @@
             Controls.Add(txtContraseña);
             Controls.Add(label2);
             Controls.Add(txtCarnet);
-            Controls.Add(txtCupHoras);
-            Controls.Add(label7);
             Controls.Add(btnRegistrar);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
@@ -268,10 +268,10 @@
         private TextBox txtContraseña;
         private Label label2;
         private TextBox txtCarnet;
-        private TextBox txtCupHoras;
-        private Label label7;
         private Button btnRegistrar;
         private PictureBox pictureBox1;
         private Label label1;
+        private TextBox txtGrupo;
+        private Label label8;
     }
 }

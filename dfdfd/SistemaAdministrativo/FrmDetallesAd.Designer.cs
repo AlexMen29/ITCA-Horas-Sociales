@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetallesAd));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pnlDetallesInfo = new Panel();
             panel1 = new Panel();
             panelDetallesAlumnos = new Panel();
@@ -160,6 +160,7 @@
             // PanelElementosBusqueda
             // 
             PanelElementosBusqueda.BackColor = Color.White;
+            PanelElementosBusqueda.BorderStyle = BorderStyle.Fixed3D;
             PanelElementosBusqueda.Controls.Add(btnBuscar);
             PanelElementosBusqueda.Controls.Add(btnLimpiar);
             PanelElementosBusqueda.Controls.Add(pictureBuscar);
@@ -225,38 +226,38 @@
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Location = new Point(268, 15);
             label9.Name = "label9";
-            label9.Size = new Size(437, 45);
+            label9.Size = new Size(430, 45);
             label9.TabIndex = 2;
-            label9.Text = "Registro de Horas Sociales";
+            label9.Text = "Detalles de Horas Sociales";
             // 
             // gridDatosAlumnos
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            gridDatosAlumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            gridDatosAlumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             gridDatosAlumnos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gridDatosAlumnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridDatosAlumnos.BackgroundColor = Color.White;
             gridDatosAlumnos.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             gridDatosAlumnos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            gridDatosAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridDatosAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridDatosAlumnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            gridDatosAlumnos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gridDatosAlumnos.DefaultCellStyle = dataGridViewCellStyle3;
             gridDatosAlumnos.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridDatosAlumnos.EnableHeadersVisualStyles = false;
             gridDatosAlumnos.GridColor = Color.Firebrick;

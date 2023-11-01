@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using dfdfd.bdSocial;
-
+using Login;
 
 namespace SistemaAdministrativo
 {
@@ -27,11 +27,14 @@ namespace SistemaAdministrativo
 
         private void CargarTabla()
         {
+            var datosAlumno = context.DatosAlumnos.Where(h => h.Grupo == compartir.usuario.Grupo).ToList();
+
             dataGridEliminarModificar.DataSource = null;
-            dataGridEliminarModificar.DataSource = context.DatosAlumnos.ToList();
+            dataGridEliminarModificar.DataSource = datosAlumno;
         }
         private void CargarDatosEnDataGridViem()
         {
+
             dataGridEliminarModificar.DataSource = context.DatosAlumnos.ToList();
             dataGridEliminarModificar.DataBindingComplete += (s, e) =>
             {

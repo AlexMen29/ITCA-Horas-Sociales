@@ -56,6 +56,15 @@ namespace Login
 
         private void RegistroUniversitarios_Load(object sender, EventArgs e)
         {
+            var options = context.DatosAlumnos.Select(o => o.Encargado).ToList();
+
+
+
+            foreach (var elementos in options)
+            {
+                if (elementos != "null")
+                    txtEncargado.Items.Add(elementos);
+            }
 
         }
 
@@ -70,8 +79,9 @@ namespace Login
             datos.Apellidos = txtApellidos.Text;
             datos.Encargado = txtEncargado.Text;
             datos.TipoEstudio = txtTipoEstudio.Text;
-            datos.Correo= txtCorreo.Text;
-            datos.Grupo = "RS01";
+            datos.Correo = txtCorreo.Text;
+            var docente = context.DatosAlumnos.FirstOrDefault(u => u.Encargado == txtEncargado.Text);
+            datos.Grupo = docente.Grupo;
 
             context.Add(datos);
             if (context.SaveChanges() == 1)
@@ -85,6 +95,7 @@ namespace Login
                 MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+
 
         }
     }

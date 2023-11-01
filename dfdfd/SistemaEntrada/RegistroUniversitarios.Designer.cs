@@ -40,13 +40,13 @@
             txtContraseña = new TextBox();
             label2 = new Label();
             txtCarnet = new TextBox();
-            txtEncargado = new TextBox();
             label7 = new Label();
             btnRegistrar = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             txtTipoEstudio = new ComboBox();
             label8 = new Label();
+            txtEncargado = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -167,14 +167,6 @@
             txtCarnet.Size = new Size(212, 23);
             txtCarnet.TabIndex = 47;
             // 
-            // txtEncargado
-            // 
-            txtEncargado.Location = new Point(627, 492);
-            txtEncargado.Margin = new Padding(4, 3, 4, 3);
-            txtEncargado.Name = "txtEncargado";
-            txtEncargado.Size = new Size(212, 23);
-            txtEncargado.TabIndex = 46;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -228,6 +220,7 @@
             // 
             // txtTipoEstudio
             // 
+            txtTipoEstudio.DropDownStyle = ComboBoxStyle.DropDownList;
             txtTipoEstudio.FormattingEnabled = true;
             txtTipoEstudio.Items.AddRange(new object[] { "Técnico", "Ingeniería" });
             txtTipoEstudio.Location = new Point(628, 540);
@@ -247,6 +240,16 @@
             label8.TabIndex = 57;
             label8.Text = "Tipo De Estudio";
             // 
+            // txtEncargado
+            // 
+            txtEncargado.BackColor = SystemColors.InactiveBorder;
+            txtEncargado.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtEncargado.FormattingEnabled = true;
+            txtEncargado.Location = new Point(628, 485);
+            txtEncargado.Name = "txtEncargado";
+            txtEncargado.Size = new Size(211, 23);
+            txtEncargado.TabIndex = 59;
+            // 
             // RegistroUniversitarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -254,6 +257,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1283, 715);
+            Controls.Add(txtEncargado);
             Controls.Add(txtTipoEstudio);
             Controls.Add(label8);
             Controls.Add(txtCorreo);
@@ -266,7 +270,6 @@
             Controls.Add(txtContraseña);
             Controls.Add(label2);
             Controls.Add(txtCarnet);
-            Controls.Add(txtEncargado);
             Controls.Add(label7);
             Controls.Add(btnRegistrar);
             Controls.Add(pictureBox1);
@@ -294,12 +297,12 @@
         private TextBox txtContraseña;
         private Label label2;
         private TextBox txtCarnet;
-        private TextBox txtEncargado;
         private Label label7;
         private Button btnRegistrar;
         private PictureBox pictureBox1;
         private Label label1;
         private ComboBox txtTipoEstudio;
         private Label label8;
+        private ComboBox txtEncargado;
     }
 }

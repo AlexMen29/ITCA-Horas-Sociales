@@ -61,7 +61,7 @@ namespace SistemaAdministrativo
         }
         private void FrmSisAd_Load(object sender, EventArgs e)
         {
-            LabNombre.Text = usuarioActual.Nombres + " " + usuarioActual.Apellidos;
+           // LabNombre.Text = usuarioActual.Nombres + " " + usuarioActual.Apellidos;
         }
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -140,7 +140,8 @@ namespace SistemaAdministrativo
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{usuarioActual.Carnet}\n--------------------\n{usuarioActual.Nombres}\n{usuarioActual.Apellidos}\n{usuarioActual.Correo}","Detalles de Sesión");
+            MessageBox.Show($"eres{compartir.usuario.Apellidos}");
+            //MessageBox.Show($"{usuarioActual.Carnet}\n--------------------\n{usuarioActual.Nombres}\n{usuarioActual.Apellidos}\n{usuarioActual.Correo}","Detalles de Sesión");
         }
     }
 

@@ -96,6 +96,7 @@ namespace Login
                 FrmSisAd frmMenu = new FrmSisAd();
                 //Mandamos informacion de usuario a nuestro metodo ubicado en el fomulario FrmSisad 
                 frmMenu.usuarioActual = usuario;
+                compartir.usuario = usuario;
                 compartir.carnetIngresado = txtCarnet.Text;
                 compartir.Nivelusuario = usuario.NivelUsuario;
                 Hide();
@@ -121,5 +122,7 @@ namespace Login
     {
         public static string carnetIngresado { get; set; }
         public static int Nivelusuario { get; set; }
+
+        public static DatosAlumno usuario { get; set; }
     }
 }
