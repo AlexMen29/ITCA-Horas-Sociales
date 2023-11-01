@@ -19,6 +19,8 @@ namespace SistemaAdministrativo
         {
             InitializeComponent();
             CargarDatosEnDataGridViem();
+            //Con esta linea podemos evitar que los usuarios ingresen texto en la comboBox
+            boxHoras.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void CargarDatosEnDataGridViem()
