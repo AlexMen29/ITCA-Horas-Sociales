@@ -32,12 +32,16 @@
             pnlInicio = new Panel();
             lblInicioFrmInicio = new Label();
             pnlInformacionAd = new Panel();
-            label1 = new Label();
             pnlDadosAdmi = new Panel();
-            gridDatosAd = new DataGridView();
+            boxHoras = new ComboBox();
+            label4 = new Label();
+            txtActividad = new TextBox();
+            label3 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            label2 = new Label();
+            label1 = new Label();
             pnlInicio.SuspendLayout();
             pnlDadosAdmi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridDatosAd).BeginInit();
             SuspendLayout();
             // 
             // pnlInicio
@@ -74,43 +78,96 @@
             pnlInformacionAd.Size = new Size(233, 556);
             pnlInformacionAd.TabIndex = 3;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(53, 102);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(306, 24);
-            label1.TabIndex = 6;
-            label1.Text = "Dani aqui el diseño del formulario";
-            // 
             // pnlDadosAdmi
             // 
             pnlDadosAdmi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlDadosAdmi.Controls.Add(boxHoras);
+            pnlDadosAdmi.Controls.Add(label4);
+            pnlDadosAdmi.Controls.Add(txtActividad);
+            pnlDadosAdmi.Controls.Add(label3);
+            pnlDadosAdmi.Controls.Add(dateTimePicker1);
+            pnlDadosAdmi.Controls.Add(label2);
             pnlDadosAdmi.Controls.Add(label1);
-            pnlDadosAdmi.Controls.Add(gridDatosAd);
             pnlDadosAdmi.Location = new Point(233, 175);
             pnlDadosAdmi.Margin = new Padding(4, 3, 4, 3);
             pnlDadosAdmi.Name = "pnlDadosAdmi";
             pnlDadosAdmi.Size = new Size(687, 415);
             pnlDadosAdmi.TabIndex = 4;
             // 
-            // gridDatosAd
+            // boxHoras
             // 
-            gridDatosAd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            gridDatosAd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridDatosAd.Dock = DockStyle.Fill;
-            gridDatosAd.EditMode = DataGridViewEditMode.EditProgrammatically;
-            gridDatosAd.Location = new Point(0, 0);
-            gridDatosAd.MultiSelect = false;
-            gridDatosAd.Name = "gridDatosAd";
-            gridDatosAd.ReadOnly = true;
-            gridDatosAd.RowTemplate.Height = 25;
-            gridDatosAd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridDatosAd.Size = new Size(687, 415);
-            gridDatosAd.TabIndex = 0;
-            gridDatosAd.CellContentClick += gridDatosAd_CellContentClick;
+            boxHoras.Anchor = AnchorStyles.None;
+            boxHoras.FormattingEnabled = true;
+            boxHoras.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8" });
+            boxHoras.Location = new Point(296, 336);
+            boxHoras.Name = "boxHoras";
+            boxHoras.Size = new Size(81, 23);
+            boxHoras.TabIndex = 19;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(219, 300);
+            label4.Name = "label4";
+            label4.Size = new Size(262, 19);
+            label4.TabIndex = 18;
+            label4.Text = "Ingrese el numero de horas realizadas";
+            // 
+            // txtActividad
+            // 
+            txtActividad.Anchor = AnchorStyles.None;
+            txtActividad.Location = new Point(211, 244);
+            txtActividad.Name = "txtActividad";
+            txtActividad.Size = new Size(280, 23);
+            txtActividad.TabIndex = 17;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.Red;
+            label3.Location = new Point(243, 212);
+            label3.Name = "label3";
+            label3.Size = new Size(210, 19);
+            label3.TabIndex = 16;
+            label3.Text = "Ingresar la actividad realizada";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Anchor = AnchorStyles.None;
+            dateTimePicker1.Location = new Point(235, 140);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(216, 23);
+            dateTimePicker1.TabIndex = 15;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Red;
+            label2.Location = new Point(203, 108);
+            label2.Name = "label2";
+            label2.Size = new Size(286, 19);
+            label2.TabIndex = 14;
+            label2.Text = "Ingresar la fecha de la actividad realizada";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft JhengHei UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkOrange;
+            label1.Location = new Point(195, 60);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(289, 30);
+            label1.TabIndex = 13;
+            label1.Text = "Registrar Horas Sociales";
             // 
             // FrmDatosInicio
             // 
@@ -129,7 +186,6 @@
             pnlInicio.PerformLayout();
             pnlDadosAdmi.ResumeLayout(false);
             pnlDadosAdmi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gridDatosAd).EndInit();
             ResumeLayout(false);
         }
 
@@ -138,7 +194,6 @@
         private Panel pnlInicio;
         private Label lblInicioFrmInicio;
         private Panel pnlInformacionAd;
-        private Label label1;
         private Label lblTelefonoAd;
         private Label lblDepartamentoAd;
         private Label lblCorreoAd;
@@ -152,6 +207,12 @@
         private TextBox txtShowCarnet;
         private TextBox txtShowLastName;
         private TextBox txtShowName;
-        private DataGridView gridDatosAd;
+        private ComboBox boxHoras;
+        private Label label4;
+        private TextBox txtActividad;
+        private Label label3;
+        private DateTimePicker dateTimePicker1;
+        private Label label2;
+        private Label label1;
     }
 }
