@@ -1,5 +1,6 @@
 ﻿using dfdfd.bdSocial;
 using Login;
+using ProyectoSocial.SistemaAdministrativo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,7 +62,15 @@ namespace SistemaAdministrativo
         }
         private void FrmSisAd_Load(object sender, EventArgs e)
         {
-           // LabNombre.Text = usuarioActual.Nombres + " " + usuarioActual.Apellidos;
+
+             LabNombre.Text = usuarioActual.Nombres + " " + usuarioActual.Apellidos;
+
+            if (compartir.Nivelusuario == 1)
+            {
+                btnEstudiantes.Visible = false;
+                btnEnviarMensaje.Visible = false;
+                btnEliModi.Visible = false;
+            }
         }
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -142,6 +151,12 @@ namespace SistemaAdministrativo
         {
             MessageBox.Show($"eres{compartir.usuario.Apellidos}");
             //MessageBox.Show($"{usuarioActual.Carnet}\n--------------------\n{usuarioActual.Nombres}\n{usuarioActual.Apellidos}\n{usuarioActual.Correo}","Detalles de Sesión");
+        }
+
+        private void btnEstudiantes_Click(object sender, EventArgs e)
+        {
+            frmEstudiantes us = new frmEstudiantes();
+            AbrirForm(us);
         }
     }
 

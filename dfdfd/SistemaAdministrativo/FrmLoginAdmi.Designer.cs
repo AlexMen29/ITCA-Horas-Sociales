@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSisAd));
             Label txtCarnet;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSisAd));
             PanelOpciones = new Panel();
+            btnEstudiantes = new Button();
             btnSalir = new Button();
             btnCerrarSesion = new Button();
             pictureBox1 = new PictureBox();
@@ -52,11 +53,23 @@
             pnlLogo.SuspendLayout();
             SuspendLayout();
             // 
+            // txtCarnet
+            // 
+            txtCarnet.AutoSize = true;
+            txtCarnet.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCarnet.Location = new Point(0, 0);
+            txtCarnet.Margin = new Padding(4, 0, 4, 0);
+            txtCarnet.Name = "txtCarnet";
+            txtCarnet.Size = new Size(129, 19);
+            txtCarnet.TabIndex = 0;
+            txtCarnet.Text = "Bienvenido/a: ";
+            // 
             // PanelOpciones
             // 
             PanelOpciones.BackColor = Color.FromArgb(206, 144, 17);
             PanelOpciones.BackgroundImage = (Image)resources.GetObject("PanelOpciones.BackgroundImage");
             PanelOpciones.BackgroundImageLayout = ImageLayout.Stretch;
+            PanelOpciones.Controls.Add(btnEstudiantes);
             PanelOpciones.Controls.Add(btnSalir);
             PanelOpciones.Controls.Add(btnCerrarSesion);
             PanelOpciones.Controls.Add(pictureBox1);
@@ -69,17 +82,34 @@
             PanelOpciones.Location = new Point(0, 0);
             PanelOpciones.Margin = new Padding(4, 3, 4, 3);
             PanelOpciones.Name = "PanelOpciones";
-            PanelOpciones.Size = new Size(271, 562);
+            PanelOpciones.Size = new Size(271, 695);
             PanelOpciones.TabIndex = 2;
+            // 
+            // btnEstudiantes
+            // 
+            btnEstudiantes.Anchor = AnchorStyles.None;
+            btnEstudiantes.BackColor = Color.FromArgb(176, 25, 29);
+            btnEstudiantes.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEstudiantes.ForeColor = SystemColors.ControlLightLight;
+            btnEstudiantes.Image = (Image)resources.GetObject("btnEstudiantes.Image");
+            btnEstudiantes.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEstudiantes.Location = new Point(33, 376);
+            btnEstudiantes.Margin = new Padding(4, 3, 4, 3);
+            btnEstudiantes.Name = "btnEstudiantes";
+            btnEstudiantes.Size = new Size(238, 55);
+            btnEstudiantes.TabIndex = 17;
+            btnEstudiantes.Text = "Estudiantes";
+            btnEstudiantes.UseVisualStyleBackColor = false;
+            btnEstudiantes.Click += btnEstudiantes_Click;
             // 
             // btnSalir
             // 
-            btnSalir.Anchor = AnchorStyles.None;
+            btnSalir.Anchor = AnchorStyles.Bottom;
             btnSalir.BackColor = Color.FromArgb(176, 25, 29);
             btnSalir.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnSalir.ForeColor = SystemColors.ControlLightLight;
             btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSalir.Location = new Point(33, 500);
+            btnSalir.Location = new Point(33, 633);
             btnSalir.Margin = new Padding(4, 3, 4, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(238, 50);
@@ -91,13 +121,13 @@
             // 
             // btnCerrarSesion
             // 
-            btnCerrarSesion.Anchor = AnchorStyles.None;
+            btnCerrarSesion.Anchor = AnchorStyles.Bottom;
             btnCerrarSesion.BackColor = Color.FromArgb(176, 25, 29);
             btnCerrarSesion.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.ControlLightLight;
             btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
             btnCerrarSesion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCerrarSesion.Location = new Point(33, 439);
+            btnCerrarSesion.Location = new Point(33, 572);
             btnCerrarSesion.Margin = new Padding(4, 3, 4, 3);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(238, 50);
@@ -112,7 +142,7 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(91, 46);
+            pictureBox1.Location = new Point(93, 88);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(131, 85);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -127,7 +157,7 @@
             btnHojaSocial.ForeColor = SystemColors.ControlLightLight;
             btnHojaSocial.Image = (Image)resources.GetObject("btnHojaSocial.Image");
             btnHojaSocial.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHojaSocial.Location = new Point(33, 378);
+            btnHojaSocial.Location = new Point(33, 315);
             btnHojaSocial.Margin = new Padding(4, 3, 4, 3);
             btnHojaSocial.Name = "btnHojaSocial";
             btnHojaSocial.Size = new Size(238, 55);
@@ -146,7 +176,7 @@
             btnEnviarMensaje.ForeColor = SystemColors.ControlLightLight;
             btnEnviarMensaje.Image = (Image)resources.GetObject("btnEnviarMensaje.Image");
             btnEnviarMensaje.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEnviarMensaje.Location = new Point(33, 323);
+            btnEnviarMensaje.Location = new Point(33, 437);
             btnEnviarMensaje.Margin = new Padding(4, 3, 4, 3);
             btnEnviarMensaje.Name = "btnEnviarMensaje";
             btnEnviarMensaje.Size = new Size(238, 55);
@@ -164,7 +194,7 @@
             btnEliModi.ForeColor = SystemColors.ControlLightLight;
             btnEliModi.Image = (Image)resources.GetObject("btnEliModi.Image");
             btnEliModi.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliModi.Location = new Point(33, 268);
+            btnEliModi.Location = new Point(33, 498);
             btnEliModi.Margin = new Padding(4, 3, 4, 3);
             btnEliModi.Name = "btnEliModi";
             btnEliModi.Size = new Size(238, 55);
@@ -183,7 +213,7 @@
             btnDetalles.ForeColor = SystemColors.ControlLightLight;
             btnDetalles.Image = (Image)resources.GetObject("btnDetalles.Image");
             btnDetalles.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDetalles.Location = new Point(33, 212);
+            btnDetalles.Location = new Point(33, 254);
             btnDetalles.Margin = new Padding(4, 3, 4, 3);
             btnDetalles.Name = "btnDetalles";
             btnDetalles.Size = new Size(238, 55);
@@ -202,7 +232,7 @@
             btnInicio.ForeColor = SystemColors.ButtonHighlight;
             btnInicio.Image = (Image)resources.GetObject("btnInicio.Image");
             btnInicio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnInicio.Location = new Point(33, 151);
+            btnInicio.Location = new Point(33, 193);
             btnInicio.Margin = new Padding(4, 3, 4, 3);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(238, 55);
@@ -274,31 +304,20 @@
             LabNombre.TabIndex = 1;
             LabNombre.Text = " ";
             // 
-            // txtCarnet
-            // 
-            txtCarnet.AutoSize = true;
-            txtCarnet.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtCarnet.Location = new Point(0, 0);
-            txtCarnet.Margin = new Padding(4, 0, 4, 0);
-            txtCarnet.Name = "txtCarnet";
-            txtCarnet.Size = new Size(129, 19);
-            txtCarnet.TabIndex = 0;
-            txtCarnet.Text = "Bienvenido/a: ";
-            // 
             // pnlContenedor
             // 
             pnlContenedor.Dock = DockStyle.Fill;
             pnlContenedor.Location = new Point(271, 46);
             pnlContenedor.Margin = new Padding(4, 3, 4, 3);
             pnlContenedor.Name = "pnlContenedor";
-            pnlContenedor.Size = new Size(767, 516);
+            pnlContenedor.Size = new Size(767, 649);
             pnlContenedor.TabIndex = 4;
             // 
             // FrmSisAd
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1038, 562);
+            ClientSize = new Size(1038, 695);
             Controls.Add(pnlContenedor);
             Controls.Add(PanelMenu);
             Controls.Add(PanelOpciones);
@@ -335,6 +354,7 @@
         private Label LabNombre;
         private Button btnCerrarSesion;
         private Button btnSalir;
+        private Button btnEstudiantes;
     }
 }
 
