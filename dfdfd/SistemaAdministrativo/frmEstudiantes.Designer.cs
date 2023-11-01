@@ -33,6 +33,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label9 = new Label();
             gridEstudiantes = new DataGridView();
+            LabEstudiantes = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).BeginInit();
             SuspendLayout();
             // 
@@ -89,11 +91,37 @@
             gridEstudiantes.Size = new Size(451, 319);
             gridEstudiantes.TabIndex = 3;
             // 
+            // LabEstudiantes
+            // 
+            LabEstudiantes.AutoSize = true;
+            LabEstudiantes.BackColor = Color.FromArgb(205, 144, 19);
+            LabEstudiantes.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            LabEstudiantes.ForeColor = SystemColors.Control;
+            LabEstudiantes.Location = new Point(453, 448);
+            LabEstudiantes.Name = "LabEstudiantes";
+            LabEstudiantes.Size = new Size(19, 30);
+            LabEstudiantes.TabIndex = 9;
+            LabEstudiantes.Text = " ";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(176, 25, 29);
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(226, 448);
+            label1.Name = "label1";
+            label1.Size = new Size(221, 30);
+            label1.TabIndex = 8;
+            label1.Text = "Total de Estudiantes: ";
+            // 
             // frmEstudiantes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(903, 522);
+            Controls.Add(LabEstudiantes);
+            Controls.Add(label1);
             Controls.Add(label9);
             Controls.Add(gridEstudiantes);
             FormBorderStyle = FormBorderStyle.None;
@@ -109,5 +137,7 @@
 
         private Label label9;
         private DataGridView gridEstudiantes;
+        private Label LabEstudiantes;
+        private Label label1;
     }
 }

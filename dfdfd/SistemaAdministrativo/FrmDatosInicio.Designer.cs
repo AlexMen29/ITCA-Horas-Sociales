@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDatosInicio));
             pnlInicio = new Panel();
             lblInicioFrmInicio = new Label();
-            pnlInformacionAd = new Panel();
             pnlDadosAdmi = new Panel();
+            btnBuscar = new Button();
             boxHoras = new ComboBox();
             label4 = new Label();
             txtActividad = new TextBox();
@@ -63,24 +62,14 @@
             lblInicioFrmInicio.Location = new Point(0, 0);
             lblInicioFrmInicio.Margin = new Padding(4, 0, 4, 0);
             lblInicioFrmInicio.Name = "lblInicioFrmInicio";
-            lblInicioFrmInicio.Size = new Size(109, 32);
+            lblInicioFrmInicio.Size = new Size(84, 32);
             lblInicioFrmInicio.TabIndex = 0;
-            lblInicioFrmInicio.Text = "INICIO";
-            // 
-            // pnlInformacionAd
-            // 
-            pnlInformacionAd.AutoScroll = true;
-            pnlInformacionAd.BackgroundImage = (Image)resources.GetObject("pnlInformacionAd.BackgroundImage");
-            pnlInformacionAd.Dock = DockStyle.Left;
-            pnlInformacionAd.Location = new Point(0, 37);
-            pnlInformacionAd.Margin = new Padding(4, 3, 4, 3);
-            pnlInformacionAd.Name = "pnlInformacionAd";
-            pnlInformacionAd.Size = new Size(233, 556);
-            pnlInformacionAd.TabIndex = 3;
+            lblInicioFrmInicio.Text = "-------";
             // 
             // pnlDadosAdmi
             // 
             pnlDadosAdmi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlDadosAdmi.Controls.Add(btnBuscar);
             pnlDadosAdmi.Controls.Add(boxHoras);
             pnlDadosAdmi.Controls.Add(label4);
             pnlDadosAdmi.Controls.Add(txtActividad);
@@ -88,18 +77,31 @@
             pnlDadosAdmi.Controls.Add(dateTimePicker1);
             pnlDadosAdmi.Controls.Add(label2);
             pnlDadosAdmi.Controls.Add(label1);
-            pnlDadosAdmi.Location = new Point(233, 175);
+            pnlDadosAdmi.Location = new Point(0, 43);
             pnlDadosAdmi.Margin = new Padding(4, 3, 4, 3);
             pnlDadosAdmi.Name = "pnlDadosAdmi";
-            pnlDadosAdmi.Size = new Size(687, 415);
+            pnlDadosAdmi.Size = new Size(919, 548);
             pnlDadosAdmi.TabIndex = 4;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Anchor = AnchorStyles.None;
+            btnBuscar.BackColor = Color.FromArgb(176, 25, 29);
+            btnBuscar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscar.ForeColor = SystemColors.ButtonHighlight;
+            btnBuscar.Location = new Point(375, 393);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(165, 40);
+            btnBuscar.TabIndex = 20;
+            btnBuscar.Text = "Guardar";
+            btnBuscar.UseVisualStyleBackColor = false;
             // 
             // boxHoras
             // 
             boxHoras.Anchor = AnchorStyles.None;
             boxHoras.FormattingEnabled = true;
             boxHoras.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8" });
-            boxHoras.Location = new Point(296, 336);
+            boxHoras.Location = new Point(421, 336);
             boxHoras.Name = "boxHoras";
             boxHoras.Size = new Size(81, 23);
             boxHoras.TabIndex = 19;
@@ -108,18 +110,19 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.Red;
-            label4.Location = new Point(219, 300);
+            label4.BackColor = Color.FromArgb(205, 144, 19);
+            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(272, 285);
             label4.Name = "label4";
-            label4.Size = new Size(262, 19);
+            label4.Size = new Size(383, 30);
             label4.TabIndex = 18;
             label4.Text = "Ingrese el numero de horas realizadas";
             // 
             // txtActividad
             // 
             txtActividad.Anchor = AnchorStyles.None;
-            txtActividad.Location = new Point(211, 244);
+            txtActividad.Location = new Point(331, 235);
             txtActividad.Name = "txtActividad";
             txtActividad.Size = new Size(280, 23);
             txtActividad.TabIndex = 17;
@@ -128,18 +131,19 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.Red;
-            label3.Location = new Point(243, 212);
+            label3.BackColor = Color.FromArgb(205, 144, 19);
+            label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(318, 183);
             label3.Name = "label3";
-            label3.Size = new Size(210, 19);
+            label3.Size = new Size(304, 30);
             label3.TabIndex = 16;
             label3.Text = "Ingresar la actividad realizada";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
-            dateTimePicker1.Location = new Point(235, 140);
+            dateTimePicker1.Location = new Point(359, 147);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(216, 23);
             dateTimePicker1.TabIndex = 15;
@@ -148,11 +152,12 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Red;
-            label2.Location = new Point(203, 108);
+            label2.BackColor = Color.FromArgb(205, 144, 19);
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(258, 102);
             label2.Name = "label2";
-            label2.Size = new Size(286, 19);
+            label2.Size = new Size(416, 30);
             label2.TabIndex = 14;
             label2.Text = "Ingresar la fecha de la actividad realizada";
             // 
@@ -160,12 +165,13 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft JhengHei UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.DarkOrange;
-            label1.Location = new Point(195, 60);
+            label1.BackColor = Color.FromArgb(176, 25, 29);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(274, 43);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(289, 30);
+            label1.Size = new Size(381, 45);
             label1.TabIndex = 13;
             label1.Text = "Registrar Horas Sociales";
             // 
@@ -173,10 +179,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(919, 593);
             Controls.Add(pnlDadosAdmi);
-            Controls.Add(pnlInformacionAd);
             Controls.Add(pnlInicio);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
@@ -193,7 +197,6 @@
 
         private Panel pnlInicio;
         private Label lblInicioFrmInicio;
-        private Panel pnlInformacionAd;
         private Label lblTelefonoAd;
         private Label lblDepartamentoAd;
         private Label lblCorreoAd;
@@ -214,5 +217,6 @@
         private DateTimePicker dateTimePicker1;
         private Label label2;
         private Label label1;
+        private Button btnBuscar;
     }
 }

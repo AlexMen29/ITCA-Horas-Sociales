@@ -31,6 +31,14 @@
             Label txtCarnet;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSisAd));
             PanelOpciones = new Panel();
+            pictureBox10 = new PictureBox();
+            pictureBox8 = new PictureBox();
+            pictureBox7 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
             btnEstudiantes = new Button();
             btnSalir = new Button();
             btnCerrarSesion = new Button();
@@ -41,23 +49,32 @@
             btnDetalles = new Button();
             btnInicio = new Button();
             PanelMenu = new Panel();
-            btnPerfil = new Button();
-            btnNotificacion = new Button();
             pnlLogo = new Panel();
+            pictureBox9 = new PictureBox();
             LabNombre = new Label();
             pnlContenedor = new Panel();
             txtCarnet = new Label();
             PanelOpciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelMenu.SuspendLayout();
             pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             SuspendLayout();
             // 
             // txtCarnet
             // 
             txtCarnet.AutoSize = true;
             txtCarnet.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtCarnet.Location = new Point(0, 0);
+            txtCarnet.ForeColor = Color.White;
+            txtCarnet.Location = new Point(4, 9);
             txtCarnet.Margin = new Padding(4, 0, 4, 0);
             txtCarnet.Name = "txtCarnet";
             txtCarnet.Size = new Size(129, 19);
@@ -69,6 +86,14 @@
             PanelOpciones.BackColor = Color.FromArgb(206, 144, 17);
             PanelOpciones.BackgroundImage = (Image)resources.GetObject("PanelOpciones.BackgroundImage");
             PanelOpciones.BackgroundImageLayout = ImageLayout.Stretch;
+            PanelOpciones.Controls.Add(pictureBox10);
+            PanelOpciones.Controls.Add(pictureBox8);
+            PanelOpciones.Controls.Add(pictureBox7);
+            PanelOpciones.Controls.Add(pictureBox3);
+            PanelOpciones.Controls.Add(pictureBox6);
+            PanelOpciones.Controls.Add(pictureBox2);
+            PanelOpciones.Controls.Add(pictureBox5);
+            PanelOpciones.Controls.Add(pictureBox4);
             PanelOpciones.Controls.Add(btnEstudiantes);
             PanelOpciones.Controls.Add(btnSalir);
             PanelOpciones.Controls.Add(btnCerrarSesion);
@@ -85,13 +110,108 @@
             PanelOpciones.Size = new Size(271, 695);
             PanelOpciones.TabIndex = 2;
             // 
+            // pictureBox10
+            // 
+            pictureBox10.Anchor = AnchorStyles.Bottom;
+            pictureBox10.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(56, 639);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(38, 36);
+            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox10.TabIndex = 27;
+            pictureBox10.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Anchor = AnchorStyles.Bottom;
+            pictureBox8.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(55, 578);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(38, 36);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 26;
+            pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Anchor = AnchorStyles.None;
+            pictureBox7.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(56, 508);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(38, 36);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 27;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Anchor = AnchorStyles.None;
+            pictureBox3.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(59, 262);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(38, 36);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 20;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.None;
+            pictureBox6.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(56, 449);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(38, 36);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 26;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(60, 202);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(38, 36);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 19;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Anchor = AnchorStyles.None;
+            pictureBox5.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(58, 388);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(38, 36);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 25;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.None;
+            pictureBox4.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(56, 327);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(38, 36);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 24;
+            pictureBox4.TabStop = false;
+            // 
             // btnEstudiantes
             // 
             btnEstudiantes.Anchor = AnchorStyles.None;
             btnEstudiantes.BackColor = Color.FromArgb(176, 25, 29);
             btnEstudiantes.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEstudiantes.ForeColor = SystemColors.ControlLightLight;
-            btnEstudiantes.Image = (Image)resources.GetObject("btnEstudiantes.Image");
             btnEstudiantes.ImageAlign = ContentAlignment.MiddleLeft;
             btnEstudiantes.Location = new Point(33, 376);
             btnEstudiantes.Margin = new Padding(4, 3, 4, 3);
@@ -101,6 +221,8 @@
             btnEstudiantes.Text = "Estudiantes";
             btnEstudiantes.UseVisualStyleBackColor = false;
             btnEstudiantes.Click += btnEstudiantes_Click;
+            btnEstudiantes.MouseEnter += btnEstudiantes_MouseEnter;
+            btnEstudiantes.MouseLeave += btnEstudiantes_MouseLeave;
             // 
             // btnSalir
             // 
@@ -118,6 +240,8 @@
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
+            btnSalir.MouseEnter += btnSalir_MouseEnter;
+            btnSalir.MouseLeave += btnSalir_MouseLeave;
             // 
             // btnCerrarSesion
             // 
@@ -125,7 +249,6 @@
             btnCerrarSesion.BackColor = Color.FromArgb(176, 25, 29);
             btnCerrarSesion.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.ControlLightLight;
-            btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
             btnCerrarSesion.ImageAlign = ContentAlignment.MiddleLeft;
             btnCerrarSesion.Location = new Point(33, 572);
             btnCerrarSesion.Margin = new Padding(4, 3, 4, 3);
@@ -136,6 +259,8 @@
             btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = false;
             btnCerrarSesion.Click += btnCerrarSesion_Click_1;
+            btnCerrarSesion.MouseEnter += btnCerrarSesion_MouseEnter;
+            btnCerrarSesion.MouseLeave += btnCerrarSesion_MouseLeave;
             // 
             // pictureBox1
             // 
@@ -155,14 +280,13 @@
             btnHojaSocial.BackColor = Color.FromArgb(176, 25, 29);
             btnHojaSocial.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnHojaSocial.ForeColor = SystemColors.ControlLightLight;
-            btnHojaSocial.Image = (Image)resources.GetObject("btnHojaSocial.Image");
             btnHojaSocial.ImageAlign = ContentAlignment.MiddleLeft;
             btnHojaSocial.Location = new Point(33, 315);
             btnHojaSocial.Margin = new Padding(4, 3, 4, 3);
             btnHojaSocial.Name = "btnHojaSocial";
             btnHojaSocial.Size = new Size(238, 55);
             btnHojaSocial.TabIndex = 13;
-            btnHojaSocial.Text = "   Hoja de Hora Social";
+            btnHojaSocial.Text = "          Hoja de Hora Social";
             btnHojaSocial.UseVisualStyleBackColor = false;
             btnHojaSocial.Click += btnHojaSocial_Click;
             btnHojaSocial.MouseEnter += btnHojaSocial_MouseEnter;
@@ -174,14 +298,13 @@
             btnEnviarMensaje.BackColor = Color.FromArgb(176, 25, 29);
             btnEnviarMensaje.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEnviarMensaje.ForeColor = SystemColors.ControlLightLight;
-            btnEnviarMensaje.Image = (Image)resources.GetObject("btnEnviarMensaje.Image");
             btnEnviarMensaje.ImageAlign = ContentAlignment.MiddleLeft;
             btnEnviarMensaje.Location = new Point(33, 437);
             btnEnviarMensaje.Margin = new Padding(4, 3, 4, 3);
             btnEnviarMensaje.Name = "btnEnviarMensaje";
             btnEnviarMensaje.Size = new Size(238, 55);
             btnEnviarMensaje.TabIndex = 12;
-            btnEnviarMensaje.Text = "Enviar mensaje";
+            btnEnviarMensaje.Text = "    Enviar mensaje";
             btnEnviarMensaje.UseVisualStyleBackColor = false;
             btnEnviarMensaje.MouseEnter += btnEnviarMensaje_MouseEnter;
             btnEnviarMensaje.MouseLeave += btnEnviarMensaje_MouseLeave;
@@ -192,14 +315,13 @@
             btnEliModi.BackColor = Color.FromArgb(176, 25, 29);
             btnEliModi.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliModi.ForeColor = SystemColors.ControlLightLight;
-            btnEliModi.Image = (Image)resources.GetObject("btnEliModi.Image");
             btnEliModi.ImageAlign = ContentAlignment.MiddleLeft;
             btnEliModi.Location = new Point(33, 498);
             btnEliModi.Margin = new Padding(4, 3, 4, 3);
             btnEliModi.Name = "btnEliModi";
             btnEliModi.Size = new Size(238, 55);
             btnEliModi.TabIndex = 10;
-            btnEliModi.Text = "Eliminar/Modificar";
+            btnEliModi.Text = "        Eliminar/Modificar";
             btnEliModi.UseVisualStyleBackColor = false;
             btnEliModi.Click += button3_Click;
             btnEliModi.MouseEnter += btnEliModi_MouseEnter;
@@ -211,7 +333,6 @@
             btnDetalles.BackColor = Color.FromArgb(176, 25, 29);
             btnDetalles.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnDetalles.ForeColor = SystemColors.ControlLightLight;
-            btnDetalles.Image = (Image)resources.GetObject("btnDetalles.Image");
             btnDetalles.ImageAlign = ContentAlignment.MiddleLeft;
             btnDetalles.Location = new Point(33, 254);
             btnDetalles.Margin = new Padding(4, 3, 4, 3);
@@ -230,7 +351,6 @@
             btnInicio.BackColor = Color.FromArgb(176, 25, 29);
             btnInicio.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnInicio.ForeColor = SystemColors.ButtonHighlight;
-            btnInicio.Image = (Image)resources.GetObject("btnInicio.Image");
             btnInicio.ImageAlign = ContentAlignment.MiddleLeft;
             btnInicio.Location = new Point(33, 193);
             btnInicio.Margin = new Padding(4, 3, 4, 3);
@@ -245,8 +365,6 @@
             // 
             // PanelMenu
             // 
-            PanelMenu.Controls.Add(btnPerfil);
-            PanelMenu.Controls.Add(btnNotificacion);
             PanelMenu.Controls.Add(pnlLogo);
             PanelMenu.Dock = DockStyle.Top;
             PanelMenu.Location = new Point(271, 0);
@@ -255,34 +373,10 @@
             PanelMenu.Size = new Size(767, 46);
             PanelMenu.TabIndex = 3;
             // 
-            // btnPerfil
-            // 
-            btnPerfil.Anchor = AnchorStyles.Right;
-            btnPerfil.FlatStyle = FlatStyle.Flat;
-            btnPerfil.Image = (Image)resources.GetObject("btnPerfil.Image");
-            btnPerfil.Location = new Point(681, 0);
-            btnPerfil.Margin = new Padding(4, 3, 4, 3);
-            btnPerfil.Name = "btnPerfil";
-            btnPerfil.Size = new Size(84, 46);
-            btnPerfil.TabIndex = 4;
-            btnPerfil.UseVisualStyleBackColor = true;
-            btnPerfil.Click += btnPerfil_Click;
-            // 
-            // btnNotificacion
-            // 
-            btnNotificacion.Anchor = AnchorStyles.Right;
-            btnNotificacion.FlatStyle = FlatStyle.Flat;
-            btnNotificacion.Image = (Image)resources.GetObject("btnNotificacion.Image");
-            btnNotificacion.Location = new Point(597, 0);
-            btnNotificacion.Margin = new Padding(4, 3, 4, 3);
-            btnNotificacion.Name = "btnNotificacion";
-            btnNotificacion.Size = new Size(88, 46);
-            btnNotificacion.TabIndex = 3;
-            btnNotificacion.UseVisualStyleBackColor = true;
-            btnNotificacion.MouseEnter += btnNotificacion_MouseEnter;
-            // 
             // pnlLogo
             // 
+            pnlLogo.BackColor = Color.FromArgb(176, 25, 29);
+            pnlLogo.Controls.Add(pictureBox9);
             pnlLogo.Controls.Add(LabNombre);
             pnlLogo.Controls.Add(txtCarnet);
             pnlLogo.Dock = DockStyle.Top;
@@ -292,17 +386,29 @@
             pnlLogo.Size = new Size(767, 75);
             pnlLogo.TabIndex = 2;
             // 
+            // pictureBox9
+            // 
+            pictureBox9.Anchor = AnchorStyles.Right;
+            pictureBox9.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(726, 4);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(38, 36);
+            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox9.TabIndex = 26;
+            pictureBox9.TabStop = false;
+            // 
             // LabNombre
             // 
             LabNombre.AutoSize = true;
             LabNombre.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            LabNombre.ForeColor = SystemColors.ControlDarkDark;
-            LabNombre.Location = new Point(135, 9);
+            LabNombre.ForeColor = Color.White;
+            LabNombre.Location = new Point(125, 9);
             LabNombre.Margin = new Padding(4, 0, 4, 0);
             LabNombre.Name = "LabNombre";
-            LabNombre.Size = new Size(14, 19);
+            LabNombre.Size = new Size(29, 19);
             LabNombre.TabIndex = 1;
-            LabNombre.Text = " ";
+            LabNombre.Text = " ...";
             // 
             // pnlContenedor
             // 
@@ -329,10 +435,19 @@
             WindowState = FormWindowState.Maximized;
             Load += FrmSisAd_Load;
             PanelOpciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelMenu.ResumeLayout(false);
             pnlLogo.ResumeLayout(false);
             pnlLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
         }
 
@@ -340,8 +455,6 @@
 
         private Panel PanelOpciones;
         private Panel PanelMenu;
-        private Button btnPerfil;
-        private Button btnNotificacion;
         private Panel pnlLogo;
         private Panel pnlContenedor;
         private Button btnInicio;
@@ -355,6 +468,15 @@
         private Button btnCerrarSesion;
         private Button btnSalir;
         private Button btnEstudiantes;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox9;
     }
 }
 

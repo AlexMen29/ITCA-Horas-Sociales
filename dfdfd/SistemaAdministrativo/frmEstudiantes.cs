@@ -32,6 +32,10 @@ namespace ProyectoSocial.SistemaAdministrativo
             var consulta = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.Encargado != "null").ToList();
             gridEstudiantes.DataSource = consulta;
 
+            LabEstudiantes.Text=consulta.Count.ToString();
+
+
+
         }
 
 

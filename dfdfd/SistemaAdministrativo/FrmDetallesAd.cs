@@ -33,13 +33,18 @@ namespace SistemaAdministrativo
                 gridDatosAlumnos.DataSource = datosAlumno;
 
 
-
-                //gridDatosAlumnos.Columns[1].Visible = false;
-                //gridDatosAlumnos.Columns[2].Visible = false;
+                if (compartir.Nivelusuario == 1)
+                {
+                    gridDatosAlumnos.Columns[0].Visible = false;
+                    gridDatosAlumnos.Columns[1].Visible = false;
+                }
+           
             }
             else
             {
-                gridDatosAlumnos.DataSource = context.horasSociales.ToList();
+                var datosAlumno = context.horasSociales.Where(h=>h.Grupo==compartir.usuario.Grupo).ToList();
+
+                gridDatosAlumnos.DataSource = datosAlumno;
 
             }
 
@@ -47,6 +52,9 @@ namespace SistemaAdministrativo
 
         private void FrmDetallesAd_Load(object sender, EventArgs e)
         {
+            gridDatosAlumnos.DataSource = context.DatosAlumnos.ToList();
+
+            
             CargarDatosEnDataGridViem(compartir.Nivelusuario, compartir.carnetIngresado);
 
             if (compartir.Nivelusuario == 1)
@@ -55,7 +63,7 @@ namespace SistemaAdministrativo
                 panelDetallesAlumnos.Visible = false;
                 totalHoras();
             }
-
+            
 
 
         }

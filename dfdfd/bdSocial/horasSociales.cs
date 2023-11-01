@@ -15,7 +15,8 @@ namespace ProyectoSocial.bdSocial
         public string Carnet { get; set; } = null!;
         public DateTime Fecha  { get; set; } 
         public string Actividad { get; set; } = null!;
-        public int Total { get; set; }  
+        public int Total { get; set; }
+        public string Grupo { get; set; } = null!;
 
     }
 }

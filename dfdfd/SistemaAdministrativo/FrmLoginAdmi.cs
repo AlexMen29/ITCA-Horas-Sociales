@@ -63,7 +63,7 @@ namespace SistemaAdministrativo
         private void FrmSisAd_Load(object sender, EventArgs e)
         {
 
-             LabNombre.Text = usuarioActual.Nombres + " " + usuarioActual.Apellidos;
+            LabNombre.Text = usuarioActual.Nombres + " " + usuarioActual.Apellidos;
 
             if (compartir.Nivelusuario == 1)
             {
@@ -157,6 +157,36 @@ namespace SistemaAdministrativo
         {
             frmEstudiantes us = new frmEstudiantes();
             AbrirForm(us);
+        }
+
+        private void btnEstudiantes_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnEstudiantes, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+
+        private void btnEstudiantes_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnEstudiantes, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+
+        private void btnCerrarSesion_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnCerrarSesion, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+
+        private void btnCerrarSesion_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnCerrarSesion, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+
+        private void btnSalir_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnSalir, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnSalir, ColorTranslator.FromHtml("#b1201f"), Color.White);
         }
     }
 
