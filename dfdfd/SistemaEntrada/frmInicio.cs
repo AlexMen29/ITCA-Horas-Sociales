@@ -117,7 +117,7 @@ namespace Login
     }
 
     //Necesario para poder tener acceso desde los demas formularios
-    public static class compartir 
+    public static class compartir
     {
         public static string carnetIngresado { get; set; }
         public static int Nivelusuario { get; set; }

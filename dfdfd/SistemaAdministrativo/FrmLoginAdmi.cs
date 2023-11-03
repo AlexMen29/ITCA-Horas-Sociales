@@ -1,5 +1,6 @@
 ﻿using dfdfd.bdSocial;
 using Login;
+using ProyectoSocial.Otros;
 using ProyectoSocial.SistemaAdministrativo;
 using System;
 using System.Collections.Generic;
@@ -67,9 +68,7 @@ namespace SistemaAdministrativo
 
             if (compartir.Nivelusuario == 1)
             {
-                btnEstudiantes.Visible = false;
-                btnEnviarMensaje.Visible = false;
-                btnEliModi.Visible = false;
+                panelAdministrador.Visible = false;
             }
         }
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -187,6 +186,25 @@ namespace SistemaAdministrativo
         private void btnSalir_MouseLeave(object sender, EventArgs e)
         {
             eventosEnterLeave(btnSalir, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Form formPerfil = Application.OpenForms["frmPerfil"];
+
+            if (formPerfil != null)
+            {
+                formPerfil.Close();
+            }
+            else
+            {
+                frmPerfil frm = new frmPerfil();
+                frm.TopLevel = false;
+                pnlContenedor.Controls.Add(frm);
+                frm.Dock = DockStyle.Right;
+
+                frm.Show();
+            }
         }
     }
 

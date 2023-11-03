@@ -114,7 +114,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(324, 542);
             panel2.TabIndex = 13;
-          
             // 
             // PicMostrar
             // 
@@ -276,7 +275,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label6);
             panel1.ImeMode = ImeMode.Disable;
-            panel1.Location = new Point(32, 197);
+            panel1.Location = new Point(31, 197);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(773, 255);
@@ -296,11 +295,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Times-Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(71, 194);
+            label6.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(89, 190);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(541, 32);
+            label6.Size = new Size(620, 37);
             label6.TabIndex = 1;
             label6.Text = "Sistema de Gestión y Control de Horas Sociales";
             // 
