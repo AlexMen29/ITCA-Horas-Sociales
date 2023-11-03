@@ -56,13 +56,11 @@ namespace Login
 
         private void RegistroUniversitarios_Load(object sender, EventArgs e)
         {
-            var options = context.DatosAlumnos.Select(o => o.Encargado).ToList();
+            //Obtenemos el nombre de los encargados para mostarlos como selecionables al momento del registo
+            var option = context.DatosAlumnos.Where(o => o.NivelUsuario == 2).Select(o => o.Nombres).ToList(); 
 
-
-
-            foreach (var elementos in options)
+            foreach (var elementos in option)
             {
-                if (elementos != "null")
                     txtEncargado.Items.Add(elementos);
             }
 
@@ -80,7 +78,7 @@ namespace Login
             datos.Encargado = txtEncargado.Text;
             datos.TipoEstudio = txtTipoEstudio.Text;
             datos.Correo = txtCorreo.Text;
-            var docente = context.DatosAlumnos.FirstOrDefault(u => u.Encargado == txtEncargado.Text);
+            var docente = context.DatosAlumnos.FirstOrDefault(u => u.Nombres == txtEncargado.Text);
             datos.Grupo = docente.Grupo;
 
             context.Add(datos);

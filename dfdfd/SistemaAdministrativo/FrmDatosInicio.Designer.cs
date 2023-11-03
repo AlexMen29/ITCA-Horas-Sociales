@@ -95,6 +95,9 @@
             btnBuscar.TabIndex = 20;
             btnBuscar.Text = "Guardar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
+            btnBuscar.MouseEnter += btnBuscar_MouseEnter;
+            btnBuscar.MouseLeave += btnBuscar_MouseLeave;
             // 
             // boxHoras
             // 
@@ -143,6 +146,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(359, 147);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(216, 23);

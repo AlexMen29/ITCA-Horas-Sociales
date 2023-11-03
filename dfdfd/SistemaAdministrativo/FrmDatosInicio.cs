@@ -1,4 +1,7 @@
-﻿using System;
+﻿using dfdfd.bdSocial;
+using Login;
+using ProyectoSocial.bdSocial;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,42 +18,50 @@ namespace SistemaAdministrativo
 {
     public partial class FrmDatosInicio : Form
     {
+        ProyectoSocialContext context = new ProyectoSocialContext();
+
         public FrmDatosInicio()
         {
             InitializeComponent();
-            CargarDatosEnDataGridViem();
             //Con esta linea podemos evitar que los usuarios ingresen texto en la comboBox
             boxHoras.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void CargarDatosEnDataGridViem()
+        private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {
-
-            /*
-            string cadenaConexion = "Data Source= DESKTOP-E4D98NB\\SQLEXPRESS;Initial Catalog=proyectoSocial;Integrated Security=True";
-            DataTable dataTable = new DataTable();
-
-            using (SqlConnection connection = new SqlConnection(cadenaConexion))
-            {
-                connection.Open();
-
-                string consulta = "SELECT * FROM dbo.DatosAlumnos";
-
-                using (SqlCommand command = new SqlCommand(consulta, connection))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    adapter.Fill(dataTable);
-                }
-            }
-
-            gridDatosAd.DataSource = dataTable;
-            gridDatosAd.Columns[1].Visible = false;
-            gridDatosAd.Columns[2].Visible = false;
-            */
+            eventosEnterLeave(btnBuscar, ColorTranslator.FromHtml("#cd9013"), Color.White);
         }
 
-        private void gridDatosAd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnBuscar_MouseLeave(object sender, EventArgs e)
         {
+            eventosEnterLeave(btnBuscar, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+        public void eventosEnterLeave(Button btn, Color ColorFondo, Color ColorLetra)
+        {
+            btn.BackColor = ColorFondo;
+            btn.ForeColor = ColorLetra;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            horasSociales datosTabla = new horasSociales();
+
+            datosTabla.Carnet = compartir.usuario.Carnet;
+            datosTabla.Fecha = dateTimePicker1.Value;
+            datosTabla.Actividad = txtActividad.Text;
+            datosTabla.Total = Convert.ToInt32(boxHoras.Text);
+            datosTabla.Grupo = compartir.usuario.Grupo;
+
+            context.Add(datosTabla);
+
+            if (context.SaveChanges() == 1)
+            {
+                MessageBox.Show("Registro guardado exitosamente", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error Inesperado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }
