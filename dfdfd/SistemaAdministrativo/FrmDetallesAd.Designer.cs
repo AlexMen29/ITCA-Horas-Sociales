@@ -34,7 +34,18 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pnlDetallesInfo = new Panel();
             panel1 = new Panel();
+            LabHorasRestantes = new Label();
+            label3 = new Label();
             panelDetallesAlumnos = new Panel();
+            LabUltimoServicio = new Label();
+            LabActivoDesde = new Label();
+            label10 = new Label();
+            label8 = new Label();
+            LabCarnet = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label112 = new Label();
             LabCorreo = new Label();
             LabApellido = new Label();
             LabNombre = new Label();
@@ -67,6 +78,8 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ButtonHighlight;
+            panel1.Controls.Add(LabHorasRestantes);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(panelDetallesAlumnos);
             panel1.Controls.Add(LabTotalHoras);
             panel1.Controls.Add(label1);
@@ -77,59 +90,199 @@
             panel1.Location = new Point(0, 34);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(919, 561);
+            panel1.Size = new Size(919, 658);
             panel1.TabIndex = 2;
+            // 
+            // LabHorasRestantes
+            // 
+            LabHorasRestantes.AutoSize = true;
+            LabHorasRestantes.BackColor = Color.FromArgb(205, 144, 19);
+            LabHorasRestantes.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            LabHorasRestantes.ForeColor = SystemColors.Control;
+            LabHorasRestantes.Location = new Point(814, 397);
+            LabHorasRestantes.Name = "LabHorasRestantes";
+            LabHorasRestantes.Size = new Size(0, 18);
+            LabHorasRestantes.TabIndex = 23;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(176, 25, 29);
+            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(674, 397);
+            label3.Name = "label3";
+            label3.Size = new Size(134, 18);
+            label3.TabIndex = 22;
+            label3.Text = "Horas restantes:";
             // 
             // panelDetallesAlumnos
             // 
+            panelDetallesAlumnos.Controls.Add(LabUltimoServicio);
+            panelDetallesAlumnos.Controls.Add(LabActivoDesde);
+            panelDetallesAlumnos.Controls.Add(label10);
+            panelDetallesAlumnos.Controls.Add(label8);
+            panelDetallesAlumnos.Controls.Add(LabCarnet);
+            panelDetallesAlumnos.Controls.Add(label6);
+            panelDetallesAlumnos.Controls.Add(label5);
+            panelDetallesAlumnos.Controls.Add(label4);
+            panelDetallesAlumnos.Controls.Add(label112);
             panelDetallesAlumnos.Controls.Add(LabCorreo);
             panelDetallesAlumnos.Controls.Add(LabApellido);
             panelDetallesAlumnos.Controls.Add(LabNombre);
             panelDetallesAlumnos.Controls.Add(label2);
             panelDetallesAlumnos.Location = new Point(252, 421);
             panelDetallesAlumnos.Name = "panelDetallesAlumnos";
-            panelDetallesAlumnos.Size = new Size(455, 131);
+            panelDetallesAlumnos.Size = new Size(511, 225);
             panelDetallesAlumnos.TabIndex = 8;
+            // 
+            // LabUltimoServicio
+            // 
+            LabUltimoServicio.AutoSize = true;
+            LabUltimoServicio.BackColor = Color.FromArgb(205, 144, 19);
+            LabUltimoServicio.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LabUltimoServicio.ForeColor = Color.White;
+            LabUltimoServicio.Location = new Point(260, 187);
+            LabUltimoServicio.Name = "LabUltimoServicio";
+            LabUltimoServicio.Size = new Size(0, 18);
+            LabUltimoServicio.TabIndex = 21;
+            // 
+            // LabActivoDesde
+            // 
+            LabActivoDesde.AutoSize = true;
+            LabActivoDesde.BackColor = Color.FromArgb(205, 144, 19);
+            LabActivoDesde.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LabActivoDesde.ForeColor = Color.White;
+            LabActivoDesde.Location = new Point(260, 158);
+            LabActivoDesde.Name = "LabActivoDesde";
+            LabActivoDesde.Size = new Size(0, 18);
+            LabActivoDesde.TabIndex = 20;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.FromArgb(176, 25, 29);
+            label10.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(16, 187);
+            label10.Name = "label10";
+            label10.Size = new Size(205, 18);
+            label10.TabIndex = 19;
+            label10.Text = "Ultima Vez de Servicio Social:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.FromArgb(176, 25, 29);
+            label8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(16, 158);
+            label8.Name = "label8";
+            label8.Size = new Size(96, 18);
+            label8.TabIndex = 18;
+            label8.Text = "Activo desde:";
+            // 
+            // LabCarnet
+            // 
+            LabCarnet.AutoSize = true;
+            LabCarnet.BackColor = Color.FromArgb(205, 144, 19);
+            LabCarnet.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LabCarnet.ForeColor = Color.White;
+            LabCarnet.Location = new Point(260, 100);
+            LabCarnet.Name = "LabCarnet";
+            LabCarnet.Size = new Size(0, 18);
+            LabCarnet.TabIndex = 17;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.FromArgb(176, 25, 29);
+            label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(16, 133);
+            label6.Name = "label6";
+            label6.Size = new Size(60, 18);
+            label6.TabIndex = 16;
+            label6.Text = "Corrreo";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(176, 25, 29);
+            label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(16, 105);
+            label5.Name = "label5";
+            label5.Size = new Size(71, 18);
+            label5.TabIndex = 15;
+            label5.Text = "Apellidos:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(176, 25, 29);
+            label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(16, 77);
+            label4.Name = "label4";
+            label4.Size = new Size(66, 18);
+            label4.TabIndex = 14;
+            label4.Text = "Nombre:";
+            // 
+            // label112
+            // 
+            label112.AutoSize = true;
+            label112.BackColor = Color.FromArgb(176, 25, 29);
+            label112.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label112.ForeColor = Color.White;
+            label112.Location = new Point(16, 44);
+            label112.Name = "label112";
+            label112.Size = new Size(56, 18);
+            label112.TabIndex = 13;
+            label112.Text = "Carnet:";
             // 
             // LabCorreo
             // 
             LabCorreo.AutoSize = true;
-            LabCorreo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LabCorreo.Location = new Point(3, 84);
+            LabCorreo.BackColor = Color.FromArgb(205, 144, 19);
+            LabCorreo.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LabCorreo.ForeColor = Color.White;
+            LabCorreo.Location = new Point(260, 72);
             LabCorreo.Name = "LabCorreo";
-            LabCorreo.Size = new Size(45, 15);
+            LabCorreo.Size = new Size(0, 18);
             LabCorreo.TabIndex = 12;
-            LabCorreo.Text = "Correo";
             // 
             // LabApellido
             // 
             LabApellido.AutoSize = true;
-            LabApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LabApellido.Location = new Point(3, 58);
+            LabApellido.BackColor = Color.FromArgb(205, 144, 19);
+            LabApellido.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LabApellido.ForeColor = Color.White;
+            LabApellido.Location = new Point(260, 44);
             LabApellido.Name = "LabApellido";
-            LabApellido.Size = new Size(100, 15);
+            LabApellido.Size = new Size(0, 18);
             LabApellido.TabIndex = 11;
-            LabApellido.Text = "Najarro Menjivar";
             // 
             // LabNombre
             // 
             LabNombre.AutoSize = true;
-            LabNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LabNombre.Location = new Point(3, 34);
+            LabNombre.BackColor = Color.FromArgb(205, 144, 19);
+            LabNombre.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LabNombre.ForeColor = Color.White;
+            LabNombre.Location = new Point(260, 133);
             LabNombre.Name = "LabNombre";
-            LabNombre.Size = new Size(101, 15);
+            LabNombre.Size = new Size(0, 18);
             LabNombre.TabIndex = 10;
-            LabNombre.Text = "Omar Alexander ";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(176, 25, 29);
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(184, 25);
+            label2.Size = new Size(153, 18);
             label2.TabIndex = 9;
             label2.Text = "Detalles de Alumno";
             // 
@@ -159,7 +312,7 @@
             // 
             // PanelElementosBusqueda
             // 
-            PanelElementosBusqueda.BackColor = Color.White;
+            PanelElementosBusqueda.BackColor = Color.FromArgb(205, 144, 19);
             PanelElementosBusqueda.BorderStyle = BorderStyle.Fixed3D;
             PanelElementosBusqueda.Controls.Add(btnBuscar);
             PanelElementosBusqueda.Controls.Add(btnLimpiar);
@@ -167,7 +320,7 @@
             PanelElementosBusqueda.Controls.Add(txtBuscar);
             PanelElementosBusqueda.Location = new Point(12, 63);
             PanelElementosBusqueda.Name = "PanelElementosBusqueda";
-            PanelElementosBusqueda.Size = new Size(198, 227);
+            PanelElementosBusqueda.Size = new Size(198, 181);
             PanelElementosBusqueda.TabIndex = 5;
             // 
             // btnBuscar
@@ -276,7 +429,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(919, 595);
+            ClientSize = new Size(919, 692);
             Controls.Add(panel1);
             Controls.Add(pnlDetallesInfo);
             FormBorderStyle = FormBorderStyle.None;
@@ -313,5 +466,16 @@
         private Label LabNombre;
         private Label label2;
         private Label LabCorreo;
+        private Label label8;
+        private Label LabCarnet;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label112;
+        private Label LabUltimoServicio;
+        private Label LabActivoDesde;
+        private Label label10;
+        private Label LabHorasRestantes;
+        private Label label3;
     }
 }

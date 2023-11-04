@@ -18,7 +18,6 @@ public partial class ProyectoSocialContext : DbContext
 
     public virtual DbSet<DatosAlumno> DatosAlumnos { get; set; }
     public virtual DbSet<horasSociales>horasSociales { get; set; }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
         => optionsBuilder.UseSqlServer("Data Source= DESKTOP-IJ4S2TJ\\SQLEXPRESS;Initial Catalog=proyectoSocial;Integrated Security=True; Encrypt=False");

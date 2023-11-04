@@ -103,7 +103,7 @@ namespace Login
             }
             else
             {
-                MessageBox.Show("Las Credenciales Ingresadas Son Incorrectas ", "ITCA FEPADE ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(" Carnet o contraseña incorrectos, inténtelo de nuevo. ", "ITCA FEPADE ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         class MetodoUniversales

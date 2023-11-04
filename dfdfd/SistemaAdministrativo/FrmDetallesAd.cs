@@ -38,11 +38,11 @@ namespace SistemaAdministrativo
                     gridDatosAlumnos.Columns[0].Visible = false;
                     gridDatosAlumnos.Columns[1].Visible = false;
                 }
-           
+                totalHoras();
             }
             else
             {
-                var datosAlumno = context.horasSociales.Where(h=>h.Grupo==compartir.usuario.Grupo).ToList();
+                var datosAlumno = context.horasSociales.Where(h => h.Grupo == compartir.usuario.Grupo).ToList();
 
                 gridDatosAlumnos.DataSource = datosAlumno;
 
@@ -54,26 +54,42 @@ namespace SistemaAdministrativo
         {
             gridDatosAlumnos.DataSource = context.DatosAlumnos.ToList();
 
-            
+
             CargarDatosEnDataGridViem(compartir.Nivelusuario, compartir.carnetIngresado);
+
 
             if (compartir.Nivelusuario == 1)
             {
                 PanelElementosBusqueda.Visible = false;
                 panelDetallesAlumnos.Visible = false;
-                totalHoras();
+                if (compartir.usuario.TipoEstudio == "Técnico")
+                {
+                    int horasRestantes = 300 - int.Parse(LabTotalHoras.Text);
+                    LabHorasRestantes.Text = horasRestantes.ToString();
+                }
+                else
+                {
+                    int horasRestantes = 500 - int.Parse(LabTotalHoras.Text);
+                    LabHorasRestantes.Text = horasRestantes.ToString();
+                }
             }
-            
+
 
 
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            LabCarnet.Text = "";
             txtBuscar.Text = "";
             LabNombre.Text = "";
             LabApellido.Text = "";
             LabCorreo.Text = "";
+            LabActivoDesde.Text = "";
+            LabUltimoServicio.Text = "";
+            LabTotalHoras.Text = "";
+            LabHorasRestantes.Text = "";
+
             CargarDatosEnDataGridViem(2, compartir.carnetIngresado);
 
         }
@@ -112,18 +128,53 @@ namespace SistemaAdministrativo
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            CargarDatosEnDataGridViem(1, txtBuscar.Text);
-            totalHoras();
+            var listaAlumnos = context.DatosAlumnos.Select(o => o.Carnet).ToList();
 
-            /*
-            var usuario = context.DatosAlumnos.FirstOrDefault(u => u.Carnet == txtBuscar.Text);
+            bool encontrado = false;
+            for (int indice = 0; indice < listaAlumnos.Count; indice++)
+            {
 
-            LabNombre.Text = usuario.Nombres;
-            LabApellido.Text = usuario.Apellidos;
-            LabCorreo.Text = usuario.Correo; 
-            */
+
+                if (txtBuscar.Text == listaAlumnos[indice])
+                {
+                    CargarDatosEnDataGridViem(1, txtBuscar.Text);
+                    totalHoras();
+
+                    var usuario = context.DatosAlumnos.FirstOrDefault(u => u.Carnet == txtBuscar.Text);
+                    LabCarnet.Text = txtBuscar.Text;
+                    LabNombre.Text = usuario.Nombres;
+                    LabApellido.Text = usuario.Apellidos;
+                    LabCorreo.Text = usuario.Correo;
+
+
+                    var usuarioF = context.horasSociales.Where(u => u.Carnet == txtBuscar.Text).Select(u => u.Fecha).ToList();
+                    LabActivoDesde.Text = usuarioF[0].ToString();
+                    LabUltimoServicio.Text = usuarioF[usuarioF.Count - 1].ToString();
+                    if (usuario.TipoEstudio == "Técnico")
+                    {
+                        int horasRestantes = 300 - int.Parse(LabTotalHoras.Text);
+                        LabHorasRestantes.Text = horasRestantes.ToString();
+                    }
+                    else
+                    {
+                        int horasRestantes = 500 - int.Parse(LabTotalHoras.Text);
+                        LabHorasRestantes.Text = horasRestantes.ToString();
+                    }
+                    encontrado = true;
+                    break;
+                }
+                if (encontrado == false && indice == listaAlumnos.Count - 1)
+                {
+                    MessageBox.Show("El carnet ingresado no fue encontrado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                if (encontrado == true)
+                {
+                    break;
+                }
+            }
 
         }
+
 
         public void totalHoras()
         {
@@ -132,9 +183,9 @@ namespace SistemaAdministrativo
             {
                 totalHoras += Convert.ToInt32(fila.Cells["Total"].Value);
             }
-
             LabTotalHoras.Text = totalHoras.ToString();
         }
+
 
     }
 }

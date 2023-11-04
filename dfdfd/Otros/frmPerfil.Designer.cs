@@ -45,6 +45,10 @@
             txtNombreE = new Label();
             txtApellidoE = new Label();
             txtCorreo = new Label();
+            panelAdministrador = new Panel();
+            LabTipoEstudio = new Label();
+            LabTipoEstudioO = new Label();
+            panelAdministrador.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -65,7 +69,7 @@
             label2.BackColor = Color.FromArgb(205, 144, 19);
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(16, 164);
+            label2.Location = new Point(34, 164);
             label2.Name = "label2";
             label2.Size = new Size(81, 21);
             label2.TabIndex = 1;
@@ -77,7 +81,7 @@
             txtCarnet.BackColor = Color.FromArgb(176, 25, 29);
             txtCarnet.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtCarnet.ForeColor = Color.White;
-            txtCarnet.Location = new Point(118, 127);
+            txtCarnet.Location = new Point(136, 127);
             txtCarnet.Name = "txtCarnet";
             txtCarnet.Size = new Size(22, 21);
             txtCarnet.TabIndex = 2;
@@ -89,7 +93,7 @@
             label4.BackColor = Color.FromArgb(205, 144, 19);
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(11, 198);
+            label4.Location = new Point(29, 198);
             label4.Name = "label4";
             label4.Size = new Size(86, 21);
             label4.TabIndex = 3;
@@ -101,7 +105,7 @@
             label6.BackColor = Color.FromArgb(205, 144, 19);
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(32, 238);
+            label6.Location = new Point(50, 238);
             label6.Name = "label6";
             label6.Size = new Size(65, 21);
             label6.TabIndex = 5;
@@ -113,7 +117,7 @@
             label7.BackColor = Color.FromArgb(205, 144, 19);
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(29, 127);
+            label7.Location = new Point(47, 127);
             label7.Name = "label7";
             label7.Size = new Size(68, 21);
             label7.TabIndex = 6;
@@ -125,7 +129,7 @@
             label8.BackColor = Color.FromArgb(176, 25, 29);
             label8.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(82, 338);
+            label8.Location = new Point(78, 18);
             label8.Name = "label8";
             label8.Size = new Size(178, 30);
             label8.TabIndex = 7;
@@ -137,7 +141,7 @@
             label9.BackColor = Color.FromArgb(205, 144, 19);
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(11, 463);
+            label9.Location = new Point(7, 143);
             label9.Name = "label9";
             label9.Size = new Size(86, 21);
             label9.TabIndex = 9;
@@ -149,7 +153,7 @@
             label10.BackColor = Color.FromArgb(205, 144, 19);
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(16, 429);
+            label10.Location = new Point(12, 109);
             label10.Name = "label10";
             label10.Size = new Size(81, 21);
             label10.TabIndex = 8;
@@ -161,7 +165,7 @@
             label5.BackColor = Color.FromArgb(205, 144, 19);
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(28, 494);
+            label5.Location = new Point(24, 174);
             label5.Name = "label5";
             label5.Size = new Size(69, 21);
             label5.TabIndex = 10;
@@ -173,7 +177,7 @@
             txtNombre.BackColor = Color.FromArgb(176, 25, 29);
             txtNombre.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtNombre.ForeColor = Color.White;
-            txtNombre.Location = new Point(118, 164);
+            txtNombre.Location = new Point(136, 164);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(22, 21);
             txtNombre.TabIndex = 11;
@@ -185,7 +189,7 @@
             txtApellido.BackColor = Color.FromArgb(176, 25, 29);
             txtApellido.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtApellido.ForeColor = Color.White;
-            txtApellido.Location = new Point(118, 198);
+            txtApellido.Location = new Point(136, 198);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(22, 21);
             txtApellido.TabIndex = 12;
@@ -197,7 +201,7 @@
             txtGrupo.BackColor = Color.FromArgb(176, 25, 29);
             txtGrupo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtGrupo.ForeColor = Color.White;
-            txtGrupo.Location = new Point(118, 238);
+            txtGrupo.Location = new Point(136, 238);
             txtGrupo.Name = "txtGrupo";
             txtGrupo.Size = new Size(22, 21);
             txtGrupo.TabIndex = 13;
@@ -209,7 +213,7 @@
             txtNombreE.BackColor = Color.FromArgb(176, 25, 29);
             txtNombreE.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtNombreE.ForeColor = Color.White;
-            txtNombreE.Location = new Point(118, 429);
+            txtNombreE.Location = new Point(114, 109);
             txtNombreE.Name = "txtNombreE";
             txtNombreE.Size = new Size(22, 21);
             txtNombreE.TabIndex = 14;
@@ -221,7 +225,7 @@
             txtApellidoE.BackColor = Color.FromArgb(176, 25, 29);
             txtApellidoE.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtApellidoE.ForeColor = Color.White;
-            txtApellidoE.Location = new Point(118, 463);
+            txtApellidoE.Location = new Point(114, 143);
             txtApellidoE.Name = "txtApellidoE";
             txtApellidoE.Size = new Size(22, 21);
             txtApellidoE.TabIndex = 15;
@@ -233,11 +237,51 @@
             txtCorreo.BackColor = Color.FromArgb(176, 25, 29);
             txtCorreo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtCorreo.ForeColor = Color.White;
-            txtCorreo.Location = new Point(118, 494);
+            txtCorreo.Location = new Point(114, 174);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(22, 21);
             txtCorreo.TabIndex = 16;
             txtCorreo.Text = "...";
+            // 
+            // panelAdministrador
+            // 
+            panelAdministrador.Anchor = AnchorStyles.None;
+            panelAdministrador.BackColor = Color.Transparent;
+            panelAdministrador.Controls.Add(txtCorreo);
+            panelAdministrador.Controls.Add(txtApellidoE);
+            panelAdministrador.Controls.Add(txtNombreE);
+            panelAdministrador.Controls.Add(label5);
+            panelAdministrador.Controls.Add(label9);
+            panelAdministrador.Controls.Add(label10);
+            panelAdministrador.Controls.Add(label8);
+            panelAdministrador.Location = new Point(4, 320);
+            panelAdministrador.Name = "panelAdministrador";
+            panelAdministrador.Size = new Size(302, 233);
+            panelAdministrador.TabIndex = 17;
+            // 
+            // LabTipoEstudio
+            // 
+            LabTipoEstudio.AutoSize = true;
+            LabTipoEstudio.BackColor = Color.FromArgb(176, 25, 29);
+            LabTipoEstudio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LabTipoEstudio.ForeColor = Color.White;
+            LabTipoEstudio.Location = new Point(136, 270);
+            LabTipoEstudio.Name = "LabTipoEstudio";
+            LabTipoEstudio.Size = new Size(22, 21);
+            LabTipoEstudio.TabIndex = 19;
+            LabTipoEstudio.Text = "...";
+            // 
+            // LabTipoEstudioO
+            // 
+            LabTipoEstudioO.AutoSize = true;
+            LabTipoEstudioO.BackColor = Color.FromArgb(205, 144, 19);
+            LabTipoEstudioO.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LabTipoEstudioO.ForeColor = Color.White;
+            LabTipoEstudioO.Location = new Point(6, 270);
+            LabTipoEstudioO.Name = "LabTipoEstudioO";
+            LabTipoEstudioO.Size = new Size(109, 21);
+            LabTipoEstudioO.TabIndex = 18;
+            LabTipoEstudioO.Text = "Tipo Estudio:";
             // 
             // frmPerfil
             // 
@@ -246,16 +290,12 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(327, 591);
-            Controls.Add(txtCorreo);
-            Controls.Add(txtApellidoE);
-            Controls.Add(txtNombreE);
+            Controls.Add(LabTipoEstudio);
+            Controls.Add(LabTipoEstudioO);
+            Controls.Add(panelAdministrador);
             Controls.Add(txtGrupo);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
-            Controls.Add(label5);
-            Controls.Add(label9);
-            Controls.Add(label10);
-            Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label4);
@@ -267,6 +307,8 @@
             StartPosition = FormStartPosition.Manual;
             Text = "frmPerfil";
             Load += frmPerfil_Load;
+            panelAdministrador.ResumeLayout(false);
+            panelAdministrador.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -289,5 +331,8 @@
         private Label txtNombreE;
         private Label txtApellidoE;
         private Label txtCorreo;
+        private Panel panelAdministrador;
+        private Label LabTipoEstudio;
+        private Label LabTipoEstudioO;
     }
 }
