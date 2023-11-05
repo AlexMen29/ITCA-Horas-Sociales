@@ -206,6 +206,12 @@ namespace SistemaAdministrativo
                 frm.Show();
             }
         }
+
+        private void btnEnviarMensaje_Click(object sender, EventArgs e)
+        {
+            frmCalendario us= new frmCalendario();
+            AbrirForm(us);
+        }
     }
 
 }

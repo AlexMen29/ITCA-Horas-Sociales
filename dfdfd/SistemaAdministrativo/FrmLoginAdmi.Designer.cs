@@ -190,6 +190,7 @@
             btnEnviarMensaje.TabIndex = 12;
             btnEnviarMensaje.Text = "    Enviar mensaje";
             btnEnviarMensaje.UseVisualStyleBackColor = false;
+            btnEnviarMensaje.Click += btnEnviarMensaje_Click;
             btnEnviarMensaje.MouseEnter += btnEnviarMensaje_MouseEnter;
             btnEnviarMensaje.MouseLeave += btnEnviarMensaje_MouseLeave;
             // 
