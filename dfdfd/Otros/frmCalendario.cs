@@ -23,11 +23,14 @@ namespace ProyectoSocial.Otros
 
         private void frmCalendario_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = context.Eventos.ToList();
+
+            gridEventos.DataSource = context.Eventos.ToList();
             fechasEventos();
+            gridEventos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
 
         }
-       
+
         private void fechasEventos()
         {
             var fechasEventos = context.Eventos.Select(o => o.Fecha);
@@ -37,17 +40,23 @@ namespace ProyectoSocial.Otros
                 monthCalendar1.AddBoldedDate(fecha);
             }
             monthCalendar1.UpdateBoldedDates();
+        }       
+
+        private void gridEventos_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtDescripcionME.Text = gridEventos.SelectedCells[2].Value.ToString();
+            dataTimeFechaME.Value = (DateTime)gridEventos.SelectedCells[1].Value;
         }
 
-        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        private void monthCalendar1_DateSelected_1(object sender, DateRangeEventArgs e)
         {
             DateTime fechaSeleccionada = monthCalendar1.SelectionStart.Date;
 
-            var evento=context.Eventos.FirstOrDefault(o => o.Fecha==fechaSeleccionada);
+            var evento = context.Eventos.FirstOrDefault(o => o.Fecha == fechaSeleccionada);
 
-            if (evento!=null) 
+            if (evento != null)
             {
-                MessageBox.Show($"{evento.Mensaje}","Eventos ITCA FEPADE",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show($"{evento.Mensaje}", "Eventos ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

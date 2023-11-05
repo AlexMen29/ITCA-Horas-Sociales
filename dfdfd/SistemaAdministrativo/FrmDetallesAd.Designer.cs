@@ -419,6 +419,7 @@
             gridDatosAlumnos.MultiSelect = false;
             gridDatosAlumnos.Name = "gridDatosAlumnos";
             gridDatosAlumnos.ReadOnly = true;
+            gridDatosAlumnos.ScrollBars = ScrollBars.Horizontal;
             gridDatosAlumnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridDatosAlumnos.Size = new Size(451, 319);
             gridDatosAlumnos.TabIndex = 1;

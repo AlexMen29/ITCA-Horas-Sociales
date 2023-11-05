@@ -209,7 +209,7 @@ namespace SistemaAdministrativo
 
         private void btnEnviarMensaje_Click(object sender, EventArgs e)
         {
-            frmCalendario us= new frmCalendario();
+            frmCalendario us = new frmCalendario();
             AbrirForm(us);
         }
     }

@@ -188,7 +188,7 @@
             btnEnviarMensaje.Name = "btnEnviarMensaje";
             btnEnviarMensaje.Size = new Size(238, 55);
             btnEnviarMensaje.TabIndex = 12;
-            btnEnviarMensaje.Text = "    Enviar mensaje";
+            btnEnviarMensaje.Text = "Calendario";
             btnEnviarMensaje.UseVisualStyleBackColor = false;
             btnEnviarMensaje.Click += btnEnviarMensaje_Click;
             btnEnviarMensaje.MouseEnter += btnEnviarMensaje_MouseEnter;
@@ -426,6 +426,7 @@
             // 
             // pnlContenedor
             // 
+            pnlContenedor.BackColor = SystemColors.ButtonHighlight;
             pnlContenedor.Dock = DockStyle.Fill;
             pnlContenedor.Location = new Point(271, 46);
             pnlContenedor.Margin = new Padding(4, 3, 4, 3);
@@ -437,6 +438,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1038, 695);
             Controls.Add(pnlContenedor);
             Controls.Add(PanelMenu);

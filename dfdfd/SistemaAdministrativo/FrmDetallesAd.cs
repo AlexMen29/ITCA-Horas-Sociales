@@ -52,6 +52,7 @@ namespace SistemaAdministrativo
 
         private void FrmDetallesAd_Load(object sender, EventArgs e)
         {
+
             gridDatosAlumnos.DataSource = context.DatosAlumnos.ToList();
 
 
@@ -74,7 +75,7 @@ namespace SistemaAdministrativo
                 }
             }
 
-
+            gridDatosAlumnos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
         }
 
