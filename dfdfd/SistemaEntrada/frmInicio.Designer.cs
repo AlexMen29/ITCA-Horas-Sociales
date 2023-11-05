@@ -68,6 +68,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.AutoScroll = true;
             splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
             splitContainer1.Panel1.Controls.Add(pictCargando);
@@ -75,6 +76,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.AutoScroll = true;
             splitContainer1.Panel2.Controls.Add(panel1);
             splitContainer1.Panel2.Font = new Font("Yu Gothic UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             splitContainer1.Size = new Size(1283, 715);
@@ -97,6 +99,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.None;
+            panel2.AutoScroll = true;
             panel2.BackColor = Color.Transparent;
             panel2.Controls.Add(PicMostrar);
             panel2.Controls.Add(PicOcultar);
@@ -275,7 +278,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label6);
             panel1.ImeMode = ImeMode.Disable;
-            panel1.Location = new Point(31, 197);
+            panel1.Location = new Point(27, 197);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(773, 255);
@@ -308,6 +311,7 @@
             AcceptButton = btnIngresar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             AutoSize = true;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(1283, 715);
@@ -315,7 +319,6 @@
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "frmInicio";
             StartPosition = FormStartPosition.CenterScreen;

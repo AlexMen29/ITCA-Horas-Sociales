@@ -57,11 +57,11 @@ namespace Login
         private void RegistroUniversitarios_Load(object sender, EventArgs e)
         {
             //Obtenemos el nombre de los encargados para mostarlos como selecionables al momento del registo
-            var option = context.DatosAlumnos.Where(o => o.NivelUsuario == 2).Select(o => o.Nombres).ToList(); 
+            var option = context.DatosAlumnos.Where(o => o.NivelUsuario == 2).Select(o => o.Nombres).ToList();
 
             foreach (var elementos in option)
             {
-                    txtEncargado.Items.Add(elementos);
+                txtEncargado.Items.Add(elementos);
             }
 
         }

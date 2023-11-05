@@ -51,6 +51,7 @@
             btnInicio = new Button();
             PanelMenu = new Panel();
             pnlLogo = new Panel();
+            PictureCalendario = new PictureBox();
             pictureBox9 = new PictureBox();
             LabNombre = new Label();
             pnlContenedor = new Panel();
@@ -68,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelMenu.SuspendLayout();
             pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PictureCalendario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             SuspendLayout();
             // 
@@ -85,6 +87,7 @@
             // 
             // PanelOpciones
             // 
+            PanelOpciones.AutoScroll = true;
             PanelOpciones.BackColor = Color.FromArgb(206, 144, 17);
             PanelOpciones.BackgroundImage = (Image)resources.GetObject("PanelOpciones.BackgroundImage");
             PanelOpciones.BackgroundImageLayout = ImageLayout.Stretch;
@@ -139,6 +142,7 @@
             pictureBox6.Anchor = AnchorStyles.None;
             pictureBox6.BackColor = Color.FromArgb(205, 144, 19);
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.InitialImage = null;
             pictureBox6.Location = new Point(26, 74);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(38, 36);
@@ -389,6 +393,7 @@
             // pnlLogo
             // 
             pnlLogo.BackColor = Color.FromArgb(176, 25, 29);
+            pnlLogo.Controls.Add(PictureCalendario);
             pnlLogo.Controls.Add(pictureBox9);
             pnlLogo.Controls.Add(LabNombre);
             pnlLogo.Controls.Add(txtCarnet);
@@ -398,6 +403,19 @@
             pnlLogo.Name = "pnlLogo";
             pnlLogo.Size = new Size(767, 75);
             pnlLogo.TabIndex = 2;
+            // 
+            // PictureCalendario
+            // 
+            PictureCalendario.Anchor = AnchorStyles.Right;
+            PictureCalendario.BackColor = Color.FromArgb(205, 144, 19);
+            PictureCalendario.Image = (Image)resources.GetObject("PictureCalendario.Image");
+            PictureCalendario.Location = new Point(682, 3);
+            PictureCalendario.Name = "PictureCalendario";
+            PictureCalendario.Size = new Size(38, 36);
+            PictureCalendario.SizeMode = PictureBoxSizeMode.StretchImage;
+            PictureCalendario.TabIndex = 27;
+            PictureCalendario.TabStop = false;
+            PictureCalendario.Click += PictureCalendario_Click;
             // 
             // pictureBox9
             // 
@@ -426,6 +444,7 @@
             // 
             // pnlContenedor
             // 
+            pnlContenedor.AutoScroll = true;
             pnlContenedor.BackColor = SystemColors.ButtonHighlight;
             pnlContenedor.Dock = DockStyle.Fill;
             pnlContenedor.Location = new Point(271, 46);
@@ -464,6 +483,7 @@
             PanelMenu.ResumeLayout(false);
             pnlLogo.ResumeLayout(false);
             pnlLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PictureCalendario).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
         }
@@ -495,6 +515,7 @@
         private PictureBox pictureBox8;
         private PictureBox pictureBox9;
         private Panel panelAdministrador;
+        private PictureBox PictureCalendario;
     }
 }
 

@@ -183,7 +183,7 @@
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(595, 30);
+            pictureBox1.Location = new Point(614, 34);
             pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(111, 112);
@@ -194,8 +194,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
+            label1.BackColor = Color.FromArgb(177, 32, 31);
             label1.Font = new Font("Microsoft YaHei", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(574, 167);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";

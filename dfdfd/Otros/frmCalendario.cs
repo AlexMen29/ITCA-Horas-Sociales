@@ -1,4 +1,5 @@
 ﻿using dfdfd.bdSocial;
+using Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,8 +24,9 @@ namespace ProyectoSocial.Otros
 
         private void frmCalendario_Load(object sender, EventArgs e)
         {
-
-            gridEventos.DataSource = context.Eventos.ToList();
+            // Para fijar la barra divisoria del SplitContainer
+            splitContainer1.IsSplitterFixed = true;
+            gridEventos.DataSource = context.Eventos.Where(o => o.Grupo == compartir.usuario.Grupo).ToList();
             fechasEventos();
             gridEventos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
@@ -33,19 +35,20 @@ namespace ProyectoSocial.Otros
 
         private void fechasEventos()
         {
-            var fechasEventos = context.Eventos.Select(o => o.Fecha);
+            var fechasEventos = context.Eventos.Where(o => o.Grupo == compartir.usuario.Grupo).Select(o => o.Fecha);
 
             foreach (var fecha in fechasEventos)
             {
                 monthCalendar1.AddBoldedDate(fecha);
             }
             monthCalendar1.UpdateBoldedDates();
-        }       
+        }
 
         private void gridEventos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             txtDescripcionME.Text = gridEventos.SelectedCells[2].Value.ToString();
             dataTimeFechaME.Value = (DateTime)gridEventos.SelectedCells[1].Value;
+            txtDescripcionME.Focus();
         }
 
         private void monthCalendar1_DateSelected_1(object sender, DateRangeEventArgs e)

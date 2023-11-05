@@ -212,6 +212,24 @@ namespace SistemaAdministrativo
             frmCalendario us = new frmCalendario();
             AbrirForm(us);
         }
+
+        private void PictureCalendario_Click(object sender, EventArgs e)
+        {
+            Form frmCalendario = Application.OpenForms["frmCalendarioVentana"];
+
+            if (frmCalendario != null)
+            {
+                frmCalendario.Close();
+            }
+            else
+            {
+                frmCalendarioVentana frm = new frmCalendarioVentana();
+                frm.TopLevel = false;
+                pnlContenedor.Controls.Add(frm);
+                frm.Dock = DockStyle.Right;
+                frm.Show();
+            }
+        }
     }
 
 }

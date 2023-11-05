@@ -14,6 +14,7 @@ namespace ProyectoSocial.bdSocial
         public int Id { get; set; }
         public DateTime Fecha { get; set; } 
         public string Mensaje { get; set; } = null!;
+        public string Grupo { get; set; } = null!;
  
 
     }
