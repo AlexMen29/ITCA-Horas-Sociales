@@ -22,7 +22,7 @@ public partial class ProyectoSocialContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
-        => optionsBuilder.UseSqlServer("Data Source= DESKTOP-IJ4S2TJ\\SQLEXPRESS;Initial Catalog=proyectoSocial;Integrated Security=True; Encrypt=False");
+        => optionsBuilder.UseSqlServer("Data Source= LAPTOP-1QS2UH3M\\SQLEXPRESS;Initial Catalog=proyectoSocial;Integrated Security=True; Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

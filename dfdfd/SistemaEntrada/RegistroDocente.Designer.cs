@@ -178,6 +178,7 @@
             btnRegistrar.TabIndex = 28;
             btnRegistrar.Text = "Registrarme";
             btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // pictureBox1
             // 
