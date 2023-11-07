@@ -56,14 +56,14 @@ namespace Login
 
         private void RegistroUniversitarios_Load(object sender, EventArgs e)
         {
-            /*Obtenemos el nombre de los encargados para mostarlos como selecionables al momento del registo
+            //Obtenemos el nombre de los encargados para mostarlos como selecionables al momento del registo
             var option = context.DatosAlumnos.Where(o => o.NivelUsuario == 2).Select(o => o.Nombres).ToList();
 
             foreach (var elementos in option)
             {
                 txtEncargado.Items.Add(elementos);
             }
-            */
+            
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -79,7 +79,6 @@ namespace Login
             datos.TipoEstudio = txtTipoEstudio.Text;
             datos.Correo = txtCorreo.Text;
             var docente = context.DatosAlumnos.FirstOrDefault(u => u.Nombres == txtEncargado.Text);
-            datos.Grupo = docente.Grupo;
 
             if (string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtContraseña.Text) || string.IsNullOrWhiteSpace(txtNombres.Text) || string.IsNullOrWhiteSpace(txtApellidos.Text) || string.IsNullOrWhiteSpace(txtCorreo.Text) || string.IsNullOrWhiteSpace(txtEncargado.Text) || string.IsNullOrWhiteSpace(txtTipoEstudio.Text))
             {
@@ -87,21 +86,24 @@ namespace Login
             }
             else
             {
-                MessageBox.Show("Registro guardado", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Registro guardado", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                datos.Grupo = docente.Grupo;
+                context.Add(datos);
+                if (context.SaveChanges() == 1)
+                {
+                    MessageBox.Show("Se ha Registrado Exitosamente", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+
+                else
+                {
+                    MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
             }
 
-            context.Add(datos);
-            if (context.SaveChanges() == 1)
-            {
-                MessageBox.Show("Se ha Registrado Exitosamente", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
-            }
-
-            else
-            {
-                MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            
 
 
         }
