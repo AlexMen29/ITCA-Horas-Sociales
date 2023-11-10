@@ -64,5 +64,10 @@ namespace SistemaAdministrativo
             }
 
         }
+
+        private void FrmDatosInicio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

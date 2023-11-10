@@ -187,6 +187,9 @@ namespace SistemaAdministrativo
             LabTotalHoras.Text = totalHoras.ToString();
         }
 
+        private void panelDetallesAlumnos_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

@@ -32,10 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            pnlDetallesInfo = new Panel();
             panel1 = new Panel();
-            LabHorasRestantes = new Label();
-            label3 = new Label();
+            splitContainer1 = new SplitContainer();
             panelDetallesAlumnos = new Panel();
             LabUltimoServicio = new Label();
             LabActivoDesde = new Label();
@@ -50,74 +48,69 @@
             LabApellido = new Label();
             LabNombre = new Label();
             label2 = new Label();
-            LabTotalHoras = new Label();
-            label1 = new Label();
             PanelElementosBusqueda = new Panel();
             btnBuscar = new Button();
             btnLimpiar = new Button();
             pictureBuscar = new PictureBox();
             txtBuscar = new TextBox();
+            label3 = new Label();
+            LabHorasRestantes = new Label();
+            LabTotalHoras = new Label();
+            label1 = new Label();
             label9 = new Label();
             gridDatosAlumnos = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
             panelDetallesAlumnos.SuspendLayout();
             PanelElementosBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBuscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridDatosAlumnos).BeginInit();
             SuspendLayout();
             // 
-            // pnlDetallesInfo
-            // 
-            pnlDetallesInfo.Dock = DockStyle.Top;
-            pnlDetallesInfo.Location = new Point(0, 0);
-            pnlDetallesInfo.Margin = new Padding(4, 3, 4, 3);
-            pnlDetallesInfo.Name = "pnlDetallesInfo";
-            pnlDetallesInfo.Size = new Size(919, 34);
-            pnlDetallesInfo.TabIndex = 0;
-            // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ButtonHighlight;
-            panel1.Controls.Add(LabHorasRestantes);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(panelDetallesAlumnos);
-            panel1.Controls.Add(LabTotalHoras);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(PanelElementosBusqueda);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(gridDatosAlumnos);
+            panel1.Controls.Add(splitContainer1);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 34);
+            panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(919, 658);
+            panel1.Size = new Size(919, 692);
             panel1.TabIndex = 2;
             // 
-            // LabHorasRestantes
+            // splitContainer1
             // 
-            LabHorasRestantes.AutoSize = true;
-            LabHorasRestantes.BackColor = Color.FromArgb(205, 144, 19);
-            LabHorasRestantes.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LabHorasRestantes.ForeColor = SystemColors.Control;
-            LabHorasRestantes.Location = new Point(814, 397);
-            LabHorasRestantes.Name = "LabHorasRestantes";
-            LabHorasRestantes.Size = new Size(0, 18);
-            LabHorasRestantes.TabIndex = 23;
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.FixedPanel = FixedPanel.Panel1;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
             // 
-            // label3
+            // splitContainer1.Panel1
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(176, 25, 29);
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(674, 397);
-            label3.Name = "label3";
-            label3.Size = new Size(134, 18);
-            label3.TabIndex = 22;
-            label3.Text = "Horas restantes:";
+            splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
+            splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            splitContainer1.Panel1.Controls.Add(panelDetallesAlumnos);
+            splitContainer1.Panel1.Controls.Add(PanelElementosBusqueda);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.BackColor = SystemColors.ButtonHighlight;
+            splitContainer1.Panel2.Controls.Add(label3);
+            splitContainer1.Panel2.Controls.Add(LabHorasRestantes);
+            splitContainer1.Panel2.Controls.Add(LabTotalHoras);
+            splitContainer1.Panel2.Controls.Add(label1);
+            splitContainer1.Panel2.Controls.Add(label9);
+            splitContainer1.Panel2.Controls.Add(gridDatosAlumnos);
+            splitContainer1.Size = new Size(919, 692);
+            splitContainer1.SplitterDistance = 243;
+            splitContainer1.TabIndex = 24;
             // 
             // panelDetallesAlumnos
             // 
+            panelDetallesAlumnos.BackColor = Color.Transparent;
             panelDetallesAlumnos.Controls.Add(LabUltimoServicio);
             panelDetallesAlumnos.Controls.Add(LabActivoDesde);
             panelDetallesAlumnos.Controls.Add(label10);
@@ -131,18 +124,19 @@
             panelDetallesAlumnos.Controls.Add(LabApellido);
             panelDetallesAlumnos.Controls.Add(LabNombre);
             panelDetallesAlumnos.Controls.Add(label2);
-            panelDetallesAlumnos.Location = new Point(252, 421);
+            panelDetallesAlumnos.Location = new Point(3, 189);
             panelDetallesAlumnos.Name = "panelDetallesAlumnos";
-            panelDetallesAlumnos.Size = new Size(511, 225);
-            panelDetallesAlumnos.TabIndex = 8;
+            panelDetallesAlumnos.Size = new Size(235, 416);
+            panelDetallesAlumnos.TabIndex = 9;
+            panelDetallesAlumnos.Paint += panelDetallesAlumnos_Paint;
             // 
             // LabUltimoServicio
             // 
             LabUltimoServicio.AutoSize = true;
-            LabUltimoServicio.BackColor = Color.FromArgb(205, 144, 19);
+            LabUltimoServicio.BackColor = Color.Transparent;
             LabUltimoServicio.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LabUltimoServicio.ForeColor = Color.White;
-            LabUltimoServicio.Location = new Point(260, 187);
+            LabUltimoServicio.ForeColor = Color.Black;
+            LabUltimoServicio.Location = new Point(20, 360);
             LabUltimoServicio.Name = "LabUltimoServicio";
             LabUltimoServicio.Size = new Size(0, 18);
             LabUltimoServicio.TabIndex = 21;
@@ -150,10 +144,10 @@
             // LabActivoDesde
             // 
             LabActivoDesde.AutoSize = true;
-            LabActivoDesde.BackColor = Color.FromArgb(205, 144, 19);
+            LabActivoDesde.BackColor = Color.Transparent;
             LabActivoDesde.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LabActivoDesde.ForeColor = Color.White;
-            LabActivoDesde.Location = new Point(260, 158);
+            LabActivoDesde.ForeColor = Color.Black;
+            LabActivoDesde.Location = new Point(20, 301);
             LabActivoDesde.Name = "LabActivoDesde";
             LabActivoDesde.Size = new Size(0, 18);
             LabActivoDesde.TabIndex = 20;
@@ -164,7 +158,7 @@
             label10.BackColor = Color.FromArgb(176, 25, 29);
             label10.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(16, 187);
+            label10.Location = new Point(16, 333);
             label10.Name = "label10";
             label10.Size = new Size(205, 18);
             label10.TabIndex = 19;
@@ -176,7 +170,7 @@
             label8.BackColor = Color.FromArgb(176, 25, 29);
             label8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(16, 158);
+            label8.Location = new Point(16, 283);
             label8.Name = "label8";
             label8.Size = new Size(96, 18);
             label8.TabIndex = 18;
@@ -185,10 +179,10 @@
             // LabCarnet
             // 
             LabCarnet.AutoSize = true;
-            LabCarnet.BackColor = Color.FromArgb(205, 144, 19);
+            LabCarnet.BackColor = Color.Transparent;
             LabCarnet.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LabCarnet.ForeColor = Color.White;
-            LabCarnet.Location = new Point(260, 100);
+            LabCarnet.ForeColor = Color.Black;
+            LabCarnet.Location = new Point(20, 187);
             LabCarnet.Name = "LabCarnet";
             LabCarnet.Size = new Size(0, 18);
             LabCarnet.TabIndex = 17;
@@ -199,7 +193,7 @@
             label6.BackColor = Color.FromArgb(176, 25, 29);
             label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(16, 133);
+            label6.Location = new Point(16, 218);
             label6.Name = "label6";
             label6.Size = new Size(60, 18);
             label6.TabIndex = 16;
@@ -211,7 +205,7 @@
             label5.BackColor = Color.FromArgb(176, 25, 29);
             label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(16, 105);
+            label5.Location = new Point(16, 161);
             label5.Name = "label5";
             label5.Size = new Size(71, 18);
             label5.TabIndex = 15;
@@ -223,7 +217,7 @@
             label4.BackColor = Color.FromArgb(176, 25, 29);
             label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(16, 77);
+            label4.Location = new Point(16, 100);
             label4.Name = "label4";
             label4.Size = new Size(66, 18);
             label4.TabIndex = 14;
@@ -244,10 +238,10 @@
             // LabCorreo
             // 
             LabCorreo.AutoSize = true;
-            LabCorreo.BackColor = Color.FromArgb(205, 144, 19);
+            LabCorreo.BackColor = Color.Transparent;
             LabCorreo.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LabCorreo.ForeColor = Color.White;
-            LabCorreo.Location = new Point(260, 72);
+            LabCorreo.ForeColor = Color.Black;
+            LabCorreo.Location = new Point(20, 133);
             LabCorreo.Name = "LabCorreo";
             LabCorreo.Size = new Size(0, 18);
             LabCorreo.TabIndex = 12;
@@ -255,10 +249,10 @@
             // LabApellido
             // 
             LabApellido.AutoSize = true;
-            LabApellido.BackColor = Color.FromArgb(205, 144, 19);
+            LabApellido.BackColor = Color.Transparent;
             LabApellido.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LabApellido.ForeColor = Color.White;
-            LabApellido.Location = new Point(260, 44);
+            LabApellido.ForeColor = Color.Black;
+            LabApellido.Location = new Point(20, 72);
             LabApellido.Name = "LabApellido";
             LabApellido.Size = new Size(0, 18);
             LabApellido.TabIndex = 11;
@@ -266,10 +260,10 @@
             // LabNombre
             // 
             LabNombre.AutoSize = true;
-            LabNombre.BackColor = Color.FromArgb(205, 144, 19);
+            LabNombre.BackColor = Color.Transparent;
             LabNombre.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LabNombre.ForeColor = Color.White;
-            LabNombre.Location = new Point(260, 133);
+            LabNombre.ForeColor = Color.Black;
+            LabNombre.Location = new Point(20, 248);
             LabNombre.Name = "LabNombre";
             LabNombre.Size = new Size(0, 18);
             LabNombre.TabIndex = 10;
@@ -286,41 +280,18 @@
             label2.TabIndex = 9;
             label2.Text = "Detalles de Alumno";
             // 
-            // LabTotalHoras
-            // 
-            LabTotalHoras.AutoSize = true;
-            LabTotalHoras.BackColor = Color.FromArgb(205, 144, 19);
-            LabTotalHoras.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            LabTotalHoras.ForeColor = SystemColors.Control;
-            LabTotalHoras.Location = new Point(611, 385);
-            LabTotalHoras.Name = "LabTotalHoras";
-            LabTotalHoras.Size = new Size(19, 30);
-            LabTotalHoras.TabIndex = 7;
-            LabTotalHoras.Text = " ";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(176, 25, 29);
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(254, 385);
-            label1.Name = "label1";
-            label1.Size = new Size(351, 30);
-            label1.TabIndex = 6;
-            label1.Text = "Total de Horas Sociales Realizadas:";
-            // 
             // PanelElementosBusqueda
             // 
-            PanelElementosBusqueda.BackColor = Color.FromArgb(205, 144, 19);
+            PanelElementosBusqueda.BackColor = Color.Transparent;
+            PanelElementosBusqueda.BackgroundImageLayout = ImageLayout.Stretch;
             PanelElementosBusqueda.BorderStyle = BorderStyle.Fixed3D;
             PanelElementosBusqueda.Controls.Add(btnBuscar);
             PanelElementosBusqueda.Controls.Add(btnLimpiar);
             PanelElementosBusqueda.Controls.Add(pictureBuscar);
             PanelElementosBusqueda.Controls.Add(txtBuscar);
-            PanelElementosBusqueda.Location = new Point(12, 63);
+            PanelElementosBusqueda.Location = new Point(3, 3);
             PanelElementosBusqueda.Name = "PanelElementosBusqueda";
-            PanelElementosBusqueda.Size = new Size(198, 181);
+            PanelElementosBusqueda.Size = new Size(221, 168);
             PanelElementosBusqueda.TabIndex = 5;
             // 
             // btnBuscar
@@ -370,14 +341,60 @@
             txtBuscar.Size = new Size(121, 32);
             txtBuscar.TabIndex = 3;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(176, 25, 29);
+            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(436, 388);
+            label3.Name = "label3";
+            label3.Size = new Size(134, 18);
+            label3.TabIndex = 25;
+            label3.Text = "Horas restantes:";
+            // 
+            // LabHorasRestantes
+            // 
+            LabHorasRestantes.AutoSize = true;
+            LabHorasRestantes.BackColor = Color.FromArgb(205, 144, 19);
+            LabHorasRestantes.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            LabHorasRestantes.ForeColor = SystemColors.Control;
+            LabHorasRestantes.Location = new Point(576, 390);
+            LabHorasRestantes.Name = "LabHorasRestantes";
+            LabHorasRestantes.Size = new Size(0, 18);
+            LabHorasRestantes.TabIndex = 23;
+            // 
+            // LabTotalHoras
+            // 
+            LabTotalHoras.AutoSize = true;
+            LabTotalHoras.BackColor = Color.FromArgb(205, 144, 19);
+            LabTotalHoras.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            LabTotalHoras.ForeColor = SystemColors.Control;
+            LabTotalHoras.Location = new Point(373, 376);
+            LabTotalHoras.Name = "LabTotalHoras";
+            LabTotalHoras.Size = new Size(19, 30);
+            LabTotalHoras.TabIndex = 24;
+            LabTotalHoras.Text = " ";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(176, 25, 29);
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(16, 376);
+            label1.Name = "label1";
+            label1.Size = new Size(351, 30);
+            label1.TabIndex = 23;
+            label1.Text = "Total de Horas Sociales Realizadas:";
+            // 
             // label9
             // 
-            label9.Anchor = AnchorStyles.Top;
             label9.AutoSize = true;
             label9.BackColor = Color.FromArgb(176, 25, 29);
             label9.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ButtonHighlight;
-            label9.Location = new Point(268, 15);
+            label9.Location = new Point(110, 9);
             label9.Name = "label9";
             label9.Size = new Size(430, 45);
             label9.TabIndex = 2;
@@ -414,14 +431,14 @@
             gridDatosAlumnos.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridDatosAlumnos.EnableHeadersVisualStyles = false;
             gridDatosAlumnos.GridColor = Color.Firebrick;
-            gridDatosAlumnos.Location = new Point(254, 63);
+            gridDatosAlumnos.Location = new Point(0, 57);
             gridDatosAlumnos.Margin = new Padding(4, 3, 4, 3);
             gridDatosAlumnos.MultiSelect = false;
             gridDatosAlumnos.Name = "gridDatosAlumnos";
             gridDatosAlumnos.ReadOnly = true;
             gridDatosAlumnos.ScrollBars = ScrollBars.Horizontal;
             gridDatosAlumnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridDatosAlumnos.Size = new Size(451, 319);
+            gridDatosAlumnos.Size = new Size(668, 316);
             gridDatosAlumnos.TabIndex = 1;
             gridDatosAlumnos.CellClick += gridDatosAlumnos_CellClick;
             // 
@@ -432,14 +449,17 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(919, 692);
             Controls.Add(panel1);
-            Controls.Add(pnlDetallesInfo);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmDetallesAd";
             Text = "FrmDetallesAd";
             Load += FrmDetallesAd_Load;
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             panelDetallesAlumnos.ResumeLayout(false);
             panelDetallesAlumnos.PerformLayout();
             PanelElementosBusqueda.ResumeLayout(false);
@@ -450,33 +470,32 @@
         }
 
         #endregion
-
-        private Panel pnlDetallesInfo;
         private Panel panel1;
-        private DataGridView gridDatosAlumnos;
-        private Label label9;
-        private PictureBox pictureBuscar;
-        private TextBox txtBuscar;
-        private Panel PanelElementosBusqueda;
-        private Button btnLimpiar;
-        private Button btnBuscar;
-        private Label LabTotalHoras;
-        private Label label1;
+        private SplitContainer splitContainer1;
         private Panel panelDetallesAlumnos;
-        private Label LabApellido;
-        private Label LabNombre;
-        private Label label2;
-        private Label LabCorreo;
+        private Label LabUltimoServicio;
+        private Label LabActivoDesde;
+        private Label label10;
         private Label label8;
         private Label LabCarnet;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label112;
-        private Label LabUltimoServicio;
-        private Label LabActivoDesde;
-        private Label label10;
-        private Label LabHorasRestantes;
+        private Label LabCorreo;
+        private Label LabApellido;
+        private Label LabNombre;
+        private Label label2;
+        private Panel PanelElementosBusqueda;
+        private Button btnBuscar;
+        private Button btnLimpiar;
+        private PictureBox pictureBuscar;
+        private TextBox txtBuscar;
         private Label label3;
+        private Label LabTotalHoras;
+        private Label label1;
+        private Label label9;
+        private DataGridView gridDatosAlumnos;
+        private Label LabHorasRestantes;
     }
 }

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlInicio = new Panel();
-            lblInicioFrmInicio = new Label();
-            pnlDadosAdmi = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDatosInicio));
+            splitter1 = new Splitter();
+            splitContainer1 = new SplitContainer();
+            pictureBox1 = new PictureBox();
             btnBuscar = new Button();
             boxHoras = new ComboBox();
             label4 = new Label();
@@ -39,49 +40,55 @@
             dateTimePicker1 = new DateTimePicker();
             label2 = new Label();
             label1 = new Label();
-            pnlInicio.SuspendLayout();
-            pnlDadosAdmi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // pnlInicio
+            // splitter1
             // 
-            pnlInicio.Controls.Add(lblInicioFrmInicio);
-            pnlInicio.Dock = DockStyle.Top;
-            pnlInicio.Location = new Point(0, 0);
-            pnlInicio.Margin = new Padding(4, 3, 4, 3);
-            pnlInicio.Name = "pnlInicio";
-            pnlInicio.Size = new Size(919, 37);
-            pnlInicio.TabIndex = 2;
+            splitter1.Location = new Point(0, 0);
+            splitter1.Name = "splitter1";
+            splitter1.Size = new Size(3, 593);
+            splitter1.TabIndex = 5;
+            splitter1.TabStop = false;
             // 
-            // lblInicioFrmInicio
+            // splitContainer1
             // 
-            lblInicioFrmInicio.AutoSize = true;
-            lblInicioFrmInicio.Dock = DockStyle.Top;
-            lblInicioFrmInicio.FlatStyle = FlatStyle.Flat;
-            lblInicioFrmInicio.Font = new Font("Times New Roman", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblInicioFrmInicio.Location = new Point(0, 0);
-            lblInicioFrmInicio.Margin = new Padding(4, 0, 4, 0);
-            lblInicioFrmInicio.Name = "lblInicioFrmInicio";
-            lblInicioFrmInicio.Size = new Size(84, 32);
-            lblInicioFrmInicio.TabIndex = 0;
-            lblInicioFrmInicio.Text = "-------";
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(3, 0);
+            splitContainer1.Name = "splitContainer1";
             // 
-            // pnlDadosAdmi
+            // splitContainer1.Panel1
             // 
-            pnlDadosAdmi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlDadosAdmi.Controls.Add(btnBuscar);
-            pnlDadosAdmi.Controls.Add(boxHoras);
-            pnlDadosAdmi.Controls.Add(label4);
-            pnlDadosAdmi.Controls.Add(txtActividad);
-            pnlDadosAdmi.Controls.Add(label3);
-            pnlDadosAdmi.Controls.Add(dateTimePicker1);
-            pnlDadosAdmi.Controls.Add(label2);
-            pnlDadosAdmi.Controls.Add(label1);
-            pnlDadosAdmi.Location = new Point(0, 43);
-            pnlDadosAdmi.Margin = new Padding(4, 3, 4, 3);
-            pnlDadosAdmi.Name = "pnlDadosAdmi";
-            pnlDadosAdmi.Size = new Size(919, 548);
-            pnlDadosAdmi.TabIndex = 4;
+            splitContainer1.Panel1.Controls.Add(pictureBox1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(btnBuscar);
+            splitContainer1.Panel2.Controls.Add(boxHoras);
+            splitContainer1.Panel2.Controls.Add(label4);
+            splitContainer1.Panel2.Controls.Add(txtActividad);
+            splitContainer1.Panel2.Controls.Add(label3);
+            splitContainer1.Panel2.Controls.Add(dateTimePicker1);
+            splitContainer1.Panel2.Controls.Add(label2);
+            splitContainer1.Panel2.Controls.Add(label1);
+            splitContainer1.Size = new Size(916, 593);
+            splitContainer1.SplitterDistance = 204;
+            splitContainer1.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(9, 175);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(182, 210);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // btnBuscar
             // 
@@ -89,15 +96,12 @@
             btnBuscar.BackColor = Color.FromArgb(176, 25, 29);
             btnBuscar.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
-            btnBuscar.Location = new Point(418, 449);
+            btnBuscar.Location = new Point(279, 476);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(152, 54);
-            btnBuscar.TabIndex = 20;
+            btnBuscar.TabIndex = 28;
             btnBuscar.Text = "Guardar";
             btnBuscar.UseVisualStyleBackColor = false;
-            btnBuscar.Click += btnBuscar_Click;
-            btnBuscar.MouseEnter += btnBuscar_MouseEnter;
-            btnBuscar.MouseLeave += btnBuscar_MouseLeave;
             // 
             // boxHoras
             // 
@@ -105,68 +109,67 @@
             boxHoras.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             boxHoras.FormattingEnabled = true;
             boxHoras.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8" });
-            boxHoras.Location = new Point(456, 385);
+            boxHoras.Location = new Point(317, 412);
             boxHoras.Name = "boxHoras";
             boxHoras.Size = new Size(81, 33);
-            boxHoras.TabIndex = 19;
+            boxHoras.TabIndex = 27;
             // 
             // label4
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(205, 144, 19);
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(225, 325);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(86, 352);
             label4.Name = "label4";
             label4.Size = new Size(586, 45);
-            label4.TabIndex = 18;
+            label4.TabIndex = 26;
             label4.Text = "Ingrese el numero de horas realizadas";
             // 
             // txtActividad
             // 
             txtActividad.Anchor = AnchorStyles.None;
             txtActividad.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtActividad.Location = new Point(244, 273);
+            txtActividad.Location = new Point(105, 300);
             txtActividad.Multiline = true;
             txtActividad.Name = "txtActividad";
             txtActividad.Size = new Size(466, 38);
-            txtActividad.TabIndex = 17;
-            txtActividad.Text = "hola";
+            txtActividad.TabIndex = 25;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(205, 144, 19);
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(244, 225);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(105, 252);
             label3.Name = "label3";
             label3.Size = new Size(466, 45);
-            label3.TabIndex = 16;
+            label3.TabIndex = 24;
             label3.Text = "Ingresar la actividad realizada";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
             dateTimePicker1.CalendarFont = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(397, 188);
+            dateTimePicker1.Location = new Point(258, 215);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(216, 23);
-            dateTimePicker1.TabIndex = 15;
+            dateTimePicker1.TabIndex = 23;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(205, 144, 19);
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(175, 127);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(36, 154);
             label2.Name = "label2";
             label2.Size = new Size(636, 45);
-            label2.TabIndex = 14;
+            label2.TabIndex = 22;
             label2.Text = "Ingresar la fecha de la actividad realizada";
             // 
             // label1
@@ -176,11 +179,11 @@
             label1.BackColor = Color.FromArgb(176, 25, 29);
             label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(225, 35);
+            label1.Location = new Point(86, 62);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(570, 65);
-            label1.TabIndex = 13;
+            label1.TabIndex = 21;
             label1.Text = "Registrar Horas Sociales";
             // 
             // FrmDatosInicio
@@ -188,36 +191,39 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(919, 593);
-            Controls.Add(pnlDadosAdmi);
-            Controls.Add(pnlInicio);
+            Controls.Add(splitContainer1);
+            Controls.Add(splitter1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmDatosInicio";
             Text = "FrmDatosInicio";
-            pnlInicio.ResumeLayout(false);
-            pnlInicio.PerformLayout();
-            pnlDadosAdmi.ResumeLayout(false);
-            pnlDadosAdmi.PerformLayout();
+            Load += FrmDatosInicio_Load;
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel pnlInicio;
-        private Label lblInicioFrmInicio;
         private Label lblTelefonoAd;
         private Label lblDepartamentoAd;
         private Label lblCorreoAd;
         private Label lblCarnetAd;
         private Label lblApellidoAd;
         private Label lblNombreAd;
-        private Panel pnlDadosAdmi;
         private TextBox txtsShowNum;
         private TextBox txtShowDepart;
         private TextBox txtShowGmail;
         private TextBox txtShowCarnet;
         private TextBox txtShowLastName;
         private TextBox txtShowName;
+        private Splitter splitter1;
+        private SplitContainer splitContainer1;
+        private PictureBox pictureBox1;
+        private Button btnBuscar;
         private ComboBox boxHoras;
         private Label label4;
         private TextBox txtActividad;
@@ -225,6 +231,5 @@
         private DateTimePicker dateTimePicker1;
         private Label label2;
         private Label label1;
-        private Button btnBuscar;
     }
 }
