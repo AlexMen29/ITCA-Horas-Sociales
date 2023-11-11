@@ -37,12 +37,12 @@
             pnlLeft = new Panel();
             pnlContent = new Panel();
             dateDate = new DateTimePicker();
-            txtEGPhone = new TextBox();
+            txtResPhone = new TextBox();
             txtResponsable = new TextBox();
             txtPhone = new TextBox();
             txtEmail = new TextBox();
             lblName = new Label();
-            txtSchool = new TextBox();
+            txtActivity = new TextBox();
             lblTime = new Label();
             lblEGPhone = new Label();
             lblResponsable = new Label();
@@ -143,12 +143,12 @@
             pnlContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnlContent.BackColor = Color.Transparent;
             pnlContent.Controls.Add(dateDate);
-            pnlContent.Controls.Add(txtEGPhone);
+            pnlContent.Controls.Add(txtResPhone);
             pnlContent.Controls.Add(txtResponsable);
             pnlContent.Controls.Add(txtPhone);
             pnlContent.Controls.Add(txtEmail);
             pnlContent.Controls.Add(lblName);
-            pnlContent.Controls.Add(txtSchool);
+            pnlContent.Controls.Add(txtActivity);
             pnlContent.Controls.Add(lblTime);
             pnlContent.Controls.Add(lblEGPhone);
             pnlContent.Controls.Add(lblResponsable);
@@ -179,15 +179,15 @@
             dateDate.Tag = "dateDate";
             dateDate.Value = new DateTime(2023, 10, 10, 22, 24, 9, 0);
             // 
-            // txtEGPhone
+            // txtResPhone
             // 
-            txtEGPhone.Anchor = AnchorStyles.Top;
-            txtEGPhone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEGPhone.Location = new Point(270, 468);
-            txtEGPhone.Margin = new Padding(4, 3, 4, 3);
-            txtEGPhone.Name = "txtEGPhone";
-            txtEGPhone.Size = new Size(187, 29);
-            txtEGPhone.TabIndex = 7;
+            txtResPhone.Anchor = AnchorStyles.Top;
+            txtResPhone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtResPhone.Location = new Point(270, 468);
+            txtResPhone.Margin = new Padding(4, 3, 4, 3);
+            txtResPhone.Name = "txtResPhone";
+            txtResPhone.Size = new Size(187, 29);
+            txtResPhone.TabIndex = 7;
             // 
             // txtResponsable
             // 
@@ -234,16 +234,16 @@
             lblName.Text = "Nombre de la Institución :";
             lblName.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // txtSchool
+            // txtActivity
             // 
-            txtSchool.Anchor = AnchorStyles.Top;
-            txtSchool.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSchool.Location = new Point(270, 166);
-            txtSchool.Margin = new Padding(4, 3, 4, 3);
-            txtSchool.Multiline = true;
-            txtSchool.Name = "txtSchool";
-            txtSchool.Size = new Size(503, 103);
-            txtSchool.TabIndex = 4;
+            txtActivity.Anchor = AnchorStyles.Top;
+            txtActivity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtActivity.Location = new Point(270, 166);
+            txtActivity.Margin = new Padding(4, 3, 4, 3);
+            txtActivity.Multiline = true;
+            txtActivity.Name = "txtActivity";
+            txtActivity.Size = new Size(503, 103);
+            txtActivity.TabIndex = 4;
             // 
             // lblTime
             // 
@@ -295,11 +295,11 @@
             lblPhone.Anchor = AnchorStyles.Top;
             lblPhone.BackColor = Color.Transparent;
             lblPhone.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPhone.Location = new Point(139, 102);
+            lblPhone.Location = new Point(152, 102);
             lblPhone.Margin = new Padding(4, 0, 4, 0);
             lblPhone.Name = "lblPhone";
             lblPhone.RightToLeft = RightToLeft.No;
-            lblPhone.Size = new Size(110, 37);
+            lblPhone.Size = new Size(97, 37);
             lblPhone.TabIndex = 10;
             lblPhone.Tag = "Teléfono :";
             lblPhone.Text = "Teléfono :";
@@ -488,8 +488,8 @@
         private Label lblTime;
         private Label lblEGPhone;
         private Label lblResponsable;
-        private TextBox txtSchool;
-        private TextBox txtEGPhone;
+        private TextBox txtActivity;
+        private TextBox txtResPhone;
         private TextBox txtResponsable;
         private TextBox txtPhone;
         private TextBox txtEmail;

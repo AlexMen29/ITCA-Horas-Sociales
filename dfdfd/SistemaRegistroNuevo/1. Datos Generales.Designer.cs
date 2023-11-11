@@ -322,11 +322,11 @@
             lblEmail.Anchor = AnchorStyles.Top;
             lblEmail.BackColor = Color.Transparent;
             lblEmail.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEmail.Location = new Point(74, 277);
+            lblEmail.Location = new Point(96, 277);
             lblEmail.Margin = new Padding(4, 0, 4, 0);
             lblEmail.Name = "lblEmail";
             lblEmail.RightToLeft = RightToLeft.No;
-            lblEmail.Size = new Size(214, 35);
+            lblEmail.Size = new Size(192, 35);
             lblEmail.TabIndex = 9;
             lblEmail.Tag = "Correo Electrónico :";
             lblEmail.Text = "Correo Electrónico :";

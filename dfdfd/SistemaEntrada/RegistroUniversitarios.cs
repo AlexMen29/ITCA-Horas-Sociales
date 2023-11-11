@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dfdfd.bdSocial;
+using HorasSociales2;
 
 
 
@@ -91,8 +92,9 @@ namespace Login
                 context.Add(datos);
                 if (context.SaveChanges() == 1)
                 {
-                    MessageBox.Show("Se ha Registrado Exitosamente", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    FrmDatosGenerales frm = new FrmDatosGenerales();
+                    frm.Show();
+                    Hide();
                 }
 
                 else

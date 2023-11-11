@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dfdfd.bdSocial;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace HorasSociales2
 {
     public partial class FrmDatosInstitucion : Form
     {
+        ProyectoSocialContext context = new ProyectoSocialContext();
         public FrmDatosInstitucion()
         {
             InitializeComponent();
@@ -26,10 +28,27 @@ namespace HorasSociales2
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            FrmObjetivosMetas vistaMain = new FrmObjetivosMetas();
-            vistaMain.Show();
-            Hide();
-        }
 
+            datosContenedor.institucion = txtName.Text;
+            datosContenedor.telefonoInstitucion = txtPhone.Text;
+            datosContenedor.actividades = txtActivity.Text;
+            datosContenedor.responsable = txtResponsable.Text;
+            datosContenedor.correoResponsable = txtEmail.Text;
+            datosContenedor.telefonoResponsable = txtResPhone.Text;
+            datosContenedor.tiempo = txtTime.Text;
+            datosContenedor.fecha = dateDate.Value.ToString();
+
+
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtActivity.Text) || string.IsNullOrWhiteSpace(txtResponsable.Text) || string.IsNullOrWhiteSpace(txtTime.Text) || string.IsNullOrWhiteSpace(txtResPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                MessageBox.Show("Por favor, Completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                FrmObjetivosMetas vistaObj = new FrmObjetivosMetas();
+                vistaObj.Show();
+                Hide();
+            }
+        }
     }
 }

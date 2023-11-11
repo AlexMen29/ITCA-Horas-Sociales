@@ -48,7 +48,7 @@
             txtDuracion2 = new TextBox();
             txtObjetivos2 = new TextBox();
             txtAct1 = new TextBox();
-            textAct2 = new TextBox();
+            txtAct2 = new TextBox();
             pnlRight = new Panel();
             panel1 = new Panel();
             pnlBottom = new Panel();
@@ -169,7 +169,7 @@
             tblytMain.Controls.Add(txtDuracion2, 0, 2);
             tblytMain.Controls.Add(txtObjetivos2, 0, 2);
             tblytMain.Controls.Add(txtAct1, 0, 1);
-            tblytMain.Controls.Add(textAct2, 0, 2);
+            tblytMain.Controls.Add(txtAct2, 0, 2);
             tblytMain.Location = new Point(48, 18);
             tblytMain.Margin = new Padding(4, 3, 4, 3);
             tblytMain.Name = "tblytMain";
@@ -339,19 +339,19 @@
             txtAct1.TabIndex = 2;
             txtAct1.TextAlign = HorizontalAlignment.Center;
             // 
-            // textAct2
+            // txtAct2
             // 
-            textAct2.Anchor = AnchorStyles.Top;
-            textAct2.BorderStyle = BorderStyle.None;
-            textAct2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textAct2.HideSelection = false;
-            textAct2.Location = new Point(5, 200);
-            textAct2.Margin = new Padding(4, 3, 4, 3);
-            textAct2.Multiline = true;
-            textAct2.Name = "textAct2";
-            textAct2.Size = new Size(203, 152);
-            textAct2.TabIndex = 3;
-            textAct2.TextAlign = HorizontalAlignment.Center;
+            txtAct2.Anchor = AnchorStyles.Top;
+            txtAct2.BorderStyle = BorderStyle.None;
+            txtAct2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAct2.HideSelection = false;
+            txtAct2.Location = new Point(5, 200);
+            txtAct2.Margin = new Padding(4, 3, 4, 3);
+            txtAct2.Multiline = true;
+            txtAct2.Name = "txtAct2";
+            txtAct2.Size = new Size(203, 152);
+            txtAct2.TabIndex = 3;
+            txtAct2.TextAlign = HorizontalAlignment.Center;
             // 
             // pnlRight
             // 
@@ -480,7 +480,7 @@
         private TextBox txtDuracion2;
         private TextBox txtObjetivos2;
         private TextBox txtAct1;
-        private TextBox textAct2;
+        private TextBox txtAct2;
     }
 }
 

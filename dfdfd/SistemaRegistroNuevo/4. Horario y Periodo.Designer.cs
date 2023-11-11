@@ -620,8 +620,9 @@
             btnNext.Size = new Size(177, 65);
             btnNext.TabIndex = 17;
             btnNext.Tag = "Siguiente";
-            btnNext.Text = "Siguiente";
+            btnNext.Text = "Terminar";
             btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
             // 
             // FrmHorarioPeriodo
             // 
