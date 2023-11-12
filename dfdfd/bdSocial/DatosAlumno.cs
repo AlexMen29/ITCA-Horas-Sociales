@@ -23,4 +23,7 @@ public partial class DatosAlumno
     public string Correo { get; set; } = null!;
 
     public string Grupo { get; set; } = null!;
+
+    public string Estado { get; set;}
+
 }

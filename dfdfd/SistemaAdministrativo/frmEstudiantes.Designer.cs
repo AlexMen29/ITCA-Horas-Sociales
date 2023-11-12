@@ -45,7 +45,7 @@
             label9.BackColor = Color.FromArgb(176, 25, 29);
             label9.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ButtonHighlight;
-            label9.Location = new Point(325, 78);
+            label9.Location = new Point(326, 6);
             label9.Name = "label9";
             label9.Size = new Size(267, 45);
             label9.TabIndex = 4;
@@ -82,7 +82,7 @@
             gridEstudiantes.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridEstudiantes.EnableHeadersVisualStyles = false;
             gridEstudiantes.GridColor = Color.Firebrick;
-            gridEstudiantes.Location = new Point(226, 126);
+            gridEstudiantes.Location = new Point(227, 54);
             gridEstudiantes.Margin = new Padding(4, 3, 4, 3);
             gridEstudiantes.MultiSelect = false;
             gridEstudiantes.Name = "gridEstudiantes";
@@ -90,6 +90,7 @@
             gridEstudiantes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridEstudiantes.Size = new Size(451, 319);
             gridEstudiantes.TabIndex = 3;
+            gridEstudiantes.CellFormatting += gridEstudiantes_CellFormatting;
             // 
             // LabEstudiantes
             // 
@@ -97,7 +98,7 @@
             LabEstudiantes.BackColor = Color.FromArgb(205, 144, 19);
             LabEstudiantes.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             LabEstudiantes.ForeColor = SystemColors.Control;
-            LabEstudiantes.Location = new Point(453, 448);
+            LabEstudiantes.Location = new Point(454, 376);
             LabEstudiantes.Name = "LabEstudiantes";
             LabEstudiantes.Size = new Size(19, 30);
             LabEstudiantes.TabIndex = 9;
@@ -109,7 +110,7 @@
             label1.BackColor = Color.FromArgb(176, 25, 29);
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(226, 448);
+            label1.Location = new Point(227, 376);
             label1.Name = "label1";
             label1.Size = new Size(221, 30);
             label1.TabIndex = 8;

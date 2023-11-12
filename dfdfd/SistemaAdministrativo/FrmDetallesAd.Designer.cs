@@ -49,10 +49,17 @@
             LabNombre = new Label();
             label2 = new Label();
             PanelElementosBusqueda = new Panel();
+            label11 = new Label();
+            label7 = new Label();
+            comboFiltra = new ComboBox();
+            btnFiltrar = new Button();
             btnBuscar = new Button();
             btnLimpiar = new Button();
             pictureBuscar = new PictureBox();
             txtBuscar = new TextBox();
+            label13 = new Label();
+            btnEstado = new Button();
+            label12 = new Label();
             label3 = new Label();
             LabHorasRestantes = new Label();
             LabTotalHoras = new Label();
@@ -90,7 +97,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
             splitContainer1.Panel1.Controls.Add(panelDetallesAlumnos);
             splitContainer1.Panel1.Controls.Add(PanelElementosBusqueda);
@@ -98,6 +104,9 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = SystemColors.ButtonHighlight;
+            splitContainer1.Panel2.Controls.Add(label13);
+            splitContainer1.Panel2.Controls.Add(btnEstado);
+            splitContainer1.Panel2.Controls.Add(label12);
             splitContainer1.Panel2.Controls.Add(label3);
             splitContainer1.Panel2.Controls.Add(LabHorasRestantes);
             splitContainer1.Panel2.Controls.Add(LabTotalHoras);
@@ -124,7 +133,7 @@
             panelDetallesAlumnos.Controls.Add(LabApellido);
             panelDetallesAlumnos.Controls.Add(LabNombre);
             panelDetallesAlumnos.Controls.Add(label2);
-            panelDetallesAlumnos.Location = new Point(3, 189);
+            panelDetallesAlumnos.Location = new Point(5, 229);
             panelDetallesAlumnos.Name = "panelDetallesAlumnos";
             panelDetallesAlumnos.Size = new Size(235, 416);
             panelDetallesAlumnos.TabIndex = 9;
@@ -270,37 +279,79 @@
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(176, 25, 29);
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(0, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(153, 18);
+            label2.Size = new Size(191, 44);
             label2.TabIndex = 9;
-            label2.Text = "Detalles de Alumno";
+            label2.Text = "Detalles de estudiante selecciónado";
             // 
             // PanelElementosBusqueda
             // 
             PanelElementosBusqueda.BackColor = Color.Transparent;
             PanelElementosBusqueda.BackgroundImageLayout = ImageLayout.Stretch;
-            PanelElementosBusqueda.BorderStyle = BorderStyle.Fixed3D;
+            PanelElementosBusqueda.Controls.Add(label11);
+            PanelElementosBusqueda.Controls.Add(label7);
+            PanelElementosBusqueda.Controls.Add(comboFiltra);
+            PanelElementosBusqueda.Controls.Add(btnFiltrar);
             PanelElementosBusqueda.Controls.Add(btnBuscar);
             PanelElementosBusqueda.Controls.Add(btnLimpiar);
             PanelElementosBusqueda.Controls.Add(pictureBuscar);
             PanelElementosBusqueda.Controls.Add(txtBuscar);
-            PanelElementosBusqueda.Location = new Point(3, 3);
+            PanelElementosBusqueda.Location = new Point(3, 0);
             PanelElementosBusqueda.Name = "PanelElementosBusqueda";
-            PanelElementosBusqueda.Size = new Size(221, 168);
+            PanelElementosBusqueda.Size = new Size(237, 230);
             PanelElementosBusqueda.TabIndex = 5;
+            // 
+            // label11
+            // 
+            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(4, 89);
+            label11.Name = "label11";
+            label11.Size = new Size(226, 42);
+            label11.TabIndex = 28;
+            label11.Text = "¿Filtro? puede filtrar segun la fecha en que se ingreso la actividad";
+            // 
+            // label7
+            // 
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(3, 7);
+            label7.Name = "label7";
+            label7.Size = new Size(226, 42);
+            label7.TabIndex = 27;
+            label7.Text = "A continuación ingrese o seleccióne el carnet a buscar:";
+            // 
+            // comboFiltra
+            // 
+            comboFiltra.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboFiltra.FormattingEnabled = true;
+            comboFiltra.Items.AddRange(new object[] { "Descendente", "Ascendente", "MaxHoras", "MinHoras", "Ninguno" });
+            comboFiltra.Location = new Point(43, 144);
+            comboFiltra.Name = "comboFiltra";
+            comboFiltra.Size = new Size(101, 23);
+            comboFiltra.TabIndex = 26;
+            // 
+            // btnFiltrar
+            // 
+            btnFiltrar.BackColor = Color.FromArgb(176, 25, 29);
+            btnFiltrar.ForeColor = SystemColors.ButtonHighlight;
+            btnFiltrar.Location = new Point(149, 134);
+            btnFiltrar.Name = "btnFiltrar";
+            btnFiltrar.Size = new Size(81, 40);
+            btnFiltrar.TabIndex = 7;
+            btnFiltrar.Text = "Filtrar";
+            btnFiltrar.UseVisualStyleBackColor = false;
+            btnFiltrar.Click += btnFiltrar_Click;
             // 
             // btnBuscar
             // 
             btnBuscar.BackColor = Color.FromArgb(176, 25, 29);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
-            btnBuscar.Location = new Point(18, 65);
+            btnBuscar.Location = new Point(152, 52);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(165, 40);
+            btnBuscar.Size = new Size(81, 34);
             btnBuscar.TabIndex = 6;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -312,11 +363,11 @@
             // 
             btnLimpiar.BackColor = Color.FromArgb(176, 25, 29);
             btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
-            btnLimpiar.Location = new Point(18, 111);
+            btnLimpiar.Location = new Point(-3, 180);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(165, 40);
+            btnLimpiar.Size = new Size(243, 40);
             btnLimpiar.TabIndex = 5;
-            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.Text = "Borrar";
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             btnLimpiar.MouseEnter += btnLimpiar_MouseEnter;
@@ -325,9 +376,9 @@
             // pictureBuscar
             // 
             pictureBuscar.Image = (Image)resources.GetObject("pictureBuscar.Image");
-            pictureBuscar.Location = new Point(18, 25);
+            pictureBuscar.Location = new Point(7, 52);
             pictureBuscar.Name = "pictureBuscar";
-            pictureBuscar.Size = new Size(38, 34);
+            pictureBuscar.Size = new Size(33, 32);
             pictureBuscar.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBuscar.TabIndex = 4;
             pictureBuscar.TabStop = false;
@@ -335,11 +386,42 @@
             // txtBuscar
             // 
             txtBuscar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBuscar.Location = new Point(62, 25);
+            txtBuscar.Location = new Point(46, 52);
             txtBuscar.Multiline = true;
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(121, 32);
+            txtBuscar.Size = new Size(101, 32);
             txtBuscar.TabIndex = 3;
+            // 
+            // label13
+            // 
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(52, 477);
+            label13.Name = "label13";
+            label13.Size = new Size(57, 23);
+            label13.TabIndex = 31;
+            label13.Text = "Estado:";
+            // 
+            // btnEstado
+            // 
+            btnEstado.BackColor = Color.Yellow;
+            btnEstado.Location = new Point(110, 472);
+            btnEstado.Name = "btnEstado";
+            btnEstado.Size = new Size(100, 26);
+            btnEstado.TabIndex = 30;
+            btnEstado.Text = "¿?";
+            btnEstado.UseVisualStyleBackColor = false;
+            btnEstado.Click += button1_Click;
+            // 
+            // label12
+            // 
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(70, 61);
+            label12.Name = "label12";
+            label12.Size = new Size(302, 25);
+            label12.TabIndex = 29;
+            label12.Text = "Seleccióne un registro:";
             // 
             // label3
             // 
@@ -347,7 +429,7 @@
             label3.BackColor = Color.FromArgb(176, 25, 29);
             label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(436, 388);
+            label3.Location = new Point(472, 445);
             label3.Name = "label3";
             label3.Size = new Size(134, 18);
             label3.TabIndex = 25;
@@ -359,7 +441,7 @@
             LabHorasRestantes.BackColor = Color.FromArgb(205, 144, 19);
             LabHorasRestantes.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             LabHorasRestantes.ForeColor = SystemColors.Control;
-            LabHorasRestantes.Location = new Point(576, 390);
+            LabHorasRestantes.Location = new Point(612, 442);
             LabHorasRestantes.Name = "LabHorasRestantes";
             LabHorasRestantes.Size = new Size(0, 18);
             LabHorasRestantes.TabIndex = 23;
@@ -370,7 +452,7 @@
             LabTotalHoras.BackColor = Color.FromArgb(205, 144, 19);
             LabTotalHoras.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             LabTotalHoras.ForeColor = SystemColors.Control;
-            LabTotalHoras.Location = new Point(373, 376);
+            LabTotalHoras.Location = new Point(409, 433);
             LabTotalHoras.Name = "LabTotalHoras";
             LabTotalHoras.Size = new Size(19, 30);
             LabTotalHoras.TabIndex = 24;
@@ -382,7 +464,7 @@
             label1.BackColor = Color.FromArgb(176, 25, 29);
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(16, 376);
+            label1.Location = new Point(52, 433);
             label1.Name = "label1";
             label1.Size = new Size(351, 30);
             label1.TabIndex = 23;
@@ -390,6 +472,7 @@
             // 
             // label9
             // 
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.BackColor = Color.FromArgb(176, 25, 29);
             label9.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point);
@@ -431,14 +514,14 @@
             gridDatosAlumnos.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridDatosAlumnos.EnableHeadersVisualStyles = false;
             gridDatosAlumnos.GridColor = Color.Firebrick;
-            gridDatosAlumnos.Location = new Point(0, 57);
+            gridDatosAlumnos.Location = new Point(70, 89);
             gridDatosAlumnos.Margin = new Padding(4, 3, 4, 3);
             gridDatosAlumnos.MultiSelect = false;
             gridDatosAlumnos.Name = "gridDatosAlumnos";
             gridDatosAlumnos.ReadOnly = true;
             gridDatosAlumnos.ScrollBars = ScrollBars.Horizontal;
             gridDatosAlumnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridDatosAlumnos.Size = new Size(668, 316);
+            gridDatosAlumnos.Size = new Size(536, 316);
             gridDatosAlumnos.TabIndex = 1;
             gridDatosAlumnos.CellClick += gridDatosAlumnos_CellClick;
             // 
@@ -497,5 +580,12 @@
         private Label label9;
         private DataGridView gridDatosAlumnos;
         private Label LabHorasRestantes;
+        private ComboBox comboFiltra;
+        private Button btnFiltrar;
+        private Label label7;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private Button btnEstado;
     }
 }

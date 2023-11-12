@@ -1,5 +1,6 @@
 ﻿using dfdfd.bdSocial;
 using Login;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,9 +22,10 @@ namespace SistemaAdministrativo
         public FrmDetallesAd()
         {
             InitializeComponent();
+
         }
 
-        private void CargarDatosEnDataGridViem(int nivel, string carnet)
+        private void CargarDatosEnDataGridViem(int nivel, string carnet, string filtro)
         {
             if (nivel == 1)
             {
@@ -39,12 +41,14 @@ namespace SistemaAdministrativo
                     gridDatosAlumnos.Columns[1].Visible = false;
                 }
                 totalHoras();
+
             }
             else
             {
                 var datosAlumno = context.horasSociales.Where(h => h.Grupo == compartir.usuario.Grupo).ToList();
 
                 gridDatosAlumnos.DataSource = datosAlumno;
+
 
             }
 
@@ -56,7 +60,7 @@ namespace SistemaAdministrativo
             gridDatosAlumnos.DataSource = context.DatosAlumnos.ToList();
 
 
-            CargarDatosEnDataGridViem(compartir.Nivelusuario, compartir.carnetIngresado);
+            CargarDatosEnDataGridViem(compartir.Nivelusuario, compartir.carnetIngresado, "indefinido");
 
 
             if (compartir.Nivelusuario == 1)
@@ -73,16 +77,30 @@ namespace SistemaAdministrativo
                     int horasRestantes = 500 - int.Parse(LabTotalHoras.Text);
                     LabHorasRestantes.Text = horasRestantes.ToString();
                 }
+
+                if (compartir.usuario.Estado == "En Proceso")
+                {
+                    btnEstado.Text = "En Proceso";
+                }
+                else
+                {
+                    btnEstado.Text = "Terminado";
+                    btnEstado.BackColor = Color.Green;
+                }
+
+
             }
 
             gridDatosAlumnos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+
 
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LabCarnet.Text = "";
-            txtBuscar.Text = "";
+            txtBuscar.Text = null;
             LabNombre.Text = "";
             LabApellido.Text = "";
             LabCorreo.Text = "";
@@ -90,8 +108,11 @@ namespace SistemaAdministrativo
             LabUltimoServicio.Text = "";
             LabTotalHoras.Text = "";
             LabHorasRestantes.Text = "";
+            btnEstado.Text = "¿?";
+            btnEstado.BackColor = Color.Yellow;
+            comboFiltra.SelectedIndex = 4;
 
-            CargarDatosEnDataGridViem(2, compartir.carnetIngresado);
+            CargarDatosEnDataGridViem(2, compartir.carnetIngresado, "indefinido");
 
         }
 
@@ -138,7 +159,7 @@ namespace SistemaAdministrativo
 
                 if (txtBuscar.Text == listaAlumnos[indice])
                 {
-                    CargarDatosEnDataGridViem(1, txtBuscar.Text);
+                    CargarDatosEnDataGridViem(1, txtBuscar.Text, comboFiltra.Text);
                     totalHoras();
 
                     var usuario = context.DatosAlumnos.FirstOrDefault(u => u.Carnet == txtBuscar.Text);
@@ -161,7 +182,15 @@ namespace SistemaAdministrativo
                         int horasRestantes = 500 - int.Parse(LabTotalHoras.Text);
                         LabHorasRestantes.Text = horasRestantes.ToString();
                     }
-                    encontrado = true;
+                    if (usuario.Estado == "En Proceso")
+                    {
+                        btnEstado.Text = "En Proceso";
+                    }
+                    else
+                    {
+                        btnEstado.Text = "Terminado";
+                        btnEstado.BackColor = Color.Green;
+                    }
                     break;
                 }
                 if (encontrado == false && indice == listaAlumnos.Count - 1)
@@ -190,6 +219,73 @@ namespace SistemaAdministrativo
         private void panelDetallesAlumnos_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscar.Text))
+            {
+
+
+                if (comboFiltra.Text == "Descendente")
+                {
+                    var datosOrdenados = context.horasSociales.Where(o => o.Grupo == compartir.usuario.Grupo).OrderByDescending(h => h.Fecha).ToList();
+                    gridDatosAlumnos.DataSource = datosOrdenados;
+
+
+                }
+                if (comboFiltra.Text == "Ascendente")
+                {
+                    var datosOrdenados = context.horasSociales.Where(o => o.Grupo == compartir.usuario.Grupo).OrderBy(h => h.Fecha).ToList();
+                    gridDatosAlumnos.DataSource = datosOrdenados;
+                }
+
+                MessageBox.Show("No hay nada en la caja");
+
+            }
+            else
+            {
+                if (comboFiltra.Text == "Descendente")
+                {
+                    var datosOrdenados = context.horasSociales.Where(o => o.Grupo == compartir.usuario.Grupo && o.Carnet == txtBuscar.Text).OrderByDescending(h => h.Fecha).ToList();
+                    gridDatosAlumnos.DataSource = datosOrdenados;
+
+
+                }
+                if (comboFiltra.Text == "Ascendente")
+                {
+                    var datosOrdenados = context.horasSociales.Where(o => o.Grupo == compartir.usuario.Grupo && o.Carnet == txtBuscar.Text).OrderBy(h => h.Fecha).ToList();
+                    gridDatosAlumnos.DataSource = datosOrdenados;
+                }
+                MessageBox.Show("si hay nada en la caja");
+
+
+
+
+
+            }
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (compartir.Nivelusuario == 1)
+            {
+                if (btnEstado.Text == "En Proceso")
+                {
+                    MessageBox.Show($"Estimado/a {compartir.usuario.Nombres},\nLe informamos que su estado se encuentra actualmente en proceso." +
+                        $" Le invitamos a continuar llevando a cabo su servicio social de manera excelente para que pueda culminar " +
+                        $"satisfactoriamente en el menor tiempo posible.", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (btnEstado.Text == "Terminado")
+                {
+                    MessageBox.Show($"Estimado/a {compartir.usuario.Nombres},\n¡Felicitaciones! Nos complace informarle que su servicio social ha sido completado con éxito. " +
+                        $"Le solicitamos presentarse o comunicarse con su encargado {compartir.usuario.Encargado} para recibir su hoja de finalización y" +
+                        $" formalizar los detalles de su logro.\nAgradecemos su dedicación y esfuerzo durante este proceso.", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+  
         }
     }
 }

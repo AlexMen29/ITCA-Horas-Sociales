@@ -94,14 +94,15 @@
             // 
             btnBuscar.Anchor = AnchorStyles.None;
             btnBuscar.BackColor = Color.FromArgb(176, 25, 29);
-            btnBuscar.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
-            btnBuscar.Location = new Point(279, 476);
+            btnBuscar.Location = new Point(283, 470);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(152, 54);
+            btnBuscar.Size = new Size(143, 47);
             btnBuscar.TabIndex = 28;
             btnBuscar.Text = "Guardar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click_1;
             // 
             // boxHoras
             // 
@@ -119,11 +120,11 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(86, 352);
+            label4.Location = new Point(134, 352);
             label4.Name = "label4";
-            label4.Size = new Size(586, 45);
+            label4.Size = new Size(502, 37);
             label4.TabIndex = 26;
             label4.Text = "Ingrese el numero de horas realizadas";
             // 
@@ -142,11 +143,11 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(105, 252);
+            label3.Location = new Point(153, 252);
             label3.Name = "label3";
-            label3.Size = new Size(466, 45);
+            label3.Size = new Size(403, 37);
             label3.TabIndex = 24;
             label3.Text = "Ingresar la actividad realizada";
             // 
@@ -164,11 +165,11 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(36, 154);
+            label2.Location = new Point(84, 154);
             label2.Name = "label2";
-            label2.Size = new Size(636, 45);
+            label2.Size = new Size(548, 37);
             label2.TabIndex = 22;
             label2.Text = "Ingresar la fecha de la actividad realizada";
             // 
@@ -177,12 +178,12 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(176, 25, 29);
-            label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(86, 62);
+            label1.Location = new Point(144, 73);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(570, 65);
+            label1.Size = new Size(441, 50);
             label1.TabIndex = 21;
             label1.Text = "Registrar Horas Sociales";
             // 
@@ -197,7 +198,6 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmDatosInicio";
             Text = "FrmDatosInicio";
-            Load += FrmDatosInicio_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();

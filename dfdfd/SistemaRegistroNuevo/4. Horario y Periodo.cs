@@ -60,7 +60,8 @@ namespace HorasSociales2
 
                     typeof(tbDatosRegistro).GetProperty(propiedad.Name)?.SetValue(registro, valor);
                 }
-                context.tbDatosRegistro.Add(registro);
+                context.Add(registro);
+
 
                 // Desactivar validación de restricciones de clave externa temporalmente (si es necesario)
 

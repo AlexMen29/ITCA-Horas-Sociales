@@ -41,8 +41,7 @@ namespace SistemaAdministrativo
             btn.BackColor = ColorFondo;
             btn.ForeColor = ColorLetra;
         }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             horasSociales datosTabla = new horasSociales();
 
@@ -63,10 +62,35 @@ namespace SistemaAdministrativo
                 MessageBox.Show("Error Inesperado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+            
+            int totalHoras = 0;
+            int horasRestantes = 0;
+            var consulta=context.horasSociales.Where(o=>o.Carnet==compartir.carnetIngresado).Select(o=>o.Total).ToList();
+            foreach (int calculando in consulta)
+            {
+                totalHoras += calculando;
+            }
 
-        private void FrmDatosInicio_Load(object sender, EventArgs e)
-        {
+            if (compartir.usuario.TipoEstudio == "Técnico")
+            {
+                horasRestantes = totalHoras - 300;
+            }
+            else
+            {
+                horasRestantes = totalHoras - 500;
+            }
+
+            if (horasRestantes <= 0)
+            {
+                var modifcacionEstado = context.DatosAlumnos.FirstOrDefault(o=>o.Carnet == compartir.carnetIngresado);
+                modifcacionEstado.Estado = "Terminado";
+                context.SaveChanges();
+                
+            }
+
+
+
+
 
         }
     }
