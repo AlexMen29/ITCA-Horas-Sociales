@@ -71,12 +71,12 @@ namespace SistemaAdministrativo
                 context.DatosAlumnos.Remove(aEliminar);
                 context.SaveChanges();
 
-                MessageBox.Show("Registros eliminados correctamente.");
+                MessageBox.Show("Registros eliminados correctamente.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarTabla();
             }
             else
             {
-                MessageBox.Show("Los registros no han sido eliminados.");
+                MessageBox.Show("Los registros no han sido eliminados.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
 
         }
@@ -96,30 +96,30 @@ namespace SistemaAdministrativo
 
 
                 context.DatosAlumnos.Update(aModificar);
-                
+
                 context.SaveChanges();
                 CargarTabla();
-                MessageBox.Show("Registros modificados correctamente.");
-                
+                MessageBox.Show("Registros modificados correctamente.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
-                MessageBox.Show("Los registros no han sido modificados.");
+                MessageBox.Show("Los registros no han sido modificados.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
 
-           
-            
+
+
         }
 
 
         private void dataGridEliminarModificar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void dataGridEliminarModificar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
         }
 
@@ -132,7 +132,7 @@ namespace SistemaAdministrativo
             txtGrupoCap.Text = dataGridEliminarModificar.SelectedCells[8].Value.ToString();
             txtBoxCorreoCap.Text = dataGridEliminarModificar.SelectedCells[7].Value.ToString();
             txtBoxResponsableCap.Text = dataGridEliminarModificar.SelectedCells[5].Value.ToString();
-            
+
 
         }
 
@@ -327,6 +327,37 @@ namespace SistemaAdministrativo
 
         private void label1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnIInfoElMoAd_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        public void eventosEnterLeave(Button btn, Color ColorFondo, Color ColorLetra)
+        {
+            btn.BackColor = ColorFondo;
+            btn.ForeColor = ColorLetra;
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(button1, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(button1, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(button2, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(button2, ColorTranslator.FromHtml("#b1201f"), Color.White);
         }
     }
 }

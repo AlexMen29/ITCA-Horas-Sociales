@@ -230,6 +230,21 @@ namespace SistemaAdministrativo
                 frm.Show();
             }
         }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerarReportes_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnGenerarReportes, ColorTranslator.FromHtml("#cd9013"), Color.White);
+        }
+
+        private void btnGenerarReportes_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnGenerarReportes, ColorTranslator.FromHtml("#b1201f"), Color.White);
+        }
     }
 
 }
