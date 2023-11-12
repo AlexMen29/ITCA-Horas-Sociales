@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dfdfd.bdSocial;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Login
 {
     public partial class RegistroDocente : Form
     {
+
+        ProyectoSocialContext context = new ProyectoSocialContext();
+    
         public RegistroDocente()
         {
             InitializeComponent();
@@ -58,6 +62,16 @@ namespace Login
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            DatosAlumno datos = new DatosAlumno();
+
+            datos.Carnet = txtCarnet.Text;
+            datos.Contraseña = txtContraseña.Text;
+            datos.NivelUsuario = 2;
+            datos.Nombres = txtNombres.Text;
+            datos.Apellidos = txtApellidos.Text;
+            datos.Correo = txtCorreo.Text;
+            datos.Grupo = txtGrupo.Text;
+
             if (string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtContraseña.Text) || string.IsNullOrWhiteSpace(txtNombres.Text) || string.IsNullOrWhiteSpace(txtApellidos.Text) || string.IsNullOrWhiteSpace(txtCorreo.Text) || string.IsNullOrWhiteSpace(txtGrupo.Text))
             {
                 MessageBox.Show("Por favor, Completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -65,6 +79,18 @@ namespace Login
             else
             {
                 MessageBox.Show("Registro guardado", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            context.Add(datos);
+            if (context.SaveChanges() == 1)
+            {
+                MessageBox.Show("Se ha Registrado Exitosamente", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }
