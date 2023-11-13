@@ -10,16 +10,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace HorasSociales2
 {
     public partial class FrmHorarioPeriodo : Form
     {
+        
+        
+        
         ProyectoSocialContext context = new ProyectoSocialContext();
 
         public FrmHorarioPeriodo()
         {
             InitializeComponent();
         }
+
+       
 
         private void btnBack_Click(object sender, EventArgs e)
         {
