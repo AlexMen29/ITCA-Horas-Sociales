@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             label9 = new Label();
             gridEstudiantes = new DataGridView();
             LabEstudiantes = new Label();
             label1 = new Label();
+            btnGenerarReporte = new Button();
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).BeginInit();
             SuspendLayout();
             // 
@@ -53,32 +54,32 @@
             // 
             // gridEstudiantes
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            gridEstudiantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            gridEstudiantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             gridEstudiantes.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gridEstudiantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridEstudiantes.BackgroundColor = Color.White;
             gridEstudiantes.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             gridEstudiantes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            gridEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            gridEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             gridEstudiantes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            gridEstudiantes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            gridEstudiantes.DefaultCellStyle = dataGridViewCellStyle6;
             gridEstudiantes.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridEstudiantes.EnableHeadersVisualStyles = false;
             gridEstudiantes.GridColor = Color.Firebrick;
@@ -116,11 +117,26 @@
             label1.TabIndex = 8;
             label1.Text = "Total de Estudiantes: ";
             // 
+            // btnGenerarReporte
+            // 
+            btnGenerarReporte.BackColor = Color.FromArgb(176, 25, 29);
+            btnGenerarReporte.ForeColor = SystemColors.ButtonHighlight;
+            btnGenerarReporte.Location = new Point(430, 461);
+            btnGenerarReporte.Name = "btnGenerarReporte";
+            btnGenerarReporte.Size = new Size(81, 34);
+            btnGenerarReporte.TabIndex = 10;
+            btnGenerarReporte.Text = "Reporte";
+            btnGenerarReporte.UseVisualStyleBackColor = false;
+            btnGenerarReporte.Click += btnGenerarReporte_Click;
+            btnGenerarReporte.MouseEnter += btnGenerarReporte_MouseEnter;
+            btnGenerarReporte.MouseLeave += btnGenerarReporte_MouseLeave;
+            // 
             // frmEstudiantes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(903, 522);
+            Controls.Add(btnGenerarReporte);
             Controls.Add(LabEstudiantes);
             Controls.Add(label1);
             Controls.Add(label9);
@@ -140,5 +156,6 @@
         private DataGridView gridEstudiantes;
         private Label LabEstudiantes;
         private Label label1;
+        private Button btnGenerarReporte;
     }
 }
