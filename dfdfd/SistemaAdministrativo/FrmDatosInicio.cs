@@ -43,55 +43,57 @@ namespace SistemaAdministrativo
         }
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
-            horasSociales datosTabla = new horasSociales();
 
-            datosTabla.Carnet = compartir.usuario.Carnet;
-            datosTabla.Fecha = dateTimePicker1.Value;
-            datosTabla.Actividad = txtActividad.Text;
-            datosTabla.Total = Convert.ToInt32(boxHoras.Text);
-            datosTabla.Grupo = compartir.usuario.Grupo;
-
-            context.Add(datosTabla);
-
-            if (context.SaveChanges() == 1)
+            if (compartir.Nivelusuario == 2)
             {
-                MessageBox.Show("Registro guardado exitosamente", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Acción no permitida, acción valida solo para estudiantes.", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Error Inesperado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                horasSociales datosTabla = new horasSociales();
+
+                datosTabla.Carnet = compartir.usuario.Carnet;
+                datosTabla.Fecha = dateTimePicker1.Value;
+                datosTabla.Actividad = txtActividad.Text;
+                datosTabla.Total = Convert.ToInt32(boxHoras.Text);
+                datosTabla.Grupo = compartir.usuario.Grupo;
+
+                context.Add(datosTabla);
+
+                if (context.SaveChanges() == 1)
+                {
+                    MessageBox.Show("Registro guardado exitosamente", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error Inesperado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                int totalHoras = 0;
+                int horasRestantes = 0;
+                var consulta = context.horasSociales.Where(o => o.Carnet == compartir.carnetIngresado).Select(o => o.Total).ToList();
+                foreach (int calculando in consulta)
+                {
+                    totalHoras += calculando;
+                }
+
+                if (compartir.usuario.TipoEstudio == "Técnico")
+                {
+                    horasRestantes = totalHoras - 300;
+                }
+                else
+                {
+                    horasRestantes = totalHoras - 500;
+                }
+
+                if (horasRestantes <= 0)
+                {
+                    var modifcacionEstado = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == compartir.carnetIngresado);
+                    modifcacionEstado.Estado = "Terminado";
+                    context.SaveChanges();
+
+                }
             }
-
-            
-            int totalHoras = 0;
-            int horasRestantes = 0;
-            var consulta=context.horasSociales.Where(o=>o.Carnet==compartir.carnetIngresado).Select(o=>o.Total).ToList();
-            foreach (int calculando in consulta)
-            {
-                totalHoras += calculando;
-            }
-
-            if (compartir.usuario.TipoEstudio == "Técnico")
-            {
-                horasRestantes = totalHoras - 300;
-            }
-            else
-            {
-                horasRestantes = totalHoras - 500;
-            }
-
-            if (horasRestantes <= 0)
-            {
-                var modifcacionEstado = context.DatosAlumnos.FirstOrDefault(o=>o.Carnet == compartir.carnetIngresado);
-                modifcacionEstado.Estado = "Terminado";
-                context.SaveChanges();
-                
-            }
-
-
-
-
-
         }
     }
 }

@@ -96,7 +96,7 @@
             btnBuscar.BackColor = Color.FromArgb(176, 25, 29);
             btnBuscar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
-            btnBuscar.Location = new Point(283, 470);
+            btnBuscar.Location = new Point(287, 467);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(143, 47);
             btnBuscar.TabIndex = 28;

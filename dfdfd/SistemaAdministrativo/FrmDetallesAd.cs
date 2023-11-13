@@ -110,7 +110,7 @@ namespace SistemaAdministrativo
             LabHorasRestantes.Text = "";
             btnEstado.Text = "¿?";
             btnEstado.BackColor = Color.Yellow;
-            comboFiltra.SelectedIndex = 4;
+            comboFiltra.SelectedIndex = 2;
 
             CargarDatosEnDataGridViem(2, compartir.carnetIngresado, "indefinido");
 
@@ -285,7 +285,19 @@ namespace SistemaAdministrativo
                         $" formalizar los detalles de su logro.\nAgradecemos su dedicación y esfuerzo durante este proceso.", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-  
+
+        }
+
+        private void btnFiltrar_MouseEnter(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnFiltrar, ColorTranslator.FromHtml("#cd9013"), Color.White);
+
+        }
+
+        private void btnFiltrar_MouseLeave(object sender, EventArgs e)
+        {
+            eventosEnterLeave(btnFiltrar, ColorTranslator.FromHtml("#b1201f"), Color.White);
+
         }
     }
 }
