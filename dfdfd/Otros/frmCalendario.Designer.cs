@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalendario));
             splitContainer1 = new SplitContainer();
             panel1 = new Panel();
@@ -44,17 +44,17 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             label10 = new Label();
-            button3 = new Button();
+            btnEliminar = new Button();
             dataTimeFechaME = new DateTimePicker();
-            button2 = new Button();
+            btnModificar = new Button();
             label7 = new Label();
             txtDescripcionME = new TextBox();
             label8 = new Label();
             label9 = new Label();
             dateTimePicker1 = new DateTimePicker();
-            button1 = new Button();
+            btnGuardar = new Button();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtMensaje = new TextBox();
             label1 = new Label();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -89,19 +89,20 @@
             splitContainer1.Panel2.Controls.Add(pictureBox2);
             splitContainer1.Panel2.Controls.Add(pictureBox1);
             splitContainer1.Panel2.Controls.Add(label10);
-            splitContainer1.Panel2.Controls.Add(button3);
+            splitContainer1.Panel2.Controls.Add(btnEliminar);
             splitContainer1.Panel2.Controls.Add(dataTimeFechaME);
-            splitContainer1.Panel2.Controls.Add(button2);
+            splitContainer1.Panel2.Controls.Add(btnModificar);
             splitContainer1.Panel2.Controls.Add(label7);
             splitContainer1.Panel2.Controls.Add(txtDescripcionME);
             splitContainer1.Panel2.Controls.Add(label8);
             splitContainer1.Panel2.Controls.Add(label9);
             splitContainer1.Panel2.Controls.Add(dateTimePicker1);
-            splitContainer1.Panel2.Controls.Add(button1);
+            splitContainer1.Panel2.Controls.Add(btnGuardar);
             splitContainer1.Panel2.Controls.Add(label3);
-            splitContainer1.Panel2.Controls.Add(textBox1);
+            splitContainer1.Panel2.Controls.Add(txtMensaje);
             splitContainer1.Panel2.Controls.Add(label1);
             splitContainer1.Panel2.Controls.Add(label2);
+            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(903, 653);
             splitContainer1.SplitterDistance = 474;
             splitContainer1.TabIndex = 24;
@@ -119,33 +120,33 @@
             // 
             gridEventos.AllowUserToAddRows = false;
             gridEventos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            gridEventos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            gridEventos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             gridEventos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gridEventos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridEventos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             gridEventos.BackgroundColor = Color.White;
             gridEventos.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             gridEventos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            gridEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridEventos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            gridEventos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gridEventos.DefaultCellStyle = dataGridViewCellStyle3;
             gridEventos.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridEventos.EnableHeadersVisualStyles = false;
             gridEventos.GridColor = Color.Firebrick;
@@ -155,7 +156,7 @@
             gridEventos.Name = "gridEventos";
             gridEventos.ReadOnly = true;
             gridEventos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridEventos.Size = new Size(468, 169);
+            gridEventos.Size = new Size(468, 152);
             gridEventos.TabIndex = 17;
             gridEventos.CellClick += gridEventos_CellClick_1;
             // 
@@ -200,8 +201,8 @@
             // 
             monthCalendar1.Anchor = AnchorStyles.Top;
             monthCalendar1.BackColor = SystemColors.HotTrack;
-            monthCalendar1.CalendarDimensions = new Size(2, 2);
-            monthCalendar1.Location = new Point(45, 107);
+            monthCalendar1.CalendarDimensions = new Size(1, 2);
+            monthCalendar1.Location = new Point(120, 104);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.ShowToday = false;
             monthCalendar1.TabIndex = 16;
@@ -270,17 +271,18 @@
             label10.TabIndex = 29;
             label10.Text = ".......................................";
             // 
-            // button3
+            // btnEliminar
             // 
-            button3.BackColor = Color.FromArgb(176, 25, 29);
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(171, 609);
-            button3.Name = "button3";
-            button3.Size = new Size(143, 45);
-            button3.TabIndex = 37;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = false;
+            btnEliminar.BackColor = Color.FromArgb(176, 25, 29);
+            btnEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(171, 609);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(143, 45);
+            btnEliminar.TabIndex = 37;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // dataTimeFechaME
             // 
@@ -290,17 +292,18 @@
             dataTimeFechaME.Size = new Size(284, 23);
             dataTimeFechaME.TabIndex = 36;
             // 
-            // button2
+            // btnModificar
             // 
-            button2.BackColor = Color.FromArgb(176, 25, 29);
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(5, 609);
-            button2.Name = "button2";
-            button2.Size = new Size(143, 45);
-            button2.TabIndex = 35;
-            button2.Text = "Modificar";
-            button2.UseVisualStyleBackColor = false;
+            btnModificar.BackColor = Color.FromArgb(176, 25, 29);
+            btnModificar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Location = new Point(5, 609);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(143, 45);
+            btnModificar.TabIndex = 35;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // label7
             // 
@@ -355,18 +358,19 @@
             dateTimePicker1.Size = new Size(284, 23);
             dateTimePicker1.TabIndex = 30;
             // 
-            // button1
+            // btnGuardar
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(176, 25, 29);
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(149, 265);
-            button1.Name = "button1";
-            button1.Size = new Size(143, 45);
-            button1.TabIndex = 28;
-            button1.Text = "Guardar Evento";
-            button1.UseVisualStyleBackColor = false;
+            btnGuardar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnGuardar.BackColor = Color.FromArgb(176, 25, 29);
+            btnGuardar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(149, 265);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(143, 45);
+            btnGuardar.TabIndex = 28;
+            btnGuardar.Text = "Guardar Evento";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label3
             // 
@@ -381,14 +385,14 @@
             label3.TabIndex = 26;
             label3.Text = "Anunciar Evento";
             // 
-            // textBox1
+            // txtMensaje
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(3, 95);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(285, 104);
-            textBox1.TabIndex = 27;
+            txtMensaje.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtMensaje.Location = new Point(3, 95);
+            txtMensaje.Multiline = true;
+            txtMensaje.Name = "txtMensaje";
+            txtMensaje.Size = new Size(285, 104);
+            txtMensaje.TabIndex = 27;
             // 
             // label1
             // 
@@ -444,17 +448,17 @@
         private Label label4;
         private DataGridView gridEventos;
         private Label label10;
-        private Button button3;
+        private Button btnEliminar;
         private DateTimePicker dataTimeFechaME;
-        private Button button2;
+        private Button btnModificar;
         private Label label7;
         private TextBox txtDescripcionME;
         private Label label8;
         private Label label9;
         private DateTimePicker dateTimePicker1;
-        private Button button1;
+        private Button btnGuardar;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtMensaje;
         private Label label1;
         private Label label2;
         private Label label11;
