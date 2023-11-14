@@ -69,8 +69,11 @@ namespace Login
             datos.NivelUsuario = 2;
             datos.Nombres = txtNombres.Text;
             datos.Apellidos = txtApellidos.Text;
+            datos.Encargado = "null";
+            datos.TipoEstudio = "null";
             datos.Correo = txtCorreo.Text;
             datos.Grupo = txtGrupo.Text;
+            datos.Estado = "N/A";
 
             if (string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtContraseña.Text) || string.IsNullOrWhiteSpace(txtNombres.Text) || string.IsNullOrWhiteSpace(txtApellidos.Text) || string.IsNullOrWhiteSpace(txtCorreo.Text) || string.IsNullOrWhiteSpace(txtGrupo.Text))
             {
@@ -78,20 +81,20 @@ namespace Login
             }
             else
             {
-                MessageBox.Show("Registro guardado", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            context.Add(datos);
-            if (context.SaveChanges() == 1)
-            {
-                MessageBox.Show("Se ha Registrado Exitosamente", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
-            }
+                context.Add(datos);
+                if (context.SaveChanges() == 1)
+                {
+                    MessageBox.Show("Se ha Registrado Exitosamente", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
 
-            else
-            {
-                MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                }
             }
+          
         }
     }
 

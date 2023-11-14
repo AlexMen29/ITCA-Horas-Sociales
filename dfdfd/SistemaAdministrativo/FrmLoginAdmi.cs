@@ -14,8 +14,10 @@ using System.Windows.Forms;
 
 namespace SistemaAdministrativo
 {
+    
     public partial class FrmSisAd : Form
     {
+        ProyectoSocialContext context =new ProyectoSocialContext();
         //Metodo para obtener informacion de las credenciales ingresadas en el menu de login
         public DatosAlumno usuarioActual { get; set; }
         public FrmSisAd()
@@ -70,6 +72,18 @@ namespace SistemaAdministrativo
             {
                 panelAdministrador.Visible = false;
             }
+            else
+            {
+                var consulta =context.DatosAlumnos.Where(o=>o.Grupo==compartir.usuario.Grupo && o.NivelUsuario==1).Count();
+                if (consulta < 1)
+                {
+                    MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nActualmente, no tienes estudiantes asignados a tu grupo, por lo que las funcionalidades del sistema se encuentran inactivas." +
+                        $" Para aprovechar al máximo las características del sistema, asigna estudiantes a tu grupo: {compartir.usuario.Grupo}. ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            
+
         }
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -80,11 +94,6 @@ namespace SistemaAdministrativo
                 Application.Exit();
             }
         }
-        private void btnNotificacion_MouseEnter(object sender, EventArgs e)
-        {
-            MessageBox.Show("Esta es una version beta de como mostrar los mensajes, posiblemnete lo dejemos asi pero con clik, sin mas que decir chambean por favor");
-        }
-
         public void eventosEnterLeave(Button btn, Color ColorFondo, Color ColorLetra)
         {
             btn.BackColor = ColorFondo;
@@ -236,15 +245,7 @@ namespace SistemaAdministrativo
 
         }
 
-        private void btnGenerarReportes_MouseEnter(object sender, EventArgs e)
-        {
-            eventosEnterLeave(btnGenerarReportes, ColorTranslator.FromHtml("#cd9013"), Color.White);
-        }
-
-        private void btnGenerarReportes_MouseLeave(object sender, EventArgs e)
-        {
-            eventosEnterLeave(btnGenerarReportes, ColorTranslator.FromHtml("#b1201f"), Color.White);
-        }
+      
     }
 
 }

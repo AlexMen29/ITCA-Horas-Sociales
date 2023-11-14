@@ -50,48 +50,55 @@ namespace SistemaAdministrativo
             }
             else
             {
-                horasSociales datosTabla = new horasSociales();
-
-                datosTabla.Carnet = compartir.usuario.Carnet;
-                datosTabla.Fecha = dateTimePicker1.Value;
-                datosTabla.Actividad = txtActividad.Text;
-                datosTabla.Total = Convert.ToInt32(boxHoras.Text);
-                datosTabla.Grupo = compartir.usuario.Grupo;
-
-                context.Add(datosTabla);
-
-                if (context.SaveChanges() == 1)
+                if (string.IsNullOrWhiteSpace(txtActividad.Text) || string.IsNullOrWhiteSpace(boxHoras.Text))
                 {
-                    MessageBox.Show("Registro guardado exitosamente", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Por favor ingrese los datos solicitados", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Error Inesperado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    horasSociales datosTabla = new horasSociales();
 
-                int totalHoras = 0;
-                int horasRestantes = 0;
-                var consulta = context.horasSociales.Where(o => o.Carnet == compartir.carnetIngresado).Select(o => o.Total).ToList();
-                foreach (int calculando in consulta)
-                {
-                    totalHoras += calculando;
-                }
+                    datosTabla.Carnet = compartir.usuario.Carnet;
+                    datosTabla.Fecha = dateTimePicker1.Value;
+                    datosTabla.Actividad = txtActividad.Text;
+                    datosTabla.Total = Convert.ToInt32(boxHoras.Text);
+                    datosTabla.Grupo = compartir.usuario.Grupo;
+                    context.Add(datosTabla);
 
-                if (compartir.usuario.TipoEstudio == "Técnico")
-                {
-                    horasRestantes = totalHoras - 300;
-                }
-                else
-                {
-                    horasRestantes = totalHoras - 500;
-                }
+                    if (context.SaveChanges() == 1)
+                    {
+                        MessageBox.Show("Registro guardado exitosamente", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtActividad.Text = null;
+                        boxHoras.Text = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Inesperado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
-                if (horasRestantes <= 0)
-                {
-                    var modifcacionEstado = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == compartir.carnetIngresado);
-                    modifcacionEstado.Estado = "Terminado";
-                    context.SaveChanges();
+                    int totalHoras = 0;
+                    int horasRestantes = 0;
+                    var consulta = context.horasSociales.Where(o => o.Carnet == compartir.carnetIngresado).Select(o => o.Total).ToList();
+                    foreach (int calculando in consulta)
+                    {
+                        totalHoras += calculando;
+                    }
 
+                    if (compartir.usuario.TipoEstudio == "Técnico")
+                    {
+                        horasRestantes = 300 - totalHoras;
+                    }
+                    else
+                    {
+                        horasRestantes = 500 - totalHoras;
+                    }
+
+                    if (horasRestantes <= 0)
+                    {
+                        var modifcacionEstado = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == compartir.carnetIngresado);
+                        modifcacionEstado.Estado = "Terminado";
+                        context.SaveChanges();
+                    }
                 }
             }
         }

@@ -48,6 +48,8 @@ namespace SistemaAdministrativo
                 var datosAlumno = context.horasSociales.Where(h => h.Grupo == compartir.usuario.Grupo).ToList();
 
                 gridDatosAlumnos.DataSource = datosAlumno;
+                gridDatosAlumnos.Columns[0].Visible = false;
+
 
 
             }
@@ -56,12 +58,8 @@ namespace SistemaAdministrativo
 
         private void FrmDetallesAd_Load(object sender, EventArgs e)
         {
-
             gridDatosAlumnos.DataSource = context.DatosAlumnos.ToList();
-
-
             CargarDatosEnDataGridViem(compartir.Nivelusuario, compartir.carnetIngresado, "indefinido");
-
 
             if (compartir.Nivelusuario == 1)
             {
@@ -87,12 +85,25 @@ namespace SistemaAdministrativo
                     btnEstado.Text = "Terminado";
                     btnEstado.BackColor = Color.Green;
                 }
+                var consulta = context.horasSociales.Where(o => o.Carnet == compartir.carnetIngresado).Count();
 
+                if (consulta < 1)
+                {
+                    MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nActualmente, no has registrado horas de tu servicio social. Te invitamos a comenzar lo antes posible con el fin de culminar de manera satisfactoria tu servicio social." +
+                        $" ¡Inicia el registro ahora para asegurar un proceso exitoso! ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
             }
-
+            else
+            {
+                var consulta = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).Count();
+                if (consulta < 1)
+                {
+                    MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nActualmente, no tienes estudiantes asignados a tu grupo, por lo que las funcionalidades del sistema se encuentran inactivas." +
+                        $" Para aprovechar al máximo las características del sistema, asigna estudiantes a tu grupo: {compartir.usuario.Grupo} ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
             gridDatosAlumnos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
 
 
         }

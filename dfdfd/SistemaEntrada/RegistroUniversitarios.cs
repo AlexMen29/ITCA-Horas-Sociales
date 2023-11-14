@@ -80,6 +80,9 @@ namespace Login
             datos.TipoEstudio = txtTipoEstudio.Text;
             datos.Correo = txtCorreo.Text;
             var docente = context.DatosAlumnos.FirstOrDefault(u => u.Nombres == txtEncargado.Text);
+            datos.Estado = "En Proceso";
+
+
 
             if (string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtContraseña.Text) || string.IsNullOrWhiteSpace(txtNombres.Text) || string.IsNullOrWhiteSpace(txtApellidos.Text) || string.IsNullOrWhiteSpace(txtCorreo.Text) || string.IsNullOrWhiteSpace(txtEncargado.Text) || string.IsNullOrWhiteSpace(txtTipoEstudio.Text))
             {
@@ -87,14 +90,18 @@ namespace Login
             }
             else
             {
-                //MessageBox.Show("Registro guardado", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 datos.Grupo = docente.Grupo;
+
+                MessageBox.Show("Registro guardado", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 context.Add(datos);
                 if (context.SaveChanges() == 1)
                 {
+                    /*
                     FrmDatosGenerales frm = new FrmDatosGenerales();
                     frm.Show();
                     Hide();
+                    */
+                    Close();
                 }
 
                 else
