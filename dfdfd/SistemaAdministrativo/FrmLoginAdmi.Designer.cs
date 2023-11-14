@@ -31,6 +31,7 @@
             Label txtCarnet;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSisAd));
             PanelOpciones = new Panel();
+            pictureBox11 = new PictureBox();
             panelAdministrador = new Panel();
             pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -55,11 +56,9 @@
             pictureBox9 = new PictureBox();
             LabNombre = new Label();
             pnlContenedor = new Panel();
-            pictureBox11 = new PictureBox();
-            btnGenerarReportes = new Button();
-            pictureBox12 = new PictureBox();
             txtCarnet = new Label();
             PanelOpciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             panelAdministrador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -74,8 +73,6 @@
             pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PictureCalendario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             SuspendLayout();
             // 
             // txtCarnet
@@ -96,8 +93,6 @@
             PanelOpciones.BackColor = Color.FromArgb(206, 144, 17);
             PanelOpciones.BackgroundImage = (Image)resources.GetObject("PanelOpciones.BackgroundImage");
             PanelOpciones.BackgroundImageLayout = ImageLayout.Stretch;
-            PanelOpciones.Controls.Add(pictureBox12);
-            PanelOpciones.Controls.Add(btnGenerarReportes);
             PanelOpciones.Controls.Add(pictureBox11);
             PanelOpciones.Controls.Add(panelAdministrador);
             PanelOpciones.Controls.Add(pictureBox10);
@@ -117,6 +112,18 @@
             PanelOpciones.Name = "PanelOpciones";
             PanelOpciones.Size = new Size(271, 695);
             PanelOpciones.TabIndex = 2;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Anchor = AnchorStyles.None;
+            pictureBox11.BackColor = Color.FromArgb(205, 144, 19);
+            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
+            pictureBox11.Location = new Point(55, 274);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(38, 31);
+            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox11.TabIndex = 29;
+            pictureBox11.TabStop = false;
             // 
             // panelAdministrador
             // 
@@ -461,48 +468,6 @@
             pnlContenedor.Size = new Size(767, 649);
             pnlContenedor.TabIndex = 4;
             // 
-            // pictureBox11
-            // 
-            pictureBox11.Anchor = AnchorStyles.None;
-            pictureBox11.BackColor = Color.FromArgb(205, 144, 19);
-            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(55, 274);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(38, 31);
-            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox11.TabIndex = 29;
-            pictureBox11.TabStop = false;
-            // 
-            // btnGenerarReportes
-            // 
-            btnGenerarReportes.Anchor = AnchorStyles.None;
-            btnGenerarReportes.BackColor = Color.FromArgb(176, 25, 29);
-            btnGenerarReportes.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnGenerarReportes.ForeColor = SystemColors.ControlLightLight;
-            btnGenerarReportes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGenerarReportes.Location = new Point(35, 507);
-            btnGenerarReportes.Margin = new Padding(4, 3, 4, 3);
-            btnGenerarReportes.Name = "btnGenerarReportes";
-            btnGenerarReportes.Size = new Size(238, 55);
-            btnGenerarReportes.TabIndex = 30;
-            btnGenerarReportes.Text = "        Generar Reportes";
-            btnGenerarReportes.UseVisualStyleBackColor = false;
-            btnGenerarReportes.MouseEnter += btnGenerarReportes_MouseEnter;
-            btnGenerarReportes.MouseLeave += btnGenerarReportes_MouseLeave;
-            // 
-            // pictureBox12
-            // 
-            pictureBox12.Anchor = AnchorStyles.None;
-            pictureBox12.BackColor = Color.FromArgb(205, 144, 19);
-            pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(56, 519);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(38, 33);
-            pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox12.TabIndex = 31;
-            pictureBox12.TabStop = false;
-            pictureBox12.Click += pictureBox12_Click;
-            // 
             // FrmSisAd
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -520,6 +485,7 @@
             WindowState = FormWindowState.Maximized;
             Load += FrmSisAd_Load;
             PanelOpciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             panelAdministrador.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -535,8 +501,6 @@
             pnlLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PictureCalendario).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ResumeLayout(false);
         }
 
@@ -568,8 +532,6 @@
         private PictureBox pictureBox9;
         private Panel panelAdministrador;
         private PictureBox PictureCalendario;
-        private PictureBox pictureBox12;
-        private Button btnGenerarReportes;
         private PictureBox pictureBox11;
     }
 }
