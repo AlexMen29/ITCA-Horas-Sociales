@@ -70,35 +70,42 @@ namespace SistemaAdministrativo
                         MessageBox.Show("Registro guardado exitosamente", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtActividad.Text = null;
                         boxHoras.Text = null;
+
+                        //calculamos total de horas con la ultima que se agrego
+                        int totalHoras = 0;
+                        int horasRestantes = 0;
+                        var consulta = context.horasSociales.Where(o => o.Carnet == compartir.carnetIngresado).Select(o => o.Total).ToList();
+                        foreach (int calculando in consulta)
+                        {
+                            totalHoras += calculando;
+                        }
+                        if (compartir.usuario.TipoEstudio == "Técnico")
+                        {
+                            horasRestantes = 300 - totalHoras;
+                        }
+                        else
+                        {
+                            horasRestantes = 500 - totalHoras;
+                        }
+
+                        //Consulta para identificar usuario y modificar datos
+                        var modifcacionEstado = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == compartir.carnetIngresado);
+                        if (horasRestantes <= 0)
+                        {
+                            modifcacionEstado.Estado = "Terminado";
+                        }
+                        modifcacionEstado.HorasTotal = totalHoras;
+                        context.SaveChanges();
+
+
+
                     }
                     else
                     {
                         MessageBox.Show("Error Inesperado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    int totalHoras = 0;
-                    int horasRestantes = 0;
-                    var consulta = context.horasSociales.Where(o => o.Carnet == compartir.carnetIngresado).Select(o => o.Total).ToList();
-                    foreach (int calculando in consulta)
-                    {
-                        totalHoras += calculando;
-                    }
-
-                    if (compartir.usuario.TipoEstudio == "Técnico")
-                    {
-                        horasRestantes = 300 - totalHoras;
-                    }
-                    else
-                    {
-                        horasRestantes = 500 - totalHoras;
-                    }
-
-                    if (horasRestantes <= 0)
-                    {
-                        var modifcacionEstado = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == compartir.carnetIngresado);
-                        modifcacionEstado.Estado = "Terminado";
-                        context.SaveChanges();
-                    }
+                   
                 }
             }
         }

@@ -25,5 +25,6 @@ public partial class DatosAlumno
     public string Grupo { get; set; } = null!;
 
     public string Estado { get; set;}
+    public int HorasTotal { get; set; }
 
 }

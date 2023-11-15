@@ -140,5 +140,20 @@ namespace ProyectoSocial.SistemaAdministrativo
             txtBuscar.Text = gridEstudiantes.SelectedCells[0].Value.ToString();
 
         }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (comboFiltra.Text == "MaxHoras")
+            {
+                gridEstudiantes.DataSource = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).OrderByDescending(o => o.HorasTotal).ToList();
+
+
+            }
+            else if (comboFiltra.Text == "MinHoras")
+            {
+                gridEstudiantes.DataSource = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).OrderBy(o => o.HorasTotal).ToList();
+
+            }
+        }
     }
 }

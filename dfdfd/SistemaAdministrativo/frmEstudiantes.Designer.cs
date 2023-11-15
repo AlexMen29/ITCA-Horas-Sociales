@@ -44,6 +44,8 @@
             btnBuscar = new Button();
             btnLimpiar = new Button();
             txtBuscar = new TextBox();
+            comboFiltra = new ComboBox();
+            btnFiltrar = new Button();
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).BeginInit();
             PanelElementosBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBuscar).BeginInit();
@@ -154,7 +156,7 @@
             PanelElementosBusqueda.Controls.Add(txtBuscar);
             PanelElementosBusqueda.Location = new Point(12, 54);
             PanelElementosBusqueda.Name = "PanelElementosBusqueda";
-            PanelElementosBusqueda.Size = new Size(208, 230);
+            PanelElementosBusqueda.Size = new Size(208, 265);
             PanelElementosBusqueda.TabIndex = 11;
             // 
             // pictureBuscar
@@ -201,9 +203,9 @@
             // 
             btnLimpiar.BackColor = Color.FromArgb(176, 25, 29);
             btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
-            btnLimpiar.Location = new Point(39, 161);
+            btnLimpiar.Location = new Point(27, 161);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(123, 32);
+            btnLimpiar.Size = new Size(144, 32);
             btnLimpiar.TabIndex = 5;
             btnLimpiar.Text = "Borrar";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -218,11 +220,37 @@
             txtBuscar.Size = new Size(105, 27);
             txtBuscar.TabIndex = 3;
             // 
+            // comboFiltra
+            // 
+            comboFiltra.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            comboFiltra.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboFiltra.FormattingEnabled = true;
+            comboFiltra.Items.AddRange(new object[] { "MinHoras", "MaxHoras" });
+            comboFiltra.Location = new Point(685, 54);
+            comboFiltra.Name = "comboFiltra";
+            comboFiltra.Size = new Size(101, 23);
+            comboFiltra.TabIndex = 28;
+            // 
+            // btnFiltrar
+            // 
+            btnFiltrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnFiltrar.BackColor = Color.FromArgb(176, 25, 29);
+            btnFiltrar.ForeColor = SystemColors.ButtonHighlight;
+            btnFiltrar.Location = new Point(687, 90);
+            btnFiltrar.Name = "btnFiltrar";
+            btnFiltrar.Size = new Size(99, 40);
+            btnFiltrar.TabIndex = 27;
+            btnFiltrar.Text = "Filtrar";
+            btnFiltrar.UseVisualStyleBackColor = false;
+            btnFiltrar.Click += btnFiltrar_Click;
+            // 
             // frmEstudiantes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(903, 522);
+            Controls.Add(comboFiltra);
+            Controls.Add(btnFiltrar);
             Controls.Add(PanelElementosBusqueda);
             Controls.Add(btnGenerarReporte);
             Controls.Add(LabEstudiantes);
@@ -255,5 +283,7 @@
         private TextBox txtBuscar;
         private Label label2;
         private PictureBox pictureBuscar;
+        private ComboBox comboFiltra;
+        private Button btnFiltrar;
     }
 }
