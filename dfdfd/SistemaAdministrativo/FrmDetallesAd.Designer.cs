@@ -97,6 +97,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.AutoScroll = true;
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
             splitContainer1.Panel1.Controls.Add(panelDetallesAlumnos);
             splitContainer1.Panel1.Controls.Add(PanelElementosBusqueda);
@@ -115,11 +116,12 @@
             splitContainer1.Panel2.Controls.Add(label9);
             splitContainer1.Panel2.Controls.Add(gridDatosAlumnos);
             splitContainer1.Size = new Size(919, 692);
-            splitContainer1.SplitterDistance = 243;
+            splitContainer1.SplitterDistance = 259;
             splitContainer1.TabIndex = 24;
             // 
             // panelDetallesAlumnos
             // 
+            panelDetallesAlumnos.AutoScroll = true;
             panelDetallesAlumnos.BackColor = Color.Transparent;
             panelDetallesAlumnos.Controls.Add(LabUltimoServicio);
             panelDetallesAlumnos.Controls.Add(LabActivoDesde);
@@ -134,9 +136,9 @@
             panelDetallesAlumnos.Controls.Add(LabApellido);
             panelDetallesAlumnos.Controls.Add(LabNombre);
             panelDetallesAlumnos.Controls.Add(label2);
-            panelDetallesAlumnos.Location = new Point(5, 229);
+            panelDetallesAlumnos.Location = new Point(5, 318);
             panelDetallesAlumnos.Name = "panelDetallesAlumnos";
-            panelDetallesAlumnos.Size = new Size(235, 416);
+            panelDetallesAlumnos.Size = new Size(227, 379);
             panelDetallesAlumnos.TabIndex = 9;
             panelDetallesAlumnos.Paint += panelDetallesAlumnos_Paint;
             // 
@@ -301,7 +303,7 @@
             PanelElementosBusqueda.Controls.Add(btnLimpiar);
             PanelElementosBusqueda.Controls.Add(pictureBuscar);
             PanelElementosBusqueda.Controls.Add(txtBuscar);
-            PanelElementosBusqueda.Location = new Point(3, 0);
+            PanelElementosBusqueda.Location = new Point(3, 89);
             PanelElementosBusqueda.Name = "PanelElementosBusqueda";
             PanelElementosBusqueda.Size = new Size(237, 230);
             PanelElementosBusqueda.TabIndex = 5;
@@ -354,7 +356,7 @@
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
             btnBuscar.Location = new Point(152, 52);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(81, 34);
+            btnBuscar.Size = new Size(77, 34);
             btnBuscar.TabIndex = 6;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -366,9 +368,9 @@
             // 
             btnLimpiar.BackColor = Color.FromArgb(176, 25, 29);
             btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
-            btnLimpiar.Location = new Point(-3, 180);
+            btnLimpiar.Location = new Point(7, 180);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(243, 40);
+            btnLimpiar.Size = new Size(222, 40);
             btnLimpiar.TabIndex = 5;
             btnLimpiar.Text = "Borrar";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -523,7 +525,7 @@
             gridDatosAlumnos.Name = "gridDatosAlumnos";
             gridDatosAlumnos.ReadOnly = true;
             gridDatosAlumnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridDatosAlumnos.Size = new Size(536, 245);
+            gridDatosAlumnos.Size = new Size(520, 245);
             gridDatosAlumnos.TabIndex = 1;
             gridDatosAlumnos.CellClick += gridDatosAlumnos_CellClick;
             // 

@@ -207,6 +207,7 @@ namespace SistemaAdministrativo
                 if (encontrado == false && indice == listaAlumnos.Count - 1)
                 {
                     MessageBox.Show("El carnet ingresado no fue encontrado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    txtBuscar.Clear();
                 }
                 if (encontrado == true)
                 {

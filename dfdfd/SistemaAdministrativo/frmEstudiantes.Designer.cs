@@ -28,15 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstudiantes));
             label9 = new Label();
             gridEstudiantes = new DataGridView();
             LabEstudiantes = new Label();
             label1 = new Label();
             btnGenerarReporte = new Button();
+            PanelElementosBusqueda = new Panel();
+            pictureBuscar = new PictureBox();
+            label2 = new Label();
+            label7 = new Label();
+            btnBuscar = new Button();
+            btnLimpiar = new Button();
+            txtBuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).BeginInit();
+            PanelElementosBusqueda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBuscar).BeginInit();
             SuspendLayout();
             // 
             // label9
@@ -54,32 +64,32 @@
             // 
             // gridEstudiantes
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            gridEstudiantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            gridEstudiantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             gridEstudiantes.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gridEstudiantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridEstudiantes.BackgroundColor = Color.White;
             gridEstudiantes.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             gridEstudiantes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            gridEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridEstudiantes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            gridEstudiantes.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gridEstudiantes.DefaultCellStyle = dataGridViewCellStyle3;
             gridEstudiantes.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridEstudiantes.EnableHeadersVisualStyles = false;
             gridEstudiantes.GridColor = Color.Firebrick;
@@ -91,6 +101,7 @@
             gridEstudiantes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridEstudiantes.Size = new Size(451, 319);
             gridEstudiantes.TabIndex = 3;
+            gridEstudiantes.CellClick += gridEstudiantes_CellClick;
             gridEstudiantes.CellFormatting += gridEstudiantes_CellFormatting;
             // 
             // LabEstudiantes
@@ -131,11 +142,88 @@
             btnGenerarReporte.MouseEnter += btnGenerarReporte_MouseEnter;
             btnGenerarReporte.MouseLeave += btnGenerarReporte_MouseLeave;
             // 
+            // PanelElementosBusqueda
+            // 
+            PanelElementosBusqueda.BackColor = Color.Transparent;
+            PanelElementosBusqueda.BackgroundImageLayout = ImageLayout.Stretch;
+            PanelElementosBusqueda.Controls.Add(pictureBuscar);
+            PanelElementosBusqueda.Controls.Add(label2);
+            PanelElementosBusqueda.Controls.Add(label7);
+            PanelElementosBusqueda.Controls.Add(btnBuscar);
+            PanelElementosBusqueda.Controls.Add(btnLimpiar);
+            PanelElementosBusqueda.Controls.Add(txtBuscar);
+            PanelElementosBusqueda.Location = new Point(12, 54);
+            PanelElementosBusqueda.Name = "PanelElementosBusqueda";
+            PanelElementosBusqueda.Size = new Size(208, 230);
+            PanelElementosBusqueda.TabIndex = 11;
+            // 
+            // pictureBuscar
+            // 
+            pictureBuscar.Image = (Image)resources.GetObject("pictureBuscar.Image");
+            pictureBuscar.Location = new Point(27, 128);
+            pictureBuscar.Name = "pictureBuscar";
+            pictureBuscar.Size = new Size(33, 32);
+            pictureBuscar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBuscar.TabIndex = 29;
+            pictureBuscar.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(3, 77);
+            label2.Name = "label2";
+            label2.Size = new Size(189, 39);
+            label2.TabIndex = 28;
+            label2.Text = "A continuación ingrese el carnet de su estudiante:";
+            // 
+            // label7
+            // 
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(3, 7);
+            label7.Name = "label7";
+            label7.Size = new Size(189, 61);
+            label7.TabIndex = 27;
+            label7.Text = "¿Desea imprimir hoja de finalización para su estudiante?";
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.FromArgb(176, 25, 29);
+            btnBuscar.ForeColor = SystemColors.ButtonHighlight;
+            btnBuscar.Location = new Point(27, 193);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(144, 34);
+            btnBuscar.TabIndex = 6;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.FromArgb(176, 25, 29);
+            btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
+            btnLimpiar.Location = new Point(39, 161);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(123, 32);
+            btnLimpiar.TabIndex = 5;
+            btnLimpiar.Text = "Borrar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBuscar.Location = new Point(66, 128);
+            txtBuscar.Multiline = true;
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(105, 27);
+            txtBuscar.TabIndex = 3;
+            // 
             // frmEstudiantes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(903, 522);
+            Controls.Add(PanelElementosBusqueda);
             Controls.Add(btnGenerarReporte);
             Controls.Add(LabEstudiantes);
             Controls.Add(label1);
@@ -146,6 +234,9 @@
             Text = "frmEstudiantes";
             Load += frmEstudiantes_Load;
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).EndInit();
+            PanelElementosBusqueda.ResumeLayout(false);
+            PanelElementosBusqueda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBuscar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -157,5 +248,12 @@
         private Label LabEstudiantes;
         private Label label1;
         private Button btnGenerarReporte;
+        private Panel PanelElementosBusqueda;
+        private Label label7;
+        private Button btnBuscar;
+        private Button btnLimpiar;
+        private TextBox txtBuscar;
+        private Label label2;
+        private PictureBox pictureBuscar;
     }
 }

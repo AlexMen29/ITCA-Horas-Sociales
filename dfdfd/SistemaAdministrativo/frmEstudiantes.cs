@@ -43,7 +43,7 @@ namespace ProyectoSocial.SistemaAdministrativo
 
         public void crearPDF()
         {
-            
+
 
         }
 
@@ -114,6 +114,31 @@ namespace ProyectoSocial.SistemaAdministrativo
         private void btnGenerarReporte_MouseLeave(object sender, EventArgs e)
         {
             eventosEnterLeave(btnGenerarReporte, ColorTranslator.FromHtml("#b1201f"), System.Drawing.Color.White);
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var consulta = context.DatosAlumnos.Where(o => o.Carnet == txtBuscar.Text && o.Estado == "Terminado").Count();
+            if (consulta > 0)
+            {
+                MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nEsta apunto de imprimir la hoja social {compartir.usuario.Grupo}. ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nno puede  imprimir la hoja social {compartir.usuario.Grupo}. ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+        }
+
+        private void gridEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtBuscar.Text = gridEstudiantes.SelectedCells[0].Value.ToString();
+
         }
     }
 }
