@@ -33,11 +33,11 @@ namespace HorasSociales2
             datosContenedor.actividad1 = txtAct1.Text;
             datosContenedor.objetivos1 = txtObjetivos1.Text;
             datosContenedor.metas1 = txtGoals1.Text;
-            datosContenedor.duracion1 = txtDuracion1.Text;
+            datosContenedor.duracion1 = int.Parse(txtDuracion1.Text);
             datosContenedor.actividad2 = txtAct2.Text;
             datosContenedor.objetivos2 = txtObjetivos2.Text;
             datosContenedor.metas2 = txtGoals2.Text;
-            datosContenedor.duracion2 = txtDuracion2.Text;
+            datosContenedor.duracion2 = int.Parse(txtDuracion2.Text);
 
             if (string.IsNullOrWhiteSpace(txtAct1.Text) || string.IsNullOrWhiteSpace(txtObjetivos1.Text) || string.IsNullOrWhiteSpace(txtGoals1.Text) || string.IsNullOrWhiteSpace(txtDuracion1.Text))
             {

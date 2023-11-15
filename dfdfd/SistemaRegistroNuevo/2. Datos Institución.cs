@@ -30,13 +30,13 @@ namespace HorasSociales2
         {
 
             datosContenedor.institucion = txtName.Text;
-            datosContenedor.telefonoInstitucion = txtPhone.Text;
+            datosContenedor.telefonoInstitucion = int.Parse(txtPhone.Text);
             datosContenedor.actividades = txtActivity.Text;
             datosContenedor.responsable = txtResponsable.Text;
             datosContenedor.correoResponsable = txtEmail.Text;
-            datosContenedor.telefonoResponsable = txtResPhone.Text;
-            datosContenedor.tiempo = txtTime.Text;
-            datosContenedor.fecha = dateDate.Value.ToString();
+            datosContenedor.telefonoResponsable = int.Parse(txtResPhone.Text);
+            datosContenedor.tiempo = int.Parse(txtTime.Text);
+            datosContenedor.fecha = dateDate.Value;
 
 
             if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtActivity.Text) || string.IsNullOrWhiteSpace(txtResponsable.Text) || string.IsNullOrWhiteSpace(txtTime.Text) || string.IsNullOrWhiteSpace(txtResPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text))

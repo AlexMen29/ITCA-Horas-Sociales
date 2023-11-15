@@ -38,16 +38,16 @@ namespace HorasSociales2
         {
           
 
-            datosContenedor.lunesAM = txtMonAM.Text;
-            datosContenedor.lunesPM = txtMonPM.Text;
-            datosContenedor.martesAM = txtTueAM.Text;
-            datosContenedor.martesPM = txtTuePM.Text;
-            datosContenedor.miercolesAM = txtWedAM.Text;
-            datosContenedor.miercolesPM = txtWedPM.Text;
-            datosContenedor.juevesAM = txtThuAM.Text;
-            datosContenedor.juevesPM = txtThuPM.Text;
-            datosContenedor.viernesAM = txtFriAM.Text;
-            datosContenedor.viernesPM = txtFriPM.Text;
+            //datosContenedor.lunesAM = txtMonAM.Value;
+            //datosContenedor.lunesPM = txtMonPM.Text;
+            //datosContenedor.martesAM = txtTueAM.Text;
+            //datosContenedor.martesPM = txtTuePM.Text;
+            //datosContenedor.miercolesAM = txtWedAM.Text;
+            //datosContenedor.miercolesPM = txtWedPM.Text;
+            //datosContenedor.juevesAM = txtThuAM.Text;
+            //datosContenedor.juevesPM = txtThuPM.Text;
+            //datosContenedor.viernesAM = txtFriAM.Text;
+            //datosContenedor.viernesPM = txtFriPM.Text;
 
             if (string.IsNullOrWhiteSpace(txtMonAM.Text) && string.IsNullOrWhiteSpace(txtMonPM.Text) && string.IsNullOrWhiteSpace(txtTueAM.Text) && string.IsNullOrWhiteSpace(txtTuePM.Text) && string.IsNullOrWhiteSpace(txtWedAM.Text) && string.IsNullOrWhiteSpace(txtWedPM.Text) && string.IsNullOrWhiteSpace(txtThuAM.Text) && string.IsNullOrWhiteSpace(txtThuPM.Text) && string.IsNullOrWhiteSpace(txtFriAM.Text) && string.IsNullOrWhiteSpace(txtFriPM.Text))
             {
@@ -55,7 +55,7 @@ namespace HorasSociales2
             }
             else
             {
-                tbDatosRegistro registro= new tbDatosRegistro();
+                tbDatosRegistro registro = new tbDatosRegistro();
 
                 foreach (var propiedad in typeof(datosContenedor).GetProperties())
                 {

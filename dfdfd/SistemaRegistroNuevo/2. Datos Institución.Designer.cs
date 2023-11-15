@@ -36,7 +36,6 @@
             picLine = new PictureBox();
             pnlLeft = new Panel();
             pnlContent = new Panel();
-            dateDate = new DateTimePicker();
             txtResPhone = new TextBox();
             txtResponsable = new TextBox();
             txtPhone = new TextBox();
@@ -58,6 +57,7 @@
             btnBack = new Button();
             pictureBox1 = new PictureBox();
             btnNext = new Button();
+            dateDate = new DateTimePicker();
             pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             pnlTitle.SuspendLayout();
@@ -164,20 +164,6 @@
             pnlContent.Name = "pnlContent";
             pnlContent.Size = new Size(947, 396);
             pnlContent.TabIndex = 6;
-            // 
-            // dateDate
-            // 
-            dateDate.Anchor = AnchorStyles.Top;
-            dateDate.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dateDate.Format = DateTimePickerFormat.Short;
-            dateDate.Location = new Point(681, 563);
-            dateDate.Margin = new Padding(4, 3, 4, 3);
-            dateDate.MinDate = new DateTime(2000, 12, 31, 0, 0, 0, 0);
-            dateDate.Name = "dateDate";
-            dateDate.Size = new Size(139, 30);
-            dateDate.TabIndex = 9;
-            dateDate.Tag = "dateDate";
-            dateDate.Value = new DateTime(2023, 10, 10, 22, 24, 9, 0);
             // 
             // txtResPhone
             // 
@@ -439,6 +425,15 @@
             btnNext.Text = "Siguiente";
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += btnNext_Click;
+            // 
+            // dateDate
+            // 
+            dateDate.Anchor = AnchorStyles.None;
+            dateDate.CalendarFont = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dateDate.Location = new Point(680, 573);
+            dateDate.Name = "dateDate";
+            dateDate.Size = new Size(210, 23);
+            dateDate.TabIndex = 24;
             // 
             // FrmDatosInstitucion
             // 
