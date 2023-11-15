@@ -237,46 +237,47 @@ namespace SistemaAdministrativo
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
-
-
                 if (comboFiltra.Text == "Descendente")
                 {
                     var datosOrdenados = context.horasSociales.Where(o => o.Grupo == compartir.usuario.Grupo).OrderByDescending(h => h.Fecha).ToList();
                     gridDatosAlumnos.DataSource = datosOrdenados;
-
-
                 }
                 if (comboFiltra.Text == "Ascendente")
                 {
                     var datosOrdenados = context.horasSociales.Where(o => o.Grupo == compartir.usuario.Grupo).OrderBy(h => h.Fecha).ToList();
                     gridDatosAlumnos.DataSource = datosOrdenados;
                 }
-
-                MessageBox.Show("No hay nada en la caja");
-
             }
             else
             {
                 if (comboFiltra.Text == "Descendente")
                 {
                     var datosOrdenados = context.horasSociales.Where(o => o.Grupo == compartir.usuario.Grupo && o.Carnet == txtBuscar.Text).OrderByDescending(h => h.Fecha).ToList();
-                    gridDatosAlumnos.DataSource = datosOrdenados;
+                    if (datosOrdenados.Count > 0)
+                    {
+                        gridDatosAlumnos.DataSource = datosOrdenados;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Carnet Invalido", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
+                    }
                 }
                 if (comboFiltra.Text == "Ascendente")
                 {
                     var datosOrdenados = context.horasSociales.Where(o => o.Grupo == compartir.usuario.Grupo && o.Carnet == txtBuscar.Text).OrderBy(h => h.Fecha).ToList();
-                    gridDatosAlumnos.DataSource = datosOrdenados;
+                    if (datosOrdenados.Count > 0)
+                    {
+                        gridDatosAlumnos.DataSource = datosOrdenados;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Carnet Invalido","ITCA FEPADE",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
                 }
-                MessageBox.Show("si hay nada en la caja");
-
-
-
 
 
             }
-
 
         }
 
@@ -286,13 +287,13 @@ namespace SistemaAdministrativo
             {
                 if (btnEstado.Text == "En Proceso")
                 {
-                    MessageBox.Show($"Estimado/a {compartir.usuario.Nombres},\nLe informamos que su estado se encuentra actualmente en proceso." +
+                    MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nLe informamos que su estado se encuentra actualmente en proceso." +
                         $" Le invitamos a continuar llevando a cabo su servicio social de manera excelente para que pueda culminar " +
                         $"satisfactoriamente en el menor tiempo posible.", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (btnEstado.Text == "Terminado")
                 {
-                    MessageBox.Show($"Estimado/a {compartir.usuario.Nombres},\n¡Felicitaciones! Nos complace informarle que su servicio social ha sido completado con éxito. " +
+                    MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\n¡Felicitaciones! Nos complace informarle que su servicio social ha sido completado con éxito. " +
                         $"Le solicitamos presentarse o comunicarse con su encargado {compartir.usuario.Encargado} para recibir su hoja de finalización y" +
                         $" formalizar los detalles de su logro.\nAgradecemos su dedicación y esfuerzo durante este proceso.", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

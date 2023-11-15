@@ -127,6 +127,9 @@ namespace ProyectoSocial.SistemaAdministrativo
             if (consulta > 0)
             {
                 MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nEsta apunto de imprimir la hoja social {compartir.usuario.Grupo}. ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                //si aqui dice que si aca ira la generacion del reporte
             }
             else
             {

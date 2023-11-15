@@ -73,7 +73,23 @@ namespace ProyectoSocial.Otros
 
             if (evento != null)
             {
-                MessageBox.Show($"{evento.Mensaje}", "Eventos ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                var idEventos = context.Eventos.Where(o => o.Fecha == fechaSeleccionada).Select(o=>o.Id).ToList();
+
+                if (idEventos.Count > 0)
+                {
+                    foreach (var id in idEventos)
+                    {
+                        var ConsultaEventos = context.Eventos.FirstOrDefault(o => o.Id == id);
+                        MessageBox.Show($"{ConsultaEventos.Mensaje}", "Eventos ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"{evento.Mensaje}", "Eventos ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
             }
         }
 

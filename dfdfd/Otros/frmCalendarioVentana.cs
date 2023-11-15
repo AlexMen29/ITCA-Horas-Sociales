@@ -28,7 +28,7 @@ namespace ProyectoSocial.Otros
 
         private void cargarEvento()
         {
-            var eventosBase = context.Eventos.Where(d=>d.Grupo==compartir.usuario.Grupo).Select(o => o.Fecha).ToList();
+            var eventosBase = context.Eventos.Where(d => d.Grupo == compartir.usuario.Grupo).Select(o => o.Fecha).ToList();
 
             foreach (var evento in eventosBase)
             {
@@ -39,16 +39,30 @@ namespace ProyectoSocial.Otros
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
-            DateTime fechaSelecicionda = monthCalendar1.SelectionStart.Date;
+            DateTime fechaSeleccionada = monthCalendar1.SelectionStart.Date;
 
-            var consulta = context.Eventos.FirstOrDefault(o=>o.Fecha==fechaSelecicionda);
-            if (consulta!=null) 
+            var evento = context.Eventos.FirstOrDefault(o => o.Fecha == fechaSeleccionada);
+
+            if (evento != null)
             {
-                string mensaje = consulta.Mensaje;
-                MessageBox.Show($"{mensaje}","Eventos ITCA FEPADE SS",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-            
 
+                var idEventos = context.Eventos.Where(o => o.Fecha == fechaSeleccionada).Select(o => o.Id).ToList();
+
+                if (idEventos.Count > 0)
+                {
+                    foreach (var id in idEventos)
+                    {
+                        var ConsultaEventos = context.Eventos.FirstOrDefault(o => o.Id == id);
+                        MessageBox.Show($"{ConsultaEventos.Mensaje}", "Eventos ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"{evento.Mensaje}", "Eventos ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+            }
         }
     }
 }
