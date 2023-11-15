@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalendario));
             splitContainer1 = new SplitContainer();
-            panel1 = new Panel();
             gridEventos = new DataGridView();
             label11 = new Label();
             label6 = new Label();
@@ -41,16 +40,15 @@
             monthCalendar1 = new MonthCalendar();
             label4 = new Label();
             label12 = new Label();
+            panelModificarEliminar = new Panel();
+            label9 = new Label();
+            txtDescripcionME = new TextBox();
             pictureBox2 = new PictureBox();
+            btnModificar = new Button();
+            btnEliminar = new Button();
+            label7 = new Label();
             pictureBox1 = new PictureBox();
             label10 = new Label();
-            btnEliminar = new Button();
-            dataTimeFechaME = new DateTimePicker();
-            btnModificar = new Button();
-            label7 = new Label();
-            txtDescripcionME = new TextBox();
-            label8 = new Label();
-            label9 = new Label();
             dateTimePicker1 = new DateTimePicker();
             btnGuardar = new Button();
             label3 = new Label();
@@ -61,8 +59,8 @@
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridEventos).BeginInit();
+            panelModificarEliminar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -76,7 +74,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(panel1);
+            splitContainer1.Panel1.Controls.Add(gridEventos);
             splitContainer1.Panel1.Controls.Add(label11);
             splitContainer1.Panel1.Controls.Add(label6);
             splitContainer1.Panel1.Controls.Add(label5);
@@ -86,16 +84,9 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(label12);
-            splitContainer1.Panel2.Controls.Add(pictureBox2);
+            splitContainer1.Panel2.Controls.Add(panelModificarEliminar);
             splitContainer1.Panel2.Controls.Add(pictureBox1);
             splitContainer1.Panel2.Controls.Add(label10);
-            splitContainer1.Panel2.Controls.Add(btnEliminar);
-            splitContainer1.Panel2.Controls.Add(dataTimeFechaME);
-            splitContainer1.Panel2.Controls.Add(btnModificar);
-            splitContainer1.Panel2.Controls.Add(label7);
-            splitContainer1.Panel2.Controls.Add(txtDescripcionME);
-            splitContainer1.Panel2.Controls.Add(label8);
-            splitContainer1.Panel2.Controls.Add(label9);
             splitContainer1.Panel2.Controls.Add(dateTimePicker1);
             splitContainer1.Panel2.Controls.Add(btnGuardar);
             splitContainer1.Panel2.Controls.Add(label3);
@@ -107,69 +98,61 @@
             splitContainer1.SplitterDistance = 474;
             splitContainer1.TabIndex = 24;
             // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(gridEventos);
-            panel1.Location = new Point(3, 484);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(468, 169);
-            panel1.TabIndex = 39;
-            // 
             // gridEventos
             // 
             gridEventos.AllowUserToAddRows = false;
             gridEventos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            gridEventos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            gridEventos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             gridEventos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gridEventos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridEventos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             gridEventos.BackgroundColor = Color.White;
             gridEventos.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             gridEventos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            gridEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            gridEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             gridEventos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            gridEventos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            gridEventos.DefaultCellStyle = dataGridViewCellStyle6;
             gridEventos.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridEventos.EnableHeadersVisualStyles = false;
             gridEventos.GridColor = Color.Firebrick;
-            gridEventos.Location = new Point(0, 0);
+            gridEventos.Location = new Point(3, 364);
             gridEventos.Margin = new Padding(4, 3, 4, 3);
             gridEventos.MultiSelect = false;
             gridEventos.Name = "gridEventos";
             gridEventos.ReadOnly = true;
             gridEventos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridEventos.Size = new Size(468, 152);
+            gridEventos.Size = new Size(468, 148);
             gridEventos.TabIndex = 17;
             gridEventos.CellClick += gridEventos_CellClick_1;
+            gridEventos.CellContentClick += gridEventos_CellContentClick;
             // 
             // label11
             // 
             label11.Anchor = AnchorStyles.Top;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(79, 454);
+            label11.Location = new Point(72, 336);
             label11.Name = "label11";
-            label11.Size = new Size(311, 17);
+            label11.Size = new Size(373, 17);
             label11.TabIndex = 38;
-            label11.Text = "Si desea Modificar, por favor seleccione un registro";
+            label11.Text = "Si desea Modificar o Eliminar, por favor seleccione un registro";
             // 
             // label6
             // 
@@ -201,8 +184,7 @@
             // 
             monthCalendar1.Anchor = AnchorStyles.Top;
             monthCalendar1.BackColor = SystemColors.HotTrack;
-            monthCalendar1.CalendarDimensions = new Size(1, 2);
-            monthCalendar1.Location = new Point(120, 104);
+            monthCalendar1.Location = new Point(120, 96);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.ShowToday = false;
             monthCalendar1.TabIndex = 16;
@@ -218,7 +200,7 @@
             label4.BackColor = Color.FromArgb(176, 25, 29);
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(127, 429);
+            label4.Location = new Point(144, 288);
             label4.Name = "label4";
             label4.Size = new Size(207, 25);
             label4.TabIndex = 18;
@@ -236,24 +218,98 @@
             label12.Size = new Size(0, 25);
             label12.TabIndex = 40;
             // 
+            // panelModificarEliminar
+            // 
+            panelModificarEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelModificarEliminar.Controls.Add(label9);
+            panelModificarEliminar.Controls.Add(txtDescripcionME);
+            panelModificarEliminar.Controls.Add(pictureBox2);
+            panelModificarEliminar.Controls.Add(btnModificar);
+            panelModificarEliminar.Controls.Add(btnEliminar);
+            panelModificarEliminar.Controls.Add(label7);
+            panelModificarEliminar.Location = new Point(16, 368);
+            panelModificarEliminar.Name = "panelModificarEliminar";
+            panelModificarEliminar.Size = new Size(400, 280);
+            panelModificarEliminar.TabIndex = 39;
+            panelModificarEliminar.Visible = false;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(8, 56);
+            label9.Name = "label9";
+            label9.Size = new Size(165, 21);
+            label9.TabIndex = 32;
+            label9.Text = "Descripcion Evento: ";
+            // 
+            // txtDescripcionME
+            // 
+            txtDescripcionME.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtDescripcionME.Location = new Point(8, 88);
+            txtDescripcionME.Multiline = true;
+            txtDescripcionME.Name = "txtDescripcionME";
+            txtDescripcionME.Size = new Size(264, 104);
+            txtDescripcionME.TabIndex = 34;
+            // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(297, 416);
+            pictureBox2.Location = new Point(288, 88);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(145, 141);
+            pictureBox2.Size = new Size(105, 104);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 39;
             pictureBox2.TabStop = false;
+            // 
+            // btnModificar
+            // 
+            btnModificar.BackColor = Color.FromArgb(176, 25, 29);
+            btnModificar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Location = new Point(8, 200);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(128, 45);
+            btnModificar.TabIndex = 35;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.FromArgb(176, 25, 29);
+            btnEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(168, 200);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(112, 45);
+            btnEliminar.TabIndex = 37;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.BackColor = Color.FromArgb(176, 25, 29);
+            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Location = new Point(8, 16);
+            label7.Name = "label7";
+            label7.Size = new Size(238, 25);
+            label7.TabIndex = 33;
+            label7.Text = "Modificacion/Eliminación";
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(291, 71);
+            pictureBox1.Location = new Point(304, 96);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(131, 159);
+            pictureBox1.Size = new Size(104, 102);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 38;
             pictureBox1.TabStop = false;
@@ -265,89 +321,11 @@
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(205, 144, 19);
-            label10.Location = new Point(5, 347);
+            label10.Location = new Point(8, 336);
             label10.Name = "label10";
-            label10.Size = new Size(287, 32);
+            label10.Size = new Size(413, 32);
             label10.TabIndex = 29;
-            label10.Text = ".......................................";
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.FromArgb(176, 25, 29);
-            btnEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(171, 609);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(143, 45);
-            btnEliminar.TabIndex = 37;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // dataTimeFechaME
-            // 
-            dataTimeFechaME.CalendarFont = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataTimeFechaME.Location = new Point(7, 571);
-            dataTimeFechaME.Name = "dataTimeFechaME";
-            dataTimeFechaME.Size = new Size(284, 23);
-            dataTimeFechaME.TabIndex = 36;
-            // 
-            // btnModificar
-            // 
-            btnModificar.BackColor = Color.FromArgb(176, 25, 29);
-            btnModificar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(5, 609);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(143, 45);
-            btnModificar.TabIndex = 35;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = false;
-            btnModificar.Click += btnModificar_Click;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label7.AutoSize = true;
-            label7.BackColor = Color.FromArgb(176, 25, 29);
-            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(4, 391);
-            label7.Name = "label7";
-            label7.Size = new Size(238, 25);
-            label7.TabIndex = 33;
-            label7.Text = "Modificacion/Eliminación";
-            // 
-            // txtDescripcionME
-            // 
-            txtDescripcionME.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtDescripcionME.Location = new Point(6, 440);
-            txtDescripcionME.Multiline = true;
-            txtDescripcionME.Name = "txtDescripcionME";
-            txtDescripcionME.Size = new Size(285, 104);
-            txtDescripcionME.TabIndex = 34;
-            // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(7, 547);
-            label8.Name = "label8";
-            label8.Size = new Size(162, 21);
-            label8.TabIndex = 31;
-            label8.Text = "Fecha de Actividad: ";
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(3, 416);
-            label9.Name = "label9";
-            label9.Size = new Size(165, 21);
-            label9.TabIndex = 32;
-            label9.Text = "Descripcion Evento: ";
+            label10.Text = ".........................................................";
             // 
             // dateTimePicker1
             // 
@@ -357,6 +335,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(284, 23);
             dateTimePicker1.TabIndex = 30;
+            dateTimePicker1.Value = new DateTime(2023, 11, 14, 0, 0, 0, 0);
             // 
             // btnGuardar
             // 
@@ -381,9 +360,9 @@
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(5, 33);
             label3.Name = "label3";
-            label3.Size = new Size(159, 25);
+            label3.Size = new Size(137, 25);
             label3.TabIndex = 26;
-            label3.Text = "Anunciar Evento";
+            label3.Text = "Nuevo Evento";
             // 
             // txtMensaje
             // 
@@ -391,7 +370,7 @@
             txtMensaje.Location = new Point(3, 95);
             txtMensaje.Multiline = true;
             txtMensaje.Name = "txtMensaje";
-            txtMensaje.Size = new Size(285, 104);
+            txtMensaje.Size = new Size(285, 105);
             txtMensaje.TabIndex = 27;
             // 
             // label1
@@ -432,8 +411,9 @@
             splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridEventos).EndInit();
+            panelModificarEliminar.ResumeLayout(false);
+            panelModificarEliminar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -449,11 +429,9 @@
         private DataGridView gridEventos;
         private Label label10;
         private Button btnEliminar;
-        private DateTimePicker dataTimeFechaME;
         private Button btnModificar;
         private Label label7;
         private TextBox txtDescripcionME;
-        private Label label8;
         private Label label9;
         private DateTimePicker dateTimePicker1;
         private Button btnGuardar;
@@ -462,7 +440,7 @@
         private Label label1;
         private Label label2;
         private Label label11;
-        private Panel panel1;
+        private Panel panelModificarEliminar;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Label label12;

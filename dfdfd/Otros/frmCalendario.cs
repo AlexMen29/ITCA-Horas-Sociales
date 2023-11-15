@@ -50,11 +50,19 @@ namespace ProyectoSocial.Otros
 
         private void gridEventos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            txtDescripcionME.Text = gridEventos.SelectedCells[2].Value.ToString();
-            dataTimeFechaME.Value = (DateTime)gridEventos.SelectedCells[1].Value;
-            int idEvento = Convert.ToInt32(gridEventos.SelectedCells[0].Value);
-            EventosITCA.itEvento = idEvento;
-            txtDescripcionME.Focus();
+            try
+            {
+                txtDescripcionME.Text = gridEventos.SelectedCells[2].Value.ToString();
+                dateTimePicker1.Value = (DateTime)gridEventos.SelectedCells[1].Value;
+                int idEvento = Convert.ToInt32(gridEventos.SelectedCells[0].Value);
+                EventosITCA.itEvento = idEvento;
+                txtDescripcionME.Focus();
+                panelModificarEliminar.Visible = true;
+            }
+            catch
+            {
+
+            }
         }
 
         private void monthCalendar1_DateSelected_1(object sender, DateRangeEventArgs e)
@@ -104,13 +112,6 @@ namespace ProyectoSocial.Otros
         {
             Eventos eventos = new Eventos();
             eventos.Mensaje = txtDescripcionME.Text;
-
-            var cantidad = context.Eventos.Where(m => m.Grupo == compartir.usuario.Grupo).Count();
-            if (cantidad < 1)
-            {
-                MessageBox.Show("No hay ningun evento programado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
             {
                 if (string.IsNullOrWhiteSpace(eventos.Mensaje))
                 {
@@ -128,7 +129,7 @@ namespace ProyectoSocial.Otros
                             MessageBox.Show("Evento modificado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CargarDataGrid();
                             fechasEventos();
-
+                            panelModificarEliminar.Visible = false;
                         }
                         else
                         {
@@ -148,12 +149,7 @@ namespace ProyectoSocial.Otros
             Eventos eventos = new Eventos();
             eventos.Mensaje = txtDescripcionME.Text;
 
-            var cantidad = context.Eventos.Where(m => m.Grupo == compartir.usuario.Grupo).Count();
-            if (cantidad < 1)
-            {
-                MessageBox.Show("No hay ningun evento programado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
+
             {
                 if (string.IsNullOrWhiteSpace(eventos.Mensaje))
                 {
@@ -171,6 +167,7 @@ namespace ProyectoSocial.Otros
                             CargarDataGrid();
                             fechasEventos();
                             txtDescripcionME.Clear();
+                            panelModificarEliminar.Visible = false;
                         }
                         else
                         {
@@ -179,7 +176,7 @@ namespace ProyectoSocial.Otros
                     }
                     else
                     {
-                        MessageBox.Show("El evento no fue eliminado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("El evento no pudo ser eliminado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
@@ -187,6 +184,11 @@ namespace ProyectoSocial.Otros
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridEventos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
