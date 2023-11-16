@@ -38,7 +38,7 @@ namespace dfdfd.bdSocial
 
         public int tiempo { get; set; }
 
-        public static DateTime fecha { get; set; }
+        public DateTime fecha { get; set; }
 
         public string actividad1 { get; set; } = null!;
 

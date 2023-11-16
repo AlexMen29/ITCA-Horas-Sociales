@@ -36,7 +36,7 @@ namespace HorasSociales2
             datosContenedor.correoResponsable = txtEmail.Text;
             datosContenedor.telefonoResponsable = int.Parse(txtResPhone.Text);
             datosContenedor.tiempo = int.Parse(txtTime.Text);
-            datosContenedor.fecha = dateDate.Value;
+            datosContenedor.fecha = DateTime.Parse(dateDate.Text);
 
             if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtActivity.Text) || string.IsNullOrWhiteSpace(txtResponsable.Text) || string.IsNullOrWhiteSpace(txtTime.Text) || string.IsNullOrWhiteSpace(txtResPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text))
             {
