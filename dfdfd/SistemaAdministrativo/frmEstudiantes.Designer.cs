@@ -46,9 +46,11 @@
             txtBuscar = new TextBox();
             comboFiltra = new ComboBox();
             btnFiltrar = new Button();
+            logoITCA = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).BeginInit();
             PanelElementosBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBuscar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logoITCA).BeginInit();
             SuspendLayout();
             // 
             // label9
@@ -244,11 +246,24 @@
             btnFiltrar.UseVisualStyleBackColor = false;
             btnFiltrar.Click += btnFiltrar_Click;
             // 
+            // logoITCA
+            // 
+            logoITCA.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            logoITCA.Image = (Image)resources.GetObject("logoITCA.Image");
+            logoITCA.Location = new Point(754, 460);
+            logoITCA.Name = "logoITCA";
+            logoITCA.Size = new Size(137, 50);
+            logoITCA.SizeMode = PictureBoxSizeMode.StretchImage;
+            logoITCA.TabIndex = 29;
+            logoITCA.TabStop = false;
+            logoITCA.Click += logoITCA_Click;
+            // 
             // frmEstudiantes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(903, 522);
+            Controls.Add(logoITCA);
             Controls.Add(comboFiltra);
             Controls.Add(btnFiltrar);
             Controls.Add(PanelElementosBusqueda);
@@ -265,6 +280,7 @@
             PanelElementosBusqueda.ResumeLayout(false);
             PanelElementosBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBuscar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logoITCA).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -285,5 +301,6 @@
         private PictureBox pictureBuscar;
         private ComboBox comboFiltra;
         private Button btnFiltrar;
+        private PictureBox logoITCA;
     }
 }

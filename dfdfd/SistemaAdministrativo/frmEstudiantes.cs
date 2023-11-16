@@ -97,7 +97,35 @@ namespace ProyectoSocial.SistemaAdministrativo
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
-            //crearPDF();
+            //Procesar_PDF pdf = new Procesar_PDF();
+            //pdf.crearDirectorio();
+            if (gridEstudiantes.SelectedRows.Count > 0)
+            {
+                // Obtener la fila seleccionada
+                DataGridViewRow selectedRow = gridEstudiantes.SelectedRows[0];
+
+                Datos_Estudiantes datos_Estudiantes = new Datos_Estudiantes
+                {
+                    //Debo ingresar más variables si se crea más campos en el gridEstudiantes que estáne en la clase Datos_Estudiantes.
+                    logo_itca = logoITCA.Image,
+                    carnet = selectedRow.Cells[0].Value.ToString(),
+                    nombres = selectedRow.Cells[3].Value.ToString(),
+                    apellidos = selectedRow.Cells[4].Value.ToString(),
+                    TipoEstudio = selectedRow.Cells[6].Value.ToString(),
+                    correo = selectedRow.Cells[7].Value.ToString(),
+                    grupo = selectedRow.Cells[8].Value.ToString(),
+                    estado = selectedRow.Cells[9].Value.ToString(),
+
+
+                };
+
+                Procesar_PDF pdf = new Procesar_PDF();
+                pdf.crearPdf(datos_Estudiantes, gridEstudiantes);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila antes de generar el informe.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         public void eventosEnterLeave(Button btn, System.Drawing.Color ColorFondo, System.Drawing.Color ColorLetra)
@@ -157,6 +185,11 @@ namespace ProyectoSocial.SistemaAdministrativo
                 gridEstudiantes.DataSource = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).OrderBy(o => o.HorasTotal).ToList();
 
             }
+        }
+
+        private void logoITCA_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
