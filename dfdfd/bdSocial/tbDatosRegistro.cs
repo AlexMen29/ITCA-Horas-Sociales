@@ -5,27 +5,28 @@ namespace dfdfd.bdSocial
     public class tbDatosRegistro
     {
         public string nombre { get; set; } = null!;
-
         [Key]
         public string carnet { get; set; } = null!;
 
         public string escuela { get; set; } = null!;
 
-        public string año { get; set; } = null!;
+        public int año { get; set; }
 
         public string carrera { get; set; } = null!;
 
         public string correo { get; set; } = null!;
 
-        public string telefono { get; set; } = null!;
+        public int telefono { get; set; }
 
         public string emergencia { get; set; } = null!;
+
+        public int telefonoEmergencia { get; set; }
 
         public string coordinador { get; set; } = null!;
 
         public string institucion { get; set; } = null!;
 
-        public string telefonoInstitucion { get; set; } = null!;
+        public int telefonoInstitucion { get; set; }
 
         public string actividades { get; set; } = null!;
 
@@ -33,11 +34,11 @@ namespace dfdfd.bdSocial
 
         public string correoResponsable { get; set; } = null!;
 
-        public string telefonoResponsable { get; set; } = null!;
+        public int telefonoResponsable { get; set; }
 
-        public string tiempo { get; set; } = null!;
+        public int tiempo { get; set; }
 
-        public string fecha { get; set; } = null!;
+        public static DateTime fecha { get; set; }
 
         public string actividad1 { get; set; } = null!;
 
@@ -55,25 +56,19 @@ namespace dfdfd.bdSocial
 
         public string? duracion2 { get; set; }
 
-        public string? lunesAM { get; set; }
+        public string? lunes { get; set; }
 
-        public string? lunesPM { get; set; }
+        public string? martes { get; set; }
 
-        public string? martesAM { get; set; }
+        public string? miercoles { get; set; }
 
-        public string? martesPM { get; set; }
+        public string? jueves { get; set; }
 
-        public string? miercolesAM { get; set; }
+        public string? viernes { get; set; }
 
-        public string? miercolesPM { get; set; }
+        public string? sabado { get; set; }
 
-        public string? juevesAM { get; set; }
-
-        public string? juevesPM { get; set; }
-
-        public string? viernesAM { get; set; }
-
-        public string? viernesPM { get; set; }
+        public string? domingo { get; set; }
 
     }
 }

@@ -37,21 +37,19 @@
             pnlLeft = new Panel();
             pnlContent = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            txtSunPM = new TextBox();
-            txtSatPM = new TextBox();
-            txtFriPM = new TextBox();
-            txtThuPM = new TextBox();
-            txtWedPM = new TextBox();
-            txtTuePM = new TextBox();
-            txtMonPM = new TextBox();
-            txtSunAM = new TextBox();
-            txtSatAM = new TextBox();
-            txtFriAM = new TextBox();
-            txtThuAM = new TextBox();
-            txtWedAM = new TextBox();
-            txtTueAM = new TextBox();
-            txtMonAM = new TextBox();
-            lblPM = new Label();
+            cmbUntilSUN = new ComboBox();
+            cmbUntilSAT = new ComboBox();
+            cmbUntilFRI = new ComboBox();
+            cmbUntilTHU = new ComboBox();
+            cmbUntilWED = new ComboBox();
+            cmbUntilTUE = new ComboBox();
+            cmbSinceSUN = new ComboBox();
+            cmbSinceSAT = new ComboBox();
+            cmbSinceFRI = new ComboBox();
+            cmbSinceTHU = new ComboBox();
+            cmbSinceWED = new ComboBox();
+            cmbSinceTUE = new ComboBox();
+            lblUntil = new Label();
             lblDay3 = new Label();
             lblDay2 = new Label();
             lblDay1 = new Label();
@@ -60,7 +58,9 @@
             lblDay5 = new Label();
             lblDay6 = new Label();
             lblDay7 = new Label();
-            lblAM = new Label();
+            lblSince = new Label();
+            cmbSinceMON = new ComboBox();
+            cmbUntilMON = new ComboBox();
             pnlRight = new Panel();
             panel1 = new Panel();
             pnlBottom = new Panel();
@@ -174,21 +174,19 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel1.Controls.Add(txtSunPM, 7, 2);
-            tableLayoutPanel1.Controls.Add(txtSatPM, 6, 2);
-            tableLayoutPanel1.Controls.Add(txtFriPM, 5, 2);
-            tableLayoutPanel1.Controls.Add(txtThuPM, 4, 2);
-            tableLayoutPanel1.Controls.Add(txtWedPM, 3, 2);
-            tableLayoutPanel1.Controls.Add(txtTuePM, 2, 2);
-            tableLayoutPanel1.Controls.Add(txtMonPM, 1, 2);
-            tableLayoutPanel1.Controls.Add(txtSunAM, 7, 1);
-            tableLayoutPanel1.Controls.Add(txtSatAM, 6, 1);
-            tableLayoutPanel1.Controls.Add(txtFriAM, 5, 1);
-            tableLayoutPanel1.Controls.Add(txtThuAM, 4, 1);
-            tableLayoutPanel1.Controls.Add(txtWedAM, 3, 1);
-            tableLayoutPanel1.Controls.Add(txtTueAM, 2, 1);
-            tableLayoutPanel1.Controls.Add(txtMonAM, 1, 1);
-            tableLayoutPanel1.Controls.Add(lblPM, 0, 2);
+            tableLayoutPanel1.Controls.Add(cmbUntilSUN, 7, 2);
+            tableLayoutPanel1.Controls.Add(cmbUntilSAT, 6, 2);
+            tableLayoutPanel1.Controls.Add(cmbUntilFRI, 5, 2);
+            tableLayoutPanel1.Controls.Add(cmbUntilTHU, 4, 2);
+            tableLayoutPanel1.Controls.Add(cmbUntilWED, 3, 2);
+            tableLayoutPanel1.Controls.Add(cmbUntilTUE, 2, 2);
+            tableLayoutPanel1.Controls.Add(cmbSinceSUN, 7, 1);
+            tableLayoutPanel1.Controls.Add(cmbSinceSAT, 6, 1);
+            tableLayoutPanel1.Controls.Add(cmbSinceFRI, 5, 1);
+            tableLayoutPanel1.Controls.Add(cmbSinceTHU, 4, 1);
+            tableLayoutPanel1.Controls.Add(cmbSinceWED, 3, 1);
+            tableLayoutPanel1.Controls.Add(cmbSinceTUE, 2, 1);
+            tableLayoutPanel1.Controls.Add(lblUntil, 0, 2);
             tableLayoutPanel1.Controls.Add(lblDay3, 3, 0);
             tableLayoutPanel1.Controls.Add(lblDay2, 2, 0);
             tableLayoutPanel1.Controls.Add(lblDay1, 1, 0);
@@ -197,7 +195,9 @@
             tableLayoutPanel1.Controls.Add(lblDay5, 5, 0);
             tableLayoutPanel1.Controls.Add(lblDay6, 6, 0);
             tableLayoutPanel1.Controls.Add(lblDay7, 7, 0);
-            tableLayoutPanel1.Controls.Add(lblAM, 0, 1);
+            tableLayoutPanel1.Controls.Add(lblSince, 0, 1);
+            tableLayoutPanel1.Controls.Add(cmbUntilMON, 1, 2);
+            tableLayoutPanel1.Controls.Add(cmbSinceMON, 1, 1);
             tableLayoutPanel1.Location = new Point(55, 18);
             tableLayoutPanel1.Margin = new Padding(4, 3, 4, 3);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -208,216 +208,128 @@
             tableLayoutPanel1.Size = new Size(849, 359);
             tableLayoutPanel1.TabIndex = 22;
             // 
-            // txtSunPM
+            // cmbUntilSUN
             // 
-            txtSunPM.Anchor = AnchorStyles.Top;
-            txtSunPM.BorderStyle = BorderStyle.None;
-            txtSunPM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSunPM.HideSelection = false;
-            txtSunPM.Location = new Point(747, 200);
-            txtSunPM.Margin = new Padding(4, 3, 4, 3);
-            txtSunPM.Multiline = true;
-            txtSunPM.Name = "txtSunPM";
-            txtSunPM.Size = new Size(97, 152);
-            txtSunPM.TabIndex = 16;
-            txtSunPM.TextAlign = HorizontalAlignment.Center;
+            cmbUntilSUN.FormattingEnabled = true;
+            cmbUntilSUN.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
+            cmbUntilSUN.Location = new Point(746, 200);
+            cmbUntilSUN.Name = "cmbUntilSUN";
+            cmbUntilSUN.Size = new Size(99, 23);
+            cmbUntilSUN.TabIndex = 46;
             // 
-            // txtSatPM
+            // cmbUntilSAT
             // 
-            txtSatPM.Anchor = AnchorStyles.Top;
-            txtSatPM.BorderStyle = BorderStyle.None;
-            txtSatPM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSatPM.HideSelection = false;
-            txtSatPM.Location = new Point(641, 200);
-            txtSatPM.Margin = new Padding(4, 3, 4, 3);
-            txtSatPM.Multiline = true;
-            txtSatPM.Name = "txtSatPM";
-            txtSatPM.Size = new Size(97, 152);
-            txtSatPM.TabIndex = 14;
-            txtSatPM.TextAlign = HorizontalAlignment.Center;
+            cmbUntilSAT.FormattingEnabled = true;
+            cmbUntilSAT.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
+            cmbUntilSAT.Location = new Point(640, 200);
+            cmbUntilSAT.Name = "cmbUntilSAT";
+            cmbUntilSAT.Size = new Size(99, 23);
+            cmbUntilSAT.TabIndex = 45;
             // 
-            // txtFriPM
+            // cmbUntilFRI
             // 
-            txtFriPM.Anchor = AnchorStyles.Top;
-            txtFriPM.BorderStyle = BorderStyle.None;
-            txtFriPM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFriPM.HideSelection = false;
-            txtFriPM.Location = new Point(535, 200);
-            txtFriPM.Margin = new Padding(4, 3, 4, 3);
-            txtFriPM.Multiline = true;
-            txtFriPM.Name = "txtFriPM";
-            txtFriPM.Size = new Size(97, 152);
-            txtFriPM.TabIndex = 12;
-            txtFriPM.TextAlign = HorizontalAlignment.Center;
+            cmbUntilFRI.FormattingEnabled = true;
+            cmbUntilFRI.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
+            cmbUntilFRI.Location = new Point(534, 200);
+            cmbUntilFRI.Name = "cmbUntilFRI";
+            cmbUntilFRI.Size = new Size(99, 23);
+            cmbUntilFRI.TabIndex = 44;
             // 
-            // txtThuPM
+            // cmbUntilTHU
             // 
-            txtThuPM.Anchor = AnchorStyles.Top;
-            txtThuPM.BorderStyle = BorderStyle.None;
-            txtThuPM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtThuPM.HideSelection = false;
-            txtThuPM.Location = new Point(429, 200);
-            txtThuPM.Margin = new Padding(4, 3, 4, 3);
-            txtThuPM.Multiline = true;
-            txtThuPM.Name = "txtThuPM";
-            txtThuPM.Size = new Size(97, 152);
-            txtThuPM.TabIndex = 10;
-            txtThuPM.TextAlign = HorizontalAlignment.Center;
+            cmbUntilTHU.FormattingEnabled = true;
+            cmbUntilTHU.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
+            cmbUntilTHU.Location = new Point(428, 200);
+            cmbUntilTHU.Name = "cmbUntilTHU";
+            cmbUntilTHU.Size = new Size(99, 23);
+            cmbUntilTHU.TabIndex = 43;
             // 
-            // txtWedPM
+            // cmbUntilWED
             // 
-            txtWedPM.Anchor = AnchorStyles.Top;
-            txtWedPM.BorderStyle = BorderStyle.None;
-            txtWedPM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtWedPM.HideSelection = false;
-            txtWedPM.Location = new Point(323, 200);
-            txtWedPM.Margin = new Padding(4, 3, 4, 3);
-            txtWedPM.Multiline = true;
-            txtWedPM.Name = "txtWedPM";
-            txtWedPM.Size = new Size(97, 152);
-            txtWedPM.TabIndex = 8;
-            txtWedPM.TextAlign = HorizontalAlignment.Center;
+            cmbUntilWED.FormattingEnabled = true;
+            cmbUntilWED.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
+            cmbUntilWED.Location = new Point(322, 200);
+            cmbUntilWED.Name = "cmbUntilWED";
+            cmbUntilWED.Size = new Size(99, 23);
+            cmbUntilWED.TabIndex = 42;
             // 
-            // txtTuePM
+            // cmbUntilTUE
             // 
-            txtTuePM.Anchor = AnchorStyles.Top;
-            txtTuePM.BorderStyle = BorderStyle.None;
-            txtTuePM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTuePM.HideSelection = false;
-            txtTuePM.Location = new Point(217, 200);
-            txtTuePM.Margin = new Padding(4, 3, 4, 3);
-            txtTuePM.Multiline = true;
-            txtTuePM.Name = "txtTuePM";
-            txtTuePM.Size = new Size(97, 152);
-            txtTuePM.TabIndex = 6;
-            txtTuePM.TextAlign = HorizontalAlignment.Center;
+            cmbUntilTUE.FormattingEnabled = true;
+            cmbUntilTUE.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
+            cmbUntilTUE.Location = new Point(216, 200);
+            cmbUntilTUE.Name = "cmbUntilTUE";
+            cmbUntilTUE.Size = new Size(99, 23);
+            cmbUntilTUE.TabIndex = 41;
             // 
-            // txtMonPM
+            // cmbSinceSUN
             // 
-            txtMonPM.Anchor = AnchorStyles.Top;
-            txtMonPM.BorderStyle = BorderStyle.None;
-            txtMonPM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMonPM.HideSelection = false;
-            txtMonPM.Location = new Point(111, 200);
-            txtMonPM.Margin = new Padding(4, 3, 4, 3);
-            txtMonPM.Multiline = true;
-            txtMonPM.Name = "txtMonPM";
-            txtMonPM.Size = new Size(97, 152);
-            txtMonPM.TabIndex = 4;
-            txtMonPM.TextAlign = HorizontalAlignment.Center;
+            cmbSinceSUN.FormattingEnabled = true;
+            cmbSinceSUN.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceSUN.Location = new Point(746, 40);
+            cmbSinceSUN.Name = "cmbSinceSUN";
+            cmbSinceSUN.Size = new Size(99, 23);
+            cmbSinceSUN.TabIndex = 40;
             // 
-            // txtSunAM
+            // cmbSinceSAT
             // 
-            txtSunAM.Anchor = AnchorStyles.Top;
-            txtSunAM.BorderStyle = BorderStyle.None;
-            txtSunAM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSunAM.HideSelection = false;
-            txtSunAM.Location = new Point(747, 40);
-            txtSunAM.Margin = new Padding(4, 3, 4, 3);
-            txtSunAM.Multiline = true;
-            txtSunAM.Name = "txtSunAM";
-            txtSunAM.Size = new Size(97, 152);
-            txtSunAM.TabIndex = 15;
-            txtSunAM.TextAlign = HorizontalAlignment.Center;
+            cmbSinceSAT.FormattingEnabled = true;
+            cmbSinceSAT.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceSAT.Location = new Point(640, 40);
+            cmbSinceSAT.Name = "cmbSinceSAT";
+            cmbSinceSAT.Size = new Size(99, 23);
+            cmbSinceSAT.TabIndex = 39;
             // 
-            // txtSatAM
+            // cmbSinceFRI
             // 
-            txtSatAM.Anchor = AnchorStyles.Top;
-            txtSatAM.BorderStyle = BorderStyle.None;
-            txtSatAM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSatAM.HideSelection = false;
-            txtSatAM.Location = new Point(641, 40);
-            txtSatAM.Margin = new Padding(4, 3, 4, 3);
-            txtSatAM.Multiline = true;
-            txtSatAM.Name = "txtSatAM";
-            txtSatAM.Size = new Size(97, 152);
-            txtSatAM.TabIndex = 13;
-            txtSatAM.TextAlign = HorizontalAlignment.Center;
+            cmbSinceFRI.FormattingEnabled = true;
+            cmbSinceFRI.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceFRI.Location = new Point(534, 40);
+            cmbSinceFRI.Name = "cmbSinceFRI";
+            cmbSinceFRI.Size = new Size(99, 23);
+            cmbSinceFRI.TabIndex = 38;
             // 
-            // txtFriAM
+            // cmbSinceTHU
             // 
-            txtFriAM.Anchor = AnchorStyles.Top;
-            txtFriAM.BorderStyle = BorderStyle.None;
-            txtFriAM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtFriAM.HideSelection = false;
-            txtFriAM.Location = new Point(535, 40);
-            txtFriAM.Margin = new Padding(4, 3, 4, 3);
-            txtFriAM.Multiline = true;
-            txtFriAM.Name = "txtFriAM";
-            txtFriAM.Size = new Size(97, 152);
-            txtFriAM.TabIndex = 11;
-            txtFriAM.TextAlign = HorizontalAlignment.Center;
+            cmbSinceTHU.FormattingEnabled = true;
+            cmbSinceTHU.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceTHU.Location = new Point(428, 40);
+            cmbSinceTHU.Name = "cmbSinceTHU";
+            cmbSinceTHU.Size = new Size(99, 23);
+            cmbSinceTHU.TabIndex = 37;
             // 
-            // txtThuAM
+            // cmbSinceWED
             // 
-            txtThuAM.Anchor = AnchorStyles.Top;
-            txtThuAM.BorderStyle = BorderStyle.None;
-            txtThuAM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtThuAM.HideSelection = false;
-            txtThuAM.Location = new Point(429, 40);
-            txtThuAM.Margin = new Padding(4, 3, 4, 3);
-            txtThuAM.Multiline = true;
-            txtThuAM.Name = "txtThuAM";
-            txtThuAM.Size = new Size(97, 152);
-            txtThuAM.TabIndex = 9;
-            txtThuAM.TextAlign = HorizontalAlignment.Center;
+            cmbSinceWED.FormattingEnabled = true;
+            cmbSinceWED.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceWED.Location = new Point(322, 40);
+            cmbSinceWED.Name = "cmbSinceWED";
+            cmbSinceWED.Size = new Size(99, 23);
+            cmbSinceWED.TabIndex = 36;
             // 
-            // txtWedAM
+            // cmbSinceTUE
             // 
-            txtWedAM.Anchor = AnchorStyles.Top;
-            txtWedAM.BorderStyle = BorderStyle.None;
-            txtWedAM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtWedAM.HideSelection = false;
-            txtWedAM.Location = new Point(323, 40);
-            txtWedAM.Margin = new Padding(4, 3, 4, 3);
-            txtWedAM.Multiline = true;
-            txtWedAM.Name = "txtWedAM";
-            txtWedAM.Size = new Size(97, 152);
-            txtWedAM.TabIndex = 7;
-            txtWedAM.TextAlign = HorizontalAlignment.Center;
+            cmbSinceTUE.FormattingEnabled = true;
+            cmbSinceTUE.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceTUE.Location = new Point(216, 40);
+            cmbSinceTUE.Name = "cmbSinceTUE";
+            cmbSinceTUE.Size = new Size(99, 23);
+            cmbSinceTUE.TabIndex = 35;
             // 
-            // txtTueAM
+            // lblUntil
             // 
-            txtTueAM.Anchor = AnchorStyles.Top;
-            txtTueAM.BorderStyle = BorderStyle.None;
-            txtTueAM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTueAM.HideSelection = false;
-            txtTueAM.Location = new Point(217, 40);
-            txtTueAM.Margin = new Padding(4, 3, 4, 3);
-            txtTueAM.Multiline = true;
-            txtTueAM.Name = "txtTueAM";
-            txtTueAM.Size = new Size(97, 152);
-            txtTueAM.TabIndex = 5;
-            txtTueAM.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtMonAM
-            // 
-            txtMonAM.Anchor = AnchorStyles.Top;
-            txtMonAM.BorderStyle = BorderStyle.None;
-            txtMonAM.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMonAM.HideSelection = false;
-            txtMonAM.Location = new Point(111, 40);
-            txtMonAM.Margin = new Padding(4, 3, 4, 3);
-            txtMonAM.Multiline = true;
-            txtMonAM.Name = "txtMonAM";
-            txtMonAM.Size = new Size(97, 152);
-            txtMonAM.TabIndex = 3;
-            txtMonAM.TextAlign = HorizontalAlignment.Center;
-            // 
-            // lblPM
-            // 
-            lblPM.Anchor = AnchorStyles.None;
-            lblPM.BackColor = Color.Transparent;
-            lblPM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPM.Location = new Point(5, 260);
-            lblPM.Margin = new Padding(4, 0, 4, 0);
-            lblPM.Name = "lblPM";
-            lblPM.RightToLeft = RightToLeft.No;
-            lblPM.Size = new Size(97, 35);
-            lblPM.TabIndex = 32;
-            lblPM.Tag = "PM";
-            lblPM.Text = "PM";
-            lblPM.TextAlign = ContentAlignment.MiddleCenter;
+            lblUntil.Anchor = AnchorStyles.None;
+            lblUntil.BackColor = Color.Transparent;
+            lblUntil.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUntil.Location = new Point(5, 260);
+            lblUntil.Margin = new Padding(4, 0, 4, 0);
+            lblUntil.Name = "lblUntil";
+            lblUntil.RightToLeft = RightToLeft.No;
+            lblUntil.Size = new Size(97, 35);
+            lblUntil.TabIndex = 32;
+            lblUntil.Tag = "PM";
+            lblUntil.Text = "Hasta";
+            lblUntil.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblDay3
             // 
@@ -539,20 +451,38 @@
             lblDay7.Text = "Domingo";
             lblDay7.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblAM
+            // lblSince
             // 
-            lblAM.Anchor = AnchorStyles.None;
-            lblAM.BackColor = Color.Transparent;
-            lblAM.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblAM.Location = new Point(5, 99);
-            lblAM.Margin = new Padding(4, 0, 4, 0);
-            lblAM.Name = "lblAM";
-            lblAM.RightToLeft = RightToLeft.No;
-            lblAM.Size = new Size(97, 35);
-            lblAM.TabIndex = 31;
-            lblAM.Tag = "AM";
-            lblAM.Text = "AM";
-            lblAM.TextAlign = ContentAlignment.MiddleCenter;
+            lblSince.Anchor = AnchorStyles.None;
+            lblSince.BackColor = Color.Transparent;
+            lblSince.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSince.Location = new Point(5, 99);
+            lblSince.Margin = new Padding(4, 0, 4, 0);
+            lblSince.Name = "lblSince";
+            lblSince.RightToLeft = RightToLeft.No;
+            lblSince.Size = new Size(97, 35);
+            lblSince.TabIndex = 31;
+            lblSince.Tag = "AM";
+            lblSince.Text = "Desde";
+            lblSince.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // cmbSinceMON
+            // 
+            cmbSinceMON.FormattingEnabled = true;
+            cmbSinceMON.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceMON.Location = new Point(110, 40);
+            cmbSinceMON.Name = "cmbSinceMON";
+            cmbSinceMON.Size = new Size(99, 23);
+            cmbSinceMON.TabIndex = 33;
+            // 
+            // cmbUntilMON
+            // 
+            cmbUntilMON.FormattingEnabled = true;
+            cmbUntilMON.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
+            cmbUntilMON.Location = new Point(110, 200);
+            cmbUntilMON.Name = "cmbUntilMON";
+            cmbUntilMON.Size = new Size(99, 23);
+            cmbUntilMON.TabIndex = 34;
             // 
             // pnlRight
             // 
@@ -647,7 +577,6 @@
             ((System.ComponentModel.ISupportInitialize)picLine).EndInit();
             pnlContent.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
             panel1.ResumeLayout(false);
             pnlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -670,21 +599,7 @@
         private PictureBox pictureBox1;
         private Button btnBack;
         private TableLayoutPanel tableLayoutPanel1;
-        private TextBox txtSunPM;
-        private TextBox txtSatPM;
-        private TextBox txtFriPM;
-        private TextBox txtThuPM;
-        private TextBox txtWedPM;
-        private TextBox txtTuePM;
-        private TextBox txtMonPM;
-        private TextBox txtSunAM;
-        private TextBox txtSatAM;
-        private TextBox txtFriAM;
-        private TextBox txtThuAM;
-        private TextBox txtWedAM;
-        private TextBox txtTueAM;
-        private TextBox txtMonAM;
-        private Label lblPM;
+        private Label lblUntil;
         private Label lblDay3;
         private Label lblDay2;
         private Label lblDay1;
@@ -693,7 +608,21 @@
         private Label lblDay5;
         private Label lblDay6;
         private Label lblDay7;
-        private Label lblAM;
+        private Label lblSince;
+        private ComboBox cmbSinceSUN;
+        private ComboBox cmbSinceSAT;
+        private ComboBox cmbSinceFRI;
+        private ComboBox cmbSinceTHU;
+        private ComboBox cmbSinceWED;
+        private ComboBox cmbSinceTUE;
+        private ComboBox cmbSinceMON;
+        private ComboBox cmbUntilMON;
+        private ComboBox cmbUntilSUN;
+        private ComboBox cmbUntilSAT;
+        private ComboBox cmbUntilFRI;
+        private ComboBox cmbUntilTHU;
+        private ComboBox cmbUntilWED;
+        private ComboBox cmbUntilTUE;
     }
 }
 

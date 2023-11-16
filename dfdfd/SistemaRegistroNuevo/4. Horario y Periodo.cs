@@ -15,9 +15,9 @@ namespace HorasSociales2
 {
     public partial class FrmHorarioPeriodo : Form
     {
-        
-        
-        
+
+
+
         ProyectoSocialContext context = new ProyectoSocialContext();
 
         public FrmHorarioPeriodo()
@@ -25,7 +25,7 @@ namespace HorasSociales2
             InitializeComponent();
         }
 
-       
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -36,20 +36,17 @@ namespace HorasSociales2
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-          
 
-            //datosContenedor.lunesAM = txtMonAM.Value;
-            //datosContenedor.lunesPM = txtMonPM.Text;
-            //datosContenedor.martesAM = txtTueAM.Text;
-            //datosContenedor.martesPM = txtTuePM.Text;
-            //datosContenedor.miercolesAM = txtWedAM.Text;
-            //datosContenedor.miercolesPM = txtWedPM.Text;
-            //datosContenedor.juevesAM = txtThuAM.Text;
-            //datosContenedor.juevesPM = txtThuPM.Text;
-            //datosContenedor.viernesAM = txtFriAM.Text;
-            //datosContenedor.viernesPM = txtFriPM.Text;
 
-            if (string.IsNullOrWhiteSpace(txtMonAM.Text) && string.IsNullOrWhiteSpace(txtMonPM.Text) && string.IsNullOrWhiteSpace(txtTueAM.Text) && string.IsNullOrWhiteSpace(txtTuePM.Text) && string.IsNullOrWhiteSpace(txtWedAM.Text) && string.IsNullOrWhiteSpace(txtWedPM.Text) && string.IsNullOrWhiteSpace(txtThuAM.Text) && string.IsNullOrWhiteSpace(txtThuPM.Text) && string.IsNullOrWhiteSpace(txtFriAM.Text) && string.IsNullOrWhiteSpace(txtFriPM.Text))
+            datosContenedor.lunes = cmbSinceMON.Text + " - " + cmbUntilMON.Text;
+            datosContenedor.martes = cmbSinceTUE.Text + " - " + cmbUntilTUE.Text;
+            datosContenedor.miercoles = cmbSinceWED.Text + " - " + cmbUntilWED.Text;
+            datosContenedor.jueves = cmbSinceTHU.Text + " - " + cmbUntilTHU.Text;
+            datosContenedor.viernes = cmbSinceFRI.Text + " - " + cmbUntilFRI.Text;
+            datosContenedor.sabado = cmbSinceSAT.Text + " - " + cmbUntilSAT.Text;
+            datosContenedor.domingo = cmbSinceSUN.Text + " - " + cmbUntilSUN.Text;
+
+            if (string.IsNullOrWhiteSpace(cmbSinceMON.Text) && string.IsNullOrWhiteSpace(cmbUntilMON.Text) && string.IsNullOrWhiteSpace(cmbSinceTUE.Text) && string.IsNullOrWhiteSpace(cmbUntilTUE.Text) && string.IsNullOrWhiteSpace(cmbSinceWED.Text) && string.IsNullOrWhiteSpace(cmbUntilWED.Text) && string.IsNullOrWhiteSpace(cmbSinceTHU.Text) && string.IsNullOrWhiteSpace(cmbUntilTHU.Text) && string.IsNullOrWhiteSpace(cmbSinceFRI.Text) && string.IsNullOrWhiteSpace(cmbUntilFRI.Text) && string.IsNullOrWhiteSpace(cmbSinceSAT.Text) && string.IsNullOrWhiteSpace(cmbUntilSAT.Text) && string.IsNullOrWhiteSpace(cmbSinceSUN.Text) && string.IsNullOrWhiteSpace(cmbUntilSUN.Text))
             {
                 MessageBox.Show("Por favor, Completar al menos 1 campo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -72,13 +69,15 @@ namespace HorasSociales2
                 // Desactivar validación de restricciones de clave externa temporalmente (si es necesario)
 
                 // Guardar cambios en la base de datos
-                if (context.SaveChanges() == 1)
+                    
+                if (context.SaveChanges() == 1)    
                 {
-                    MessageBox.Show("Datos guardados correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Datos guardados correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                 }
-                else
+                   
+                else  
                 {
-                    MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);                    
                 }
 
                 // Reactivar validación de restricciones de clave externa (si se desactivó)

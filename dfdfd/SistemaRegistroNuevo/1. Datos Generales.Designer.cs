@@ -277,11 +277,11 @@
             lblEGPhone.Anchor = AnchorStyles.Top;
             lblEGPhone.BackColor = Color.Transparent;
             lblEGPhone.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEGPhone.Location = new Point(75, 489);
+            lblEGPhone.Location = new Point(104, 485);
             lblEGPhone.Margin = new Padding(4, 0, 4, 0);
             lblEGPhone.Name = "lblEGPhone";
             lblEGPhone.RightToLeft = RightToLeft.No;
-            lblEGPhone.Size = new Size(208, 37);
+            lblEGPhone.Size = new Size(184, 37);
             lblEGPhone.TabIndex = 12;
             lblEGPhone.Tag = "Teléfono emergencia :";
             lblEGPhone.Text = "Teléfono emergencia :";

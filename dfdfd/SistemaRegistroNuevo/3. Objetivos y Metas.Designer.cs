@@ -45,7 +45,6 @@
             txtGoals1 = new TextBox();
             txtObjetivos1 = new TextBox();
             txtGoals2 = new TextBox();
-            txtDuracion2 = new TextBox();
             txtObjetivos2 = new TextBox();
             txtAct1 = new TextBox();
             txtAct2 = new TextBox();
@@ -55,6 +54,7 @@
             btnBack = new Button();
             pictureBox1 = new PictureBox();
             btnNext = new Button();
+            txtDuracion2 = new TextBox();
             pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             pnlTitle.SuspendLayout();
@@ -166,10 +166,10 @@
             tblytMain.Controls.Add(txtGoals1, 2, 1);
             tblytMain.Controls.Add(txtObjetivos1, 1, 1);
             tblytMain.Controls.Add(txtGoals2, 0, 2);
-            tblytMain.Controls.Add(txtDuracion2, 0, 2);
             tblytMain.Controls.Add(txtObjetivos2, 0, 2);
             tblytMain.Controls.Add(txtAct1, 0, 1);
             tblytMain.Controls.Add(txtAct2, 0, 2);
+            tblytMain.Controls.Add(txtDuracion2, 3, 2);
             tblytMain.Location = new Point(48, 18);
             tblytMain.Margin = new Padding(4, 3, 4, 3);
             tblytMain.Name = "tblytMain";
@@ -289,7 +289,7 @@
             txtGoals2.BorderStyle = BorderStyle.None;
             txtGoals2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtGoals2.HideSelection = false;
-            txtGoals2.Location = new Point(429, 200);
+            txtGoals2.Location = new Point(217, 200);
             txtGoals2.Margin = new Padding(4, 3, 4, 3);
             txtGoals2.Multiline = true;
             txtGoals2.Name = "txtGoals2";
@@ -297,27 +297,13 @@
             txtGoals2.TabIndex = 7;
             txtGoals2.TextAlign = HorizontalAlignment.Center;
             // 
-            // txtDuracion2
-            // 
-            txtDuracion2.Anchor = AnchorStyles.Top;
-            txtDuracion2.BorderStyle = BorderStyle.None;
-            txtDuracion2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDuracion2.HideSelection = false;
-            txtDuracion2.Location = new Point(641, 200);
-            txtDuracion2.Margin = new Padding(4, 3, 4, 3);
-            txtDuracion2.Multiline = true;
-            txtDuracion2.Name = "txtDuracion2";
-            txtDuracion2.Size = new Size(203, 152);
-            txtDuracion2.TabIndex = 9;
-            txtDuracion2.TextAlign = HorizontalAlignment.Center;
-            // 
             // txtObjetivos2
             // 
             txtObjetivos2.Anchor = AnchorStyles.Top;
             txtObjetivos2.BorderStyle = BorderStyle.None;
             txtObjetivos2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtObjetivos2.HideSelection = false;
-            txtObjetivos2.Location = new Point(217, 200);
+            txtObjetivos2.Location = new Point(429, 200);
             txtObjetivos2.Margin = new Padding(4, 3, 4, 3);
             txtObjetivos2.Multiline = true;
             txtObjetivos2.Name = "txtObjetivos2";
@@ -423,6 +409,20 @@
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += btnNext_Click;
             // 
+            // txtDuracion2
+            // 
+            txtDuracion2.Anchor = AnchorStyles.Top;
+            txtDuracion2.BorderStyle = BorderStyle.None;
+            txtDuracion2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDuracion2.HideSelection = false;
+            txtDuracion2.Location = new Point(641, 200);
+            txtDuracion2.Margin = new Padding(4, 3, 4, 3);
+            txtDuracion2.Multiline = true;
+            txtDuracion2.Name = "txtDuracion2";
+            txtDuracion2.Size = new Size(203, 152);
+            txtDuracion2.TabIndex = 26;
+            txtDuracion2.TextAlign = HorizontalAlignment.Center;
+            // 
             // FrmObjetivosMetas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -477,10 +477,10 @@
         private TextBox txtGoals1;
         private TextBox txtObjetivos1;
         private TextBox txtGoals2;
-        private TextBox txtDuracion2;
         private TextBox txtObjetivos2;
         private TextBox txtAct1;
         private TextBox txtAct2;
+        private TextBox txtDuracion2;
     }
 }
 

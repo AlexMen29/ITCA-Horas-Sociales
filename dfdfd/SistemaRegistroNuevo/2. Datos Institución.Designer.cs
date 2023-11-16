@@ -36,6 +36,7 @@
             picLine = new PictureBox();
             pnlLeft = new Panel();
             pnlContent = new Panel();
+            dateDate = new DateTimePicker();
             txtResPhone = new TextBox();
             txtResponsable = new TextBox();
             txtPhone = new TextBox();
@@ -57,7 +58,6 @@
             btnBack = new Button();
             pictureBox1 = new PictureBox();
             btnNext = new Button();
-            dateDate = new DateTimePicker();
             pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             pnlTitle.SuspendLayout();
@@ -165,11 +165,22 @@
             pnlContent.Size = new Size(947, 396);
             pnlContent.TabIndex = 6;
             // 
+            // dateDate
+            // 
+            dateDate.CalendarFont = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dateDate.Format = DateTimePickerFormat.Short;
+            dateDate.Location = new Point(688, 561);
+            dateDate.MinimumSize = new Size(0, 50);
+            dateDate.Name = "dateDate";
+            dateDate.Size = new Size(104, 50);
+            dateDate.TabIndex = 25;
+            dateDate.Value = new DateTime(2023, 11, 30, 0, 0, 0, 0);
+            // 
             // txtResPhone
             // 
             txtResPhone.Anchor = AnchorStyles.Top;
             txtResPhone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtResPhone.Location = new Point(270, 468);
+            txtResPhone.Location = new Point(262, 468);
             txtResPhone.Margin = new Padding(4, 3, 4, 3);
             txtResPhone.Name = "txtResPhone";
             txtResPhone.Size = new Size(187, 29);
@@ -179,7 +190,7 @@
             // 
             txtResponsable.Anchor = AnchorStyles.Top;
             txtResponsable.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtResponsable.Location = new Point(270, 309);
+            txtResponsable.Location = new Point(262, 309);
             txtResponsable.Margin = new Padding(4, 3, 4, 3);
             txtResponsable.Name = "txtResponsable";
             txtResponsable.Size = new Size(503, 29);
@@ -189,7 +200,7 @@
             // 
             txtPhone.Anchor = AnchorStyles.Top;
             txtPhone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPhone.Location = new Point(270, 102);
+            txtPhone.Location = new Point(262, 102);
             txtPhone.Margin = new Padding(4, 3, 4, 3);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(186, 29);
@@ -199,7 +210,7 @@
             // 
             txtEmail.Anchor = AnchorStyles.Top;
             txtEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEmail.Location = new Point(270, 388);
+            txtEmail.Location = new Point(262, 388);
             txtEmail.Margin = new Padding(4, 3, 4, 3);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(503, 29);
@@ -210,7 +221,7 @@
             lblName.Anchor = AnchorStyles.Top;
             lblName.BackColor = Color.Transparent;
             lblName.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblName.Location = new Point(111, 18);
+            lblName.Location = new Point(103, 18);
             lblName.Margin = new Padding(4, 0, 4, 0);
             lblName.Name = "lblName";
             lblName.RightToLeft = RightToLeft.No;
@@ -224,7 +235,7 @@
             // 
             txtActivity.Anchor = AnchorStyles.Top;
             txtActivity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtActivity.Location = new Point(270, 166);
+            txtActivity.Location = new Point(262, 166);
             txtActivity.Margin = new Padding(4, 3, 4, 3);
             txtActivity.Multiline = true;
             txtActivity.Name = "txtActivity";
@@ -236,7 +247,7 @@
             lblTime.Anchor = AnchorStyles.Top;
             lblTime.BackColor = Color.Transparent;
             lblTime.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTime.Location = new Point(46, 545);
+            lblTime.Location = new Point(38, 545);
             lblTime.Margin = new Padding(4, 0, 4, 0);
             lblTime.Name = "lblTime";
             lblTime.RightToLeft = RightToLeft.No;
@@ -251,7 +262,7 @@
             lblEGPhone.Anchor = AnchorStyles.Top;
             lblEGPhone.BackColor = Color.Transparent;
             lblEGPhone.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEGPhone.Location = new Point(114, 459);
+            lblEGPhone.Location = new Point(106, 459);
             lblEGPhone.Margin = new Padding(4, 0, 4, 0);
             lblEGPhone.Name = "lblEGPhone";
             lblEGPhone.RightToLeft = RightToLeft.No;
@@ -266,7 +277,7 @@
             lblResponsable.Anchor = AnchorStyles.Top;
             lblResponsable.BackColor = Color.Transparent;
             lblResponsable.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblResponsable.Location = new Point(46, 295);
+            lblResponsable.Location = new Point(38, 295);
             lblResponsable.Margin = new Padding(4, 0, 4, 0);
             lblResponsable.Name = "lblResponsable";
             lblResponsable.RightToLeft = RightToLeft.No;
@@ -281,7 +292,7 @@
             lblPhone.Anchor = AnchorStyles.Top;
             lblPhone.BackColor = Color.Transparent;
             lblPhone.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPhone.Location = new Point(152, 102);
+            lblPhone.Location = new Point(144, 102);
             lblPhone.Margin = new Padding(4, 0, 4, 0);
             lblPhone.Name = "lblPhone";
             lblPhone.RightToLeft = RightToLeft.No;
@@ -296,7 +307,7 @@
             lblEmail.Anchor = AnchorStyles.Top;
             lblEmail.BackColor = Color.Transparent;
             lblEmail.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEmail.Location = new Point(65, 378);
+            lblEmail.Location = new Point(57, 378);
             lblEmail.Margin = new Padding(4, 0, 4, 0);
             lblEmail.Name = "lblEmail";
             lblEmail.RightToLeft = RightToLeft.No;
@@ -311,7 +322,7 @@
             lblSchool.Anchor = AnchorStyles.Top;
             lblSchool.BackColor = Color.Transparent;
             lblSchool.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSchool.Location = new Point(130, 175);
+            lblSchool.Location = new Point(122, 175);
             lblSchool.Margin = new Padding(4, 0, 4, 0);
             lblSchool.Name = "lblSchool";
             lblSchool.RightToLeft = RightToLeft.No;
@@ -326,7 +337,7 @@
             lblDate.Anchor = AnchorStyles.Top;
             lblDate.BackColor = Color.Transparent;
             lblDate.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDate.Location = new Point(485, 554);
+            lblDate.Location = new Point(477, 554);
             lblDate.Margin = new Padding(4, 0, 4, 0);
             lblDate.Name = "lblDate";
             lblDate.RightToLeft = RightToLeft.No;
@@ -340,7 +351,7 @@
             // 
             txtTime.Anchor = AnchorStyles.Top;
             txtTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTime.Location = new Point(270, 572);
+            txtTime.Location = new Point(262, 572);
             txtTime.Margin = new Padding(4, 3, 4, 3);
             txtTime.Name = "txtTime";
             txtTime.Size = new Size(186, 29);
@@ -350,7 +361,7 @@
             // 
             txtName.Anchor = AnchorStyles.Top;
             txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtName.Location = new Point(270, 28);
+            txtName.Location = new Point(262, 28);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
             txtName.Size = new Size(503, 29);
@@ -426,15 +437,6 @@
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += btnNext_Click;
             // 
-            // dateDate
-            // 
-            dateDate.Anchor = AnchorStyles.None;
-            dateDate.CalendarFont = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dateDate.Location = new Point(680, 573);
-            dateDate.Name = "dateDate";
-            dateDate.Size = new Size(210, 23);
-            dateDate.TabIndex = 24;
-            // 
             // FrmDatosInstitucion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -494,6 +496,7 @@
         private Button btnNext;
         private PictureBox pictureBox1;
         private Button btnBack;
+        private DateTimePicker dateTimePicker1;
         private DateTimePicker dateDate;
     }
 }

@@ -34,7 +34,7 @@ namespace HorasSociales2
             datosContenedor.telefonoEmergencia = int.Parse(txtEGPhone.Text);
             datosContenedor.emergencia = txtEmergency.Text;
             datosContenedor.coordinador = txtSSE.Text;
-          
+
 
             if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtSchool.Text) || string.IsNullOrWhiteSpace(txtYear.Text) || string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtCareer.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmergency.Text) || string.IsNullOrEmpty(txtEGPhone.Text) || string.IsNullOrWhiteSpace(txtSSE.Text))
             {
@@ -51,76 +51,70 @@ namespace HorasSociales2
     }
     public static class datosContenedor
     {
-        public static string nombre { get; set; }
+        public static string nombre { get; set; } = null!;
 
-        public static string carnet { get; set; } 
+        public static string carnet { get; set; } = null!;
 
-        public static string escuela { get; set; } 
+        public static string escuela { get; set; } = null!;
 
         public static int año { get; set; }
 
-        public static string carrera { get; set; }  
+        public static string carrera { get; set; } = null!;
 
-        public static string correo { get; set; }  
+        public static string correo { get; set; } = null!;
 
-        public static int telefono { get; set; }  
+        public static int telefono { get; set; }
 
-        public static string emergencia { get; set; }
+        public static string emergencia { get; set; } = null!;
 
         public static int telefonoEmergencia { get; set; }
 
-        public static string coordinador { get; set; }  
+        public static string coordinador { get; set; } = null!;
 
-        public static string institucion { get; set; }  
+        public static string institucion { get; set; } = null!;
 
-        public static int telefonoInstitucion { get; set; }  
+        public static int telefonoInstitucion { get; set; }
 
-        public static string actividades { get; set; }  
+        public static string actividades { get; set; } = null!;
 
-        public static string responsable { get; set; }  
+        public static string responsable { get; set; } = null!;
 
-        public static string correoResponsable { get; set; }  
+        public static string correoResponsable { get; set; } = null!;
 
-        public static int telefonoResponsable { get; set; }  
+        public static int telefonoResponsable { get; set; }
 
-        public static int tiempo { get; set; }  
+        public static int tiempo { get; set; }
 
-        public static DateTime fecha { get; set; }  
+        public static DateTime fecha { get; set; }
 
-        public static string actividad1 { get; set; }  
+        public static string actividad1 { get; set; } = null!;
 
-        public static string objetivos1 { get; set; }  
+        public static string objetivos1 { get; set; } = null!;
 
-        public static string metas1 { get; set; }  
+        public static string metas1 { get; set; } = null!;
 
-        public static int duracion1 { get; set; }  
+        public static string duracion1 { get; set; } = null!;
 
-        public static string actividad2 { get; set; }
+        public static string actividad2 { get; set; } = null!;
 
-        public static string metas2 { get; set; }
+        public static string metas2 { get; set; } = null!;
 
-        public static string objetivos2 { get; set; }
+        public static string objetivos2 { get; set; } = null!;
 
-        public static int duracion2 { get; set; }
+        public static string? duracion2 { get; set; }
 
-        public static DateTime lunesAM { get; set; }
+        public static string? lunes { get; set; }
 
-        public static DateTime lunesPM { get; set; }
+        public static string? martes { get; set; }
 
-        public static DateTime martesAM { get; set; }
+        public static string? miercoles { get; set; }
 
-        public static DateTime martesPM { get; set; }
+        public static string? jueves { get; set; }
 
-        public static DateTime miercolesAM { get; set; }
+        public static string? viernes { get; set; }
 
-        public static DateTime miercolesPM { get; set; }
+        public static string? sabado { get; set; }
 
-        public static DateTime juevesAM { get; set; }
-
-        public static DateTime juevesPM { get; set; }
-
-        public static DateTime viernesAM { get; set; }
-
-        public static DateTime viernesPM { get; set; }
+        public static string? domingo { get; set; }
     }
 }
