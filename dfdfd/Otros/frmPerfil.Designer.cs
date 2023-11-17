@@ -48,6 +48,7 @@
             panelAdministrador = new Panel();
             LabTipoEstudio = new Label();
             LabTipoEstudioO = new Label();
+            label3 = new Label();
             panelAdministrador.SuspendLayout();
             SuspendLayout();
             // 
@@ -254,7 +255,7 @@
             panelAdministrador.Controls.Add(label9);
             panelAdministrador.Controls.Add(label10);
             panelAdministrador.Controls.Add(label8);
-            panelAdministrador.Location = new Point(4, 320);
+            panelAdministrador.Location = new Point(6, 337);
             panelAdministrador.Name = "panelAdministrador";
             panelAdministrador.Size = new Size(302, 233);
             panelAdministrador.TabIndex = 17;
@@ -283,6 +284,21 @@
             LabTipoEstudioO.TabIndex = 18;
             LabTipoEstudioO.Text = "Tipo Estudio:";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(114, 65);
+            label3.Name = "label3";
+            label3.Size = new Size(115, 15);
+            label3.TabIndex = 20;
+            label3.Text = "Modificar mis datos";
+            label3.Click += label3_Click;
+            label3.MouseEnter += label3_MouseEnter;
+            label3.MouseLeave += label3_MouseLeave;
+            // 
             // frmPerfil
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -290,6 +306,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(327, 591);
+            Controls.Add(label3);
             Controls.Add(LabTipoEstudio);
             Controls.Add(LabTipoEstudioO);
             Controls.Add(panelAdministrador);
@@ -334,5 +351,6 @@
         private Panel panelAdministrador;
         private Label LabTipoEstudio;
         private Label LabTipoEstudioO;
+        private Label label3;
     }
 }

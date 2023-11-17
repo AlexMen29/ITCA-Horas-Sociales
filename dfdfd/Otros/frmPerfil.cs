@@ -63,5 +63,23 @@ namespace ProyectoSocial.Otros
             MessageBox.Show($"{titulo}",$"{mensaje}");
             */
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            frmModificacionUsuario frm = new frmModificacionUsuario();
+            Close();
+            frm.ShowDialog();
+        }
+
+        private void label3_MouseEnter(object sender, EventArgs e)
+        {
+            label3.ForeColor = Color.Black;
+        }
+
+        private void label3_MouseLeave(object sender, EventArgs e)
+        {
+            label3.ForeColor = Color.White;
+
+        }
     }
 }
