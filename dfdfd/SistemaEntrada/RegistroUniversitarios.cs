@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dfdfd.bdSocial;
 using HorasSociales2;
-
-
+using ProyectoSocial;
 
 namespace Login
 {
@@ -64,7 +63,7 @@ namespace Login
             {
                 txtEncargado.Items.Add(elementos);
             }
-            
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -112,9 +111,35 @@ namespace Login
 
             }
 
-            
 
 
+
+        }
+
+        private void txtCarnet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender, e);
+        }
+
+        private void PicMostrar_Click(object sender, EventArgs e)
+        {
+            if (txtContraseña.UseSystemPasswordChar)
+            {
+                txtContraseña.UseSystemPasswordChar = false; // Mostrar contraseña
+                PicMostrar.Visible = false;
+                PicOcultar.Visible = true;
+            }
+
+        }
+
+        private void PicOcultar_Click(object sender, EventArgs e)
+        {
+            if (!txtContraseña.UseSystemPasswordChar)
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+                PicOcultar.Visible = false;
+                PicMostrar.Visible = true;
+            }
         }
     }
 }

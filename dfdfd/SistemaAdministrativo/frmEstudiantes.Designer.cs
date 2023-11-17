@@ -221,6 +221,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(105, 27);
             txtBuscar.TabIndex = 3;
+            txtBuscar.KeyPress += txtBuscar_KeyPress;
             // 
             // comboFiltra
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModificacionUsuario));
             label1 = new Label();
             txtCorreo = new TextBox();
             txtApellidos = new TextBox();
@@ -39,10 +40,15 @@
             txtContraseña = new TextBox();
             btnGuardar = new Button();
             btnRegresar = new Button();
+            PicMostrar = new PictureBox();
+            PicOcultar = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)PicMostrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicOcultar).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(177, 32, 31);
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -56,6 +62,7 @@
             // 
             // txtCorreo
             // 
+            txtCorreo.Anchor = AnchorStyles.None;
             txtCorreo.Location = new Point(159, 296);
             txtCorreo.Margin = new Padding(4, 3, 4, 3);
             txtCorreo.Name = "txtCorreo";
@@ -64,6 +71,7 @@
             // 
             // txtApellidos
             // 
+            txtApellidos.Anchor = AnchorStyles.None;
             txtApellidos.Location = new Point(159, 240);
             txtApellidos.Margin = new Padding(4, 3, 4, 3);
             txtApellidos.Name = "txtApellidos";
@@ -72,6 +80,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -84,6 +93,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -96,6 +106,7 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -108,6 +119,7 @@
             // 
             // txtNombres
             // 
+            txtNombres.Anchor = AnchorStyles.None;
             txtNombres.Location = new Point(159, 184);
             txtNombres.Margin = new Padding(4, 3, 4, 3);
             txtNombres.Name = "txtNombres";
@@ -116,6 +128,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -128,11 +141,13 @@
             // 
             // txtContraseña
             // 
+            txtContraseña.Anchor = AnchorStyles.None;
             txtContraseña.Location = new Point(159, 128);
             txtContraseña.Margin = new Padding(4, 3, 4, 3);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(168, 23);
             txtContraseña.TabIndex = 59;
+            txtContraseña.UseSystemPasswordChar = true;
             // 
             // btnGuardar
             // 
@@ -165,11 +180,43 @@
             btnRegresar.UseVisualStyleBackColor = false;
             btnRegresar.Click += btnRegresar_Click;
             // 
+            // PicMostrar
+            // 
+            PicMostrar.Anchor = AnchorStyles.None;
+            PicMostrar.BackColor = Color.White;
+            PicMostrar.Image = (Image)resources.GetObject("PicMostrar.Image");
+            PicMostrar.Location = new Point(335, 128);
+            PicMostrar.Margin = new Padding(4, 3, 4, 3);
+            PicMostrar.Name = "PicMostrar";
+            PicMostrar.Size = new Size(35, 23);
+            PicMostrar.SizeMode = PictureBoxSizeMode.StretchImage;
+            PicMostrar.TabIndex = 70;
+            PicMostrar.TabStop = false;
+            PicMostrar.Click += PicMostrar_Click;
+            // 
+            // PicOcultar
+            // 
+            PicOcultar.Anchor = AnchorStyles.None;
+            PicOcultar.BackColor = Color.White;
+            PicOcultar.Image = (Image)resources.GetObject("PicOcultar.Image");
+            PicOcultar.Location = new Point(335, 128);
+            PicOcultar.Margin = new Padding(4, 3, 4, 3);
+            PicOcultar.Name = "PicOcultar";
+            PicOcultar.Size = new Size(35, 23);
+            PicOcultar.SizeMode = PictureBoxSizeMode.StretchImage;
+            PicOcultar.TabIndex = 69;
+            PicOcultar.TabStop = false;
+            PicOcultar.Visible = false;
+            PicOcultar.Click += PicOcultar_Click;
+            // 
             // frmModificacionUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(424, 461);
+            Controls.Add(PicMostrar);
+            Controls.Add(PicOcultar);
             Controls.Add(btnGuardar);
             Controls.Add(btnRegresar);
             Controls.Add(txtCorreo);
@@ -185,6 +232,8 @@
             ShowIcon = false;
             Text = "ITCA FEPADE";
             Load += frmModificacionUsuario_Load;
+            ((System.ComponentModel.ISupportInitialize)PicMostrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicOcultar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -202,5 +251,7 @@
         private TextBox txtContraseña;
         private Button btnGuardar;
         private Button btnRegresar;
+        private PictureBox PicMostrar;
+        private PictureBox PicOcultar;
     }
 }

@@ -396,6 +396,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(101, 32);
             txtBuscar.TabIndex = 3;
+            txtBuscar.KeyPress += txtBuscar_KeyPress;
             // 
             // label13
             // 

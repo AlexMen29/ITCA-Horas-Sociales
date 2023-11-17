@@ -1,5 +1,6 @@
 ﻿using dfdfd.bdSocial;
 using Login;
+using ProyectoSocial;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Windows.Forms;
 
 namespace HorasSociales2
 {
+
     public partial class FrmDatosInstitucion : Form
     {
         ProyectoSocialContext context = new ProyectoSocialContext();

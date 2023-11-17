@@ -1,5 +1,6 @@
 ﻿using dfdfd.bdSocial;
 using Login;
+using ProyectoSocial;
 using ProyectoSocial.bdSocial;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ using System.Windows.Forms;
 
 namespace SistemaAdministrativo
 {
+    
     public partial class FrmDatosInicio : Form
     {
         ProyectoSocialContext context = new ProyectoSocialContext();

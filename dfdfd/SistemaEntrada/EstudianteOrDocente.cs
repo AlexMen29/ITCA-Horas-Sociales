@@ -46,27 +46,53 @@ namespace Login
 
         }
 
-        private void EstudianteOrDocente_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void PanelUniversitario_Click(object sender, EventArgs e)
         {
-
-            RegistroUniversitarios frm = new RegistroUniversitarios();
-            Close();
-            frm.Show();
+            abrirFormEstudiante();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            abrirFormEstudiante();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            abrirFormEstudiante();
+        }
+
+
         private void PanelDocente_Click(object sender, EventArgs e)
+        {
+            abrirFormDocente();
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            abrirFormDocente();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            abrirFormDocente();
+        }
+
+   
+
+        //metodo para abrir formularios
+        private void abrirFormDocente()
         {
             RegistroDocente frm = new RegistroDocente();
             Close();
             frm.Show();
-
         }
 
+        private void abrirFormEstudiante()
+        {
+            RegistroUniversitarios frm = new RegistroUniversitarios();
+            Close();
+            frm.Show();
+        }
 
     }
 }

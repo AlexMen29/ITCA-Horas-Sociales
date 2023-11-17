@@ -45,7 +45,11 @@
             label1 = new Label();
             txtGrupo = new TextBox();
             label8 = new Label();
+            PicMostrar = new PictureBox();
+            PicOcultar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicMostrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicOcultar).BeginInit();
             SuspendLayout();
             // 
             // btnRegresar
@@ -67,6 +71,7 @@
             // 
             // txtCorreo
             // 
+            txtCorreo.Anchor = AnchorStyles.None;
             txtCorreo.Location = new Point(614, 471);
             txtCorreo.Margin = new Padding(4, 3, 4, 3);
             txtCorreo.Name = "txtCorreo";
@@ -75,6 +80,7 @@
             // 
             // txtApellidos
             // 
+            txtApellidos.Anchor = AnchorStyles.None;
             txtApellidos.Location = new Point(614, 415);
             txtApellidos.Margin = new Padding(4, 3, 4, 3);
             txtApellidos.Name = "txtApellidos";
@@ -83,6 +89,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -95,6 +102,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -107,6 +115,7 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -119,6 +128,7 @@
             // 
             // txtNombres
             // 
+            txtNombres.Anchor = AnchorStyles.None;
             txtNombres.Location = new Point(614, 359);
             txtNombres.Margin = new Padding(4, 3, 4, 3);
             txtNombres.Name = "txtNombres";
@@ -127,6 +137,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -139,14 +150,17 @@
             // 
             // txtContraseña
             // 
+            txtContraseña.Anchor = AnchorStyles.None;
             txtContraseña.Location = new Point(614, 303);
             txtContraseña.Margin = new Padding(4, 3, 4, 3);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(212, 23);
             txtContraseña.TabIndex = 33;
+            txtContraseña.UseSystemPasswordChar = true;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -159,11 +173,13 @@
             // 
             // txtCarnet
             // 
+            txtCarnet.Anchor = AnchorStyles.None;
             txtCarnet.Location = new Point(614, 247);
             txtCarnet.Margin = new Padding(4, 3, 4, 3);
             txtCarnet.Name = "txtCarnet";
             txtCarnet.Size = new Size(212, 23);
             txtCarnet.TabIndex = 31;
+            txtCarnet.KeyPress += txtCarnet_KeyPress;
             // 
             // btnRegistrar
             // 
@@ -182,6 +198,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(614, 34);
@@ -194,6 +211,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(177, 32, 31);
             label1.Font = new Font("Microsoft YaHei", 24F, FontStyle.Bold, GraphicsUnit.Point);
@@ -207,6 +225,7 @@
             // 
             // txtGrupo
             // 
+            txtGrupo.Anchor = AnchorStyles.None;
             txtGrupo.Location = new Point(614, 523);
             txtGrupo.Margin = new Padding(4, 3, 4, 3);
             txtGrupo.Name = "txtGrupo";
@@ -215,6 +234,7 @@
             // 
             // label8
             // 
+            label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -225,6 +245,35 @@
             label8.TabIndex = 41;
             label8.Text = "Nombre de Grupo";
             // 
+            // PicMostrar
+            // 
+            PicMostrar.Anchor = AnchorStyles.None;
+            PicMostrar.BackColor = Color.White;
+            PicMostrar.Image = (Image)resources.GetObject("PicMostrar.Image");
+            PicMostrar.Location = new Point(834, 303);
+            PicMostrar.Margin = new Padding(4, 3, 4, 3);
+            PicMostrar.Name = "PicMostrar";
+            PicMostrar.Size = new Size(35, 23);
+            PicMostrar.SizeMode = PictureBoxSizeMode.StretchImage;
+            PicMostrar.TabIndex = 63;
+            PicMostrar.TabStop = false;
+            PicMostrar.Click += PicMostrar_Click;
+            // 
+            // PicOcultar
+            // 
+            PicOcultar.Anchor = AnchorStyles.None;
+            PicOcultar.BackColor = Color.White;
+            PicOcultar.Image = (Image)resources.GetObject("PicOcultar.Image");
+            PicOcultar.Location = new Point(834, 303);
+            PicOcultar.Margin = new Padding(4, 3, 4, 3);
+            PicOcultar.Name = "PicOcultar";
+            PicOcultar.Size = new Size(35, 23);
+            PicOcultar.SizeMode = PictureBoxSizeMode.StretchImage;
+            PicOcultar.TabIndex = 62;
+            PicOcultar.TabStop = false;
+            PicOcultar.Visible = false;
+            PicOcultar.Click += PicOcultar_Click;
+            // 
             // RegistroDocente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -232,6 +281,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1283, 715);
+            Controls.Add(PicMostrar);
+            Controls.Add(PicOcultar);
             Controls.Add(txtGrupo);
             Controls.Add(label8);
             Controls.Add(txtCorreo);
@@ -249,11 +300,14 @@
             Controls.Add(label1);
             Controls.Add(btnRegresar);
             Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
             Name = "RegistroDocente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RegistroDocente";
             Load += RegistroDocente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicMostrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicOcultar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -275,5 +329,7 @@
         private Label label1;
         private TextBox txtGrupo;
         private Label label8;
+        private PictureBox PicMostrar;
+        private PictureBox PicOcultar;
     }
 }

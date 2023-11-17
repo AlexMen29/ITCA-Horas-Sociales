@@ -52,6 +52,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // PanelUniversitario
             // 
@@ -77,6 +78,7 @@
             label1.Size = new Size(103, 22);
             label1.TabIndex = 1;
             label1.Text = "Estudiantes";
+            label1.Click += label1_Click;
             // 
             // pictureBox2
             // 
@@ -88,6 +90,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // PanelDocente
             // 
@@ -113,6 +116,7 @@
             label2.Size = new Size(170, 22);
             label2.TabIndex = 2;
             label2.Text = "Encargado/Docente";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -141,7 +145,6 @@
             Name = "EstudianteOrDocente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EstudianteOrDocente";
-            Load += EstudianteOrDocente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelUniversitario.ResumeLayout(false);
             PanelUniversitario.PerformLayout();

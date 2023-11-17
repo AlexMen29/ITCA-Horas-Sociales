@@ -15,7 +15,7 @@ namespace ProyectoSocial.Otros
 {
     public partial class frmModificacionUsuario : Form
     {
-        ProyectoSocialContext context=new ProyectoSocialContext();
+        ProyectoSocialContext context = new ProyectoSocialContext();
         public frmModificacionUsuario()
         {
             InitializeComponent();
@@ -39,9 +39,9 @@ namespace ProyectoSocial.Otros
             if (MessageBox.Show("Esta apunto de modificar sus datos. ¿Desea continuar?", "ITCA FEPADE", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 compartir.usuario.Contraseña = txtContraseña.Text;
-                compartir.usuario.Nombres =txtNombres.Text;
-                compartir.usuario.Apellidos= txtApellidos.Text;
-                compartir.usuario.Correo= txtCorreo.Text;
+                compartir.usuario.Nombres = txtNombres.Text;
+                compartir.usuario.Apellidos = txtApellidos.Text;
+                compartir.usuario.Correo = txtCorreo.Text;
 
 
                 context.DatosAlumnos.Update(compartir.usuario);
@@ -62,6 +62,26 @@ namespace ProyectoSocial.Otros
             }
 
 
+        }
+        private void PicMostrar_Click(object sender, EventArgs e)
+        {
+            if (txtContraseña.UseSystemPasswordChar)
+            {
+                txtContraseña.UseSystemPasswordChar = false; // Mostrar contraseña
+                PicMostrar.Visible = false;
+                PicOcultar.Visible = true;
+            }
+
+        }
+
+        private void PicOcultar_Click(object sender, EventArgs e)
+        {
+            if (!txtContraseña.UseSystemPasswordChar)
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+                PicOcultar.Visible = false;
+                PicMostrar.Visible = true;
+            }
         }
     }
 }

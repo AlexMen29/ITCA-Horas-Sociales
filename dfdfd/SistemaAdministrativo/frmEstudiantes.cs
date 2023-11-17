@@ -191,5 +191,10 @@ namespace ProyectoSocial.SistemaAdministrativo
         {
 
         }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender,e);
+        }
     }
 }

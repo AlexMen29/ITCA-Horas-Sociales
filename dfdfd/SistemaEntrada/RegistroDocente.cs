@@ -1,4 +1,5 @@
 ﻿using dfdfd.bdSocial;
+using ProyectoSocial;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace Login
     {
 
         ProyectoSocialContext context = new ProyectoSocialContext();
-    
+
         public RegistroDocente()
         {
             InitializeComponent();
@@ -94,10 +95,35 @@ namespace Login
 
                 }
             }
-          
+
+        }
+
+        private void PicMostrar_Click(object sender, EventArgs e)
+        {
+            if (txtContraseña.UseSystemPasswordChar)
+            {
+                txtContraseña.UseSystemPasswordChar = false; // Mostrar contraseña
+                PicMostrar.Visible = false;
+                PicOcultar.Visible = true;
+            }
+
+        }
+
+        private void PicOcultar_Click(object sender, EventArgs e)
+        {
+            if (!txtContraseña.UseSystemPasswordChar)
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+                PicOcultar.Visible = false;
+                PicMostrar.Visible = true;
+            }
+        }
+
+        private void txtCarnet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender,e);
         }
     }
 
 
-    //Metod
 }

@@ -1,6 +1,7 @@
 ﻿using dfdfd.bdSocial;
 using Login;
 using Microsoft.VisualBasic;
+using ProyectoSocial;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,6 @@ namespace SistemaAdministrativo
 {
     public partial class FrmDetallesAd : Form
     {
-
 
         ProyectoSocialContext context = new ProyectoSocialContext();
         public FrmDetallesAd()
@@ -272,7 +272,7 @@ namespace SistemaAdministrativo
                     }
                     else
                     {
-                        MessageBox.Show("Carnet Invalido","ITCA FEPADE",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("Carnet Invalido", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
@@ -311,6 +311,11 @@ namespace SistemaAdministrativo
         {
             eventosEnterLeave(btnFiltrar, ColorTranslator.FromHtml("#b1201f"), Color.White);
 
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender,e);
         }
     }
 }
