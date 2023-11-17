@@ -1,5 +1,6 @@
 ﻿using dfdfd.bdSocial;
 using Login;
+using System.Linq;
 using ProyectoSocial;
 using System;
 using System.Collections.Generic;
@@ -18,35 +19,52 @@ namespace HorasSociales2
     public partial class FrmDatosGenerales : Form
     {
         ProyectoSocialContext context = new ProyectoSocialContext();
-
-        public FrmDatosGenerales()
+        private int formulario;
+        private string carnetB;
+        public FrmDatosGenerales(int a,string carnet)
         {
+            formulario = a;
+            carnetB = carnet; 
+
             InitializeComponent();
         }
 
+
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtSchool.Text) || string.IsNullOrWhiteSpace(txtYear.Text) || string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtCareer.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmergency.Text) || string.IsNullOrEmpty(txtEGPhone.Text) || string.IsNullOrWhiteSpace(txtSSE.Text))
+            if (formulario == 1)
             {
-                MessageBox.Show("Por favor, Completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtSchool.Text) || string.IsNullOrWhiteSpace(txtYear.Text) || string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtCareer.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmergency.Text) || string.IsNullOrEmpty(txtEGPhone.Text) || string.IsNullOrWhiteSpace(txtSSE.Text))
+                {
+                    MessageBox.Show("Por favor, Completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    datosContenedor.nombre = txtName.Text;
+                    datosContenedor.carnet = txtCarnet.Text;
+                    datosContenedor.escuela = txtSchool.Text;
+                    datosContenedor.año = txtYear.Text;
+                    datosContenedor.carrera = txtCareer.Text;
+                    datosContenedor.correo = txtEmail.Text;
+                    datosContenedor.telefono = int.Parse(txtPhone.Text);
+                    datosContenedor.telefonoEmergencia = int.Parse(txtEGPhone.Text);
+                    datosContenedor.emergencia = txtEmergency.Text;
+                    datosContenedor.coordinador = txtSSE.Text;
+
+                    FrmDatosInstitucion vistaMain = new FrmDatosInstitucion(1,"N/A");
+                    vistaMain.Show();
+                    Hide();
+                }
             }
             else
             {
-                datosContenedor.nombre = txtName.Text;
-                datosContenedor.carnet = txtCarnet.Text;
-                datosContenedor.escuela = txtSchool.Text;
-                datosContenedor.año = txtYear.Text;
-                datosContenedor.carrera = txtCareer.Text;
-                datosContenedor.correo = txtEmail.Text;
-                datosContenedor.telefono = int.Parse(txtPhone.Text);
-                datosContenedor.telefonoEmergencia = int.Parse(txtEGPhone.Text);
-                datosContenedor.emergencia = txtEmergency.Text;
-                datosContenedor.coordinador = txtSSE.Text;
-
-                FrmDatosInstitucion vistaMain = new FrmDatosInstitucion();
+                FrmDatosInstitucion vistaMain = new FrmDatosInstitucion(2, carnetB);
                 vistaMain.Show();
                 Hide();
+
             }
+
         }
 
         public void txtCarnet_KeyPress(object sender, KeyPressEventArgs e)
@@ -63,6 +81,31 @@ namespace HorasSociales2
         {
             compartir.ValidacionNumerica(sender, e);
         }
+
+        private void FrmDatosGenerales_Load(object sender, EventArgs e)
+        {
+            if (formulario == 1)
+            {
+                MessageBox.Show("entraste desde el registro");
+            }
+            else
+            {
+                var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o=>o.carnet==carnetB);
+                txtName.Text = datosUsuario.nombre;
+                txtCarnet.Text= datosUsuario.carnet;
+            }
+
+
+
+            foreach (var control in Controls.OfType<System.Windows.Forms.TextBox>())
+            {
+                control.Enabled = false;
+            }
+        }
+
+
+
+    
     }
     public static class datosContenedor
     {

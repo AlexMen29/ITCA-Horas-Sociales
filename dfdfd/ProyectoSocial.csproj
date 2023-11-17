@@ -25,7 +25,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="SistemaAdministrativo\ImpresionDatos.cs" />
     <Compile Update="SistemaEntrada\EstudianteOrDocente.cs">
       <SubType>Form</SubType>
     </Compile>

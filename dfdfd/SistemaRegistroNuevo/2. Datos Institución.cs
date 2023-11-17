@@ -17,16 +17,22 @@ namespace HorasSociales2
     public partial class FrmDatosInstitucion : Form
     {
         ProyectoSocialContext context = new ProyectoSocialContext();
-        public FrmDatosInstitucion()
+        private int formulario;
+        private string carnetB;
+        public FrmDatosInstitucion(int a, string carnet)
         {
+            formulario = a;
+            carnetB = carnet;
             InitializeComponent();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            /*
             FrmDatosGenerales vistaMain = new FrmDatosGenerales();
             vistaMain.Show();
             Hide();
+            */
         }
 
         private void btnNext_Click(object sender, EventArgs e)

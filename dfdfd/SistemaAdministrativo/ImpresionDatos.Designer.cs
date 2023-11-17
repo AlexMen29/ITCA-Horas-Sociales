@@ -33,7 +33,9 @@
             label1 = new Label();
             btnImprimir = new Button();
             pnlHojaImprimir = new FlowLayoutPanel();
+            txtBuscar = new TextBox();
             pnlImprimir.SuspendLayout();
+            pnlHojaImprimir.SuspendLayout();
             SuspendLayout();
             // 
             // pnlImprimir
@@ -77,12 +79,20 @@
             // 
             // pnlHojaImprimir
             // 
+            pnlHojaImprimir.Controls.Add(txtBuscar);
             pnlHojaImprimir.Dock = DockStyle.Fill;
             pnlHojaImprimir.Location = new Point(0, 0);
             pnlHojaImprimir.Margin = new Padding(4, 3, 4, 3);
             pnlHojaImprimir.Name = "pnlHojaImprimir";
             pnlHojaImprimir.Size = new Size(585, 654);
             pnlHojaImprimir.TabIndex = 1;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(3, 3);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(224, 23);
+            txtBuscar.TabIndex = 0;
             // 
             // ImpresionDatos
             // 
@@ -97,6 +107,8 @@
             Text = "Impresion de Datos";
             pnlImprimir.ResumeLayout(false);
             pnlImprimir.PerformLayout();
+            pnlHojaImprimir.ResumeLayout(false);
+            pnlHojaImprimir.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -106,5 +118,6 @@
         private Button btnImprimir;
         private FlowLayoutPanel pnlHojaImprimir;
         private Label label1;
+        private TextBox txtBuscar;
     }
 }

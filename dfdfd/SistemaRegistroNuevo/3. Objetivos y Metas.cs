@@ -29,9 +29,11 @@ namespace HorasSociales2
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            /*
             FrmDatosInstitucion vistaMain = new FrmDatosInstitucion();
             vistaMain.Show();
             Hide();
+            */
         }
 
 

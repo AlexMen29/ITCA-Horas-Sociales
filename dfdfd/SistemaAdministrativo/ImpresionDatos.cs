@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HorasSociales2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,7 @@ namespace SistemaAdministrativo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            /*
             // Me mostrará el cuadro de diálogo de impresión
             PrintDocument pd = new PrintDocument();
             PrintDialog printDialog = new PrintDialog();
@@ -45,17 +47,12 @@ namespace SistemaAdministrativo
                 }
 
                 pd.Print();
-            }
-        }
+            */
+            FrmDatosGenerales form = new FrmDatosGenerales(2, txtBuscar.Text);
+            form.Show();
 
-        private void ImprimirContenido(object sender, PrintPageEventArgs e)
-        {
-            // Debe capturas la imagen del Panel pnlHojaImprimir
-            Bitmap bmp = new Bitmap(pnlHojaImprimir.Width, pnlHojaImprimir.Height);
-            pnlHojaImprimir.DrawToBitmap(bmp, new Rectangle(0, 0, pnlHojaImprimir.Width, pnlHojaImprimir.Height));
-
-            // Dibuja la imagen en la página de impresión
-            e.Graphics.DrawImage(bmp, e.MarginBounds.Left, e.MarginBounds.Top, bmp.Width, bmp.Height);
         }
     }
+
+    
 }

@@ -501,6 +501,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmDatosGenerales";
             Text = "Horas Sociales";
+            Load += FrmDatosGenerales_Load;
             pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             pnlTitle.ResumeLayout(false);
