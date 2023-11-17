@@ -332,8 +332,9 @@
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             Name = "RegistroUniversitarios";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "RegistroUniversitarios";
+            Text = "Estudiante";
             Load += RegistroUniversitarios_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)PicMostrar).EndInit();

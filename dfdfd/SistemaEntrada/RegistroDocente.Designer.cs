@@ -302,8 +302,9 @@
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             Name = "RegistroDocente";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "RegistroDocente";
+            Text = "Docente";
             Load += RegistroDocente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)PicMostrar).EndInit();

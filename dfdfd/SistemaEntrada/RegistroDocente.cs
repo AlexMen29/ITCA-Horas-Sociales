@@ -121,7 +121,7 @@ namespace Login
 
         private void txtCarnet_KeyPress(object sender, KeyPressEventArgs e)
         {
-            compartir.ValidacionNumerica(sender,e);
+            compartir.ValidacionNumerica(sender, e);
         }
     }
 

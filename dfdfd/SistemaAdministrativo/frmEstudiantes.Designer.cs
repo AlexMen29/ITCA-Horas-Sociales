@@ -36,7 +36,6 @@
             gridEstudiantes = new DataGridView();
             LabEstudiantes = new Label();
             label1 = new Label();
-            btnGenerarReporte = new Button();
             PanelElementosBusqueda = new Panel();
             pictureBuscar = new PictureBox();
             label2 = new Label();
@@ -131,20 +130,6 @@
             label1.Size = new Size(221, 30);
             label1.TabIndex = 8;
             label1.Text = "Total de Estudiantes: ";
-            // 
-            // btnGenerarReporte
-            // 
-            btnGenerarReporte.BackColor = Color.FromArgb(176, 25, 29);
-            btnGenerarReporte.ForeColor = SystemColors.ButtonHighlight;
-            btnGenerarReporte.Location = new Point(430, 461);
-            btnGenerarReporte.Name = "btnGenerarReporte";
-            btnGenerarReporte.Size = new Size(81, 34);
-            btnGenerarReporte.TabIndex = 10;
-            btnGenerarReporte.Text = "Reporte";
-            btnGenerarReporte.UseVisualStyleBackColor = false;
-            btnGenerarReporte.Click += btnGenerarReporte_Click;
-            btnGenerarReporte.MouseEnter += btnGenerarReporte_MouseEnter;
-            btnGenerarReporte.MouseLeave += btnGenerarReporte_MouseLeave;
             // 
             // PanelElementosBusqueda
             // 
@@ -268,7 +253,6 @@
             Controls.Add(comboFiltra);
             Controls.Add(btnFiltrar);
             Controls.Add(PanelElementosBusqueda);
-            Controls.Add(btnGenerarReporte);
             Controls.Add(LabEstudiantes);
             Controls.Add(label1);
             Controls.Add(label9);
@@ -292,7 +276,6 @@
         private DataGridView gridEstudiantes;
         private Label LabEstudiantes;
         private Label label1;
-        private Button btnGenerarReporte;
         private Panel PanelElementosBusqueda;
         private Label label7;
         private Button btnBuscar;

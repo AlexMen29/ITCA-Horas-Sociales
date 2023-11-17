@@ -146,8 +146,16 @@ namespace SistemaAdministrativo
 
         private void gridDatosAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtBuscar.Text = gridDatosAlumnos.SelectedCells[1].Value.ToString();
+            try
+            {
+                txtBuscar.Text = gridDatosAlumnos.SelectedCells[1].Value.ToString();
+            }
+            catch
+            {
+
+            }
         }
+        
 
         private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {

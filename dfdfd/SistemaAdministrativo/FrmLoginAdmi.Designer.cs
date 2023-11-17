@@ -43,7 +43,6 @@
             pictureBox8 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
-            pictureBox4 = new PictureBox();
             btnSalir = new Button();
             btnCerrarSesion = new Button();
             pictureBox1 = new PictureBox();
@@ -67,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelMenu.SuspendLayout();
             pnlLogo.SuspendLayout();
@@ -99,7 +97,6 @@
             PanelOpciones.Controls.Add(pictureBox8);
             PanelOpciones.Controls.Add(pictureBox3);
             PanelOpciones.Controls.Add(pictureBox2);
-            PanelOpciones.Controls.Add(pictureBox4);
             PanelOpciones.Controls.Add(btnSalir);
             PanelOpciones.Controls.Add(btnCerrarSesion);
             PanelOpciones.Controls.Add(pictureBox1);
@@ -129,10 +126,10 @@
             // 
             panelAdministrador.Anchor = AnchorStyles.None;
             panelAdministrador.BackColor = Color.Transparent;
-            panelAdministrador.Controls.Add(pictureBox7);
-            panelAdministrador.Controls.Add(pictureBox6);
             panelAdministrador.Controls.Add(pictureBox5);
+            panelAdministrador.Controls.Add(pictureBox7);
             panelAdministrador.Controls.Add(btnEstudiantes);
+            panelAdministrador.Controls.Add(pictureBox6);
             panelAdministrador.Controls.Add(btnEnviarMensaje);
             panelAdministrador.Controls.Add(btnEliModi);
             panelAdministrador.Location = new Point(30, 323);
@@ -170,7 +167,7 @@
             pictureBox5.Anchor = AnchorStyles.None;
             pictureBox5.BackColor = Color.FromArgb(205, 144, 19);
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(28, 13);
+            pictureBox5.Location = new Point(25, 10);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(38, 36);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -184,7 +181,7 @@
             btnEstudiantes.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEstudiantes.ForeColor = SystemColors.ControlLightLight;
             btnEstudiantes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEstudiantes.Location = new Point(3, 1);
+            btnEstudiantes.Location = new Point(3, 0);
             btnEstudiantes.Margin = new Padding(4, 3, 4, 3);
             btnEstudiantes.Name = "btnEstudiantes";
             btnEstudiantes.Size = new Size(238, 55);
@@ -278,18 +275,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 19;
             pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Anchor = AnchorStyles.None;
-            pictureBox4.BackColor = Color.FromArgb(205, 144, 19);
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(56, 327);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(38, 36);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 24;
-            pictureBox4.TabStop = false;
             // 
             // btnSalir
             // 
@@ -494,7 +479,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelMenu.ResumeLayout(false);
             pnlLogo.ResumeLayout(false);
@@ -526,7 +510,6 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox2;
         private PictureBox pictureBox5;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox10;
         private PictureBox pictureBox8;
         private PictureBox pictureBox9;

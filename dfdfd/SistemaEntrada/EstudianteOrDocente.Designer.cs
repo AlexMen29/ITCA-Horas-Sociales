@@ -143,8 +143,8 @@
             Controls.Add(PanelUniversitario);
             Margin = new Padding(4, 3, 4, 3);
             Name = "EstudianteOrDocente";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "EstudianteOrDocente";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelUniversitario.ResumeLayout(false);
             PanelUniversitario.PerformLayout();

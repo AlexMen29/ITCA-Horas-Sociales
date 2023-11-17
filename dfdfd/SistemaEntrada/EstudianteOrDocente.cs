@@ -77,7 +77,7 @@ namespace Login
             abrirFormDocente();
         }
 
-   
+
 
         //metodo para abrir formularios
         private void abrirFormDocente()

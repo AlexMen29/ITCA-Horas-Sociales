@@ -15,10 +15,10 @@ using System.Windows.Forms;
 
 namespace SistemaAdministrativo
 {
-    
+
     public partial class FrmSisAd : Form
     {
-        ProyectoSocialContext context =new ProyectoSocialContext();
+        ProyectoSocialContext context = new ProyectoSocialContext();
         //Metodo para obtener informacion de las credenciales ingresadas en el menu de login
         public DatosAlumno usuarioActual { get; set; }
         public FrmSisAd()
@@ -75,7 +75,7 @@ namespace SistemaAdministrativo
             }
             else
             {
-                var consulta =context.DatosAlumnos.Where(o=>o.Grupo==compartir.usuario.Grupo && o.NivelUsuario==1).Count();
+                var consulta = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).Count();
                 if (consulta < 1)
                 {
                     MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nActualmente, no tienes estudiantes asignados a tu grupo, por lo que las funcionalidades del sistema se encuentran inactivas." +
@@ -83,7 +83,7 @@ namespace SistemaAdministrativo
                 }
             }
 
-            
+
 
         }
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -147,21 +147,21 @@ namespace SistemaAdministrativo
 
         private void btnCerrarSesion_Click_1(object sender, EventArgs e)
         {
-            frmInicio Frm = new frmInicio();
-            Close();
-            Frm.Show();
+            if (MessageBox.Show("Esta apunto de cerrar la sesión ¿Desea continuar?", "ITCA FEPADE", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+
+                frmInicio Frm = new frmInicio();
+                Close();
+                Frm.Show();
+            }
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Esta apunto de cerrar la aplicacion ¿Desea continuar?", "ITCA FEPADE", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
-
-        private void btnPerfil_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show($"eres{compartir.usuario.Apellidos}");
-            //MessageBox.Show($"{usuarioActual.Carnet}\n--------------------\n{usuarioActual.Nombres}\n{usuarioActual.Apellidos}\n{usuarioActual.Correo}","Detalles de Sesión");
-        }
-
         private void btnEstudiantes_Click(object sender, EventArgs e)
         {
             frmEstudiantes us = new frmEstudiantes();
@@ -240,13 +240,6 @@ namespace SistemaAdministrativo
                 frm.Show();
             }
         }
-
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-      
     }
 
 }

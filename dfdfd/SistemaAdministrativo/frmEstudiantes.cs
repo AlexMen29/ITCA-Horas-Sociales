@@ -37,7 +37,12 @@ namespace ProyectoSocial.SistemaAdministrativo
         private void frmEstudiantes_Load(object sender, EventArgs e)
         {
             CargarDataGrid();
-            gridEstudiantes.ClearSelection();
+            var consulta = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).Count();
+            if (consulta < 1)
+            {
+                MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nActualmente, no tienes estudiantes asignados a tu grupo, por lo que las funcionalidades del sistema se encuentran inactivas." +
+                    $" Para aprovechar al máximo las características del sistema, asigna estudiantes a tu grupo: {compartir.usuario.Grupo} ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 
@@ -94,76 +99,77 @@ namespace ProyectoSocial.SistemaAdministrativo
 
             }
         }
-
-        private void btnGenerarReporte_Click(object sender, EventArgs e)
-        {
-            //Procesar_PDF pdf = new Procesar_PDF();
-            //pdf.crearDirectorio();
-            if (gridEstudiantes.SelectedRows.Count > 0)
-            {
-                // Obtener la fila seleccionada
-                DataGridViewRow selectedRow = gridEstudiantes.SelectedRows[0];
-
-                Datos_Estudiantes datos_Estudiantes = new Datos_Estudiantes
-                {
-                    //Debo ingresar más variables si se crea más campos en el gridEstudiantes que estáne en la clase Datos_Estudiantes.
-                    logo_itca = logoITCA.Image,
-                    carnet = selectedRow.Cells[0].Value.ToString(),
-                    nombres = selectedRow.Cells[3].Value.ToString(),
-                    apellidos = selectedRow.Cells[4].Value.ToString(),
-                    TipoEstudio = selectedRow.Cells[6].Value.ToString(),
-                    correo = selectedRow.Cells[7].Value.ToString(),
-                    grupo = selectedRow.Cells[8].Value.ToString(),
-                    estado = selectedRow.Cells[9].Value.ToString(),
-
-
-                };
-
-                Procesar_PDF pdf = new Procesar_PDF();
-                pdf.crearPdf(datos_Estudiantes, gridEstudiantes);
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione una fila antes de generar el informe.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        public void eventosEnterLeave(Button btn, System.Drawing.Color ColorFondo, System.Drawing.Color ColorLetra)
-        {
-            btn.BackColor = ColorFondo;
-            btn.ForeColor = ColorLetra;
-        }
-
-        private void btnGenerarReporte_MouseEnter(object sender, EventArgs e)
-        {
-            eventosEnterLeave(btnGenerarReporte, ColorTranslator.FromHtml("#cd9013"), System.Drawing.Color.White);
-        }
-
-        private void btnGenerarReporte_MouseLeave(object sender, EventArgs e)
-        {
-            eventosEnterLeave(btnGenerarReporte, ColorTranslator.FromHtml("#b1201f"), System.Drawing.Color.White);
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
+            txtBuscar.Text = null;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var consulta = context.DatosAlumnos.Where(o => o.Carnet == txtBuscar.Text && o.Estado == "Terminado").Count();
-            if (consulta > 0)
+            //lista de alumnos de docente actual
+            var listaDeAlumnos = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).Select(o=>o.Carnet).ToList();
+
+            for (int indice = 0; indice < listaDeAlumnos.Count; indice++)
             {
-                MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nEsta apunto de imprimir la hoja social {compartir.usuario.Grupo}. ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                bool encontrado = false;
+                //si se encuentra el carntet ingresado
+                if (txtBuscar.Text == listaDeAlumnos[indice])
+                {
+                    //verificamos si usuario ya termino su servicio social
+                    var consulta = context.DatosAlumnos.Where(o => o.Carnet == txtBuscar.Text && o.Estado == "Terminado").Count();
+                    //datos de usuario seleccionado
+                    var usuario = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == txtBuscar.Text);
+                    if (consulta > 0)
+                    {
+                        if (MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nEsta apunto de imprimir la hoja social de: {usuario.Nombres + " " + usuario.Apellidos}. ", "ITCA FEPADE", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                        {
+                            if (gridEstudiantes.SelectedRows.Count > 0)
+                            {
+                                // Obtener la fila seleccionada
+                                DataGridViewRow selectedRow = gridEstudiantes.SelectedRows[0];
+                                Datos_Estudiantes datos_Estudiantes = new Datos_Estudiantes
+                                {
+                                    //Debo ingresar más variables si se crea más campos en el gridEstudiantes que estáne en la clase Datos_Estudiantes.
+                                    logo_itca = logoITCA.Image,
+                                    carnet = selectedRow.Cells[0].Value.ToString(),
+                                    nombres = selectedRow.Cells[3].Value.ToString(),
+                                    apellidos = selectedRow.Cells[4].Value.ToString(),
+                                    TipoEstudio = selectedRow.Cells[6].Value.ToString(),
+                                    correo = selectedRow.Cells[7].Value.ToString(),
+                                    grupo = selectedRow.Cells[8].Value.ToString(),
+                                    estado = selectedRow.Cells[9].Value.ToString(),
+                                };
 
+                                Procesar_PDF pdf = new Procesar_PDF();
+                                pdf.crearPdf(datos_Estudiantes, gridEstudiantes);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Por favor, seleccione una fila antes de generar el informe.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nno puede  imprimir la hoja social de {usuario.Nombres+" "+usuario.Apellidos}, actualmente tiene realizadas {usuario.HorasTotal} horas sociales siendo su tipo de estudio de {usuario.TipoEstudio}", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    encontrado = true;
+                }
 
-                //si aqui dice que si aca ira la generacion del reporte
+                if (encontrado==false && indice==listaDeAlumnos.Count-1)
+                {
+                    MessageBox.Show("El carnet ingresado es invalido","ITCA FEAPDE",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                if (encontrado == true)
+                {
+                    break;
+                }
+
             }
-            else
-            {
-                MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nno puede  imprimir la hoja social {compartir.usuario.Grupo}. ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            }
+
+
+            
         }
 
         private void gridEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -194,7 +200,7 @@ namespace ProyectoSocial.SistemaAdministrativo
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            compartir.ValidacionNumerica(sender,e);
+            compartir.ValidacionNumerica(sender, e);
         }
     }
 }
