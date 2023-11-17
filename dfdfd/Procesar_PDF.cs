@@ -115,7 +115,7 @@ namespace ProyectoSocial
                 y += espacioVertical;
                 dc.ShowTextAligned(PdfContentByte.ALIGN_LEFT, datos_Estudiantes.estudioYear, docPDF.PageSize.Width / 23, docPDF.PageSize.Height - y, 0);
                 y += espacioVertical;
-                dc.ShowTextAligned(PdfContentByte.ALIGN_LEFT, datos_Estudiantes.telefonoEstudiante, docPDF.PageSize.Width / 23, docPDF.PageSize.Height - y, 0);
+                dc.ShowTextAligned(PdfContentByte.ALIGN_LEFT, datos_Estudiantes.TelefonoEstudiante, docPDF.PageSize.Width / 23, docPDF.PageSize.Height - y, 0);
                 y += espacioVertical;
                 dc.ShowTextAligned(PdfContentByte.ALIGN_LEFT, datos_Estudiantes.correoEstu, docPDF.PageSize.Width / 23, docPDF.PageSize.Height - y, 0);
                 y += espacioVertical;

@@ -127,6 +127,8 @@ namespace ProyectoSocial.SistemaAdministrativo
                             {
                                 // Obtener la fila seleccionada
                                 DataGridViewRow selectedRow = gridEstudiantes.SelectedRows[0];
+                                string carnet = selectedRow.Cells[0].Value.ToString();
+                                var datosRegistro = context.tbDatosRegistro.FirstOrDefault(d => d.carnet == carnet);
                                 Datos_Estudiantes datos_Estudiantes = new Datos_Estudiantes
                                 {
                                     //Debo ingresar más variables si se crea más campos en el gridEstudiantes que estáne en la clase Datos_Estudiantes.
@@ -139,7 +141,20 @@ namespace ProyectoSocial.SistemaAdministrativo
                                     grupo = selectedRow.Cells[8].Value.ToString(),
                                     estado = selectedRow.Cells[9].Value.ToString(),
                                 };
-
+                                if (datosRegistro != null)
+                                {
+                                    datos_Estudiantes.estudioAño = datosRegistro.año;
+                                    datos_Estudiantes.escuelaEs = datosRegistro.escuela;
+                                    datos_Estudiantes.telefonoEs = datosRegistro.telefono.ToString();
+                                    datos_Estudiantes.institucionName = datosRegistro.institucion;
+                                    datos_Estudiantes.responsable = datosRegistro.coordinador;
+                                    datos_Estudiantes.telefonoInstitucion = datosRegistro.telefonoInstitucion;
+                                    datos_Estudiantes.coordinador = datosRegistro.coordinador;
+                                    datos_Estudiantes.responsable = datosRegistro.responsable;
+                                    //datos_Estudiantes.direInst = datos_Estudiantes.instucion;
+                                    datos_Estudiantes.fechaInicioSer = datosRegistro.fecha.ToLongDateString();
+                                    datos_Estudiantes.fechaFinalSer = datosRegistro.fecha.ToLongDateString();
+                                }
                                 Procesar_PDF pdf = new Procesar_PDF();
                                 pdf.crearPdf(datos_Estudiantes, gridEstudiantes);
                             }
