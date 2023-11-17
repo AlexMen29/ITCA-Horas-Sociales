@@ -371,6 +371,7 @@
             txtYear.Name = "txtYear";
             txtYear.Size = new Size(111, 29);
             txtYear.TabIndex = 6;
+            txtYear.KeyPress += txtYear_KeyPress;
             // 
             // lblYear
             // 
@@ -396,6 +397,7 @@
             txtCarnet.Name = "txtCarnet";
             txtCarnet.Size = new Size(177, 29);
             txtCarnet.TabIndex = 4;
+            txtCarnet.KeyPress += txtCarnet_KeyPress;
             // 
             // lblCarnet
             // 

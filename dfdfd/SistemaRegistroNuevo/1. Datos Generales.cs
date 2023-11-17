@@ -1,4 +1,5 @@
 ﻿using dfdfd.bdSocial;
+using Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,12 +10,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HorasSociales2
 {
     public partial class FrmDatosGenerales : Form
     {
         ProyectoSocialContext context = new ProyectoSocialContext();
+
+        public KeyPressEventHandler ValidacionNumerica { get; private set; }
 
         public FrmDatosGenerales()
         {
@@ -46,6 +50,11 @@ namespace HorasSociales2
                 vistaMain.Show();
                 Hide();
             }
+        }
+
+        public void txtCarnet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender, e);
         }
 
     }

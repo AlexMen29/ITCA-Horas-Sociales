@@ -37,7 +37,6 @@ namespace HorasSociales2
         private void btnNext_Click(object sender, EventArgs e)
         {
 
-
             datosContenedor.lunes = cmbSinceMON.Text + " - " + cmbUntilMON.Text;
             datosContenedor.martes = cmbSinceTUE.Text + " - " + cmbUntilTUE.Text;
             datosContenedor.miercoles = cmbSinceWED.Text + " - " + cmbUntilWED.Text;
