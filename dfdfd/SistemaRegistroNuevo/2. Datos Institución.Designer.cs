@@ -183,8 +183,10 @@
             txtResPhone.Location = new Point(262, 468);
             txtResPhone.Margin = new Padding(4, 3, 4, 3);
             txtResPhone.Name = "txtResPhone";
+            txtResPhone.ShortcutsEnabled = false;
             txtResPhone.Size = new Size(187, 29);
             txtResPhone.TabIndex = 7;
+            txtResPhone.KeyPress += txtResPhone_KeyPress;
             // 
             // txtResponsable
             // 
@@ -203,8 +205,10 @@
             txtPhone.Location = new Point(262, 102);
             txtPhone.Margin = new Padding(4, 3, 4, 3);
             txtPhone.Name = "txtPhone";
+            txtPhone.ShortcutsEnabled = false;
             txtPhone.Size = new Size(186, 29);
             txtPhone.TabIndex = 3;
+            txtPhone.KeyPress += txtPhone_KeyPress;
             // 
             // txtEmail
             // 
@@ -254,7 +258,7 @@
             lblTime.Size = new Size(202, 92);
             lblTime.TabIndex = 13;
             lblTime.Tag = "Coordinador de Servicio Social Estudiantil :";
-            lblTime.Text = "Tiempo estimado en el que se desarrollará el proyecto :";
+            lblTime.Text = "Tiempo estimado en el que se desarrollará el proyecto (en meses):";
             lblTime.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblEGPhone
@@ -354,8 +358,10 @@
             txtTime.Location = new Point(262, 572);
             txtTime.Margin = new Padding(4, 3, 4, 3);
             txtTime.Name = "txtTime";
+            txtTime.ShortcutsEnabled = false;
             txtTime.Size = new Size(186, 29);
             txtTime.TabIndex = 8;
+            txtTime.KeyPress += txtTime_KeyPress;
             // 
             // txtName
             // 

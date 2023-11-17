@@ -48,13 +48,13 @@
             txtObjetivos2 = new TextBox();
             txtAct1 = new TextBox();
             txtAct2 = new TextBox();
+            txtDuracion2 = new TextBox();
             pnlRight = new Panel();
             panel1 = new Panel();
             pnlBottom = new Panel();
             btnBack = new Button();
             pictureBox1 = new PictureBox();
             btnNext = new Button();
-            txtDuracion2 = new TextBox();
             pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             pnlTitle.SuspendLayout();
@@ -287,6 +287,7 @@
             // 
             txtGoals2.Anchor = AnchorStyles.Top;
             txtGoals2.BorderStyle = BorderStyle.None;
+            txtGoals2.Enabled = false;
             txtGoals2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtGoals2.HideSelection = false;
             txtGoals2.Location = new Point(217, 200);
@@ -299,8 +300,8 @@
             // 
             // txtObjetivos2
             // 
-            txtObjetivos2.Anchor = AnchorStyles.Top;
             txtObjetivos2.BorderStyle = BorderStyle.None;
+            txtObjetivos2.Enabled = false;
             txtObjetivos2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtObjetivos2.HideSelection = false;
             txtObjetivos2.Location = new Point(429, 200);
@@ -329,6 +330,7 @@
             // 
             txtAct2.Anchor = AnchorStyles.Top;
             txtAct2.BorderStyle = BorderStyle.None;
+            txtAct2.Enabled = false;
             txtAct2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtAct2.HideSelection = false;
             txtAct2.Location = new Point(5, 200);
@@ -338,6 +340,21 @@
             txtAct2.Size = new Size(203, 152);
             txtAct2.TabIndex = 3;
             txtAct2.TextAlign = HorizontalAlignment.Center;
+            // 
+            // txtDuracion2
+            // 
+            txtDuracion2.Anchor = AnchorStyles.Top;
+            txtDuracion2.BorderStyle = BorderStyle.None;
+            txtDuracion2.Enabled = false;
+            txtDuracion2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDuracion2.HideSelection = false;
+            txtDuracion2.Location = new Point(641, 200);
+            txtDuracion2.Margin = new Padding(4, 3, 4, 3);
+            txtDuracion2.Multiline = true;
+            txtDuracion2.Name = "txtDuracion2";
+            txtDuracion2.Size = new Size(203, 152);
+            txtDuracion2.TabIndex = 26;
+            txtDuracion2.TextAlign = HorizontalAlignment.Center;
             // 
             // pnlRight
             // 
@@ -408,20 +425,6 @@
             btnNext.Text = "Siguiente";
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += btnNext_Click;
-            // 
-            // txtDuracion2
-            // 
-            txtDuracion2.Anchor = AnchorStyles.Top;
-            txtDuracion2.BorderStyle = BorderStyle.None;
-            txtDuracion2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDuracion2.HideSelection = false;
-            txtDuracion2.Location = new Point(641, 200);
-            txtDuracion2.Margin = new Padding(4, 3, 4, 3);
-            txtDuracion2.Multiline = true;
-            txtDuracion2.Name = "txtDuracion2";
-            txtDuracion2.Size = new Size(203, 152);
-            txtDuracion2.TabIndex = 26;
-            txtDuracion2.TextAlign = HorizontalAlignment.Center;
             // 
             // FrmObjetivosMetas
             // 

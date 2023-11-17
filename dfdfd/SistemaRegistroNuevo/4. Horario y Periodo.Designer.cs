@@ -59,8 +59,8 @@
             lblDay6 = new Label();
             lblDay7 = new Label();
             lblSince = new Label();
-            cmbSinceMON = new ComboBox();
             cmbUntilMON = new ComboBox();
+            cmbSinceMON = new ComboBox();
             pnlRight = new Panel();
             panel1 = new Panel();
             pnlBottom = new Panel();
@@ -210,6 +210,8 @@
             // 
             // cmbUntilSUN
             // 
+            cmbUntilSUN.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUntilSUN.Enabled = false;
             cmbUntilSUN.FormattingEnabled = true;
             cmbUntilSUN.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
             cmbUntilSUN.Location = new Point(746, 200);
@@ -219,6 +221,8 @@
             // 
             // cmbUntilSAT
             // 
+            cmbUntilSAT.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUntilSAT.Enabled = false;
             cmbUntilSAT.FormattingEnabled = true;
             cmbUntilSAT.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
             cmbUntilSAT.Location = new Point(640, 200);
@@ -228,6 +232,8 @@
             // 
             // cmbUntilFRI
             // 
+            cmbUntilFRI.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUntilFRI.Enabled = false;
             cmbUntilFRI.FormattingEnabled = true;
             cmbUntilFRI.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
             cmbUntilFRI.Location = new Point(534, 200);
@@ -237,6 +243,8 @@
             // 
             // cmbUntilTHU
             // 
+            cmbUntilTHU.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUntilTHU.Enabled = false;
             cmbUntilTHU.FormattingEnabled = true;
             cmbUntilTHU.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
             cmbUntilTHU.Location = new Point(428, 200);
@@ -246,6 +254,8 @@
             // 
             // cmbUntilWED
             // 
+            cmbUntilWED.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUntilWED.Enabled = false;
             cmbUntilWED.FormattingEnabled = true;
             cmbUntilWED.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
             cmbUntilWED.Location = new Point(322, 200);
@@ -255,6 +265,8 @@
             // 
             // cmbUntilTUE
             // 
+            cmbUntilTUE.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUntilTUE.Enabled = false;
             cmbUntilTUE.FormattingEnabled = true;
             cmbUntilTUE.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
             cmbUntilTUE.Location = new Point(216, 200);
@@ -264,8 +276,9 @@
             // 
             // cmbSinceSUN
             // 
+            cmbSinceSUN.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSinceSUN.FormattingEnabled = true;
-            cmbSinceSUN.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceSUN.Items.AddRange(new object[] { "", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
             cmbSinceSUN.Location = new Point(746, 40);
             cmbSinceSUN.Name = "cmbSinceSUN";
             cmbSinceSUN.Size = new Size(99, 23);
@@ -273,8 +286,9 @@
             // 
             // cmbSinceSAT
             // 
+            cmbSinceSAT.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSinceSAT.FormattingEnabled = true;
-            cmbSinceSAT.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceSAT.Items.AddRange(new object[] { "", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
             cmbSinceSAT.Location = new Point(640, 40);
             cmbSinceSAT.Name = "cmbSinceSAT";
             cmbSinceSAT.Size = new Size(99, 23);
@@ -282,8 +296,9 @@
             // 
             // cmbSinceFRI
             // 
+            cmbSinceFRI.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSinceFRI.FormattingEnabled = true;
-            cmbSinceFRI.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceFRI.Items.AddRange(new object[] { "", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
             cmbSinceFRI.Location = new Point(534, 40);
             cmbSinceFRI.Name = "cmbSinceFRI";
             cmbSinceFRI.Size = new Size(99, 23);
@@ -291,8 +306,9 @@
             // 
             // cmbSinceTHU
             // 
+            cmbSinceTHU.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSinceTHU.FormattingEnabled = true;
-            cmbSinceTHU.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceTHU.Items.AddRange(new object[] { "", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
             cmbSinceTHU.Location = new Point(428, 40);
             cmbSinceTHU.Name = "cmbSinceTHU";
             cmbSinceTHU.Size = new Size(99, 23);
@@ -300,8 +316,9 @@
             // 
             // cmbSinceWED
             // 
+            cmbSinceWED.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSinceWED.FormattingEnabled = true;
-            cmbSinceWED.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceWED.Items.AddRange(new object[] { "", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
             cmbSinceWED.Location = new Point(322, 40);
             cmbSinceWED.Name = "cmbSinceWED";
             cmbSinceWED.Size = new Size(99, 23);
@@ -309,8 +326,9 @@
             // 
             // cmbSinceTUE
             // 
+            cmbSinceTUE.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSinceTUE.FormattingEnabled = true;
-            cmbSinceTUE.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceTUE.Items.AddRange(new object[] { "", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
             cmbSinceTUE.Location = new Point(216, 40);
             cmbSinceTUE.Name = "cmbSinceTUE";
             cmbSinceTUE.Size = new Size(99, 23);
@@ -466,23 +484,26 @@
             lblSince.Text = "Desde";
             lblSince.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // cmbSinceMON
-            // 
-            cmbSinceMON.FormattingEnabled = true;
-            cmbSinceMON.Items.AddRange(new object[] { "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
-            cmbSinceMON.Location = new Point(110, 40);
-            cmbSinceMON.Name = "cmbSinceMON";
-            cmbSinceMON.Size = new Size(99, 23);
-            cmbSinceMON.TabIndex = 33;
-            // 
             // cmbUntilMON
             // 
+            cmbUntilMON.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUntilMON.Enabled = false;
             cmbUntilMON.FormattingEnabled = true;
             cmbUntilMON.Items.AddRange(new object[] { "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" });
             cmbUntilMON.Location = new Point(110, 200);
             cmbUntilMON.Name = "cmbUntilMON";
             cmbUntilMON.Size = new Size(99, 23);
             cmbUntilMON.TabIndex = 34;
+            // 
+            // cmbSinceMON
+            // 
+            cmbSinceMON.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSinceMON.FormattingEnabled = true;
+            cmbSinceMON.Items.AddRange(new object[] { "", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM" });
+            cmbSinceMON.Location = new Point(110, 40);
+            cmbSinceMON.Name = "cmbSinceMON";
+            cmbSinceMON.Size = new Size(99, 23);
+            cmbSinceMON.TabIndex = 33;
             // 
             // pnlRight
             // 

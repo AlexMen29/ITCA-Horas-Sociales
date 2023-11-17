@@ -1,4 +1,5 @@
 ﻿using dfdfd.bdSocial;
+using Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,26 +29,41 @@ namespace HorasSociales2
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
-            datosContenedor.institucion = txtName.Text;
-            datosContenedor.telefonoInstitucion = int.Parse(txtPhone.Text);
-            datosContenedor.actividades = txtActivity.Text;
-            datosContenedor.responsable = txtResponsable.Text;
-            datosContenedor.correoResponsable = txtEmail.Text;
-            datosContenedor.telefonoResponsable = int.Parse(txtResPhone.Text);
-            datosContenedor.tiempo = int.Parse(txtTime.Text);
-            datosContenedor.fecha = DateTime.Parse(dateDate.Text);
-
             if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtActivity.Text) || string.IsNullOrWhiteSpace(txtResponsable.Text) || string.IsNullOrWhiteSpace(txtTime.Text) || string.IsNullOrWhiteSpace(txtResPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text))
             {
                 MessageBox.Show("Por favor, Completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+
+                datosContenedor.institucion = txtName.Text;
+                datosContenedor.telefonoInstitucion = int.Parse(txtPhone.Text);
+                datosContenedor.actividades = txtActivity.Text;
+                datosContenedor.responsable = txtResponsable.Text;
+                datosContenedor.correoResponsable = txtEmail.Text;
+                datosContenedor.telefonoResponsable = int.Parse(txtResPhone.Text);
+                datosContenedor.tiempo = int.Parse(txtTime.Text);
+                datosContenedor.fecha = DateTime.Parse(dateDate.Text);
+
                 FrmObjetivosMetas vistaObj = new FrmObjetivosMetas();
                 vistaObj.Show();
                 Hide();
             }
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender, e);
+        }
+
+        private void txtResPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender, e);
+        }
+
+        private void txtTime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender, e);
         }
     }
 }

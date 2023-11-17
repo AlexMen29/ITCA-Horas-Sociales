@@ -10,7 +10,7 @@ namespace dfdfd.bdSocial
 
         public string escuela { get; set; } = null!;
 
-        public int año { get; set; }
+        public string año { get; set; } = null!;
 
         public string carrera { get; set; } = null!;
 

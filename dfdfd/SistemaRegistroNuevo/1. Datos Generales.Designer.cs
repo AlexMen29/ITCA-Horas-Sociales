@@ -36,6 +36,7 @@
             picLine = new PictureBox();
             pnlLeft = new Panel();
             pnlContent = new Panel();
+            txtYear = new ComboBox();
             txtSSE = new TextBox();
             txtEGPhone = new TextBox();
             txtEmergency = new TextBox();
@@ -51,7 +52,6 @@
             lblEmail = new Label();
             lblCareer = new Label();
             lblSchool = new Label();
-            txtYear = new TextBox();
             lblYear = new Label();
             txtCarnet = new TextBox();
             lblCarnet = new Label();
@@ -145,6 +145,7 @@
             pnlContent.AutoScroll = true;
             pnlContent.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnlContent.BackColor = Color.Transparent;
+            pnlContent.Controls.Add(txtYear);
             pnlContent.Controls.Add(txtSSE);
             pnlContent.Controls.Add(txtEGPhone);
             pnlContent.Controls.Add(txtEmergency);
@@ -160,7 +161,6 @@
             pnlContent.Controls.Add(lblEmail);
             pnlContent.Controls.Add(lblCareer);
             pnlContent.Controls.Add(lblSchool);
-            pnlContent.Controls.Add(txtYear);
             pnlContent.Controls.Add(lblYear);
             pnlContent.Controls.Add(txtCarnet);
             pnlContent.Controls.Add(lblCarnet);
@@ -171,6 +171,17 @@
             pnlContent.Name = "pnlContent";
             pnlContent.Size = new Size(947, 396);
             pnlContent.TabIndex = 6;
+            // 
+            // txtYear
+            // 
+            txtYear.Anchor = AnchorStyles.Top;
+            txtYear.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtYear.FormattingEnabled = true;
+            txtYear.Items.AddRange(new object[] { "1° año", "2° año", "3° año", "4° año", "5° año" });
+            txtYear.Location = new Point(680, 88);
+            txtYear.Name = "txtYear";
+            txtYear.Size = new Size(112, 23);
+            txtYear.TabIndex = 21;
             // 
             // txtSSE
             // 
@@ -189,8 +200,10 @@
             txtEGPhone.Location = new Point(299, 489);
             txtEGPhone.Margin = new Padding(4, 3, 4, 3);
             txtEGPhone.Name = "txtEGPhone";
+            txtEGPhone.ShortcutsEnabled = false;
             txtEGPhone.Size = new Size(187, 29);
             txtEGPhone.TabIndex = 19;
+            txtEGPhone.KeyPress += txtEGPhone_KeyPress;
             // 
             // txtEmergency
             // 
@@ -209,8 +222,10 @@
             txtPhone.Location = new Point(299, 342);
             txtPhone.Margin = new Padding(4, 3, 4, 3);
             txtPhone.Name = "txtPhone";
+            txtPhone.ShortcutsEnabled = false;
             txtPhone.Size = new Size(186, 29);
             txtPhone.TabIndex = 17;
+            txtPhone.KeyPress += txtPhone_KeyPress;
             // 
             // txtEmail
             // 
@@ -362,17 +377,6 @@
             lblSchool.Text = "Escuela :";
             lblSchool.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // txtYear
-            // 
-            txtYear.Anchor = AnchorStyles.Top;
-            txtYear.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtYear.Location = new Point(682, 83);
-            txtYear.Margin = new Padding(4, 3, 4, 3);
-            txtYear.Name = "txtYear";
-            txtYear.Size = new Size(111, 29);
-            txtYear.TabIndex = 6;
-            txtYear.KeyPress += txtYear_KeyPress;
-            // 
             // lblYear
             // 
             lblYear.Anchor = AnchorStyles.Top;
@@ -395,6 +399,7 @@
             txtCarnet.Location = new Point(299, 83);
             txtCarnet.Margin = new Padding(4, 3, 4, 3);
             txtCarnet.Name = "txtCarnet";
+            txtCarnet.ShortcutsEnabled = false;
             txtCarnet.Size = new Size(177, 29);
             txtCarnet.TabIndex = 4;
             txtCarnet.KeyPress += txtCarnet_KeyPress;
@@ -520,7 +525,6 @@
         private Label lblName;
         private TextBox txtName;
         private Label lblCarnet;
-        private TextBox txtYear;
         private Label lblYear;
         private TextBox txtCarnet;
         private Label lblPhone;
@@ -542,6 +546,7 @@
         private Panel pnlBottom;
         private Button btnNext;
         private PictureBox pictureBox1;
+        private ComboBox txtYear;
     }
 }
 

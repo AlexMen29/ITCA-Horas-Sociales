@@ -16,16 +16,21 @@ namespace HorasSociales2
     public partial class FrmHorarioPeriodo : Form
     {
 
-
-
         ProyectoSocialContext context = new ProyectoSocialContext();
 
         public FrmHorarioPeriodo()
         {
             InitializeComponent();
+
+            cmbSinceMON.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            cmbSinceTUE.SelectedIndexChanged += ComboBox2_SelectedIndexChanged;
+            cmbSinceWED.SelectedIndexChanged += ComboBox3_SelectedIndexChanged;
+            cmbSinceTHU.SelectedIndexChanged += ComboBox4_SelectedIndexChanged;
+            cmbSinceFRI.SelectedIndexChanged += ComboBox5_SelectedIndexChanged;
+            cmbSinceSAT.SelectedIndexChanged += ComboBox6_SelectedIndexChanged;
+            cmbSinceSUN.SelectedIndexChanged += ComboBox7_SelectedIndexChanged;
+
         }
-
-
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -37,54 +42,77 @@ namespace HorasSociales2
         private void btnNext_Click(object sender, EventArgs e)
         {
 
-            datosContenedor.lunes = cmbSinceMON.Text + " - " + cmbUntilMON.Text;
-            datosContenedor.martes = cmbSinceTUE.Text + " - " + cmbUntilTUE.Text;
-            datosContenedor.miercoles = cmbSinceWED.Text + " - " + cmbUntilWED.Text;
-            datosContenedor.jueves = cmbSinceTHU.Text + " - " + cmbUntilTHU.Text;
-            datosContenedor.viernes = cmbSinceFRI.Text + " - " + cmbUntilFRI.Text;
-            datosContenedor.sabado = cmbSinceSAT.Text + " - " + cmbUntilSAT.Text;
-            datosContenedor.domingo = cmbSinceSUN.Text + " - " + cmbUntilSUN.Text;
-
             if (string.IsNullOrWhiteSpace(cmbSinceMON.Text) && string.IsNullOrWhiteSpace(cmbUntilMON.Text) && string.IsNullOrWhiteSpace(cmbSinceTUE.Text) && string.IsNullOrWhiteSpace(cmbUntilTUE.Text) && string.IsNullOrWhiteSpace(cmbSinceWED.Text) && string.IsNullOrWhiteSpace(cmbUntilWED.Text) && string.IsNullOrWhiteSpace(cmbSinceTHU.Text) && string.IsNullOrWhiteSpace(cmbUntilTHU.Text) && string.IsNullOrWhiteSpace(cmbSinceFRI.Text) && string.IsNullOrWhiteSpace(cmbUntilFRI.Text) && string.IsNullOrWhiteSpace(cmbSinceSAT.Text) && string.IsNullOrWhiteSpace(cmbUntilSAT.Text) && string.IsNullOrWhiteSpace(cmbSinceSUN.Text) && string.IsNullOrWhiteSpace(cmbUntilSUN.Text))
             {
                 MessageBox.Show("Por favor, Completar al menos 1 campo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                tbDatosRegistro registro = new tbDatosRegistro();
-
-                foreach (var propiedad in typeof(datosContenedor).GetProperties())
+                if (string.IsNullOrWhiteSpace(cmbUntilMON.Text) && string.IsNullOrWhiteSpace(cmbUntilTUE.Text) && string.IsNullOrWhiteSpace(cmbUntilWED.Text) && string.IsNullOrWhiteSpace(cmbUntilTHU.Text) && string.IsNullOrWhiteSpace(cmbUntilFRI.Text) && string.IsNullOrWhiteSpace(cmbUntilSAT.Text) && string.IsNullOrWhiteSpace(cmbUntilSUN.Text))
                 {
-                    var valor = propiedad.GetValue(null);
-
-                    // Aquí puedes agregar lógica adicional si es necesario,
-                    // por ejemplo, para manejar valores nulos o conversiones de tipo.
-
-                    typeof(tbDatosRegistro).GetProperty(propiedad.Name)?.SetValue(registro, valor);
+                    MessageBox.Show("Por favor, Ingresar el campo de la hora de finalizacion del trabajo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                context.Add(registro);
-
-
-                // Desactivar validación de restricciones de clave externa temporalmente (si es necesario)
-
-                // Guardar cambios en la base de datos
-                    
-                if (context.SaveChanges() == 1)    
+                else
                 {
-                    MessageBox.Show("Datos guardados correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                    datosContenedor.lunes = cmbSinceMON.Text + " - " + cmbUntilMON.Text;
+                    datosContenedor.martes = cmbSinceTUE.Text + " - " + cmbUntilTUE.Text;
+                    datosContenedor.miercoles = cmbSinceWED.Text + " - " + cmbUntilWED.Text;
+                    datosContenedor.jueves = cmbSinceTHU.Text + " - " + cmbUntilTHU.Text;
+                    datosContenedor.viernes = cmbSinceFRI.Text + " - " + cmbUntilFRI.Text;
+                    datosContenedor.sabado = cmbSinceSAT.Text + " - " + cmbUntilSAT.Text;
+                    datosContenedor.domingo = cmbSinceSUN.Text + " - " + cmbUntilSUN.Text;
+
+                    tbDatosRegistro registro = new tbDatosRegistro();
+
+                    foreach (var propiedad in typeof(datosContenedor).GetProperties())
+                    {
+                        var valor = propiedad.GetValue(null);
+
+                        typeof(tbDatosRegistro).GetProperty(propiedad.Name)?.SetValue(registro, valor);
+                    }
+                    context.Add(registro);
+
+
+                    if (context.SaveChanges() == 1)
+                    {
+                        MessageBox.Show("Datos guardados correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                   
-                else  
-                {
-                    MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);                    
-                }
-
-                // Reactivar validación de restricciones de clave externa (si se desactivó)
-
-
             }
-
-            Close();
+        }
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbUntilMON.Enabled = true;
+        }
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbUntilTUE.Enabled = true;
+        }
+        private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbUntilWED.Enabled = true;
+        }
+        private void ComboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbUntilTHU.Enabled = true;
+        }
+        private void ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbUntilFRI.Enabled = true;
+        }
+        private void ComboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbUntilSAT.Enabled = true;
+        }
+        private void ComboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbUntilSUN.Enabled = true;
         }
     }
 }

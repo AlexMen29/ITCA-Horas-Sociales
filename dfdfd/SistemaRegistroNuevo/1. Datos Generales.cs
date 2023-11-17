@@ -18,8 +18,6 @@ namespace HorasSociales2
     {
         ProyectoSocialContext context = new ProyectoSocialContext();
 
-        public KeyPressEventHandler ValidacionNumerica { get; private set; }
-
         public FrmDatosGenerales()
         {
             InitializeComponent();
@@ -27,25 +25,23 @@ namespace HorasSociales2
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
-            datosContenedor.nombre = txtName.Text;
-            datosContenedor.carnet = txtCarnet.Text;
-            datosContenedor.escuela = txtSchool.Text;
-            datosContenedor.año = int.Parse(txtYear.Text);
-            datosContenedor.carrera = txtCareer.Text;
-            datosContenedor.correo = txtEmail.Text;
-            datosContenedor.telefono = int.Parse(txtPhone.Text);
-            datosContenedor.telefonoEmergencia = int.Parse(txtEGPhone.Text);
-            datosContenedor.emergencia = txtEmergency.Text;
-            datosContenedor.coordinador = txtSSE.Text;
-
-
             if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtSchool.Text) || string.IsNullOrWhiteSpace(txtYear.Text) || string.IsNullOrWhiteSpace(txtCarnet.Text) || string.IsNullOrWhiteSpace(txtCareer.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmergency.Text) || string.IsNullOrEmpty(txtEGPhone.Text) || string.IsNullOrWhiteSpace(txtSSE.Text))
             {
                 MessageBox.Show("Por favor, Completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                datosContenedor.nombre = txtName.Text;
+                datosContenedor.carnet = txtCarnet.Text;
+                datosContenedor.escuela = txtSchool.Text;
+                datosContenedor.año = txtYear.Text;
+                datosContenedor.carrera = txtCareer.Text;
+                datosContenedor.correo = txtEmail.Text;
+                datosContenedor.telefono = int.Parse(txtPhone.Text);
+                datosContenedor.telefonoEmergencia = int.Parse(txtEGPhone.Text);
+                datosContenedor.emergencia = txtEmergency.Text;
+                datosContenedor.coordinador = txtSSE.Text;
+
                 FrmDatosInstitucion vistaMain = new FrmDatosInstitucion();
                 vistaMain.Show();
                 Hide();
@@ -57,6 +53,15 @@ namespace HorasSociales2
             compartir.ValidacionNumerica(sender, e);
         }
 
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender, e);
+        }
+
+        private void txtEGPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender, e);
+        }
     }
     public static class datosContenedor
     {
@@ -66,7 +71,7 @@ namespace HorasSociales2
 
         public static string escuela { get; set; } = null!;
 
-        public static int año { get; set; }
+        public static string año { get; set; } = null!;
 
         public static string carrera { get; set; } = null!;
 
