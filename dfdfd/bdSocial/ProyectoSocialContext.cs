@@ -25,7 +25,7 @@ public partial class ProyectoSocialContext : DbContext
         => optionsBuilder.UseSqlServer("Data Source= DESKTOP-JT52J6H\\SQLEXPRESS;Initial Catalog=proyectoSocial;Integrated Security=True; Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {''
+    {
         modelBuilder.Entity<DatosAlumno>(entity =>
         {
             entity.HasKey(e => e.Carnet).HasName("PK__DatosAlu__4CDEAA6FF685EF26");
