@@ -99,15 +99,40 @@ namespace ProyectoSocial.SistemaAdministrativo
 
             }
         }
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnBorrar_Click(object sender, EventArgs e)
         {
-            txtBuscar.Text = null;
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                MessageBox.Show("Por Favor, seleccione un carnet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Seguro que desea eliminar al estudiante", "ITCA FEPADE", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    var Eliminar = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == txtBuscar.Text);
+                    context.DatosAlumnos.Remove(Eliminar);
+                    if (context.SaveChanges() == 1)
+                    {
+                        MessageBox.Show("Estudiante eliminado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarDataGrid();
+                        txtBuscar.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error inesperado, no se ha podido eliminar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+
+                }
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //lista de alumnos de docente actual
-            var listaDeAlumnos = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).Select(o=>o.Carnet).ToList();
+            var listaDeAlumnos = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).Select(o => o.Carnet).ToList();
 
             for (int indice = 0; indice < listaDeAlumnos.Count; indice++)
             {
@@ -166,14 +191,14 @@ namespace ProyectoSocial.SistemaAdministrativo
                     }
                     else
                     {
-                        MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nno puede  imprimir la hoja social de {usuario.Nombres+" "+usuario.Apellidos}, actualmente tiene realizadas {usuario.HorasTotal} horas sociales siendo su tipo de estudio de {usuario.TipoEstudio}", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nno puede  imprimir la hoja social de {usuario.Nombres + " " + usuario.Apellidos}, actualmente tiene realizadas {usuario.HorasTotal} horas sociales siendo su tipo de estudio de {usuario.TipoEstudio}", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     encontrado = true;
                 }
 
-                if (encontrado==false && indice==listaDeAlumnos.Count-1)
+                if (encontrado == false && indice == listaDeAlumnos.Count - 1)
                 {
-                    MessageBox.Show("El carnet ingresado es invalido","ITCA FEAPDE",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("El carnet ingresado es invalido", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (encontrado == true)
                 {
@@ -184,7 +209,7 @@ namespace ProyectoSocial.SistemaAdministrativo
 
 
 
-            
+
         }
 
         private void gridEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -41,11 +41,12 @@
             label2 = new Label();
             label7 = new Label();
             btnBuscar = new Button();
-            btnLimpiar = new Button();
+            btnBorrar = new Button();
             txtBuscar = new TextBox();
             comboFiltra = new ComboBox();
             btnFiltrar = new Button();
             logoITCA = new PictureBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).BeginInit();
             PanelElementosBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBuscar).BeginInit();
@@ -139,7 +140,7 @@
             PanelElementosBusqueda.Controls.Add(label2);
             PanelElementosBusqueda.Controls.Add(label7);
             PanelElementosBusqueda.Controls.Add(btnBuscar);
-            PanelElementosBusqueda.Controls.Add(btnLimpiar);
+            PanelElementosBusqueda.Controls.Add(btnBorrar);
             PanelElementosBusqueda.Controls.Add(txtBuscar);
             PanelElementosBusqueda.Location = new Point(12, 54);
             PanelElementosBusqueda.Name = "PanelElementosBusqueda";
@@ -186,17 +187,17 @@
             btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
             // 
-            // btnLimpiar
+            // btnBorrar
             // 
-            btnLimpiar.BackColor = Color.FromArgb(176, 25, 29);
-            btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
-            btnLimpiar.Location = new Point(27, 161);
-            btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(144, 32);
-            btnLimpiar.TabIndex = 5;
-            btnLimpiar.Text = "Borrar";
-            btnLimpiar.UseVisualStyleBackColor = false;
-            btnLimpiar.Click += btnLimpiar_Click;
+            btnBorrar.BackColor = Color.FromArgb(176, 25, 29);
+            btnBorrar.ForeColor = SystemColors.ButtonHighlight;
+            btnBorrar.Location = new Point(27, 161);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(144, 32);
+            btnBorrar.TabIndex = 5;
+            btnBorrar.Text = "Borrar";
+            btnBorrar.UseVisualStyleBackColor = false;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // txtBuscar
             // 
@@ -214,7 +215,7 @@
             comboFiltra.DropDownStyle = ComboBoxStyle.DropDownList;
             comboFiltra.FormattingEnabled = true;
             comboFiltra.Items.AddRange(new object[] { "MinHoras", "MaxHoras" });
-            comboFiltra.Location = new Point(685, 54);
+            comboFiltra.Location = new Point(728, 112);
             comboFiltra.Name = "comboFiltra";
             comboFiltra.Size = new Size(101, 23);
             comboFiltra.TabIndex = 28;
@@ -224,7 +225,7 @@
             btnFiltrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnFiltrar.BackColor = Color.FromArgb(176, 25, 29);
             btnFiltrar.ForeColor = SystemColors.ButtonHighlight;
-            btnFiltrar.Location = new Point(687, 90);
+            btnFiltrar.Location = new Point(728, 136);
             btnFiltrar.Name = "btnFiltrar";
             btnFiltrar.Size = new Size(99, 40);
             btnFiltrar.TabIndex = 27;
@@ -244,11 +245,21 @@
             logoITCA.TabStop = false;
             logoITCA.Click += logoITCA_Click;
             // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(688, 64);
+            label3.Name = "label3";
+            label3.Size = new Size(189, 39);
+            label3.TabIndex = 30;
+            label3.Text = "Filtrar estudiantes de mayor numero de horas a menor y viseversa:";
+            // 
             // frmEstudiantes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(903, 522);
+            Controls.Add(label3);
             Controls.Add(logoITCA);
             Controls.Add(comboFiltra);
             Controls.Add(btnFiltrar);
@@ -279,12 +290,13 @@
         private Panel PanelElementosBusqueda;
         private Label label7;
         private Button btnBuscar;
-        private Button btnLimpiar;
+        private Button btnBorrar;
         private TextBox txtBuscar;
         private Label label2;
         private PictureBox pictureBuscar;
         private ComboBox comboFiltra;
         private Button btnFiltrar;
         private PictureBox logoITCA;
+        private Label label3;
     }
 }
