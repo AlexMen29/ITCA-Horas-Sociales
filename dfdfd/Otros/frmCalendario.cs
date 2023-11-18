@@ -69,12 +69,12 @@ namespace ProyectoSocial.Otros
         {
             DateTime fechaSeleccionada = monthCalendar1.SelectionStart.Date;
 
-            var evento = context.Eventos.FirstOrDefault(o => o.Fecha == fechaSeleccionada);
+            var evento = context.Eventos.FirstOrDefault(o => o.Fecha == fechaSeleccionada && o.Grupo == compartir.usuario.Grupo);
 
             if (evento != null)
             {
 
-                var idEventos = context.Eventos.Where(o => o.Fecha == fechaSeleccionada).Select(o=>o.Id).ToList();
+                var idEventos = context.Eventos.Where(o => o.Fecha == fechaSeleccionada && o.Grupo == compartir.usuario.Grupo).Select(o=>o.Id).ToList();
 
                 if (idEventos.Count > 0)
                 {
