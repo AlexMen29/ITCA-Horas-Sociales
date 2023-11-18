@@ -69,10 +69,7 @@ namespace ProyectoSocial.SistemaAdministrativo
 
             gridEstudiantes.Columns[1].Visible = false;
             gridEstudiantes.Columns[2].Visible = false;
-
             gridEstudiantes.Columns[5].Visible = false;
-
-
             LabEstudiantes.Text = consulta.Count.ToString();
 
 
@@ -101,31 +98,63 @@ namespace ProyectoSocial.SistemaAdministrativo
         }
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            if (string.IsNullOrWhiteSpace(txtEliminar.Text))
             {
-                MessageBox.Show("Por Favor, seleccione un carnet", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por Favor, ingrese un carnet", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (MessageBox.Show("Seguro que desea eliminar al estudiante", "ITCA FEPADE", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                var listaDeAlumnos = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).Select(o => o.Carnet).ToList();
+
+                for (int indice = 0; indice < listaDeAlumnos.Count; indice++)
                 {
-                    var Eliminar = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == txtBuscar.Text);
-                    context.DatosAlumnos.Remove(Eliminar);
-                    if (context.SaveChanges() == 1)
+                    bool encontrado = false;
+                    //si se encuentra el carntet ingresado
+                    if (txtEliminar.Text == listaDeAlumnos[indice])
                     {
-                        MessageBox.Show("Estudiante eliminado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CargarDataGrid();
-                        txtBuscar.Clear();
+                        var Eliminar = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == txtEliminar.Text);
+
+                        if (MessageBox.Show($"¿Seguro que desea eliminar al estudiante {Eliminar.Nombres + " " + Eliminar.Apellidos + " con el carnet " + Eliminar.Carnet}? Esta acción no se puede revertir", "ITCA FEPADE", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                        {
+
+                            // Eliminar registros en la tabla horasSociales relacionados con el Carnet
+                            var registrosHorasSociales = context.horasSociales.Where(o => o.Carnet == txtEliminar.Text).ToList();
+                            context.horasSociales.RemoveRange(registrosHorasSociales);
+                            //elimina registros de la tabla de tbregistros
+                            var tbRegistro = context.tbDatosRegistro.FirstOrDefault(o => o.carnet == txtEliminar.Text);
+                            context.tbDatosRegistro.Remove(tbRegistro);
+
+
+                            context.DatosAlumnos.Remove(Eliminar);
+
+                            if (context.SaveChanges() == 1)
+                            {
+                                MessageBox.Show("Estudiante eliminado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CargarDataGrid();
+                                txtBuscar.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error inesperado, no se ha podido eliminar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                       encontrado = true;
+
                     }
-                    else
+                    if (encontrado == false && indice == listaDeAlumnos.Count - 1)
                     {
-                        MessageBox.Show("Error inesperado, no se ha podido eliminar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("El carnet ingresado es invalido", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                }
-                else
-                {
+                    if (encontrado == true)
+                    {
+                        break;
+                    }
 
                 }
+
+
+                       
+            
             }
         }
 
@@ -239,6 +268,11 @@ namespace ProyectoSocial.SistemaAdministrativo
         }
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            compartir.ValidacionNumerica(sender, e);
+        }
+
+        private void txtEliminar_KeyPress(object sender, KeyPressEventArgs e)
         {
             compartir.ValidacionNumerica(sender, e);
         }

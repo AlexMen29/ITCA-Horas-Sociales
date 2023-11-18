@@ -37,6 +37,10 @@
             LabEstudiantes = new Label();
             label1 = new Label();
             PanelElementosBusqueda = new Panel();
+            label4 = new Label();
+            pictureBox1 = new PictureBox();
+            txtEliminar = new TextBox();
+            btnLimpiar = new Button();
             pictureBuscar = new PictureBox();
             label2 = new Label();
             label7 = new Label();
@@ -49,6 +53,7 @@
             label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).BeginInit();
             PanelElementosBusqueda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBuscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)logoITCA).BeginInit();
             SuspendLayout();
@@ -103,7 +108,7 @@
             gridEstudiantes.Name = "gridEstudiantes";
             gridEstudiantes.ReadOnly = true;
             gridEstudiantes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridEstudiantes.Size = new Size(451, 319);
+            gridEstudiantes.Size = new Size(451, 390);
             gridEstudiantes.TabIndex = 3;
             gridEstudiantes.CellClick += gridEstudiantes_CellClick;
             gridEstudiantes.CellFormatting += gridEstudiantes_CellFormatting;
@@ -114,7 +119,7 @@
             LabEstudiantes.BackColor = Color.FromArgb(205, 144, 19);
             LabEstudiantes.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             LabEstudiantes.ForeColor = SystemColors.Control;
-            LabEstudiantes.Location = new Point(454, 376);
+            LabEstudiantes.Location = new Point(454, 447);
             LabEstudiantes.Name = "LabEstudiantes";
             LabEstudiantes.Size = new Size(19, 30);
             LabEstudiantes.TabIndex = 9;
@@ -126,7 +131,7 @@
             label1.BackColor = Color.FromArgb(176, 25, 29);
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(227, 376);
+            label1.Location = new Point(227, 447);
             label1.Name = "label1";
             label1.Size = new Size(221, 30);
             label1.TabIndex = 8;
@@ -136,6 +141,10 @@
             // 
             PanelElementosBusqueda.BackColor = Color.Transparent;
             PanelElementosBusqueda.BackgroundImageLayout = ImageLayout.Stretch;
+            PanelElementosBusqueda.Controls.Add(label4);
+            PanelElementosBusqueda.Controls.Add(pictureBox1);
+            PanelElementosBusqueda.Controls.Add(txtEliminar);
+            PanelElementosBusqueda.Controls.Add(btnLimpiar);
             PanelElementosBusqueda.Controls.Add(pictureBuscar);
             PanelElementosBusqueda.Controls.Add(label2);
             PanelElementosBusqueda.Controls.Add(label7);
@@ -144,8 +153,48 @@
             PanelElementosBusqueda.Controls.Add(txtBuscar);
             PanelElementosBusqueda.Location = new Point(12, 54);
             PanelElementosBusqueda.Name = "PanelElementosBusqueda";
-            PanelElementosBusqueda.Size = new Size(208, 265);
+            PanelElementosBusqueda.Size = new Size(208, 390);
             PanelElementosBusqueda.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(3, 273);
+            label4.Name = "label4";
+            label4.Size = new Size(189, 25);
+            label4.TabIndex = 33;
+            label4.Text = "Eliminacion de Estudiantes";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(27, 301);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(33, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 32;
+            pictureBox1.TabStop = false;
+            // 
+            // txtEliminar
+            // 
+            txtEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEliminar.Location = new Point(66, 306);
+            txtEliminar.Multiline = true;
+            txtEliminar.Name = "txtEliminar";
+            txtEliminar.Size = new Size(105, 27);
+            txtEliminar.TabIndex = 31;
+            txtEliminar.KeyPress += txtEliminar_KeyPress;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.FromArgb(176, 25, 29);
+            btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
+            btnLimpiar.Location = new Point(81, 161);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(90, 34);
+            btnLimpiar.TabIndex = 30;
+            btnLimpiar.Text = "limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // pictureBuscar
             // 
@@ -178,6 +227,7 @@
             // btnBuscar
             // 
             btnBuscar.BackColor = Color.FromArgb(176, 25, 29);
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
             btnBuscar.Location = new Point(27, 193);
             btnBuscar.Name = "btnBuscar";
@@ -190,12 +240,13 @@
             // btnBorrar
             // 
             btnBorrar.BackColor = Color.FromArgb(176, 25, 29);
+            btnBorrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBorrar.ForeColor = SystemColors.ButtonHighlight;
-            btnBorrar.Location = new Point(27, 161);
+            btnBorrar.Location = new Point(27, 339);
             btnBorrar.Name = "btnBorrar";
             btnBorrar.Size = new Size(144, 32);
             btnBorrar.TabIndex = 5;
-            btnBorrar.Text = "Borrar";
+            btnBorrar.Text = "Eliminar Estudiante";
             btnBorrar.UseVisualStyleBackColor = false;
             btnBorrar.Click += btnBorrar_Click;
             // 
@@ -276,6 +327,7 @@
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).EndInit();
             PanelElementosBusqueda.ResumeLayout(false);
             PanelElementosBusqueda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBuscar).EndInit();
             ((System.ComponentModel.ISupportInitialize)logoITCA).EndInit();
             ResumeLayout(false);
@@ -299,5 +351,9 @@
         private Button btnFiltrar;
         private PictureBox logoITCA;
         private Label label3;
+        private Label label4;
+        private PictureBox pictureBox1;
+        private TextBox txtEliminar;
+        private Button btnLimpiar;
     }
 }

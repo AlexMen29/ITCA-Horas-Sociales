@@ -79,7 +79,7 @@ namespace Login
         {
             pictCargando.Visible = true;
 
-            // Esperar 2 segundos (2000 milisegundos)
+            // Esperar 1 segundos (1000 milisegundos)
             await Task.Delay(1000);
 
             pictCargando.Visible = false;
@@ -88,13 +88,11 @@ namespace Login
             var contraseña = txtPassword.Text;
 
             var usuario = context.DatosAlumnos.FirstOrDefault(u => u.Carnet == carnet && u.Contraseña == contraseña);
-
             if (usuario != null)
             {
                 //Abrimos nuestro formulario principal
                 FrmSisAd frmMenu = new FrmSisAd();
-                //Mandamos informacion de usuario a nuestro metodo ubicado en el fomulario FrmSisad 
-                frmMenu.usuarioActual = usuario;
+                //damos el valor a nuestro metodo
                 compartir.usuario = usuario;
                 compartir.carnetIngresado = txtCarnet.Text;
                 compartir.Nivelusuario = usuario.NivelUsuario;
@@ -120,6 +118,6 @@ namespace Login
             compartir.ValidacionNumerica(sender, e);
         }
 
-    
+
     }
 }

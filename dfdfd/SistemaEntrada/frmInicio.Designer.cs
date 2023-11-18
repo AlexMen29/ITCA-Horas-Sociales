@@ -279,7 +279,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label6);
             panel1.ImeMode = ImeMode.Disable;
-            panel1.Location = new Point(22, 197);
+            panel1.Location = new Point(21, 197);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(773, 255);

@@ -126,8 +126,8 @@ namespace HorasSociales2
                 pnlLeft.Visible = false;
                 var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o => o.carnet == carnetB);
 
-                cmbSinceMON.DataSource = new List<string> { datosUsuario.lunes.Substring(0, 6) };
-                cmbUntilMON.Text = datosUsuario.lunes.Substring(5, 9);
+                //cmbSinceMON.DataSource = new List<string> { datosUsuario.lunes.Substring(0, 6) };
+                //cmbUntilMON.Text = datosUsuario.lunes.Substring(5, 9);
 
                 //txtObjetivos1.Text = datosUsuario.objetivos1;
                 //txtGoals1.Text = datosUsuario.metas1;

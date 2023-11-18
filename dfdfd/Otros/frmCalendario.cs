@@ -30,13 +30,13 @@ namespace ProyectoSocial.Otros
             CargarDataGrid();
             fechasEventos();
             gridEventos.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
-
         }
         public void CargarDataGrid()
         {
             gridEventos.DataSource = context.Eventos.Where(o => o.Grupo == compartir.usuario.Grupo).ToList();
         }
+
+        //hace negritas las fechas del calendario si hay evento
         private void fechasEventos()
         {
             var fechasEventos = context.Eventos.Where(o => o.Grupo == compartir.usuario.Grupo).Select(o => o.Fecha);
@@ -48,12 +48,13 @@ namespace ProyectoSocial.Otros
             monthCalendar1.UpdateBoldedDates();
         }
 
+
         private void gridEventos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 txtDescripcionME.Text = gridEventos.SelectedCells[2].Value.ToString();
-                dateTimePicker1.Value = (DateTime)gridEventos.SelectedCells[1].Value;
+                dateTimeME.Value = (DateTime)gridEventos.SelectedCells[1].Value;
                 int idEvento = Convert.ToInt32(gridEventos.SelectedCells[0].Value);
                 EventosITCA.itEvento = idEvento;
                 txtDescripcionME.Focus();
@@ -74,7 +75,7 @@ namespace ProyectoSocial.Otros
             if (evento != null)
             {
 
-                var idEventos = context.Eventos.Where(o => o.Fecha == fechaSeleccionada && o.Grupo == compartir.usuario.Grupo).Select(o=>o.Id).ToList();
+                var idEventos = context.Eventos.Where(o => o.Fecha == fechaSeleccionada && o.Grupo == compartir.usuario.Grupo).Select(o => o.Id).ToList();
 
                 if (idEventos.Count > 0)
                 {
@@ -97,7 +98,7 @@ namespace ProyectoSocial.Otros
         {
             Eventos eventos = new Eventos();
             eventos.Mensaje = txtMensaje.Text;
-            eventos.Fecha = dateTimePicker1.Value;
+            eventos.Fecha = dateTimeGuardar.Value;
             eventos.Grupo = compartir.usuario.Grupo;
 
 
@@ -127,9 +128,8 @@ namespace ProyectoSocial.Otros
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Eventos eventos = new Eventos();
-            eventos.Mensaje = txtDescripcionME.Text;
             {
-                if (string.IsNullOrWhiteSpace(eventos.Mensaje))
+                if (string.IsNullOrWhiteSpace(txtDescripcionME.Text))
                 {
                     MessageBox.Show("Por Favor, ingrese un mensaje", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -139,6 +139,7 @@ namespace ProyectoSocial.Otros
                     {
                         var Modificar = context.Eventos.FirstOrDefault(m => m.Id == EventosITCA.itEvento);
                         Modificar.Mensaje = txtDescripcionME.Text;
+                        Modificar.Fecha = dateTimeME.Value;
                         context.Eventos.Update(Modificar);
                         if (context.SaveChanges() == 1)
                         {
@@ -197,16 +198,6 @@ namespace ProyectoSocial.Otros
                 }
 
             }
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void gridEventos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
     public static class EventosITCA

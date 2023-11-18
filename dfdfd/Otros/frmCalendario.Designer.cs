@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalendario));
             splitContainer1 = new SplitContainer();
             gridEventos = new DataGridView();
@@ -41,6 +41,7 @@
             label4 = new Label();
             label12 = new Label();
             panelModificarEliminar = new Panel();
+            dateTimeME = new DateTimePicker();
             label9 = new Label();
             txtDescripcionME = new TextBox();
             pictureBox2 = new PictureBox();
@@ -49,7 +50,7 @@
             label7 = new Label();
             pictureBox1 = new PictureBox();
             label10 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dateTimeGuardar = new DateTimePicker();
             btnGuardar = new Button();
             label3 = new Label();
             txtMensaje = new TextBox();
@@ -87,13 +88,12 @@
             splitContainer1.Panel2.Controls.Add(panelModificarEliminar);
             splitContainer1.Panel2.Controls.Add(pictureBox1);
             splitContainer1.Panel2.Controls.Add(label10);
-            splitContainer1.Panel2.Controls.Add(dateTimePicker1);
+            splitContainer1.Panel2.Controls.Add(dateTimeGuardar);
             splitContainer1.Panel2.Controls.Add(btnGuardar);
             splitContainer1.Panel2.Controls.Add(label3);
             splitContainer1.Panel2.Controls.Add(txtMensaje);
             splitContainer1.Panel2.Controls.Add(label1);
             splitContainer1.Panel2.Controls.Add(label2);
-            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(903, 653);
             splitContainer1.SplitterDistance = 474;
             splitContainer1.TabIndex = 24;
@@ -102,33 +102,33 @@
             // 
             gridEventos.AllowUserToAddRows = false;
             gridEventos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            gridEventos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            gridEventos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             gridEventos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gridEventos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridEventos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             gridEventos.BackgroundColor = Color.White;
             gridEventos.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             gridEventos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(176, 25, 29);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            gridEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(176, 25, 29);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridEventos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(204, 147, 20);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            gridEventos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(204, 147, 20);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gridEventos.DefaultCellStyle = dataGridViewCellStyle3;
             gridEventos.EditMode = DataGridViewEditMode.EditProgrammatically;
             gridEventos.EnableHeadersVisualStyles = false;
             gridEventos.GridColor = Color.Firebrick;
@@ -138,19 +138,18 @@
             gridEventos.Name = "gridEventos";
             gridEventos.ReadOnly = true;
             gridEventos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridEventos.Size = new Size(468, 148);
+            gridEventos.Size = new Size(468, 229);
             gridEventos.TabIndex = 17;
             gridEventos.CellClick += gridEventos_CellClick_1;
-            gridEventos.CellContentClick += gridEventos_CellContentClick;
             // 
             // label11
             // 
             label11.Anchor = AnchorStyles.Top;
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label11.Location = new Point(72, 336);
             label11.Name = "label11";
-            label11.Size = new Size(373, 17);
+            label11.Size = new Size(391, 17);
             label11.TabIndex = 38;
             label11.Text = "Si desea Modificar o Eliminar, por favor seleccione un registro";
             // 
@@ -221,6 +220,7 @@
             // panelModificarEliminar
             // 
             panelModificarEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelModificarEliminar.Controls.Add(dateTimeME);
             panelModificarEliminar.Controls.Add(label9);
             panelModificarEliminar.Controls.Add(txtDescripcionME);
             panelModificarEliminar.Controls.Add(pictureBox2);
@@ -233,12 +233,22 @@
             panelModificarEliminar.TabIndex = 39;
             panelModificarEliminar.Visible = false;
             // 
+            // dateTimeME
+            // 
+            dateTimeME.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dateTimeME.CalendarFont = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimeME.Location = new Point(8, 164);
+            dateTimeME.Name = "dateTimeME";
+            dateTimeME.Size = new Size(264, 23);
+            dateTimeME.TabIndex = 41;
+            dateTimeME.Value = new DateTime(2023, 11, 14, 0, 0, 0, 0);
+            // 
             // label9
             // 
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(8, 56);
+            label9.Location = new Point(8, 30);
             label9.Name = "label9";
             label9.Size = new Size(165, 21);
             label9.TabIndex = 32;
@@ -247,7 +257,7 @@
             // txtDescripcionME
             // 
             txtDescripcionME.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtDescripcionME.Location = new Point(8, 88);
+            txtDescripcionME.Location = new Point(8, 54);
             txtDescripcionME.Multiline = true;
             txtDescripcionME.Name = "txtDescripcionME";
             txtDescripcionME.Size = new Size(264, 104);
@@ -257,7 +267,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(288, 88);
+            pictureBox2.Location = new Point(287, 90);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(105, 104);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -297,7 +307,7 @@
             label7.BackColor = Color.FromArgb(176, 25, 29);
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = SystemColors.ButtonHighlight;
-            label7.Location = new Point(8, 16);
+            label7.Location = new Point(8, 5);
             label7.Name = "label7";
             label7.Size = new Size(238, 25);
             label7.TabIndex = 33;
@@ -327,15 +337,15 @@
             label10.TabIndex = 29;
             label10.Text = ".........................................................";
             // 
-            // dateTimePicker1
+            // dateTimeGuardar
             // 
-            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CalendarFont = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(4, 226);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(284, 23);
-            dateTimePicker1.TabIndex = 30;
-            dateTimePicker1.Value = new DateTime(2023, 11, 14, 0, 0, 0, 0);
+            dateTimeGuardar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dateTimeGuardar.CalendarFont = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimeGuardar.Location = new Point(4, 226);
+            dateTimeGuardar.Name = "dateTimeGuardar";
+            dateTimeGuardar.Size = new Size(284, 23);
+            dateTimeGuardar.TabIndex = 30;
+            dateTimeGuardar.Value = new DateTime(2023, 11, 14, 0, 0, 0, 0);
             // 
             // btnGuardar
             // 
@@ -433,7 +443,7 @@
         private Label label7;
         private TextBox txtDescripcionME;
         private Label label9;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimeGuardar;
         private Button btnGuardar;
         private Label label3;
         private TextBox txtMensaje;
@@ -444,5 +454,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Label label12;
+        private DateTimePicker dateTimeME;
     }
 }

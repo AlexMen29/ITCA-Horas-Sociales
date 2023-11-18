@@ -73,16 +73,19 @@ namespace SistemaAdministrativo
         {
             compartir.ValidacionNumerica(sender, e);
         }
+        private void ImpresionDatos_Load_1(object sender, EventArgs e)
+        {
+            splitContainer1.IsSplitterFixed = true;
 
-        //private void ImpresionDatos_Load(object sender, EventArgs e)
-        //{
-        //    if (compartir.usuario.NivelUsuario == 1)
-        //    {
-        //        PanelOcultar.Visible = false;
-        //        FrmDatosGenerales form = new FrmDatosGenerales(2, txtBuscar.Text);
-        //        compartir.abrirform(form, splitContainer1);
-        //    }
-        //}
+
+            if (compartir.usuario.NivelUsuario == 1)
+            {
+                PanelOcultar.Visible = false;
+                PicturiEspera.Visible = false;
+                FrmDatosGenerales form = new FrmDatosGenerales(2, txtBuscar.Text);
+                compartir.abrirform(form, splitContainer1);
+            }
+        }
     }
 
 

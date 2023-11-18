@@ -29,6 +29,16 @@ namespace HorasSociales2
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            if (formulario == 2)
+            {
+                Hide();
+
+                FrmDatosGenerales frm=new FrmDatosGenerales(2,carnetB);
+                frm.Show();
+
+
+            }
+
             /*
             FrmDatosGenerales vistaMain = new FrmDatosGenerales();
             vistaMain.Show();

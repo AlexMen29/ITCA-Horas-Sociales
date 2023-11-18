@@ -20,7 +20,6 @@ namespace SistemaAdministrativo
     {
         ProyectoSocialContext context = new ProyectoSocialContext();
         //Metodo para obtener informacion de las credenciales ingresadas en el menu de login
-        public DatosAlumno usuarioActual { get; set; }
         public FrmSisAd()
         {
             InitializeComponent();
@@ -61,7 +60,7 @@ namespace SistemaAdministrativo
         private void FrmSisAd_Load(object sender, EventArgs e)
         {
 
-            LabNombre.Text = usuarioActual.Nombres + " " + usuarioActual.Apellidos;
+            LabNombre.Text = compartir.usuario.Nombres + " " + compartir.usuario.Apellidos;
 
             if (compartir.Nivelusuario == 1)
             {
@@ -80,15 +79,7 @@ namespace SistemaAdministrativo
 
 
         }
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            DialogResult Respuesta = MessageBox.Show("¿Desea salir del Sistema?", "Horas Sociales", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (Respuesta == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
+       
         public void eventosEnterLeave(Button btn, Color ColorFondo, Color ColorLetra)
         {
             btn.BackColor = ColorFondo;

@@ -155,7 +155,7 @@ namespace SistemaAdministrativo
 
             }
         }
-        
+
 
         private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {
@@ -169,7 +169,7 @@ namespace SistemaAdministrativo
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var listaAlumnos = context.DatosAlumnos.Select(o => o.Carnet).ToList();
+            var listaAlumnos = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo).Select(o => o.Carnet).ToList();
 
             bool encontrado = false;
             for (int indice = 0; indice < listaAlumnos.Count; indice++)
@@ -189,8 +189,8 @@ namespace SistemaAdministrativo
 
 
                     var usuarioF = context.horasSociales.Where(u => u.Carnet == txtBuscar.Text).Select(u => u.Fecha).ToList();
-                    LabActivoDesde.Text = usuarioF[0].ToString();
-                    LabUltimoServicio.Text = usuarioF[usuarioF.Count - 1].ToString();
+                    LabActivoDesde.Text = (usuarioF[0].ToString()).Substring(0, 10);
+                    LabUltimoServicio.Text = (usuarioF[usuarioF.Count - 1].ToString().Substring(0, 10));
                     if (usuario.TipoEstudio == "Técnico")
                     {
                         int horasRestantes = 300 - int.Parse(LabTotalHoras.Text);
@@ -323,7 +323,7 @@ namespace SistemaAdministrativo
 
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            compartir.ValidacionNumerica(sender,e);
+            compartir.ValidacionNumerica(sender, e);
         }
     }
 }

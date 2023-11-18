@@ -402,7 +402,7 @@
             // 
             label13.BackColor = Color.Transparent;
             label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(52, 477);
+            label13.Location = new Point(69, 536);
             label13.Name = "label13";
             label13.Size = new Size(57, 23);
             label13.TabIndex = 31;
@@ -411,7 +411,7 @@
             // btnEstado
             // 
             btnEstado.BackColor = Color.Yellow;
-            btnEstado.Location = new Point(110, 472);
+            btnEstado.Location = new Point(127, 531);
             btnEstado.Name = "btnEstado";
             btnEstado.Size = new Size(100, 26);
             btnEstado.TabIndex = 30;
@@ -435,7 +435,7 @@
             label3.BackColor = Color.FromArgb(176, 25, 29);
             label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(472, 445);
+            label3.Location = new Point(489, 504);
             label3.Name = "label3";
             label3.Size = new Size(134, 18);
             label3.TabIndex = 25;
@@ -447,7 +447,7 @@
             LabHorasRestantes.BackColor = Color.FromArgb(205, 144, 19);
             LabHorasRestantes.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             LabHorasRestantes.ForeColor = SystemColors.Control;
-            LabHorasRestantes.Location = new Point(612, 442);
+            LabHorasRestantes.Location = new Point(629, 501);
             LabHorasRestantes.Name = "LabHorasRestantes";
             LabHorasRestantes.Size = new Size(0, 18);
             LabHorasRestantes.TabIndex = 23;
@@ -458,7 +458,7 @@
             LabTotalHoras.BackColor = Color.FromArgb(205, 144, 19);
             LabTotalHoras.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             LabTotalHoras.ForeColor = SystemColors.Control;
-            LabTotalHoras.Location = new Point(409, 433);
+            LabTotalHoras.Location = new Point(426, 492);
             LabTotalHoras.Name = "LabTotalHoras";
             LabTotalHoras.Size = new Size(19, 30);
             LabTotalHoras.TabIndex = 24;
@@ -470,7 +470,7 @@
             label1.BackColor = Color.FromArgb(176, 25, 29);
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(52, 433);
+            label1.Location = new Point(69, 492);
             label1.Name = "label1";
             label1.Size = new Size(351, 30);
             label1.TabIndex = 23;
@@ -526,7 +526,7 @@
             gridDatosAlumnos.Name = "gridDatosAlumnos";
             gridDatosAlumnos.ReadOnly = true;
             gridDatosAlumnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridDatosAlumnos.Size = new Size(520, 245);
+            gridDatosAlumnos.Size = new Size(520, 386);
             gridDatosAlumnos.TabIndex = 1;
             gridDatosAlumnos.CellClick += gridDatosAlumnos_CellClick;
             // 
