@@ -103,7 +103,7 @@ namespace ProyectoSocial.SistemaAdministrativo
         {
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
-                MessageBox.Show("Por Favor, seleccione un carnet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por Favor, seleccione un carnet", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

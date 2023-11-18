@@ -52,12 +52,6 @@ namespace SistemaAdministrativo
             AbrirForm(us);
 
         }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            frmEliminarModificar us = new frmEliminarModificar();
-            AbrirForm(us);
-
-        }
         private void btnHojaSocial_Click(object sender, EventArgs e)
         {
             ImpresionDatos us = new ImpresionDatos();
@@ -119,14 +113,6 @@ namespace SistemaAdministrativo
         private void btnDetalles_MouseLeave(object sender, EventArgs e)
         {
             eventosEnterLeave(btnDetalles, ColorTranslator.FromHtml("#b1201f"), Color.White);
-        }
-        private void btnEliModi_MouseEnter(object sender, EventArgs e)
-        {
-            eventosEnterLeave(btnEliModi, ColorTranslator.FromHtml("#cd9013"), Color.White);
-        }
-        private void btnEliModi_MouseLeave(object sender, EventArgs e)
-        {
-            eventosEnterLeave(btnEliModi, ColorTranslator.FromHtml("#b1201f"), Color.White);
         }
         private void btnEnviarMensaje_MouseEnter(object sender, EventArgs e)
         {
