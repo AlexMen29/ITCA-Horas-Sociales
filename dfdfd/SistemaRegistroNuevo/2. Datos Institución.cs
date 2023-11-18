@@ -23,6 +23,7 @@ namespace HorasSociales2
         {
             formulario = a;
             carnetB = carnet;
+
             InitializeComponent();
         }
 
@@ -37,25 +38,32 @@ namespace HorasSociales2
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtActivity.Text) || string.IsNullOrWhiteSpace(txtResponsable.Text) || string.IsNullOrWhiteSpace(txtTime.Text) || string.IsNullOrWhiteSpace(txtResPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text))
+            if (formulario == 1)
             {
-                MessageBox.Show("Por favor, Completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtActivity.Text) || string.IsNullOrWhiteSpace(txtResponsable.Text) || string.IsNullOrWhiteSpace(txtTime.Text) || string.IsNullOrWhiteSpace(txtResPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text))
+                {
+                    MessageBox.Show("Por favor, Completar todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+
+                    datosContenedor.institucion = txtName.Text;
+                    datosContenedor.telefonoInstitucion = int.Parse(txtPhone.Text);
+                    datosContenedor.actividades = txtActivity.Text;
+                    datosContenedor.responsable = txtResponsable.Text;
+                    datosContenedor.correoResponsable = txtEmail.Text;
+                    datosContenedor.telefonoResponsable = int.Parse(txtResPhone.Text);
+                    datosContenedor.tiempo = int.Parse(txtTime.Text);
+                    datosContenedor.fecha = DateTime.Parse(dateDate.Text);
+
+                    FrmObjetivosMetas vistaObj = new FrmObjetivosMetas(1, "N/A");
+                    vistaObj.Show();
+                    Hide();
+                }
             }
             else
             {
-
-                datosContenedor.institucion = txtName.Text;
-                datosContenedor.telefonoInstitucion = int.Parse(txtPhone.Text);
-                datosContenedor.actividades = txtActivity.Text;
-                datosContenedor.responsable = txtResponsable.Text;
-                datosContenedor.correoResponsable = txtEmail.Text;
-                datosContenedor.telefonoResponsable = int.Parse(txtResPhone.Text);
-                datosContenedor.tiempo = int.Parse(txtTime.Text);
-                datosContenedor.fecha = DateTime.Parse(dateDate.Text);
-
-                FrmObjetivosMetas vistaObj = new FrmObjetivosMetas();
-                vistaObj.Show();
-                Hide();
+                Close();
             }
         }
 
@@ -72,6 +80,34 @@ namespace HorasSociales2
         private void txtTime_KeyPress(object sender, KeyPressEventArgs e)
         {
             compartir.ValidacionNumerica(sender, e);
+        }
+
+        private void FrmDatosInstitucion_Load(object sender, EventArgs e)
+        {
+            if (formulario == 2)
+            {
+                pnlLeft.Visible = false;
+                var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o => o.carnet == carnetB);
+
+                txtName.Text = datosUsuario.nombre;
+                txtPhone.Text = datosUsuario.telefono.ToString();
+                txtActivity.Text = datosUsuario.actividades;
+                txtResponsable.Text = datosUsuario.responsable;
+                txtEmail.Text = datosUsuario.correoResponsable;
+                txtResPhone.Text = datosUsuario.telefonoResponsable.ToString();
+                txtTime.Text = datosUsuario.tiempo.ToString();
+                dateDate.Text = datosUsuario.fecha.ToString();
+
+                txtName.Enabled = false;
+                txtPhone.Enabled = false;
+                txtActivity.Enabled = false;
+                txtResponsable.Enabled = false;
+                txtEmail.Enabled = false;
+                txtResPhone.Enabled = false;
+                txtTime.Enabled = false;
+                dateDate.Enabled = false;
+
+            }
         }
     }
 }

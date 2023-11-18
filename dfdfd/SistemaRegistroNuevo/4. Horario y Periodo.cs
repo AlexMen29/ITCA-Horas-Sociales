@@ -18,8 +18,12 @@ namespace HorasSociales2
 
         ProyectoSocialContext context = new ProyectoSocialContext();
 
-        public FrmHorarioPeriodo()
+        private int formulario;
+        private string carnetB;
+        public FrmHorarioPeriodo(int a, string carnet)
         {
+            formulario = a;
+            carnetB = carnet;
             InitializeComponent();
 
             cmbSinceMON.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
@@ -34,9 +38,9 @@ namespace HorasSociales2
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            FrmObjetivosMetas vistaMain = new FrmObjetivosMetas();
-            vistaMain.Show();
-            Hide();
+            //FrmObjetivosMetas vistaMain = new FrmObjetivosMetas();
+            //vistaMain.Show();
+            //Hide();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -113,6 +117,36 @@ namespace HorasSociales2
         private void ComboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbUntilSUN.Enabled = true;
+        }
+
+        private void FrmHorarioPeriodo_Load(object sender, EventArgs e)
+        {
+            if (formulario == 2)
+            {
+                pnlLeft.Visible = false;
+                var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o => o.carnet == carnetB);
+
+                cmbSinceMON.DataSource = new List<string> { datosUsuario.lunes.Substring(0, 6) };
+                cmbUntilMON.Text = datosUsuario.lunes.Substring(5, 9);
+
+                //txtObjetivos1.Text = datosUsuario.objetivos1;
+                //txtGoals1.Text = datosUsuario.metas1;
+                //txtDuracion1.Text = datosUsuario.duracion1;
+                //txtAct2.Text = datosUsuario.actividad2;
+                //txtObjetivos2.Text = datosUsuario.objetivos2;
+                //txtGoals2.Text = datosUsuario.metas2;
+                //txtDuracion2.Text = datosUsuario.duracion2;
+
+                //txtAct1.Enabled = false;
+                //txtObjetivos1.Enabled = false;
+                //txtGoals1.Enabled = false;
+                //txtDuracion1.Enabled = false;
+                //txtAct2.Enabled = false;
+                //txtObjetivos2.Enabled = false;
+                //txtGoals2.Enabled = false;
+                //txtDuracion2.Enabled = false;
+
+            }
         }
     }
 }

@@ -592,6 +592,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmHorarioPeriodo";
             Text = "Horas Sociales";
+            Load += FrmHorarioPeriodo_Load;
             pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             pnlTitle.ResumeLayout(false);

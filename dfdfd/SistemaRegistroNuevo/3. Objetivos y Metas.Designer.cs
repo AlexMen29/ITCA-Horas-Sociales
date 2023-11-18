@@ -443,6 +443,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmObjetivosMetas";
             Text = "Horas Sociales";
+            Load += FrmObjetivosMetas_Load;
             pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             pnlTitle.ResumeLayout(false);

@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.IdentityModel.Tokens;
 
 namespace HorasSociales2
 {
@@ -59,10 +60,7 @@ namespace HorasSociales2
             }
             else
             {
-                FrmDatosInstitucion vistaMain = new FrmDatosInstitucion(2, carnetB);
-                vistaMain.Show();
-                Hide();
-
+                Close();
             }
 
         }
@@ -84,29 +82,36 @@ namespace HorasSociales2
 
         private void FrmDatosGenerales_Load(object sender, EventArgs e)
         {
-            if (formulario == 1)
-            {
-                MessageBox.Show("entraste desde el registro");
-            }
-            else
+            if (formulario == 2)
             {
                 pnlLeft.Visible = false;
                 var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o => o.carnet == carnetB);
+
                 txtName.Text = datosUsuario.nombre;
                 txtCarnet.Text = datosUsuario.carnet;
-            }
+                txtYear.Text = datosUsuario.año;
+                txtSchool.Text = datosUsuario.escuela;
+                txtCareer.Text = datosUsuario.carrera;
+                txtEmail.Text = datosUsuario.correo;
+                txtPhone.Text = datosUsuario.telefono.ToString();
+                txtEmergency.Text = datosUsuario.emergencia;
+                txtEGPhone.Text = datosUsuario.telefonoEmergencia.ToString();
+                txtSSE.Text = datosUsuario.coordinador;
 
 
-
-            foreach (var control in Controls.OfType<System.Windows.Forms.TextBox>())
-            {
-                control.Enabled = false;
+                txtName.Enabled = false;
+                txtCarnet.Enabled = false;
+                txtYear.Enabled = false;
+                txtSchool.Enabled = false;
+                txtCareer.Enabled = false;
+                txtEmail.Enabled = false;
+                txtPhone.Enabled = false;
+                txtEmergency.Enabled = false;
+                txtEGPhone.Enabled = false;
+                txtSSE.Enabled = false;
             }
         }
-
-
-
-
+        
     }
     public static class datosContenedor
     {
