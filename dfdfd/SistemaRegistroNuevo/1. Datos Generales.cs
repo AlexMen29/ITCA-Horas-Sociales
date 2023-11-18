@@ -21,10 +21,10 @@ namespace HorasSociales2
         ProyectoSocialContext context = new ProyectoSocialContext();
         private int formulario;
         private string carnetB;
-        public FrmDatosGenerales(int a,string carnet)
+        public FrmDatosGenerales(int a, string carnet)
         {
             formulario = a;
-            carnetB = carnet; 
+            carnetB = carnet;
 
             InitializeComponent();
         }
@@ -52,7 +52,7 @@ namespace HorasSociales2
                     datosContenedor.emergencia = txtEmergency.Text;
                     datosContenedor.coordinador = txtSSE.Text;
 
-                    FrmDatosInstitucion vistaMain = new FrmDatosInstitucion(1,"N/A");
+                    FrmDatosInstitucion vistaMain = new FrmDatosInstitucion(1, "N/A");
                     vistaMain.Show();
                     Hide();
                 }
@@ -90,9 +90,10 @@ namespace HorasSociales2
             }
             else
             {
-                var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o=>o.carnet==carnetB);
+                pnlLeft.Visible = false;
+                var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o => o.carnet == carnetB);
                 txtName.Text = datosUsuario.nombre;
-                txtCarnet.Text= datosUsuario.carnet;
+                txtCarnet.Text = datosUsuario.carnet;
             }
 
 
@@ -105,7 +106,7 @@ namespace HorasSociales2
 
 
 
-    
+
     }
     public static class datosContenedor
     {

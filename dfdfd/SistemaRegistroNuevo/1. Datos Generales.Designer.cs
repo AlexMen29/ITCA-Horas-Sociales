@@ -84,8 +84,9 @@
             // 
             // picLogo
             // 
+            picLogo.Anchor = AnchorStyles.None;
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
-            picLogo.Location = new Point(12, 12);
+            picLogo.Location = new Point(354, 12);
             picLogo.Margin = new Padding(4, 3, 4, 3);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(385, 81);
