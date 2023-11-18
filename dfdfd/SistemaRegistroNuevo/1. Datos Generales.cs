@@ -60,7 +60,7 @@ namespace HorasSociales2
             }
             else
             {
-                Hide();
+                Close();
             }
 
         }
@@ -84,69 +84,32 @@ namespace HorasSociales2
         {
             if (formulario == 2)
             {
-                if (compartir.Nivelusuario == 2)
-                {
+                pnlLeft.Visible = false;
+                var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o => o.carnet == carnetB);
 
-                    pnlLeft.Visible = false;
-                    var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o => o.carnet == carnetB);
-
-                    txtName.Text = datosUsuario.nombre;
-                    txtCarnet.Text = datosUsuario.carnet;
-                    txtYear.Text = datosUsuario.año;
-                    txtSchool.Text = datosUsuario.escuela;
-                    txtCareer.Text = datosUsuario.carrera;
-                    txtEmail.Text = datosUsuario.correo;
-                    txtPhone.Text = datosUsuario.telefono.ToString();
-                    txtEmergency.Text = datosUsuario.emergencia;
-                    txtEGPhone.Text = datosUsuario.telefonoEmergencia.ToString();
-                    txtSSE.Text = datosUsuario.coordinador;
+                txtName.Text = datosUsuario.nombre;
+                txtCarnet.Text = datosUsuario.carnet;
+                txtYear.Text = datosUsuario.año;
+                txtSchool.Text = datosUsuario.escuela;
+                txtCareer.Text = datosUsuario.carrera;
+                txtEmail.Text = datosUsuario.correo;
+                txtPhone.Text = datosUsuario.telefono.ToString();
+                txtEmergency.Text = datosUsuario.emergencia;
+                txtEGPhone.Text = datosUsuario.telefonoEmergencia.ToString();
+                txtSSE.Text = datosUsuario.coordinador;
 
 
-                    txtName.Enabled = false;
-                    txtCarnet.Enabled = false;
-                    txtYear.Enabled = false;
-                    txtSchool.Enabled = false;
-                    txtCareer.Enabled = false;
-                    txtEmail.Enabled = false;
-                    txtPhone.Enabled = false;
-                    txtEmergency.Enabled = false;
-                    txtEGPhone.Enabled = false;
-                    txtSSE.Enabled = false;
-
-                }
-                else
-                {
-                    var datosUsuario = context.tbDatosRegistro.FirstOrDefault(o => o.carnet == compartir.carnetIngresado);
-
-                    pnlLeft.Visible = false;
-                    txtName.Text = datosUsuario.nombre;
-                    txtCarnet.Text = datosUsuario.carnet;
-                    txtYear.Text = datosUsuario.año;
-                    txtSchool.Text = datosUsuario.escuela;
-                    txtCareer.Text = datosUsuario.carrera;
-                    txtEmail.Text = datosUsuario.correo;
-                    txtPhone.Text = datosUsuario.telefono.ToString();
-                    txtEmergency.Text = datosUsuario.emergencia;
-                    txtEGPhone.Text = datosUsuario.telefonoEmergencia.ToString();
-                    txtSSE.Text = datosUsuario.coordinador;
-
-
-                    txtName.Enabled = false;
-                    txtCarnet.Enabled = false;
-                    txtYear.Enabled = false;
-                    txtSchool.Enabled = false;
-                    txtCareer.Enabled = false;
-                    txtEmail.Enabled = false;
-                    txtPhone.Enabled = false;
-                    txtEmergency.Enabled = false;
-                    txtEGPhone.Enabled = false;
-                    txtSSE.Enabled = false;
-
-
-                }
-
+                txtName.Enabled = false;
+                txtCarnet.Enabled = false;
+                txtYear.Enabled = false;
+                txtSchool.Enabled = false;
+                txtCareer.Enabled = false;
+                txtEmail.Enabled = false;
+                txtPhone.Enabled = false;
+                txtEmergency.Enabled = false;
+                txtEGPhone.Enabled = false;
+                txtSSE.Enabled = false;
             }
-            
         }
         
     }
