@@ -49,8 +49,8 @@
             txtBuscar = new TextBox();
             comboFiltra = new ComboBox();
             btnFiltrar = new Button();
-            logoITCA = new PictureBox();
             label3 = new Label();
+            logoITCA = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)gridEstudiantes).BeginInit();
             PanelElementosBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -285,18 +285,6 @@
             btnFiltrar.UseVisualStyleBackColor = false;
             btnFiltrar.Click += btnFiltrar_Click;
             // 
-            // logoITCA
-            // 
-            logoITCA.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            logoITCA.Image = (Image)resources.GetObject("logoITCA.Image");
-            logoITCA.Location = new Point(754, 460);
-            logoITCA.Name = "logoITCA";
-            logoITCA.Size = new Size(137, 50);
-            logoITCA.SizeMode = PictureBoxSizeMode.StretchImage;
-            logoITCA.TabIndex = 29;
-            logoITCA.TabStop = false;
-            logoITCA.Click += logoITCA_Click;
-            // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -306,6 +294,18 @@
             label3.Size = new Size(189, 39);
             label3.TabIndex = 30;
             label3.Text = "Filtrar estudiantes de mayor numero de horas a menor y viseversa:";
+            // 
+            // logoITCA
+            // 
+            logoITCA.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            logoITCA.Image = (Image)resources.GetObject("logoITCA.Image");
+            logoITCA.Location = new Point(754, 460);
+            logoITCA.Name = "logoITCA";
+            logoITCA.Size = new Size(137, 50);
+            logoITCA.SizeMode = PictureBoxSizeMode.StretchImage;
+            logoITCA.TabIndex = 29;
+            logoITCA.TabStop = false;
+            logoITCA.Click += logoITCA_Click;
             // 
             // frmEstudiantes
             // 
@@ -350,11 +350,11 @@
         private PictureBox pictureBuscar;
         private ComboBox comboFiltra;
         private Button btnFiltrar;
-        private PictureBox logoITCA;
         private Label label3;
         private Label label4;
         private PictureBox pictureBox1;
         private TextBox txtEliminar;
         private Button btnLimpiar;
+        private PictureBox logoITCA;
     }
 }

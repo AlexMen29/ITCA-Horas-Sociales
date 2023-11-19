@@ -42,7 +42,7 @@ namespace SistemaAdministrativo
                 }
                 if (encontrado == false && indice == alumnos.Count() - 1)
                 {
-                    MessageBox.Show("Estudiante no Encontrado");
+                    MessageBox.Show("El estudiante ingresado no fue encontrado ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 if (encontrado == true)

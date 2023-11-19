@@ -114,11 +114,13 @@ namespace HorasSociales2
             }
             else
             {
+                
                 txtName.Text = compartir.usuario.Nombres + " " + compartir.usuario.Apellidos;
                 txtCarnet.Text = compartir.usuario.Carnet;
                 txtEmail.Text = compartir.usuario.Correo;
 
                 txtCarnet.Enabled = false;
+                
             }
         }
 

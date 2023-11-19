@@ -310,10 +310,10 @@
             // 
             // label11
             // 
-            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label11.Location = new Point(4, 89);
             label11.Name = "label11";
-            label11.Size = new Size(226, 42);
+            label11.Size = new Size(225, 42);
             label11.TabIndex = 28;
             label11.Text = "¿Filtro? puede filtrar segun la fecha en que se ingreso la actividad";
             // 

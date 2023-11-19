@@ -116,7 +116,7 @@ namespace ProyectoSocial.SistemaAdministrativo
                             {
                                 MessageBox.Show("Estudiante eliminado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CargarDataGrid();
-                                txtEliminar.Text=null;
+                                txtEliminar.Text = null;
                                 CargarDataGrid();
                             }
                             else
