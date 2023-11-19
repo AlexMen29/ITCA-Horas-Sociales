@@ -116,6 +116,10 @@ namespace HorasSociales2
                 dateDate.Enabled = false;
 
             }
+            else
+            {
+                btnBack.Visible = false;
+            }
         }
     }
 }

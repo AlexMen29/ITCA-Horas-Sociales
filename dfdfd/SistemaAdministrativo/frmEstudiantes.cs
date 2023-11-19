@@ -127,7 +127,7 @@ namespace ProyectoSocial.SistemaAdministrativo
 
                             context.DatosAlumnos.Remove(Eliminar);
 
-                            if (context.SaveChanges() == 1)
+                            if (context.SaveChanges() == 3)
                             {
                                 MessageBox.Show("Estudiante eliminado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CargarDataGrid();
@@ -135,7 +135,7 @@ namespace ProyectoSocial.SistemaAdministrativo
                             }
                             else
                             {
-                                MessageBox.Show("Error inesperado, no se ha podido eliminar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Error inesperado, no se ha podido eliminar correctamente", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                        encontrado = true;

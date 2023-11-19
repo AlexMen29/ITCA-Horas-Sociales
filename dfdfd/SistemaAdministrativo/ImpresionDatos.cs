@@ -71,9 +71,8 @@ namespace SistemaAdministrativo
             if (compartir.usuario.NivelUsuario == 1)
             {
                 PanelOcultar.Visible = false;
-                PicturiEspera.Visible = false;
-                FrmDatosGenerales form = new FrmDatosGenerales(2, txtBuscar.Text);
-                compartir.abrirform(form, splitContainer1);
+                FrmDatosGenerales form = new FrmDatosGenerales(2,compartir.carnetIngresado);
+                form.Show();
             }
         }
     }

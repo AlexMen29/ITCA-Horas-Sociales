@@ -172,6 +172,10 @@ namespace HorasSociales2
                 cmbSinceSUN.Enabled = false;
                 cmbUntilSUN.Enabled = false;
             }
+            else
+            {
+                btnBack.Visible = false;
+            }
         }
     }
 }
