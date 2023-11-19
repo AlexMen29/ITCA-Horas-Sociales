@@ -32,7 +32,7 @@
             splitter1 = new Splitter();
             splitContainer1 = new SplitContainer();
             pictureBox1 = new PictureBox();
-            btnBuscar = new Button();
+            btnGuardar = new Button();
             boxHoras = new ComboBox();
             label4 = new Label();
             txtActividad = new TextBox();
@@ -67,7 +67,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(btnBuscar);
+            splitContainer1.Panel2.Controls.Add(btnGuardar);
             splitContainer1.Panel2.Controls.Add(boxHoras);
             splitContainer1.Panel2.Controls.Add(label4);
             splitContainer1.Panel2.Controls.Add(txtActividad);
@@ -90,19 +90,19 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // btnBuscar
+            // btnGuardar
             // 
-            btnBuscar.Anchor = AnchorStyles.None;
-            btnBuscar.BackColor = Color.FromArgb(176, 25, 29);
-            btnBuscar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBuscar.ForeColor = SystemColors.ButtonHighlight;
-            btnBuscar.Location = new Point(287, 467);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(143, 47);
-            btnBuscar.TabIndex = 28;
-            btnBuscar.Text = "Guardar";
-            btnBuscar.UseVisualStyleBackColor = false;
-            btnBuscar.Click += btnBuscar_Click_1;
+            btnGuardar.Anchor = AnchorStyles.None;
+            btnGuardar.BackColor = Color.FromArgb(176, 25, 29);
+            btnGuardar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardar.ForeColor = SystemColors.ButtonHighlight;
+            btnGuardar.Location = new Point(287, 467);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(143, 47);
+            btnGuardar.TabIndex = 28;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnBuscar_Click_1;
             // 
             // boxHoras
             // 
@@ -223,7 +223,7 @@
         private Splitter splitter1;
         private SplitContainer splitContainer1;
         private PictureBox pictureBox1;
-        private Button btnBuscar;
+        private Button btnGuardar;
         private ComboBox boxHoras;
         private Label label4;
         private TextBox txtActividad;

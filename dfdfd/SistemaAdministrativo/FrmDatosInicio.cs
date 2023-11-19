@@ -17,7 +17,7 @@ using System.Windows.Forms;
 
 namespace SistemaAdministrativo
 {
-    
+
     public partial class FrmDatosInicio : Form
     {
         ProyectoSocialContext context = new ProyectoSocialContext();
@@ -31,12 +31,12 @@ namespace SistemaAdministrativo
 
         private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {
-            eventosEnterLeave(btnBuscar, ColorTranslator.FromHtml("#cd9013"), Color.White);
+            eventosEnterLeave(btnGuardar, ColorTranslator.FromHtml("#cd9013"), Color.White);
         }
 
         private void btnBuscar_MouseLeave(object sender, EventArgs e)
         {
-            eventosEnterLeave(btnBuscar, ColorTranslator.FromHtml("#b1201f"), Color.White);
+            eventosEnterLeave(btnGuardar, ColorTranslator.FromHtml("#b1201f"), Color.White);
         }
         public void eventosEnterLeave(Button btn, Color ColorFondo, Color ColorLetra)
         {
@@ -92,11 +92,17 @@ namespace SistemaAdministrativo
 
                         //Consulta para identificar usuario y modificar datos
                         var modifcacionEstado = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == compartir.carnetIngresado);
-                        if (horasRestantes <= 0)
+                        if (horasRestantes < 1)
                         {
                             modifcacionEstado.Estado = "Terminado";
                         }
+                        else
+                        {
+                            modifcacionEstado.Estado = "En Proceso";
+                        }
                         modifcacionEstado.HorasTotal = totalHoras;
+                        context.DatosAlumnos.Update(modifcacionEstado);
+
                         context.SaveChanges();
 
 
@@ -107,7 +113,7 @@ namespace SistemaAdministrativo
                         MessageBox.Show("Error Inesperado", "ITCA FEPADE SS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                   
+
                 }
             }
         }

@@ -46,21 +46,6 @@ namespace ProyectoSocial.SistemaAdministrativo
 
         }
 
-        public void crearPDF()
-        {
-
-
-        }
-
-        public Cell getCell(String text, TextAlignment alignment)
-        {
-            Cell cell = new Cell().Add(new Paragraph(text));
-
-            cell.SetTextAlignment(alignment);
-            // cell.SetBorder(iText.Layout.Borders.Border.NO_BORDER);
-            // cell.SetWidth();
-            return cell;
-        }
 
         public void CargarDataGrid()
         {
@@ -127,18 +112,19 @@ namespace ProyectoSocial.SistemaAdministrativo
 
                             context.DatosAlumnos.Remove(Eliminar);
 
-                            if (context.SaveChanges() == 3)
+                            if (context.SaveChanges() > 0)
                             {
                                 MessageBox.Show("Estudiante eliminado", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CargarDataGrid();
-                                txtBuscar.Clear();
+                                txtEliminar.Text=null;
+                                CargarDataGrid();
                             }
                             else
                             {
                                 MessageBox.Show("Error inesperado, no se ha podido eliminar correctamente", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                       encontrado = true;
+                        encontrado = true;
 
                     }
                     if (encontrado == false && indice == listaDeAlumnos.Count - 1)
@@ -153,8 +139,8 @@ namespace ProyectoSocial.SistemaAdministrativo
                 }
 
 
-                       
-            
+
+
             }
         }
 
@@ -275,6 +261,11 @@ namespace ProyectoSocial.SistemaAdministrativo
         private void txtEliminar_KeyPress(object sender, KeyPressEventArgs e)
         {
             compartir.ValidacionNumerica(sender, e);
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = null;
         }
     }
 }

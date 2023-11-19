@@ -195,6 +195,7 @@
             btnLimpiar.TabIndex = 30;
             btnLimpiar.Text = "limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // pictureBuscar
             // 
