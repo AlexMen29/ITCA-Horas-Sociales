@@ -141,20 +141,13 @@ namespace HorasSociales2
 
                 if (datosUsuario != null)
                 {
-                    cmbSinceMON.DataSource = new List<string> { datosUsuario.lunes?.Substring(0, 8) };
-                    cmbUntilMON.DataSource = new List<string> { datosUsuario.lunes?.Substring(11, 8) };
-                    cmbSinceTUE.DataSource = new List<string> { datosUsuario.martes?.Substring(0, 8) };
-                    cmbUntilTUE.DataSource = new List<string> { datosUsuario.martes?.Substring(11, 8) };
-                    cmbSinceWED.DataSource = new List<string> { datosUsuario.miercoles?.Substring(0, 8) };
-                    cmbUntilWED.DataSource = new List<string> { datosUsuario.miercoles?.Substring(11, 8) };
-                    cmbSinceTHU.DataSource = new List<string> { datosUsuario.jueves?.Substring(0, 8) };
-                    cmbUntilTHU.DataSource = new List<string> { datosUsuario.jueves?.Substring(11, 8) };
-                    cmbSinceFRI.DataSource = new List<string> { datosUsuario.viernes?.Substring(0, 8) };
-                    cmbUntilFRI.DataSource = new List<string> { datosUsuario.viernes?.Substring(11, 8) };
-                    cmbSinceSAT.DataSource = new List<string> { datosUsuario.sabado?.Substring(0, 8) };
-                    cmbUntilSAT.DataSource = new List<string> { datosUsuario.sabado?.Substring(11, 8) };
-                    cmbSinceSUN.DataSource = new List<string> { datosUsuario.domingo?.Substring(0, 8) };
-                    cmbUntilSUN.DataSource = new List<string> { datosUsuario.domingo?.Substring(11, 8) };
+                    AgregarHorario(datosUsuario.lunes, cmbSinceMON, cmbUntilMON);
+                    AgregarHorario(datosUsuario.martes, cmbSinceTUE, cmbUntilTUE);
+                    AgregarHorario(datosUsuario.miercoles, cmbSinceWED, cmbUntilWED);
+                    AgregarHorario(datosUsuario.jueves, cmbSinceTHU, cmbUntilTHU);
+                    AgregarHorario(datosUsuario.viernes, cmbSinceFRI, cmbUntilFRI);
+                    AgregarHorario(datosUsuario.sabado, cmbSinceSAT, cmbUntilSAT);
+                    AgregarHorario(datosUsuario.domingo, cmbSinceSUN, cmbUntilSUN);
                 }
 
                 cmbSinceMON.Enabled = false;
@@ -176,6 +169,15 @@ namespace HorasSociales2
             {
                 btnBack.Visible = false;
             }
+        }
+        private void AgregarHorario(string dia, ComboBox cmbSince, ComboBox cmbUntil)
+        {
+            if (!string.IsNullOrEmpty(dia) && dia != " - ")
+            {
+                cmbSince.DataSource = new List<string> { dia.Substring(0, 8) };
+                cmbUntil.DataSource = new List<string> { dia.Substring(11, 8) };
+            }
+
         }
     }
 }

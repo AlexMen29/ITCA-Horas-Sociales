@@ -40,12 +40,12 @@ namespace SistemaAdministrativo
 
                     encontrado = true;
                 }
-                else if (encontrado == false && indice == alumnos.Count() - 1)
+                if (encontrado == false && indice == alumnos.Count() - 1)
                 {
-                    MessageBox.Show("pasmado");
+                    MessageBox.Show("Estudiante no Encontrado");
                 }
 
-                else if (encontrado == true)
+                if (encontrado == true)
                 {
                     break;
                 }
