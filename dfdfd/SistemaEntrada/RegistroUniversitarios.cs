@@ -91,15 +91,15 @@ namespace Login
             {
                 datos.Grupo = docente.Grupo;
 
-                MessageBox.Show("Registro guardado", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 context.Add(datos);
                 if (context.SaveChanges() == 1)
                 {
-                    /*
-                    FrmDatosGenerales frm = new FrmDatosGenerales();
+                    MessageBox.Show("Registro guardado", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var Usuario = context.DatosAlumnos.FirstOrDefault(o => o.Carnet == txtCarnet.Text);
+                    compartir.usuario=Usuario;
+                    FrmDatosGenerales frm = new FrmDatosGenerales(1, "N/A");
                     frm.Show();
                     Hide();
-                    */
                     Close();
                 }
 
@@ -108,12 +108,7 @@ namespace Login
                     MessageBox.Show("Error inesperado, no se ha podido registrar", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-
             }
-
-
-
-
         }
 
         private void txtCarnet_KeyPress(object sender, KeyPressEventArgs e)

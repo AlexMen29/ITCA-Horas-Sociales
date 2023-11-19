@@ -230,6 +230,7 @@
             Controls.Add(label1);
             Name = "frmModificacionUsuario";
             ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ITCA FEPADE";
             Load += frmModificacionUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)PicMostrar).EndInit();

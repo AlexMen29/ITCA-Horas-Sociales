@@ -36,17 +36,7 @@ namespace SistemaAdministrativo
 
 
                     FrmDatosGenerales form = new FrmDatosGenerales(2, txtBuscar.Text);
-                    compartir.abrirform(form, splitContainer1);
-
-
-                    FrmDatosInstitucion form1 = new FrmDatosInstitucion(2, txtBuscar.Text);
-                    compartir.abrirform(form1, splitContainer1);
-
-                    FrmObjetivosMetas form2 = new FrmObjetivosMetas(2, txtBuscar.Text);
-                    compartir.abrirform(form2, splitContainer1);
-
-                    FrmHorarioPeriodo form3 = new FrmHorarioPeriodo(2, txtBuscar.Text);
-                    compartir.abrirform(form3, splitContainer1);
+                    form.Show();
 
                     encontrado = true;
                 }

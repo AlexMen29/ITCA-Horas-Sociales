@@ -442,6 +442,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmObjetivosMetas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Horas Sociales";
             Load += FrmObjetivosMetas_Load;
             pnlTop.ResumeLayout(false);

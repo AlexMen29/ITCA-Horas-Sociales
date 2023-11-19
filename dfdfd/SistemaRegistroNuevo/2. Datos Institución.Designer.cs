@@ -167,6 +167,7 @@
             // 
             // dateDate
             // 
+            dateDate.Anchor = AnchorStyles.Top;
             dateDate.CalendarFont = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             dateDate.Format = DateTimePickerFormat.Short;
             dateDate.Location = new Point(688, 561);
@@ -459,6 +460,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmDatosInstitucion";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Horas Sociales";
             Load += FrmDatosInstitucion_Load;
             pnlTop.ResumeLayout(false);

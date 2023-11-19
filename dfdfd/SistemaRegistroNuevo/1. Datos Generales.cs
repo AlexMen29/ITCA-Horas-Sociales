@@ -42,8 +42,8 @@ namespace HorasSociales2
                 }
                 else
                 {
-                    datosContenedor.nombre = txtName.Text;
-                    datosContenedor.carnet = txtCarnet.Text;
+                    datosContenedor.nombre = compartir.usuario.Nombres + " " + compartir.usuario.Apellidos;
+                    datosContenedor.carnet = compartir.usuario.Carnet;
                     datosContenedor.escuela = txtSchool.Text;
                     datosContenedor.año = txtYear.Text;
                     datosContenedor.carrera = txtCareer.Text;
@@ -60,7 +60,9 @@ namespace HorasSociales2
             }
             else
             {
-                Close();
+                FrmDatosInstitucion form = new FrmDatosInstitucion(2, carnetB);
+                form.Show();
+                Hide();
             }
 
         }
@@ -110,8 +112,16 @@ namespace HorasSociales2
                 txtEGPhone.Enabled = false;
                 txtSSE.Enabled = false;
             }
+            else
+            {
+                txtName.Text = compartir.usuario.Nombres + " " + compartir.usuario.Apellidos;
+                txtCarnet.Text = compartir.usuario.Carnet;
+                txtEmail.Text = compartir.usuario.Correo;
+
+                txtCarnet.Enabled = false;
+            }
         }
-        
+
     }
     public static class datosContenedor
     {

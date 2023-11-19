@@ -501,6 +501,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             Name = "FrmDatosGenerales";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Horas Sociales";
             Load += FrmDatosGenerales_Load;
             pnlTop.ResumeLayout(false);

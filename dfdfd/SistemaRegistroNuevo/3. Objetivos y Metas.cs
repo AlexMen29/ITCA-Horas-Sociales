@@ -36,6 +36,13 @@ namespace HorasSociales2
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            if (formulario == 2)
+            {
+                FrmDatosInstitucion frm = new FrmDatosInstitucion(2, carnetB);
+                frm.Show();
+                Hide();
+            }
+
             /*
             FrmDatosInstitucion vistaMain = new FrmDatosInstitucion();
             vistaMain.Show();
@@ -63,14 +70,16 @@ namespace HorasSociales2
                     datosContenedor.metas2 = txtGoals2.Text;
                     datosContenedor.duracion2 = txtDuracion2.Text;
 
-                    FrmHorarioPeriodo vistaObj = new FrmHorarioPeriodo(2, "N/A");
+                    FrmHorarioPeriodo vistaObj = new FrmHorarioPeriodo(1, "N/A");
                     vistaObj.Show();
                     Hide();
                 }
             }
             else
             {
-                Close();
+                FrmHorarioPeriodo form = new FrmHorarioPeriodo(2, carnetB);
+                form.Show();
+                Hide();
             }
         }
         private void TextBox1_TextChanged(object sender, EventArgs e)
