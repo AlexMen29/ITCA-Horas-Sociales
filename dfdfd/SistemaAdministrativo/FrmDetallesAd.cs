@@ -25,7 +25,7 @@ namespace SistemaAdministrativo
 
         }
 
-        private void CargarDatosEnDataGridViem(int nivel, string carnet, string filtro)
+        private void CargarDatosEnDataGridViem(int nivel, string carnet)
         {
             if (nivel == 1)
             {
@@ -58,8 +58,7 @@ namespace SistemaAdministrativo
 
         private void FrmDetallesAd_Load(object sender, EventArgs e)
         {
-            gridDatosAlumnos.DataSource = context.DatosAlumnos.ToList();
-            CargarDatosEnDataGridViem(compartir.Nivelusuario, compartir.carnetIngresado, "indefinido");
+            CargarDatosEnDataGridViem(compartir.Nivelusuario, compartir.carnetIngresado);
 
             if (compartir.Nivelusuario == 1)
             {
@@ -123,7 +122,7 @@ namespace SistemaAdministrativo
             btnEstado.BackColor = Color.Yellow;
             comboFiltra.SelectedIndex = 2;
 
-            CargarDatosEnDataGridViem(2, compartir.carnetIngresado, "indefinido");
+            CargarDatosEnDataGridViem(2, compartir.carnetIngresado);
 
         }
 
@@ -178,7 +177,7 @@ namespace SistemaAdministrativo
 
                 if (txtBuscar.Text == listaAlumnos[indice])
                 {
-                    CargarDatosEnDataGridViem(1, txtBuscar.Text, comboFiltra.Text);
+                    CargarDatosEnDataGridViem(1, txtBuscar.Text);
                     totalHoras();
 
                     var usuario = context.DatosAlumnos.FirstOrDefault(u => u.Carnet == txtBuscar.Text);

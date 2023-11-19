@@ -21,15 +21,5 @@ namespace ProyectoSocial
                 e.Handled = true; // Indica que la tecla fue manejada y no se procesará más
             }
         }
-        public static void abrirform(Form form, SplitContainer splitContainer1)
-        {
-            form.TopLevel = false;
-            form.Dock = DockStyle.Fill;
-            splitContainer1.Panel2.Controls.Add(form);
-            splitContainer1.Tag = form;
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Show();
-        }
-
     }
 }
