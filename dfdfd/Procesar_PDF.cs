@@ -75,6 +75,7 @@ namespace ProyectoSocial
 
                 if (datos_Estudiantes.logo_itca != null)
                 {
+                    //docPDF.PageSize.Heigth representa la alineación a la izquierda de los datos.
                     fotoPDF = iTextSharp.text.Image.GetInstance(datos_Estudiantes.logo_itca, iTextSharp.text.BaseColor.WHITE);
                     fotoPDF.SetAbsolutePosition(x, docPDF.PageSize.Height - y);
                     fotoPDF.ScaleAbsolute(70, 70);
@@ -84,6 +85,8 @@ namespace ProyectoSocial
 
                 x += 50;
                 //Los encabezados
+                //Aquí me permiten tomar el tamaño y la fuente de la letra.
+                // Dode PageSize.Width me permite manipular el maquetado del reporte, se divide entre 2 para darle un salto de línea a los titulos
                 dc.SetFontAndSize(FontFactory.GetFont(FontFactory.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD).BaseFont, 12);
                 dc.ShowTextAligned(PdfContentByte.ALIGN_CENTER, datos_Estudiantes.titulo, docPDF.PageSize.Width / 2, docPDF.PageSize.Height - y, 0);
                 y += espacioVertical;
@@ -152,6 +155,8 @@ namespace ProyectoSocial
                 dc.ShowTextAligned(PdfContentByte.ALIGN_CENTER, datos_Estudiantes.s, docPDF.PageSize.Width / 2, docPDF.PageSize.Height - y, 0);
                 y += espacioVertical;
 
+
+                //Si se sobrepasa los datos entonces que se me cree un nuevo documento
                 if (y > limite)
                 {
                     docPDF.NewPage();
@@ -161,6 +166,7 @@ namespace ProyectoSocial
                 }
 
                 //Otra página:
+                
                 dc.SetFontAndSize(FontFactory.GetFont(FontFactory.TIMES_ROMAN, 11, iTextSharp.text.Font.NORMAL).BaseFont, 11);
                 dc.ShowTextAligned(PdfContentByte.ALIGN_LEFT, datos_Estudiantes.f, docPDF.PageSize.Width / 23, docPDF.PageSize.Height - x, 0);
                 y += espacioVertical;
@@ -184,6 +190,11 @@ namespace ProyectoSocial
                 dc.SetColorFill(iTextSharp.text.BaseColor.BLACK);
                 dc.SetFontAndSize(FontFactory.GetFont(FontFactory.TIMES, 11, iTextSharp.text.Font.NORMAL).BaseFont, 11);
                 y += 15;
+
+                //Uso el bucle for para iterar el ancho de la página que es "i"
+                //Donde "-" dará alineación a la izquierda del documento
+                //docPDF.PageSize.Heigth representa la alineación a la izquierda de los datos.
+                //Donde los "-" son iguales al ancho del documento.
                 for (int i = 0; i < docPDF.PageSize.Width; i++)
                 {
                     dc.ShowTextAligned(PdfContentByte.ALIGN_LEFT, "-", i, docPDF.PageSize.Height - y, 0);
