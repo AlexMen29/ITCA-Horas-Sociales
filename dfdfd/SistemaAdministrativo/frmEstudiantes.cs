@@ -25,20 +25,24 @@ namespace ProyectoSocial.SistemaAdministrativo
     public partial class frmEstudiantes : Form
     {
         //Crearé la ruta para guardar el reporte:
-        //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosPDF\";
+        
         ProyectoSocialContext context = new ProyectoSocialContext();
 
         public frmEstudiantes()
         {
-            InitializeComponent();
+            InitializeComponent(); //formulario y se encarga de inicializar y configurar todos los componentes visuales y no visuales que agregados al formulario.
             gridEstudiantes.CellFormatting += gridEstudiantes_CellFormatting;
+            //El evento CellFormatting se dispara cuando se formatea una celda en un control DataGridView. 
+            //Útil para personalizar la apariencia o el contenido de una celda antes de que se muestre en la pantalla.
         }
 
         private void frmEstudiantes_Load(object sender, EventArgs e)
         {
             CargarDataGrid();
+            //Se hace  una consulta segúne el contexto de la base de datos tomando como argumento el grupo y el nivel de usuario que es 1 que 
+            //representa a los "Estudiante".
             var consulta = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).Count();
-            if (consulta < 1)
+            if (consulta < 1) //Si no hay datos, entonces se muestra un mensaje de aviso que no tiene estudiantes registrados en su GRUPO.
             {
                 MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nActualmente, no tienes estudiantes asignados a tu grupo, por lo que las funcionalidades del sistema se encuentran inactivas." +
                     $" Para aprovechar al máximo las características del sistema, asigna estudiantes a tu grupo: {compartir.usuario.Grupo} ", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -52,11 +56,11 @@ namespace ProyectoSocial.SistemaAdministrativo
             var consulta = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.Encargado != "null").ToList();
             gridEstudiantes.DataSource = consulta;
 
-            gridEstudiantes.Columns[1].Visible = false;
-            gridEstudiantes.Columns[2].Visible = false;
-            gridEstudiantes.Columns[5].Visible = false;
+            gridEstudiantes.Columns[1].Visible = false; //Columna de la Contraseña
+            gridEstudiantes.Columns[2].Visible = false; //Columna del Nivel de usuario
+            gridEstudiantes.Columns[5].Visible = false; //Columna del Encargado
             LabEstudiantes.Text = consulta.Count.ToString();
-
+            //Carga el grid con los datos que cumplen con estos requisitos.
 
 
         }
@@ -127,7 +131,7 @@ namespace ProyectoSocial.SistemaAdministrativo
                         encontrado = true;
 
                     }
-                    if (encontrado == false && indice == listaDeAlumnos.Count - 1)
+                    if (encontrado == false && indice == listaDeAlumnos.Count - 1) //Si el carnet no existe en la base de datos
                     {
                         MessageBox.Show("El carnet ingresado es invalido", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -171,7 +175,7 @@ namespace ProyectoSocial.SistemaAdministrativo
                                 var datosRegistro = context.tbDatosRegistro.FirstOrDefault(d => d.carnet == carnet);
                                 Datos_Estudiantes datos_Estudiantes = new Datos_Estudiantes
                                 {
-                                    //Debo ingresar más variables si se crea más campos en el gridEstudiantes que estáne en la clase Datos_Estudiantes.
+                                   //Los datos de la base de datos que le darán valor a las variables en la Clase "Datos_Estudiantes".
                                     logo_itca = logoITCA.Image,
                                     carnet = selectedRow.Cells[0].Value.ToString(),
                                     nombres = selectedRow.Cells[3].Value.ToString(),
@@ -181,7 +185,8 @@ namespace ProyectoSocial.SistemaAdministrativo
                                     grupo = selectedRow.Cells[8].Value.ToString(),
                                     estado = selectedRow.Cells[9].Value.ToString(),
                                 };
-                                if (datosRegistro != null)
+                                if (datosRegistro != null) //Conexión a la base de datos "datosRegistro" para poder imprimir los datos
+                                    //de la clase "Datos_Estudiantes" y poder imprimir el reporte con los datos ingresados.
                                 {
                                     datos_Estudiantes.estudioAño = datosRegistro.año;
                                     datos_Estudiantes.escuelaEs = datosRegistro.escuela;
@@ -191,27 +196,26 @@ namespace ProyectoSocial.SistemaAdministrativo
                                     datos_Estudiantes.telefonoInstitucion = datosRegistro.telefonoInstitucion;
                                     datos_Estudiantes.coordinador = datosRegistro.coordinador;
                                     datos_Estudiantes.responsable = datosRegistro.responsable;
-                                    //datos_Estudiantes.direInst = datos_Estudiantes.instucion;
                                     datos_Estudiantes.fechaInicioSer = datosRegistro.fecha.ToLongDateString();
                                     datos_Estudiantes.fechaFinalSer = datosRegistro.fecha.ToLongDateString();
                                 }
-                                Procesar_PDF pdf = new Procesar_PDF();
-                                pdf.crearPdf(datos_Estudiantes, gridEstudiantes);
+                                Procesar_PDF pdf = new Procesar_PDF(); //Al cumplirlo, se imprimirá los datos en el reporte.
+                                pdf.crearPdf(datos_Estudiantes, gridEstudiantes); //También se imprime los datos de la clase y el gridEstudiantes
                             }
-                            else
+                            else //Primero debe seleccionar una fila de los datos para poder imprimir el reporte del estudiante.
                             {
                                 MessageBox.Show("Por favor, seleccione una fila antes de generar el informe.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                     }
-                    else
+                    else //Si el estudiante no tienen las 300 o 500 horas de su SSE, no se podrá imprimir su reporte de SSE. 
                     {
                         MessageBox.Show($"Estimado/a {compartir.usuario.Nombres}\nno puede  imprimir la hoja social de {usuario.Nombres + " " + usuario.Apellidos}, actualmente tiene realizadas {usuario.HorasTotal} horas sociales siendo su tipo de estudio de {usuario.TipoEstudio}", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     encontrado = true;
                 }
 
-                if (encontrado == false && indice == listaDeAlumnos.Count - 1)
+                if (encontrado == false && indice == listaDeAlumnos.Count - 1) //Si el carnet no se encuentra en la BD, entonces se muestra el siguiente mensaje:
                 {
                     MessageBox.Show("El carnet ingresado es invalido", "ITCA FEPADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -230,18 +234,18 @@ namespace ProyectoSocial.SistemaAdministrativo
         private void gridEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtBuscar.Text = gridEstudiantes.SelectedCells[0].Value.ToString();
-
+            //Hace que al dar clic en el grid, se seleccione por defecto el priemr valor, en este caso, el número de Carnet
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (comboFiltra.Text == "MaxHoras")
+            if (comboFiltra.Text == "MaxHoras") //Permite ordenar de forma numérica del valor más alto, en este caso, las horas de los estudiantes.
             {
                 gridEstudiantes.DataSource = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).OrderByDescending(o => o.HorasTotal).ToList();
 
 
             }
-            else if (comboFiltra.Text == "MinHoras")
+            else if (comboFiltra.Text == "MinHoras") //Permite ordenar de forma numérica del valor más bajo, en este caso, las horas de los estudiantes.
             {
                 gridEstudiantes.DataSource = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario == 1).OrderBy(o => o.HorasTotal).ToList();
 
@@ -256,16 +260,21 @@ namespace ProyectoSocial.SistemaAdministrativo
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             compartir.ValidacionNumerica(sender, e);
+            //Precisa la verificación de que no se haya ingresado un numéro.
+            //También verifica que la tecla fue manejada y no se procesará más
         }
 
         private void txtEliminar_KeyPress(object sender, KeyPressEventArgs e)
         {
             compartir.ValidacionNumerica(sender, e);
+            //Precisa la verificación de que no se haya ingresado un numéro.
+            //También verifica que la tecla fue manejada y no se procesará más
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtBuscar.Text = null;
+            //Borrará sin consecuencia el botónd de limpiar sin afectar la base de datos.
         }
     }
 }
