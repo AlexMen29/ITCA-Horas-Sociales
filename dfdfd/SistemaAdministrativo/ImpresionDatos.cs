@@ -25,7 +25,7 @@ namespace SistemaAdministrativo
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var alumnos = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo).Select(o => o.Carnet).ToList();
+            var alumnos = context.DatosAlumnos.Where(o => o.Grupo == compartir.usuario.Grupo && o.NivelUsuario==1).Select(o => o.Carnet).ToList();
 
             for (int indice = 0; indice < alumnos.Count; indice++)
             {
@@ -71,7 +71,7 @@ namespace SistemaAdministrativo
             if (compartir.usuario.NivelUsuario == 1)
             {
                 PanelOcultar.Visible = false;
-                FrmDatosGenerales form = new FrmDatosGenerales(2,compartir.carnetIngresado);
+                FrmDatosGenerales form = new FrmDatosGenerales(2, compartir.carnetIngresado);
                 form.Show();
             }
         }

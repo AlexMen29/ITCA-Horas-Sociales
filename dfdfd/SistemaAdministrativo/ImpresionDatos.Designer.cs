@@ -104,9 +104,8 @@
             // 
             txtBuscar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtBuscar.Location = new Point(25, 111);
-            txtBuscar.Multiline = true;
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(101, 32);
+            txtBuscar.Size = new Size(101, 33);
             txtBuscar.TabIndex = 8;
             txtBuscar.KeyPress += txtBuscar_KeyPress;
             // 

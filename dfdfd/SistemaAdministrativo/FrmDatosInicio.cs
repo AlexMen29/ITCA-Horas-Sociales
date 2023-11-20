@@ -87,7 +87,7 @@ namespace SistemaAdministrativo
                         }
                         else
                         {
-                            horasRestantes = 500 - totalHoras;
+                            horasRestantes = 500 - 600;
                         }
 
                         //Consulta para identificar usuario y modificar datos
